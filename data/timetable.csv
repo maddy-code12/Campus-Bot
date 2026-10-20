@@ -1,0 +1,120 @@
+teacher,dept,cabin,phone,email,designation,day,start,end,class,room,subject
+Dr. A G Hiremath,Maths,Maths Dept Cabin 1,08472-224360,aghiremath@pdaengg.com,Professor,Mon,11:15,12:15,1st Sem CSE-A,FB LH01,Calculus & Linear Algebra
+Dr. A G Hiremath,Maths,Maths Dept Cabin 1,08472-224360,aghiremath@pdaengg.com,Professor,Wed,09:00,11:00,1st Sem CSE-A,Maths LAB A,Maths Lab
+Dr. A G Hiremath,Maths,Maths Dept Cabin 1,08472-224360,aghiremath@pdaengg.com,Professor,Thu,10:00,11:00,1st Sem CSE-A,FB LH01,Calculus & Linear Algebra
+Dr. A G Hiremath,Maths,Maths Dept Cabin 1,08472-224360,aghiremath@pdaengg.com,Professor,Sat,09:00,10:00,1st Sem CSE-A,FB LH01,Calculus & Linear Algebra
+Prof. Triveni,Physics,Physics Dept Cabin 2,08472-224360,triveni@pdaengg.com,Assistant Professor,Mon,09:00,11:00,1st Sem CSE-A,PHY LAB,Physics Lab
+Prof. Triveni,Physics,Physics Dept Cabin 2,08472-224360,triveni@pdaengg.com,Assistant Professor,Wed,11:15,12:15,1st Sem CSE-A,FB LH01,Quantum Physics
+Prof. Triveni,Physics,Physics Dept Cabin 2,08472-224360,triveni@pdaengg.com,Assistant Professor,Thu,09:00,10:00,1st Sem CSE-A,FB LH01,Quantum Physics
+Prof. Triveni,Physics,Physics Dept Cabin 2,08472-224360,triveni@pdaengg.com,Assistant Professor,Fri,10:00,11:00,1st Sem CSE-A,FB LH01,Quantum Physics
+Prof. Triveni,Physics,Physics Dept Cabin 2,08472-224360,triveni@pdaengg.com,Assistant Professor,Tue,11:15,12:15,1st Sem CSD-E,FBLH06,Quantum Physics
+Prof. Sarita M,Mechanical,Mech Dept Cabin 4,08472-224360,saritam@pdaengg.com,Associate Professor,Tue,11:15,13:15,1st Sem CSE-A,FB LH01,CAED
+Prof. Sarita M,Mechanical,Mech Dept Cabin 4,08472-224360,saritam@pdaengg.com,Associate Professor,Thu,11:15,13:15,1st Sem CSE-A,CAED Lab,CAED Lab
+Prof. Sarita M,Mechanical,Mech Dept Cabin 4,08472-224360,saritam@pdaengg.com,Associate Professor,Mon,09:00,11:00,1st Sem ISE-F,FB LH01,CAED
+Dr. Radha B K,CSE,CSE Dept Cabin 3,08472-224360,radhabk@pdaengg.com,Associate Professor,Mon,15:00,16:00,1st Sem CSE-A,FB LH01,Programming in C
+Dr. Radha B K,CSE,CSE Dept Cabin 3,08472-224360,radhabk@pdaengg.com,Associate Professor,Wed,12:15,13:15,1st Sem CSE-A,FB LH01,Programming in C
+Dr. Radha B K,CSE,CSE Dept Cabin 3,08472-224360,radhabk@pdaengg.com,Associate Professor,Fri,09:00,10:00,1st Sem CSE-A,FB LH01,Programming in C
+Dr. Radha B K,CSE,CSE Dept Cabin 3,08472-224360,radhabk@pdaengg.com,Associate Professor,Tue,09:00,11:00,1st Sem CSE-A,POC LAB,C Programming Lab
+Dr. Gopichand T P,Maths,Maths Dept Cabin 2,08472-224360,gopichand@pdaengg.com,Assistant Professor,Mon,09:00,10:00,1st Sem CSE-B,FB LH02,Calculus & Linear Algebra
+Dr. Gopichand T P,Maths,Maths Dept Cabin 2,08472-224360,gopichand@pdaengg.com,Assistant Professor,Tue,10:00,11:00,1st Sem CSE-B,FB LH02,Calculus & Linear Algebra
+Dr. Gopichand T P,Maths,Maths Dept Cabin 2,08472-224360,gopichand@pdaengg.com,Assistant Professor,Thu,11:15,12:15,1st Sem CSE-B,FB LH02,Calculus & Linear Algebra
+Dr. Gopichand T P,Maths,Maths Dept Cabin 2,08472-224360,gopichand@pdaengg.com,Assistant Professor,Fri,09:00,11:00,1st Sem CSE-B,Maths LAB B,Maths Lab
+Prof. Bhoodevi,Physics,Physics Dept Cabin 3,08472-224360,bhoodevi@pdaengg.com,Assistant Professor,Mon,10:00,11:00,1st Sem CSE-B,FB LH02,Quantum Physics
+Prof. Bhoodevi,Physics,Physics Dept Cabin 3,08472-224360,bhoodevi@pdaengg.com,Assistant Professor,Fri,11:15,12:15,1st Sem CSE-B,FB LH02,Quantum Physics
+Prof. Bhoodevi,Physics,Physics Dept Cabin 3,08472-224360,bhoodevi@pdaengg.com,Assistant Professor,Sat,11:15,12:15,1st Sem CSE-B,FB LH02,Quantum Physics
+Prof. Bhoodevi,Physics,Physics Dept Cabin 3,08472-224360,bhoodevi@pdaengg.com,Assistant Professor,Wed,09:00,11:00,1st Sem CSE-B,PHY LAB,Physics Lab
+Prof. Revati Soma,CSE,CSE Dept Cabin 4,08472-224360,revatisoma@pdaengg.com,Assistant Professor,Tue,09:00,10:00,1st Sem CSE-B,FB LH02,Programming in C
+Prof. Revati Soma,CSE,CSE Dept Cabin 4,08472-224360,revatisoma@pdaengg.com,Assistant Professor,Thu,14:00,15:00,1st Sem CSE-B,FB LH02,Programming in C
+Prof. Revati Soma,CSE,CSE Dept Cabin 4,08472-224360,revatisoma@pdaengg.com,Assistant Professor,Fri,12:15,13:15,1st Sem CSE-B,FB LH02,Programming in C
+Prof. Revati Soma,CSE,CSE Dept Cabin 4,08472-224360,revatisoma@pdaengg.com,Assistant Professor,Wed,09:00,11:00,1st Sem CSE-B,POC LAB,C Programming Lab
+Dr. Veena M,Maths,Maths Dept Cabin 4,08472-224360,veenam@pdaengg.com,Associate Professor,Mon,15:00,16:00,1st Sem CSE-C,FB LH02,Calculus & Linear Algebra
+Dr. Veena M,Maths,Maths Dept Cabin 4,08472-224360,veenam@pdaengg.com,Associate Professor,Tue,10:00,11:00,1st Sem CSE-C,FBLH01,Calculus & Linear Algebra
+Dr. Veena M,Maths,Maths Dept Cabin 4,08472-224360,veenam@pdaengg.com,Associate Professor,Thu,09:00,10:00,1st Sem CSE-C,FBLH02,Calculus & Linear Algebra
+Dr. Veena M,Maths,Maths Dept Cabin 4,08472-224360,veenam@pdaengg.com,Associate Professor,Mon,12:15,13:15,1st Sem ECE-J,MB LH54,Diff Calculus
+Dr. Jayashree A,CSE,CSE Dept Cabin 6,08472-224360,jayashreea@pdaengg.com,Assistant Professor,Mon,12:15,13:15,1st Sem CSE-C,FB LH02,Programming in C
+Dr. Jayashree A,CSE,CSE Dept Cabin 6,08472-224360,jayashreea@pdaengg.com,Assistant Professor,Tue,11:15,12:15,1st Sem CSE-C,FBLH02,Programming in C
+Dr. Jayashree A,CSE,CSE Dept Cabin 6,08472-224360,jayashreea@pdaengg.com,Assistant Professor,Thu,11:15,12:15,1st Sem CSE-C,FBLH01,Programming in C
+Dr. S B Malipatil,Maths,Maths Dept Cabin 5,08472-224360,sbmalipatil@pdaengg.com,Associate Professor,Mon,09:00,10:00,1st Sem CSE-D,FBLH03,Calculus & Linear Algebra
+Dr. S B Malipatil,Maths,Maths Dept Cabin 5,08472-224360,sbmalipatil@pdaengg.com,Associate Professor,Thu,09:00,10:00,1st Sem CSE-D,FBLH03,Calculus & Linear Algebra
+Dr. S B Malipatil,Maths,Maths Dept Cabin 5,08472-224360,sbmalipatil@pdaengg.com,Associate Professor,Fri,10:00,11:00,1st Sem CSE-D,FBLH03,Calculus & Linear Algebra
+Dr. Satish Lathure,Physics,Physics Dept Cabin 4,08472-224360,satishlathure@pdaengg.com,Associate Professor,Wed,10:00,11:00,1st Sem CSE-D,FBLH03,Quantum Physics
+Dr. Satish Lathure,Physics,Physics Dept Cabin 4,08472-224360,satishlathure@pdaengg.com,Associate Professor,Fri,09:00,10:00,1st Sem CSE-D,FBLH03,Quantum Physics
+Dr. Satish Lathure,Physics,Physics Dept Cabin 4,08472-224360,satishlathure@pdaengg.com,Associate Professor,Sat,09:00,10:00,1st Sem CSE-D,FBLH03,Quantum Physics
+Dr. Satish Lathure,Physics,Physics Dept Cabin 4,08472-224360,satishlathure@pdaengg.com,Associate Professor,Wed,11:15,12:15,1st Sem AIML-G,FB LH07,Quantum Physics
+Prof. Pooja B,CSE,CSE Dept Cabin 7,08472-224360,poojab@pdaengg.com,Assistant Professor,Wed,09:00,10:00,1st Sem CSE-D,FBLH03,Programming in C
+Prof. Pooja B,CSE,CSE Dept Cabin 7,08472-224360,poojab@pdaengg.com,Assistant Professor,Thu,10:00,11:00,1st Sem CSE-D,FBLH03,Programming in C
+Prof. Pooja B,CSE,CSE Dept Cabin 7,08472-224360,poojab@pdaengg.com,Assistant Professor,Fri,14:00,15:00,1st Sem CSE-D,FBLH03,Programming in C
+Dr. M S Patil,Maths,Maths Dept Cabin 6,08472-224360,mspatil@pdaengg.com,Professor,Mon,09:00,10:00,1st Sem CSD-E,FBLH06,Calculus & Linear Algebra
+Dr. M S Patil,Maths,Maths Dept Cabin 6,08472-224360,mspatil@pdaengg.com,Professor,Tue,10:00,11:00,1st Sem CSD-E,FBLH06,Calculus & Linear Algebra
+Dr. M S Patil,Maths,Maths Dept Cabin 6,08472-224360,mspatil@pdaengg.com,Professor,Fri,10:00,11:00,1st Sem CSD-E,FBLH06,Calculus & Linear Algebra
+Dr. M S Patil,Maths,Maths Dept Cabin 6,08472-224360,mspatil@pdaengg.com,Professor,Mon,11:15,12:15,1st Sem EEE-M,MB Bosch Centre,Differential Calculus
+Prof. Mahananda H,CSE,CSE Dept Cabin 8,08472-224360,mahanandah@pdaengg.com,Assistant Professor,Tue,09:00,10:00,1st Sem CSD-E,FBLH06,Programming in C
+Prof. Mahananda H,CSE,CSE Dept Cabin 8,08472-224360,mahanandah@pdaengg.com,Assistant Professor,Wed,09:00,10:00,1st Sem CSD-E,FBLH06,Programming in C
+Prof. Mahananda H,CSE,CSE Dept Cabin 8,08472-224360,mahanandah@pdaengg.com,Assistant Professor,Sat,11:15,12:15,1st Sem CSD-E,FBLH06,Programming in C
+Prof. Rajeshwari B,Maths,Maths Dept Cabin 7,08472-224360,rajeshwarib@pdaengg.com,Associate Professor,Thu,09:00,10:00,1st Sem ISE-F,FB LH06,Calculus & Linear Algebra
+Prof. Rajeshwari B,Maths,Maths Dept Cabin 7,08472-224360,rajeshwarib@pdaengg.com,Associate Professor,Fri,09:00,10:00,1st Sem ISE-F,FB LH02,Calculus & Linear Algebra
+Prof. Rajeshwari B,Maths,Maths Dept Cabin 7,08472-224360,rajeshwarib@pdaengg.com,Associate Professor,Sat,10:00,11:00,1st Sem ISE-F,FB LH02,Calculus & Linear Algebra
+Prof. Rajeshwari B,Maths,Maths Dept Cabin 7,08472-224360,rajeshwarib@pdaengg.com,Associate Professor,Tue,12:15,13:15,1st Sem Civil-N,MB IP01,Differential Calculus
+Dr. Priyadarshini P,ISE,ISE Dept Cabin 2,08472-224360,priyadarshinip@pdaengg.com,Associate Professor,Tue,11:15,12:15,1st Sem ISE-F,FB LH03,Programming in C
+Dr. Priyadarshini P,ISE,ISE Dept Cabin 2,08472-224360,priyadarshinip@pdaengg.com,Associate Professor,Wed,10:00,11:00,1st Sem ISE-F,FB LH02,Programming in C
+Dr. Priyadarshini P,ISE,ISE Dept Cabin 2,08472-224360,priyadarshinip@pdaengg.com,Associate Professor,Thu,10:00,11:00,1st Sem ISE-F,FB LH06,Programming in C
+Dr. Umadevi R Devani,Maths,Maths Dept Cabin 8,08472-224360,umadevird@pdaengg.com,Associate Professor,Wed,10:00,11:00,1st Sem AIML-G,FB LH07,Calculus & Linear Algebra
+Dr. Umadevi R Devani,Maths,Maths Dept Cabin 8,08472-224360,umadevird@pdaengg.com,Associate Professor,Thu,12:15,13:15,1st Sem AIML-G,FB LH07,Calculus & Linear Algebra
+Dr. Umadevi R Devani,Maths,Maths Dept Cabin 8,08472-224360,umadevird@pdaengg.com,Associate Professor,Sat,09:00,10:00,1st Sem AIML-G,FB LH07,Calculus & Linear Algebra
+Dr. Umadevi R Devani,Maths,Maths Dept Cabin 8,08472-224360,umadevird@pdaengg.com,Associate Professor,Mon,11:15,12:15,1st Sem ECE-K,MB LH55,Differential Calculus
+Prof. Ashwini H,AIML,AIML Dept Cabin 3,08472-224360,ashwinih@pdaengg.com,Assistant Professor,Wed,09:00,10:00,1st Sem AIML-G,FB LH07,Programming in C
+Prof. Ashwini H,AIML,AIML Dept Cabin 3,08472-224360,ashwinih@pdaengg.com,Assistant Professor,Fri,10:00,11:00,1st Sem AIML-G,FB LH07,Programming in C
+Prof. Ashwini H,AIML,AIML Dept Cabin 3,08472-224360,ashwinih@pdaengg.com,Assistant Professor,Sat,10:00,11:00,1st Sem AIML-G,FB LH07,Programming in C
+Dr. Suvarna H,Maths,Maths Dept Cabin 9,08472-224360,suvarnah@pdaengg.com,Associate Professor,Tue,11:15,12:15,1st Sem AIML-H,FB LH08,Calculus & Linear Algebra
+Dr. Suvarna H,Maths,Maths Dept Cabin 9,08472-224360,suvarnah@pdaengg.com,Associate Professor,Wed,10:00,11:00,1st Sem AIML-H,FB LH08,Calculus & Linear Algebra
+Dr. Suvarna H,Maths,Maths Dept Cabin 9,08472-224360,suvarnah@pdaengg.com,Associate Professor,Thu,10:00,11:00,1st Sem AIML-H,FB LH08,Calculus & Linear Algebra
+Dr. Suvarna H,Maths,Maths Dept Cabin 9,08472-224360,suvarnah@pdaengg.com,Associate Professor,Tue,09:00,10:00,1st Sem ECE-L,MB LH55,Differential Calculus
+Prof. Chandrakant Biradar,AIML,AIML Dept Cabin 5,08472-224360,cbiradar@pdaengg.com,Assistant Professor,Mon,10:00,11:00,1st Sem AIML-H,FB LH08,Programming in C
+Prof. Chandrakant Biradar,AIML,AIML Dept Cabin 5,08472-224360,cbiradar@pdaengg.com,Assistant Professor,Tue,12:15,13:15,1st Sem AIML-H,FB LH08,Programming in C
+Prof. Chandrakant Biradar,AIML,AIML Dept Cabin 5,08472-224360,cbiradar@pdaengg.com,Assistant Professor,Wed,09:00,10:00,1st Sem AIML-H,FB LH08,Programming in C
+Dr. S A Adky,Maths,Maths Dept Cabin 10,08472-224360,adky@pdaengg.com,Professor,Mon,11:15,12:15,1st Sem AIDS-I,FB LH06,Calculus & Linear Algebra
+Dr. S A Adky,Maths,Maths Dept Cabin 10,08472-224360,adky@pdaengg.com,Professor,Wed,11:15,12:15,1st Sem AIDS-I,FB LH06,Calculus & Linear Algebra
+Dr. S A Adky,Maths,Maths Dept Cabin 10,08472-224360,adky@pdaengg.com,Professor,Thu,09:00,10:00,1st Sem AIDS-I,FB LH07,Calculus & Linear Algebra
+Dr. S A Adky,Maths,Maths Dept Cabin 10,08472-224360,adky@pdaengg.com,Professor,Mon,09:00,10:00,1st Sem Civil-O,MB IP01,Differential Calculus
+Dr. Shridevi Soma,AIDS,AIDS Dept Cabin 2,08472-224360,shridevisoma@pdaengg.com,Associate Professor,Tue,12:15,13:15,1st Sem AIDS-I,FB LH07,Programming in C
+Dr. Shridevi Soma,AIDS,AIDS Dept Cabin 2,08472-224360,shridevisoma@pdaengg.com,Associate Professor,Thu,12:15,13:15,1st Sem AIDS-I,FB LH08,Programming in C
+Dr. Shridevi Soma,AIDS,AIDS Dept Cabin 2,08472-224360,shridevisoma@pdaengg.com,Associate Professor,Sat,09:00,10:00,1st Sem AIDS-I,FB LH08,Programming in C
+Prof. Geetanjali Devani,Chemistry,Chemistry Dept Cabin 2,08472-224360,gdevani@pdaengg.com,Associate Professor,Mon,09:00,10:00,1st Sem ECE-J,MB LH54,Applied Chemistry
+Prof. Geetanjali Devani,Chemistry,Chemistry Dept Cabin 2,08472-224360,gdevani@pdaengg.com,Associate Professor,Thu,10:00,11:00,1st Sem ECE-J,MB LH54,Applied Chemistry
+Prof. Geetanjali Devani,Chemistry,Chemistry Dept Cabin 2,08472-224360,gdevani@pdaengg.com,Associate Professor,Fri,12:15,13:15,1st Sem ECE-J,MB LH54,Applied Chemistry
+Prof. Geetanjali Devani,Chemistry,Chemistry Dept Cabin 2,08472-224360,gdevani@pdaengg.com,Associate Professor,Wed,10:00,11:00,1st Sem Civil-N,MB IP01,Applied Chemistry
+Prof. Jyoti Laxmi,Chemistry,Chemistry Dept Cabin 3,08472-224360,jyotilaxmi@pdaengg.com,Assistant Professor,Mon,09:00,10:00,1st Sem ECE-K,MB LH55,Applied Chemistry
+Prof. Jyoti Laxmi,Chemistry,Chemistry Dept Cabin 3,08472-224360,jyotilaxmi@pdaengg.com,Assistant Professor,Thu,10:00,11:00,1st Sem ECE-K,MB LH55,Applied Chemistry
+Prof. Jyoti Laxmi,Chemistry,Chemistry Dept Cabin 3,08472-224360,jyotilaxmi@pdaengg.com,Assistant Professor,Sat,11:15,12:15,1st Sem ECE-K,MB LH55,Applied Chemistry
+Prof. Jyoti Laxmi,Chemistry,Chemistry Dept Cabin 3,08472-224360,jyotilaxmi@pdaengg.com,Assistant Professor,Tue,09:00,10:00,1st Sem Civil-O,MB IP01,Applied Chemistry
+Dr. Anand P Patil,Chemistry,Chemistry Dept Cabin 4,08472-224360,anandppatil@pdaengg.com,Associate Professor,Mon,10:00,11:00,1st Sem EEE-M,MB Bosch Centre,Applied Chemistry
+Dr. Anand P Patil,Chemistry,Chemistry Dept Cabin 4,08472-224360,anandppatil@pdaengg.com,Associate Professor,Tue,11:15,12:15,1st Sem EEE-M,MB Bosch Centre,Applied Chemistry
+Dr. Anand P Patil,Chemistry,Chemistry Dept Cabin 4,08472-224360,anandppatil@pdaengg.com,Associate Professor,Fri,09:00,10:00,1st Sem EEE-M,MB Bosch Centre,Applied Chemistry
+Dr. Anand P Patil,Chemistry,Chemistry Dept Cabin 4,08472-224360,anandppatil@pdaengg.com,Associate Professor,Tue,10:00,11:00,1st Sem CCT-P,MB IP11,Applied Chemistry
+Dr. Vijay Hiremath,Chemistry,Chemistry Dept Cabin 1,08472-224360,vijayhiremath@pdaengg.com,Professor & HOD,Mon,11:15,12:15,1st Sem Mech-Q,FB LH04,Applied Chemistry
+Dr. Vijay Hiremath,Chemistry,Chemistry Dept Cabin 1,08472-224360,vijayhiremath@pdaengg.com,Professor & HOD,Wed,11:15,12:15,1st Sem Mech-Q,FB LH04,Applied Chemistry
+Dr. Vijay Hiremath,Chemistry,Chemistry Dept Cabin 1,08472-224360,vijayhiremath@pdaengg.com,Professor & HOD,Thu,09:00,10:00,1st Sem Mech-Q,FB LH04,Applied Chemistry
+Dr. R S Malipatil,Chemistry,Chemistry Dept Cabin 5,08472-224360,rsmalipatil@pdaengg.com,Associate Professor,Mon,11:15,12:15,1st Sem ECE-L,MB IP01,Applied Chemistry
+Dr. R S Malipatil,Chemistry,Chemistry Dept Cabin 5,08472-224360,rsmalipatil@pdaengg.com,Associate Professor,Wed,10:00,11:00,1st Sem ECE-L,MB LH55,Applied Chemistry
+Dr. R S Malipatil,Chemistry,Chemistry Dept Cabin 5,08472-224360,rsmalipatil@pdaengg.com,Associate Professor,Fri,12:15,13:15,1st Sem ECE-L,MB LH55,Applied Chemistry
+Dr. R S Malipatil,Chemistry,Chemistry Dept Cabin 5,08472-224360,rsmalipatil@pdaengg.com,Associate Professor,Tue,09:00,10:00,1st Sem Mech-R,FB LH04,Applied Chemistry
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Sat,10:00,11:00,1st Sem CSE-A,FB LH01,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Thu,12:15,13:15,1st Sem CSE-B,FB LH02,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Thu,10:00,11:00,1st Sem CSE-C,FBLH02,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Mon,10:00,11:00,1st Sem CSE-D,FBLH03,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Tue,12:15,13:15,1st Sem CSD-E,FBLH06,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Tue,10:00,11:00,1st Sem ISE-F,FB LH03,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Wed,12:15,13:15,1st Sem AIML-G,FB LH07,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Fri,09:00,10:00,1st Sem AIML-H,FB LH08,Samskritika Kannada
+Dr. Sujatha Patil,Humanities,Humanities Dept Cabin 1,08472-224360,sujathapatil@pdaengg.com,Professor,Mon,12:15,13:15,1st Sem AIDS-I,FB LH06,Samskritika Kannada
+Prof. Vijaylaxmi T,Humanities,Humanities Dept Cabin 2,08472-224360,vijaylaxmit@pdaengg.com,Assistant Professor,Mon,12:15,13:15,1st Sem CSE-A,FB LH01,Soft Skills
+Prof. Vijaylaxmi T,Humanities,Humanities Dept Cabin 2,08472-224360,vijaylaxmit@pdaengg.com,Assistant Professor,Sat,10:00,11:00,1st Sem CSE-D,FBLH03,Soft Skills
+Prof. Vijaylaxmi T,Humanities,Humanities Dept Cabin 2,08472-224360,vijaylaxmit@pdaengg.com,Assistant Professor,Sat,12:15,13:15,1st Sem ECE-L,MB LH54,Comm. Skills
+Prof. Vijaylaxmi T,Humanities,Humanities Dept Cabin 2,08472-224360,vijaylaxmit@pdaengg.com,Assistant Professor,Tue,10:00,11:00,1st Sem EEE-M,MB Bosch Centre,Comm. Skills
+Prof. Vijaylaxmi T,Humanities,Humanities Dept Cabin 2,08472-224360,vijaylaxmit@pdaengg.com,Assistant Professor,Wed,10:00,11:00,1st Sem CCT-P,MB IP11,Comm. Skills
+Prof. Chandra Reddy,Humanities,Humanities Dept Cabin 3,08472-224360,chandrareddy@pdaengg.com,Assistant Professor,Sat,12:15,13:15,1st Sem CSE-B,FB LH02,Soft Skills
+Prof. Chandra Reddy,Humanities,Humanities Dept Cabin 3,08472-224360,chandrareddy@pdaengg.com,Assistant Professor,Fri,09:00,10:00,1st Sem AIML-G,FB LH07,Soft Skills
+Prof. Chandra Reddy,Humanities,Humanities Dept Cabin 3,08472-224360,chandrareddy@pdaengg.com,Assistant Professor,Thu,09:00,10:00,1st Sem ECE-J,MB LH54,Comm. Skills
+Prof. Chandra Reddy,Humanities,Humanities Dept Cabin 3,08472-224360,chandrareddy@pdaengg.com,Assistant Professor,Thu,12:15,13:15,1st Sem ECE-J,MB LH54,IC&PE
+Prof. Chandra Reddy,Humanities,Humanities Dept Cabin 3,08472-224360,chandrareddy@pdaengg.com,Assistant Professor,Wed,12:15,13:15,1st Sem Civil-N,MB IP01,Comm. Skills
+Prof. Chandra Reddy,Humanities,Humanities Dept Cabin 3,08472-224360,chandrareddy@pdaengg.com,Assistant Professor,Thu,10:00,11:00,1st Sem Mech-Q,FB LH04,Comm. Skills

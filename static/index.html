@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDA College of Engineering, Kalaburagi | Campus Assistant</title>
+  <link rel="icon" type="image/png" href="/static/pda_logo.png" />
+  <style>
+    :root {
+      --primary: #800020;
+      --primary-dark: #4a0011;
+      --gold: #d4af37;
+      --gold-light: #ffe27a;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Top Gov/Trust Ribbon */
+    .top-ribbon {
+      background: var(--primary-dark);
+      color: #f1f5f9;
+      font-size: 12px;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .top-ribbon a {
+      color: var(--gold-light);
+      text-decoration: none;
+      margin-left: 14px;
+    }
+    .top-ribbon a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Branding Header */
+    header {
+      background: #ffffff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-bottom: 3px solid var(--gold);
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .college-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+    }
+    .brand-text h1 {
+      font-size: 22px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .brand-text p {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .brand-badges {
+      display: flex;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      background: #fff5f6;
+      color: var(--primary);
+      border: 1px solid #ffd1d9;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: var(--primary);
+      padding: 0 24px;
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 12px 6px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover, nav a.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, rgba(74, 0, 17, 0.94), rgba(128, 0, 32, 0.88)),
+                  url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: white;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #fce7eb;
+      max-width: 760px;
+      margin: 0 auto 24px;
+    }
+    .hero-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--primary-dark);
+      border: none;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Section Cards Grid */
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .card-action:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Feature Spotlight Banner */
+    .spotlight {
+      background: linear-gradient(135deg, #fff7f7, #ffffff);
+      border: 2px dashed #ffd1d9;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .spotlight-left {
+      flex: 1;
+      min-width: 300px;
+    }
+    .spotlight h3 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .spotlight p {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+    .demo-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .prompt-pill {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .prompt-pill:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #e2e8f0;
+      padding: 40px 24px 20px;
+      margin-top: 60px;
+      border-top: 4px solid var(--gold);
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .footer-col h4 {
+      color: var(--gold-light);
+      font-size: 15px;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 13px;
+      color: #cbd5e1;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer-col a:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 12px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Trust & Portals Ribbon -->
+  <div class="top-ribbon">
+    <div>
+      Sharanabasaveshwar Vidya Vardhak Sangha's • <strong>Estd. 1958</strong>
+    </div>
+    <div>
+      <a href="https://www.pdacek.ac.in" target="_blank">Official Portal: pdacek.ac.in</a>
+      <a href="https://ssp.postmatric.karnataka.gov.in" target="_blank">SSP Scholarship</a>
+      <a href="https://cetonline.karnataka.gov.in/kea/" target="_blank">KEA Admissions</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-wrap">
+      <img src="/static/pda_logo.png" alt="PDA College Crest" class="college-logo" />
+      <div class="brand-text">
+        <h1>POOJYA DODDAPPA APPA COLLEGE OF ENGINEERING</h1>
+        <p>An Autonomous Institution Affiliated to VTU Belagavi | Approved by AICTE | Accredited by NBA & NAAC</p>
+      </div>
+    </div>
+    <div class="brand-badges">
+      <span class="badge">Estd 1958</span>
+      <span class="badge">Kalaburagi</span>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#admissions">Admissions & Seats</a>
+    <a href="#students">Student Desk</a>
+    <a href="#faculty">Faculty & Locator</a>
+    <a href="#scholarships">Scholarships</a>
+    <a href="#examinations">Examinations & VTU</a>
+    <a href="https://www.pdacek.ac.in" target="_blank">Official College Website ↗</a>
+  </nav>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <h2>PDA College of Engineering Campus Assistant</h2>
+    <p>
+      Welcome to the integrated digital assistance portal for Poojya Doddappa Appa College of Engineering, Kalaburagi.
+      Ask questions, track live classroom locations of faculty, explore admission seat matrices, access autonomous syllabus & notes, and check scholarship eligibility!
+    </p>
+    <div class="hero-btn-group">
+      <button class="btn btn-gold" onclick="document.getElementById('pda-chat-launcher').click()">
+        💬 Open Campus Assistant Chatbot
+      </button>
+      <a href="https://www.pdacek.ac.in" target="_blank" class="btn btn-outline">
+        🌐 Visit pdacek.ac.in
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="container">
+
+    <!-- Interactive Chatbot Spotlight -->
+    <div class="spotlight">
+      <div class="spotlight-left">
+        <h3>🤖 Integrated Campus Assistant & Voice Bot</h3>
+        <p>
+          Click the <strong>College Crest widget</strong> in the bottom right corner, or try these instant voice & text queries:
+        </p>
+        <div class="demo-prompts">
+          <span class="prompt-pill" onclick="triggerBotQuery('Where is Dr. S. R. Patil right now?')">
+            📍 Where is Dr. S. R. Patil?
+          </span>
+          <span class="prompt-pill" onclick="triggerBotQuery('Show admission seat intake and fees')">
+            🎓 Seats & Fees Structure
+          </span>
+          <span class="prompt-pill" onclick="triggerBotQuery('Give 5th sem CSE notes and PYQs')">
+            📚 5th Sem CSE Syllabus & Notes
+          </span>
+          <span class="prompt-pill" onclick="triggerBotQuery('How to apply for SSP Karnataka scholarship?')">
+            💰 SSP & NSP Scholarships
+          </span>
+          <span class="prompt-pill" onclick="triggerBotQuery('Dr. Ramesh Kulkarni')">
+            👨‍🏫 Locate Dr. Ramesh Kulkarni
+          </span>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-gold" onclick="document.getElementById('pda-chat-launcher').click()">
+          🎙️ Try Voice Assistant
+        </button>
+      </div>
+    </div>
+
+    <!-- 3 Core Sections -->
+    <h2 class="section-title">Key Campus Services</h2>
+    <div class="grid-3">
+
+      <!-- Admissions -->
+      <div class="card" id="admissions">
+        <div class="card-icon">🎓</div>
+        <h3>Admissions Enquiry</h3>
+        <p>
+          Approved intake for 12+ engineering streams including CSE (180 seats), ISE (120 seats), ECE (120 seats), AI & ML (60 seats), Civil and Mechanical. Detailed KCET, COMEDK, and Management seat matrices.
+        </p>
+        <a class="card-action" onclick="triggerBotQuery('Show admission seat intake and fees')">
+          Explore Seats & Fee Structure →
+        </a>
+      </div>
+
+      <!-- Student Corner -->
+      <div class="card" id="students">
+        <div class="card-icon">📚</div>
+        <h3>Student Academic Corner</h3>
+        <p>
+          Autonomous scheme course syllabus, semester timetable schedules, previous year question papers (PYQs), unit-wise handwritten & faculty notes, and laboratory manuals with code.
+        </p>
+        <a class="card-action" onclick="triggerBotQuery('Show student resources')">
+          Access Notes, PYQ & Lab Manuals →
+        </a>
+      </div>
+
+      <!-- Staff & Teacher Locator -->
+      <div class="card" id="faculty">
+        <div class="card-icon">👨‍🏫</div>
+        <h3>Faculty Directory & Live Locator</h3>
+        <p>
+          Public faculty directory with cabin locations, direct contact phone numbers, and official emails. Includes a <strong>Live Teacher Locator</strong> showing whether a professor is in class or cabin!
+        </p>
+        <a class="card-action" onclick="triggerBotQuery('Where is Dr. S. R. Patil right now?')">
+          Locate Faculty / Staff Login →
+        </a>
+      </div>
+
+      <!-- Scholarships -->
+      <div class="card" id="scholarships">
+        <div class="card-icon">💰</div>
+        <h3>Scholarships & Financial Aid</h3>
+        <p>
+          State Scholarship Portal (SSP) Post-Matric SC/ST/OBC fee reimbursement, National Scholarship Portal (NSP), AICTE Pragati for girls, Vidyasiri, and Sitaram Jindal Foundation schemes.
+        </p>
+        <a class="card-action" onclick="triggerBotQuery('Tell me about Scholarships for PDA College')">
+          View Scholarship Guidelines →
+        </a>
+      </div>
+
+      <!-- Private Staff Portal -->
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Private Staff & Marks Portal</h3>
+        <p>
+          Secure login for PDA faculty members to review class attendance percentages, Continuous Internal Evaluation (CIE-1, 2, 3) test marks, and update student academic performance.
+        </p>
+        <a class="card-action" onclick="openStaffModalDirectly()">
+          Open Staff Login Panel →
+        </a>
+      </div>
+
+      <!-- Official College Website -->
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Official Portals & Contacts</h3>
+        <p>
+          Direct links to PDA College official website (pdacek.ac.in), Autonomous Examination Cell, VTU results portal, AICTE compliance reports, and Kalaburagi campus map.
+        </p>
+        <a href="https://www.pdacek.ac.in" target="_blank" class="card-action">
+          Visit pdacek.ac.in Official Website ↗
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PDA College of Engineering</h4>
+        <p>Aiwan-E-Shahi Area, Kalaburagi (Gulbarga)</p>
+        <p>Karnataka, India - 585102</p>
+        <p>📞 Phone: +91 8472 220172</p>
+        <p>✉️ Email: principal@pdaengg.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Academic Programs</h4>
+        <a href="#">Computer Science & Engineering</a>
+        <a href="#">Information Science & Engg</a>
+        <a href="#">Electronics & Communication</a>
+        <a href="#">Artificial Intelligence & ML</a>
+        <a href="#">Civil Engineering</a>
+        <a href="#">Mechanical Engineering</a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Portals</h4>
+        <a href="https://www.pdacek.ac.in" target="_blank">Official Website</a>
+        <a href="https://ssp.postmatric.karnataka.gov.in" target="_blank">SSP Scholarship Portal</a>
+        <a href="https://cetonline.karnataka.gov.in/kea/" target="_blank">KEA Admission Portal</a>
+        <a href="https://vtu.ac.in" target="_blank">VTU Belagavi</a>
+      </div>
+      <div class="footer-col">
+        <h4>Campus Assistant</h4>
+        <p>Multilingual AI Assistant (English, Kannada, Hindi)</p>
+        <p>Web Speech Voice Recognition & TTS Output</p>
+        <p>Real-Time Faculty Classroom Locator</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Poojya Doddappa Appa College of Engineering, Kalaburagi. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Include Chatbot Widget Script -->
+  <script src="/static/widget.js"></script>
+
+  <!-- Interactive Demo Bridge -->
+  <script>
+    function triggerBotQuery(query) {
+      if (window.PDACampusBot && window.PDACampusBot.ask) {
+        window.PDACampusBot.ask(query);
+        return;
+      }
+      const launcher = document.getElementById('pda-chat-launcher');
+      const chatWin = document.getElementById('pda-chat-window');
+      if (chatWin && chatWin.style.display !== 'flex') {
+        launcher.click();
+      }
+      setTimeout(() => {
+        const inp = document.getElementById('pda-query-input');
+        const send = document.getElementById('pda-send-btn');
+        if (inp && send) {
+          inp.value = query;
+          send.click();
+        }
+      }, 250);
+    }
+
+    function openStaffModalDirectly() {
+      if (window.PDACampusBot && window.PDACampusBot.openStaffDash) {
+        window.PDACampusBot.openStaffDash();
+      }
+    }
+  </script>
+</body>
+</html>
