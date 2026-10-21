@@ -8,9 +8,9 @@ import time
 import urllib.request
 from typing import Dict, List, Optional
 
-from fastapi import FastAPI, HTTPException, Header, Query
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -18,9 +18,15 @@ import data.first_year_data as fy_data
 import data.seed_data as seed
 from ml_engine import ml_engine
 
-DB_FILE = "campus.db"
+DB_FILE = os.getenv("DB_FILE", "campus.db")
 CSV_FILE = os.path.join("data", "timetable.csv")
 DEFAULT_AI_URL = os.environ.get("AI_URL", "")
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", "8000"))
+ALLOWED_ORIGINS = [
+    origin.strip() for origin in os.getenv("ALLOWED_ORIGINS", "*").split(",") if origin.strip()
+]
+ALLOWED_ORIGINS = ["*"] if ALLOWED_ORIGINS == ["*"] else ALLOWED_ORIGINS
 
 app = FastAPI(
     title="PDA College of Engineering - Campus Assistant API",
@@ -30,7 +36,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -422,347 +428,324 @@ SENIOR_FACULTY_SLOTS = [
 
 def init_db():
     conn = get_db()
-    conn.executescript(
-        """
-        DROP TABLE IF EXISTS teachers;
-        DROP TABLE IF EXISTS slots;
-        DROP TABLE IF EXISTS departments;
-        DROP TABLE IF EXISTS scholarships;
-        DROP TABLE IF EXISTS first_year_timetable;
-        DROP TABLE IF EXISTS first_year_esc_courses;
-        DROP TABLE IF EXISTS students;
-        DROP TABLE IF EXISTS student_records;
-
-        CREATE TABLE IF NOT EXISTS teachers(
-            id INTEGER PRIMARY KEY,
-            name TEXT UNIQUE,
-            dept TEXT,
-            cabin TEXT,
-            phone TEXT,
-            email TEXT,
-            designation TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS slots(
-            id INTEGER PRIMARY KEY,
-            teacher_id INTEGER,
-            day TEXT,
-            start_time TEXT,
-            end_time TEXT,
-            class_name TEXT,
-            room TEXT,
-            subject TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS departments(
-            code TEXT PRIMARY KEY,
-            name TEXT,
-            intake INTEGER,
-            fee_govt INTEGER,
-            cutoff_kcet INTEGER,
-            open_seats INTEGER,
-            hod TEXT,
-            phone TEXT,
-            email TEXT,
-            description TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS scholarships(
-            id INTEGER PRIMARY KEY,
-            title TEXT,
-            category TEXT,
-            eligibility TEXT,
-            benefit TEXT,
-            portal_link TEXT,
-            deadline TEXT,
-            documents_required TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS staff_users(
-            id INTEGER PRIMARY KEY,
-            username TEXT UNIQUE,
-            password TEXT,
-            full_name TEXT,
-            dept TEXT,
-            role TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS students(
-            usn TEXT PRIMARY KEY,
-            name TEXT,
-            dept TEXT,
-            sem INTEGER,
-            section TEXT,
-            attendance REAL,
-            cie1 INTEGER,
-            cie2 INTEGER,
-            cie3 INTEGER,
-            assignment INTEGER,
-            lab INTEGER
-        );
-
-        CREATE TABLE IF NOT EXISTS student_records(
-            id INTEGER PRIMARY KEY,
-            usn TEXT,
-            subject_code TEXT,
-            subject_name TEXT,
-            attendance REAL,
-            cie1 INTEGER,
-            cie2 INTEGER,
-            cie3 INTEGER,
-            assignment INTEGER,
-            lab INTEGER
-        );
-
-        CREATE TABLE IF NOT EXISTS first_year_timetable(
-            id INTEGER PRIMARY KEY,
-            year INTEGER DEFAULT 1,
-            semester INTEGER DEFAULT 1,
-            section TEXT,
-            dept TEXT,
-            stream TEXT,
-            room TEXT,
-            subject_code TEXT,
-            subject_title TEXT,
-            faculty TEXT,
-            faculty_dept TEXT,
-            day TEXT,
-            period INTEGER,
-            slot_label TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS first_year_esc_courses(
-            id INTEGER PRIMARY KEY,
-            year INTEGER DEFAULT 1,
-            semester INTEGER DEFAULT 1,
-            course_code TEXT,
-            course_title TEXT,
-            batch TEXT,
-            faculty TEXT,
-            room TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS notices(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            title TEXT NOT NULL,
-            date TEXT NOT NULL,
-            category TEXT DEFAULT 'Notice',
-            link TEXT DEFAULT 'https://www.pdacek.ac.in/announcement.php',
-            details TEXT DEFAULT ''
-        );
-
-        CREATE TABLE IF NOT EXISTS study_materials(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            dept TEXT NOT NULL,
-            scheme TEXT NOT NULL,
-            resource_type TEXT NOT NULL,
-            title TEXT NOT NULL,
-            content TEXT DEFAULT '',
-            link TEXT DEFAULT ''
-        );
-        """
-    )
-
-    # 1. Seed Senior Faculty & HODs + CSV Teachers & Slots
-    for sf in SENIOR_FACULTY_SLOTS:
-        conn.execute(
+    try:
+        conn.executescript(
             """
-            INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
-            VALUES (?, ?, ?, ?, ?, ?)
-            """,
-            (sf["name"], sf["dept"], sf["cabin"], sf["phone"], sf["email"], sf["designation"]),
-        )
-        tid = conn.execute("SELECT id FROM teachers WHERE name=?", (sf["name"],)).fetchone()[0]
-        for day, st, et, cls_name, rm, subj in sf["slots"]:
-            conn.execute(
-                """
-                INSERT INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-                """,
-                (tid, day, st, et, cls_name, rm, subj),
-            )
+            CREATE TABLE IF NOT EXISTS teachers(
+                id INTEGER PRIMARY KEY,
+                name TEXT UNIQUE,
+                dept TEXT,
+                cabin TEXT,
+                phone TEXT,
+                email TEXT,
+                designation TEXT
+            );
 
-    # Also ensure every department HOD is in teachers table
-    for d in seed.DEPARTMENTS:
-        conn.execute(
+            CREATE TABLE IF NOT EXISTS slots(
+                id INTEGER PRIMARY KEY,
+                teacher_id INTEGER,
+                day TEXT,
+                start_time TEXT,
+                end_time TEXT,
+                class_name TEXT,
+                room TEXT,
+                subject TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS departments(
+                code TEXT PRIMARY KEY,
+                name TEXT,
+                intake INTEGER,
+                fee_govt INTEGER,
+                cutoff_kcet INTEGER,
+                open_seats INTEGER,
+                hod TEXT,
+                phone TEXT,
+                email TEXT,
+                description TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS scholarships(
+                id INTEGER PRIMARY KEY,
+                title TEXT,
+                category TEXT,
+                eligibility TEXT,
+                benefit TEXT,
+                portal_link TEXT,
+                deadline TEXT,
+                documents_required TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS staff_users(
+                id INTEGER PRIMARY KEY,
+                username TEXT UNIQUE,
+                password TEXT,
+                full_name TEXT,
+                dept TEXT,
+                role TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS students(
+                usn TEXT PRIMARY KEY,
+                name TEXT,
+                dept TEXT,
+                sem INTEGER,
+                section TEXT,
+                attendance REAL,
+                cie1 INTEGER,
+                cie2 INTEGER,
+                cie3 INTEGER,
+                assignment INTEGER,
+                lab INTEGER
+            );
+
+            CREATE TABLE IF NOT EXISTS student_records(
+                id INTEGER PRIMARY KEY,
+                usn TEXT,
+                subject_code TEXT,
+                subject_name TEXT,
+                attendance REAL,
+                cie1 INTEGER,
+                cie2 INTEGER,
+                cie3 INTEGER,
+                assignment INTEGER,
+                lab INTEGER
+            );
+
+            CREATE TABLE IF NOT EXISTS first_year_timetable(
+                id INTEGER PRIMARY KEY,
+                year INTEGER DEFAULT 1,
+                semester INTEGER DEFAULT 1,
+                section TEXT,
+                dept TEXT,
+                stream TEXT,
+                room TEXT,
+                subject_code TEXT,
+                subject_title TEXT,
+                faculty TEXT,
+                faculty_dept TEXT,
+                day TEXT,
+                period INTEGER,
+                slot_label TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS first_year_esc_courses(
+                id INTEGER PRIMARY KEY,
+                year INTEGER DEFAULT 1,
+                semester INTEGER DEFAULT 1,
+                course_code TEXT,
+                course_title TEXT,
+                batch TEXT,
+                faculty TEXT,
+                room TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS notices(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL,
+                date TEXT NOT NULL,
+                category TEXT DEFAULT 'Notice',
+                link TEXT DEFAULT 'https://www.pdacek.ac.in/announcement.php',
+                details TEXT DEFAULT ''
+            );
+
+            CREATE TABLE IF NOT EXISTS study_materials(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                dept TEXT NOT NULL,
+                scheme TEXT NOT NULL,
+                resource_type TEXT NOT NULL,
+                title TEXT NOT NULL,
+                content TEXT DEFAULT '',
+                link TEXT DEFAULT ''
+            );
             """
-            INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
-            VALUES (?, ?, ?, ?, ?, ?)
-            """,
-            (
-                d["hod"],
-                d["code"],
-                d.get("cabin", f"{d['code']} Dept HOD Cabin"),
-                d["phone"],
-                d["email"],
-                f"Professor & HOD ({d['code']})",
-            ),
         )
 
-    if os.path.exists(CSV_FILE):
-        with open(CSV_FILE, newline="", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for r in reader:
+        if conn.execute("SELECT COUNT(*) FROM teachers").fetchone()[0] == 0:
+            for sf in SENIOR_FACULTY_SLOTS:
                 conn.execute(
                     """
                     INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
                     VALUES (?, ?, ?, ?, ?, ?)
                     """,
-                    (
-                        r.get("teacher"),
-                        r.get("dept"),
-                        r.get("cabin"),
-                        r.get("phone", "08472-224360"),
-                        r.get("email", "principal@pdaengg.com"),
-                        r.get("designation", "Faculty Member"),
-                    ),
+                    (sf["name"], sf["dept"], sf["cabin"], sf["phone"], sf["email"], sf["designation"]),
                 )
-                tid = conn.execute(
-                    "SELECT id FROM teachers WHERE name=?", (r.get("teacher"),)
-                ).fetchone()[0]
+                tid = conn.execute("SELECT id FROM teachers WHERE name=?", (sf["name"],)).fetchone()[0]
+                for day, st, et, cls_name, rm, subj in sf["slots"]:
+                    conn.execute(
+                        """
+                        INSERT OR IGNORE INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
+                        """,
+                        (tid, day, st, et, cls_name, rm, subj),
+                    )
 
+        if conn.execute("SELECT COUNT(*) FROM departments").fetchone()[0] == 0:
+            for d in seed.DEPARTMENTS:
                 conn.execute(
                     """
-                    INSERT INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
+                    INSERT OR IGNORE INTO departments(code, name, intake, fee_govt, cutoff_kcet, open_seats, hod, phone, email, description)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        d["code"],
+                        d["name"],
+                        d["intake"],
+                        d["fee_govt"],
+                        d["cutoff_kcet"],
+                        d["open_seats"],
+                        d["hod"],
+                        d["phone"],
+                        d["email"],
+                        d["description"],
+                    ),
+                )
+
+        if conn.execute("SELECT COUNT(*) FROM scholarships").fetchone()[0] == 0:
+            for s in seed.SCHOLARSHIPS:
+                conn.execute(
+                    """
+                    INSERT OR IGNORE INTO scholarships(title, category, eligibility, benefit, portal_link, deadline, documents_required)
                     VALUES (?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
-                        tid,
-                        r.get("day"),
-                        r.get("start"),
-                        r.get("end"),
-                        r.get("class"),
-                        r.get("room"),
-                        r.get("subject", "Theory/Lab"),
+                        s["title"],
+                        s["category"],
+                        s["eligibility"],
+                        s["benefit"],
+                        s["portal_link"],
+                        s["deadline"],
+                        s["documents_required"],
                     ),
                 )
 
-    # 2. Departments
-    for d in seed.DEPARTMENTS:
-        conn.execute(
-            """
-            INSERT OR REPLACE INTO departments(code, name, intake, fee_govt, cutoff_kcet, open_seats, hod, phone, email, description)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                d["code"],
-                d["name"],
-                d["intake"],
-                d["fee_govt"],
-                d["cutoff_kcet"],
-                d["open_seats"],
-                d["hod"],
-                d["phone"],
-                d["email"],
-                d["description"],
-            ),
-        )
+        if conn.execute("SELECT COUNT(*) FROM first_year_timetable").fetchone()[0] == 0:
+            for section, info in fy_data.FIRST_YEAR_TIMETABLE.items():
+                subj_lookup = {sub["code"]: sub for sub in info.get("faculties", [])}
+                for day, periods in info.get("schedule", {}).items():
+                    for period_num, slot_label in enumerate(periods, start=1):
+                        matched_code = ""
+                        matched_title = slot_label
+                        matched_faculty = ""
+                        matched_faculty_dept = ""
 
-    # 3. Scholarships
-    for s in seed.SCHOLARSHIPS:
-        conn.execute(
-            """
-            INSERT INTO scholarships(title, category, eligibility, benefit, portal_link, deadline, documents_required)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                s["title"],
-                s["category"],
-                s["eligibility"],
-                s["benefit"],
-                s["portal_link"],
-                s["deadline"],
-                s["documents_required"],
-            ),
-        )
+                        for code, meta in subj_lookup.items():
+                            if code in slot_label or meta["title"][:10].lower() in slot_label.lower():
+                                matched_code = code
+                                matched_title = meta["title"]
+                                matched_faculty = meta["faculty"]
+                                matched_faculty_dept = meta["dept"]
+                                break
 
-    # 4. 1st Year Timetable (Sem 1, Sections A–R)
-    for section, info in fy_data.FIRST_YEAR_TIMETABLE.items():
-        subj_lookup = {sub["code"]: sub for sub in info.get("faculties", [])}
-        for day, periods in info.get("schedule", {}).items():
-            for period_num, slot_label in enumerate(periods, start=1):
-                matched_code = ""
-                matched_title = slot_label
-                matched_faculty = ""
-                matched_faculty_dept = ""
+                        conn.execute(
+                            """
+                            INSERT OR IGNORE INTO first_year_timetable(
+                                year, semester, section, dept, stream, room,
+                                subject_code, subject_title, faculty, faculty_dept,
+                                day, period, slot_label
+                            ) VALUES (1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            """,
+                            (
+                                section,
+                                info.get("dept", ""),
+                                info.get("stream", ""),
+                                info.get("room", ""),
+                                matched_code,
+                                matched_title,
+                                matched_faculty,
+                                matched_faculty_dept,
+                                day,
+                                period_num,
+                                slot_label,
+                            ),
+                        )
 
-                for code, meta in subj_lookup.items():
-                    if code in slot_label or meta["title"][:10].lower() in slot_label.lower():
-                        matched_code = code
-                        matched_title = meta["title"]
-                        matched_faculty = meta["faculty"]
-                        matched_faculty_dept = meta["dept"]
-                        break
+        if conn.execute("SELECT COUNT(*) FROM first_year_esc_courses").fetchone()[0] == 0:
+            for course in fy_data.ESC_COURSES:
+                for batch_info in course.get("batches", []):
+                    conn.execute(
+                        """
+                        INSERT OR IGNORE INTO first_year_esc_courses(
+                            year, semester, course_code, course_title, batch, faculty, room
+                        ) VALUES (1, 1, ?, ?, ?, ?, ?)
+                        """,
+                        (
+                            course["code"],
+                            course["title"],
+                            batch_info["batch"],
+                            batch_info["faculty"],
+                            batch_info["room"],
+                        ),
+                    )
 
+        if conn.execute("SELECT COUNT(*) FROM notices").fetchone()[0] == 0:
+            for n in seed.RECENT_NOTICES:
                 conn.execute(
-                    """
-                    INSERT INTO first_year_timetable(
-                        year, semester, section, dept, stream, room,
-                        subject_code, subject_title, faculty, faculty_dept,
-                        day, period, slot_label
-                    ) VALUES (1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
-                    (
-                        section,
-                        info.get("dept", ""),
-                        info.get("stream", ""),
-                        info.get("room", ""),
-                        matched_code,
-                        matched_title,
-                        matched_faculty,
-                        matched_faculty_dept,
-                        day,
-                        period_num,
-                        slot_label,
-                    ),
+                    "INSERT OR IGNORE INTO notices(title, date, category, link, details) VALUES (?,?,?,?,?)",
+                    (n["title"], n["date"], n["category"], n["link"], n["details"]),
                 )
 
-    # 5. 1st Year ESC Courses
-    for course in fy_data.ESC_COURSES:
-        for batch_info in course.get("batches", []):
+        default_staff = [
+            (os.getenv("STAFF_CSE_USER", "staff_cse"), os.getenv("STAFF_CSE_PASS", "pda1958"), "Dr. S. R. Patil", "CSE", "Professor & HOD"),
+            (os.getenv("STAFF_ISE_USER", "staff_ise"), os.getenv("STAFF_ISE_PASS", "pda1958"), "Dr. Ramesh Kulkarni", "ISE", "Professor & HOD"),
+            (os.getenv("STAFF_AIML_USER", "basavaraj.mathapati"), os.getenv("STAFF_AIML_PASS", "pda1958"), "Dr. Basavaraj S. Mathapati", "AIML", "Professor & HOD"),
+            (os.getenv("STAFF_ADMIN_USER", "admin"), os.getenv("STAFF_ADMIN_PASS", "pdaadmin2026"), "Principal Office", "Administration", "Administrator"),
+        ]
+        for u, p, fn, dp, rl in default_staff:
             conn.execute(
-                """
-                INSERT INTO first_year_esc_courses(
-                    year, semester, course_code, course_title, batch, faculty, room
-                ) VALUES (1, 1, ?, ?, ?, ?, ?)
-                """,
-                (
-                    course["code"],
-                    course["title"],
-                    batch_info["batch"],
-                    batch_info["faculty"],
-                    batch_info["room"],
-                ),
+                "INSERT OR IGNORE INTO staff_users(username, password, full_name, dept, role) VALUES (?,?,?,?,?)",
+                (u, p, fn, dp, rl),
             )
 
-    # 6. Staff users & Official Notices
-    default_staff = [
-        ("staff_cse", "pda1958", "Dr. S. R. Patil", "CSE", "Professor & HOD"),
-        ("staff_ise", "pda1958", "Dr. Ramesh Kulkarni", "ISE", "Professor & HOD"),
-        ("basavaraj.mathapati", "pda1958", "Dr. Basavaraj S. Mathapati", "AIML", "Professor & HOD"),
-        ("ramesh.kulkarni", "pda1958", "Dr. Ramesh Kulkarni", "ISE", "Professor & HOD"),
-        ("mahesh.biradar", "pda1958", "Dr. Mahesh Biradar", "ECE", "Professor & HOD"),
-        ("admin", "pdaadmin2026", "Principal Office", "Administration", "Administrator"),
-    ]
-    for u, p, fn, dp, rl in default_staff:
-        conn.execute(
-            "INSERT OR IGNORE INTO staff_users(username, password, full_name, dept, role) VALUES (?,?,?,?,?)",
-            (u, p, fn, dp, rl),
-        )
+        if os.path.exists(CSV_FILE):
+            teacher_count = conn.execute("SELECT COUNT(*) FROM teachers").fetchone()[0]
+            if teacher_count > 0:
+                with open(CSV_FILE, newline="", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    for r in reader:
+                        conn.execute(
+                            """
+                            INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
+                            VALUES (?, ?, ?, ?, ?, ?)
+                            """,
+                            (
+                                r.get("teacher"),
+                                r.get("dept"),
+                                r.get("cabin"),
+                                r.get("phone", "08472-224360"),
+                                r.get("email", "principal@pdaengg.com"),
+                                r.get("designation", "Faculty Member"),
+                            ),
+                        )
+                        tid = conn.execute(
+                            "SELECT id FROM teachers WHERE name=?", (r.get("teacher"),)
+                        ).fetchone()
+                        if tid:
+                            tid = tid[0]
+                            conn.execute(
+                                """
+                                INSERT OR IGNORE INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
+                                VALUES (?, ?, ?, ?, ?, ?, ?)
+                                """,
+                                (
+                                    tid,
+                                    r.get("day"),
+                                    r.get("start"),
+                                    r.get("end"),
+                                    r.get("class"),
+                                    r.get("room"),
+                                    r.get("subject", "Theory/Lab"),
+                                ),
+                            )
 
-    existing_notices = conn.execute("SELECT COUNT(*) FROM notices").fetchone()[0]
-    if existing_notices == 0:
-        for n in seed.RECENT_NOTICES:
-            conn.execute(
-                "INSERT INTO notices(title, date, category, link, details) VALUES (?,?,?,?,?)",
-                (n["title"], n["date"], n["category"], n["link"], n["details"]),
-            )
-
-    conn.commit()
-    conn.close()
+        conn.commit()
+    finally:
+        conn.close()
 
 
-init_db()
+@app.on_event("startup")
+def startup_event():
+    init_db()
 
 
 class ChatRequest(BaseModel):
@@ -810,7 +793,7 @@ def greet(lang: str = "en"):
         },
         "hi": {
             "title": "नमस्ते! पी.डी.ए. कॉलेज ऑफ इंजीनियरिंग कैंपस बॉट में आपका स्वागत है",
-            "subtitle": "स्वायत्त संस्थान (स्थापना 1958) | कलबुर्गी",
+            "subtitle": "स्वायत्त संस्थान (स्थापنة 1958) | कलबुर्गी",
         },
     }
     return greetings.get(lang, greetings["en"])
@@ -876,8 +859,7 @@ def locate_teacher(name: str, day: Optional[str] = None, time: Optional[str] = N
             (t["id"], day, time, time),
         ).fetchone()
         nxt = conn.execute(
-            "SELECT * FROM slots WHERE teacher_id=? AND lower(day)=lower(?) AND start_time>? "
-            "ORDER BY start_time LIMIT 1",
+            "SELECT * FROM slots WHERE teacher_id=? AND lower(day)=lower(?) AND start_time>? ORDER BY start_time LIMIT 1",
             (t["id"], day, time),
         ).fetchone()
         all_slots = conn.execute(
@@ -1194,3 +1176,8 @@ def serve_embed():
         with open("static/embed_example.html", encoding="utf-8") as f:
             return f.read()
     return "<h1>PDA Campus Assistant</h1>"
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app:app", host=HOST, port=PORT, reload=False)
