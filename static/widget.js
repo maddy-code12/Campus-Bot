@@ -2217,6 +2217,7 @@
         let h = tag(`${s.code} · Syllabus`);
         h += `<b>${s.code}: ${s.name}</b><br>`;
         h += `<b>Scheme:</b> 2025 | <b>Credits:</b> ${s.credits} | <b>Cycle:</b> ${s.cycle} | <b>Stream:</b> ${s.stream || "CS Stream"}<br>`;
+        h += `<div style="margin:8px 0;"><a href="${API_BASE}/static/pdfs/I-II-SEM-Syllabus-2025.pdf" target="_blank" rel="noopener" class="pda-website-btn" style="font-size:11.5px;padding:5px 12px;">📄 View Official 2025 Syllabus PDF</a></div>`;
         h += `<b>Status:</b> ${s.data_status === "coming_soon" ? '<span style="color:#d97706;font-weight:700">⏳ ' + csText + '</span>' : '<span style="color:#10b981;font-weight:700">✅ Verified</span>'}<br><br>`;
 
         if (s.data_status === "coming_soon") {
@@ -2307,14 +2308,32 @@
   }
 
   function show2025SectionTT(sec, d) {
+    const secLetter = sec.toUpperCase();
+    const pdfPage = secLetter === "G" ? 7 : (secLetter === "H" ? 8 : 1);
     fetch(`${API_BASE}/api/aiml-2025/timetable?section=${sec}`)
       .then(function (r) { return r.json(); })
       .then(function (res) {
         const days = res.schedule || {};
         let h = tag(`Section ${sec} · Timetable`);
         h += `<b>🗓️ 1st Sem AIML — Section ${sec} (Room ${res.room || "TBA"}):</b><br>`;
-        h += `<small>Academic Year 2026-27 · Effective 07-09-2026</small><br>`;
+        h += `<small>Academic Year 2026-27 · Effective 07-09-2026</small><br><br>`;
         
+        // PDF download & high-res image buttons
+        h += `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">`;
+        h += `<a href="${API_BASE}/static/pdfs/BE_Time_Table_1_SEM__26-27_Draft2.pdf" target="_blank" rel="noopener" class="pda-website-btn">📄 Open Original PDF Document</a>`;
+        h += `<a href="${API_BASE}/static/timetables/timetable_section_${sec.toLowerCase()}.png" target="_blank" rel="noopener" class="pda-website-btn" style="background:linear-gradient(135deg, #10b981, #059669);">🔍 View Full Image</a>`;
+        h += `</div>`;
+
+        // Official Scanned Image
+        h += `<div style="margin:10px 0 14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bd);background:rgba(0,0,0,0.25);">`;
+        h += `<a href="${API_BASE}/static/timetables/timetable_section_${sec.toLowerCase()}.png" target="_blank" title="Click to view full-size official timetable">`;
+        h += `<img src="${API_BASE}/static/timetables/timetable_section_${sec.toLowerCase()}.png" alt="Official Section ${sec} Timetable Sheet" style="width:100%;height:auto;display:block;border-radius:10px;" />`;
+        h += `</a>`;
+        h += `<div style="font-size:11px;color:var(--mu);padding:5px 8px;text-align:center;">🔍 Official Timetable Draft (Page ${pdfPage}) — Tap image to open full resolution</div>`;
+        h += `</div>`;
+
+        // Clean Interactive Day-by-Day Table
+        h += `<b>📅 Day-by-Day Class Schedule:</b><br>`;
         h += `<div class="pda-table-wrap"><table class="pda-table"><thead><tr><th>Day</th><th>P1 (9-10)</th><th>P2 (10-11)</th><th>P3 (11:15-12:15)</th><th>P4 (12:15-1:15)</th><th>P5 (2:15-3:15)</th><th>P6 (3:15-4:15)</th><th>P7 (4:15-5:15)</th></tr></thead><tbody>`;
         
         ["MON", "TUE", "WED", "THU", "FRI", "SAT"].forEach(function (dayKey) {
@@ -2334,7 +2353,7 @@
 
         // Faculty list
         if (res.faculty && res.faculty.length > 0) {
-          h += `<b>Faculty Details:</b><br>`;
+          h += `<b>Faculty Allocation:</b><br>`;
           res.faculty.forEach(function (fac) {
             h += `• <b>${fac.subject_code}:</b> ${fac.faculty_name} (${fac.initials})<br>`;
           });
@@ -2343,6 +2362,7 @@
         add(
           h,
           [
+            { icon: "📄", title: "View Original Timetable PDF", action: function () { window.open(`${API_BASE}/static/pdfs/BE_Time_Table_1_SEM__26-27_Draft2.pdf`, "_blank"); } },
             { icon: "⬅️", title: "← Other Sections", action: function () { show2025TimetableMenu(d); } },
             { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
           ],
@@ -2361,14 +2381,29 @@
       .then(function (res) {
         let h = tag("ESC-I Batches");
         h += `<b>⚡ Emerging Science Course - I (ESC-I) Batches:</b><br>`;
-        h += `<small>BE 1st Semester 2026-27 Draft Timetable (Page 19)</small><br>`;
+        h += `<small>BE 1st Semester 2026-27 Draft Timetable (Page 19)</small><br><br>`;
         
-        h += `<div class="pda-table-wrap"><table class="pda-table"><thead><tr><th>Batch</th><th>Course Name</th><th>Faculty</th><th>Room</th></tr></thead><tbody>`;
+        // PDF & Image links
+        h += `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">`;
+        h += `<a href="${API_BASE}/static/pdfs/BE_Time_Table_1_SEM__26-27_Draft2.pdf" target="_blank" rel="noopener" class="pda-website-btn">📄 Open Original Timetable PDF</a>`;
+        h += `<a href="${API_BASE}/static/timetables/esc_batches_page19.png" target="_blank" rel="noopener" class="pda-website-btn" style="background:linear-gradient(135deg, #10b981, #059669);">🔍 View Page 19 Image</a>`;
+        h += `</div>`;
+
+        // Official Scanned Image
+        h += `<div style="margin:10px 0 14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bd);background:rgba(0,0,0,0.25);">`;
+        h += `<a href="${API_BASE}/static/timetables/esc_batches_page19.png" target="_blank" title="Click to view full-size sheet">`;
+        h += `<img src="${API_BASE}/static/timetables/esc_batches_page19.png" alt="Official ESC-I Sheet" style="width:100%;height:auto;display:block;border-radius:10px;" />`;
+        h += `</a>`;
+        h += `<div style="font-size:11px;color:var(--mu);padding:5px 8px;text-align:center;">🔍 Official ESC-I Allocation (Page 19) — Tap image to open full resolution</div>`;
+        h += `</div>`;
+
+        h += `<div class="pda-table-wrap"><table class="pda-table"><thead><tr><th>Batch</th><th>Course Title</th><th>Faculty</th><th>Room</th></tr></thead><tbody>`;
         const courses = res.courses || [];
         courses.forEach(function (c) {
+          const cName = c.course_title || c.course_name || '';
           const batches = c.batches || [];
           batches.forEach(function (b) {
-            h += `<tr><td><b>${b.batch_id}</b></td><td>${c.course_name} (${c.course_code})</td><td>${b.faculty}</td><td>${b.room}</td></tr>`;
+            h += `<tr><td><b>${b.batch || b.batch_id}</b></td><td>${cName} (${c.course_code})</td><td>${b.faculty}</td><td>${b.room}</td></tr>`;
           });
         });
         h += `</tbody></table></div>`;
@@ -2376,6 +2411,7 @@
         add(
           h,
           [
+            { icon: "📄", title: "View Original Timetable PDF", action: function () { window.open(`${API_BASE}/static/pdfs/BE_Time_Table_1_SEM__26-27_Draft2.pdf`, "_blank"); } },
             { icon: "⬅️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
           ],
           false,
@@ -2636,12 +2672,27 @@
       { icon: "📅", title: "Select Another AIML Semester", action: function () { selectSem(d); } },
     ]);
 
+    const imgName = 'timetable_aiml_' + sem + sec.toLowerCase() + '.png';
+    const pdfName = 'AIML ' + (sem === '3' ? 'III' : 'V') + ' ' + sec + ' SECTION TIME_TABLE_2025-26(ODD)-1.pdf';
+    const pdfBtnHtml = '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px 0;">' +
+      '<a href="' + API_BASE + '/static/pdfs/' + encodeURIComponent(pdfName) + '" target="_blank" rel="noopener" class="pda-website-btn">📄 Open Original PDF Document</a>' +
+      '<a href="' + API_BASE + '/static/timetables/' + imgName + '" target="_blank" rel="noopener" class="pda-website-btn" style="background:linear-gradient(135deg, #10b981, #059669);">🔍 View High-Res Scanned Sheet</a>' +
+      '</div>';
+    const imgHtml = '<div style="margin:10px 0 14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bd);background:rgba(0,0,0,0.25);">' +
+      '<a href="' + API_BASE + '/static/timetables/' + imgName + '" target="_blank" title="Click to view full-size official timetable">' +
+      '<img src="' + API_BASE + '/static/timetables/' + imgName + '" alt="Official Timetable Sheet" style="width:100%;height:auto;display:block;border-radius:10px;" />' +
+      '</a>' +
+      '<div style="font-size:11px;color:var(--mu);padding:5px 8px;text-align:center;">🔍 Official Timetable Scanned Sheet — Tap image to open full resolution</div>' +
+      '</div>';
+
     add(
       tag(`AIML · Sem ${sem} · Section ${sec} Official Timetable`) +
         '<h3>📋 ' + s.title + '</h3>' +
         '<b>Department:</b> Artificial Intelligence & Machine Learning (AIML)<br>' +
         '<b>W.E.F:</b> ' + s.wef + ' &nbsp;|&nbsp; <b>Lecture Hall:</b> <code>' + s.room + '</code><br>' +
         '<b>Class Coordinator:</b> <b>' + s.coordinator + '</b><br><br>' +
+        pdfBtnHtml +
+        imgHtml +
         '<b>📚 Courses & Assigned Faculty:</b>' + facHtml +
         '<br><b>📅 Weekly Schedule (Mon–Sat, Periods 1–7):</b>' +
         '<br><small style="color:#6d28d9">P1: 9:00–10:00 · P2: 10:00–11:00 · P3: 11:15–12:15 · P4: 12:15–1:15 · Lunch: 1:15–2:15 · P5: 2:15–3:15 · P6: 3:15–4:15 · P7: 4:15–5:15</small>' +
@@ -2716,11 +2767,28 @@
       { icon: "📚", title: "Back to Student Enquiry", action: stu },
     ];
 
+    var fyImgHtml = '';
+    var fyPdfHtml = '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px 0;">' +
+      '<a href="' + API_BASE + '/static/pdfs/BE_Time_Table_1_SEM__26-27_Draft2.pdf" target="_blank" rel="noopener" class="pda-website-btn">📄 Open Original Timetable PDF</a>';
+    if (sec === 'G' || sec === 'H') {
+      var secLower = sec.toLowerCase();
+      fyPdfHtml += '<a href="' + API_BASE + '/static/timetables/timetable_section_' + secLower + '.png" target="_blank" rel="noopener" class="pda-website-btn" style="background:linear-gradient(135deg, #10b981, #059669);">🔍 View Scanned Sheet</a>';
+      fyImgHtml = '<div style="margin:10px 0 14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bd);background:rgba(0,0,0,0.25);">' +
+        '<a href="' + API_BASE + '/static/timetables/timetable_section_' + secLower + '.png" target="_blank" title="Click to view full-size official timetable">' +
+        '<img src="' + API_BASE + '/static/timetables/timetable_section_' + secLower + '.png" alt="Official Section ' + sec + ' Timetable Sheet" style="width:100%;height:auto;display:block;border-radius:10px;" />' +
+        '</a>' +
+        '<div style="font-size:11px;color:var(--mu);padding:5px 8px;text-align:center;">🔍 Official Timetable Scanned Sheet — Tap image to open full resolution</div>' +
+        '</div>';
+    }
+    fyPdfHtml += '</div>';
+
     add(
       tag("1st Year Sem 1 Official Timetable") +
         '<h3>📋 Section ' + sec + ' — ' + s.dept + '</h3>' +
         '<b>Stream:</b> ' + s.stream + '<br>' +
         '<b>Classroom:</b> ' + s.room + '<br><br>' +
+        fyPdfHtml +
+        fyImgHtml +
         '<b>📚 Subjects & Assigned Faculty:</b>' + facHtml +
         '<br><b>📅 Weekly Schedule (Mon–Sat, Periods 1–7):</b>' +
         '<br><small style="color:#6d28d9">P1:09:00 · P2:10:00 · P3:11:15 · P4:12:15 · Break:13:15–14:00 · P5:14:00 · P6:15:00 · P7:16:00</small>' +
