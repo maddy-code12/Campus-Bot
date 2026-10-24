@@ -1,0 +1,141 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "C",
+  "sem": 2,
+  "code": "KKAIA203",
+  "name": "Introduction To AI And Applications",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Explain AI Fundamentals, subfields, capabilities, and limitations.",
+    "Create Prompt for effective interaction with language models like Chat GPT.",
+    "Impart knowledge in AI techniques, its applications and aspects of no code/low code AI.",
+    "Modules Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Introduction to Artificial Intelligence",
+      "hours": 8,
+      "topics": [
+        "Artificial Intelligence, How Does AI Work?",
+        "Advantages and Disadvantages of Artificial Intelligence, History of Artificial Intelligence,",
+        "Types of Artificial Intelligence, Weak AI, Strong AI, Reactive Machines, Limited Memory,",
+        "Theory of Mind, Self -Awareness, Is Artificial Intelligence Same as Augmented Intelligence",
+        "and Cognitive Computing, Machine Learning and Deep Learning.",
+        "Machine Intelligence: Defining Intelligence, Components of Intelligence, Differences",
+        "Between Human and Machine Intelligence, Agent and Environment, Search, Uninformed",
+        "Search Algorithms, Informed Search Algorithms: Pure Heuristic Search, Best -First Search",
+        "Algorithm (Greedy Search).",
+        "Knowledge Representation: Introduction, Knowledge Representation, Knowledge-Based",
+        "Agent, Types of Knowledge.",
+        "Textbook1:Chapter1(1.1-1.5), Chapter3(3.1-3.7.2), Chapter4(4.1-4.4)"
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Introduction to Prompt Engineering, Introduction to Prompt Engineering, The Evolution",
+      "hours": 8,
+      "topics": [
+        "of Prompt Engineering, Types of Prompts, How Does Prompt Engineering Work?",
+        "Comprehending Prompt Engineering's Function in Communication, The Advantages of",
+        "Prompt Engineering, The Future of LLM Communication.",
+        "Prompt Engineering Techniques for ChatGPT , Introduction to Prompt Engineering",
+        "Techniques, Instructions Prompt Technique, Zero, One, and Few Shot Prompting, Self -",
+        "Consistency Prompt.",
+        "Prompts for Creative Thinking: Introduction, Unlocking Imagination and Innovation.",
+        "Prompts for Effective Writing: Introduction, Igniting the Writing Process with Prompts.",
+        "Textbook2:Chapters1,3,4&5"
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Machine Learning",
+      "hours": 8,
+      "topics": [
+        "Techniques in AI, Machine Learning Model, Regression Analysis in",
+        "Machine Learning, Classification Techniques, Clustering Techniques, Naïve Bayes",
+        "Classification, Neural Network, Support Vector Machine (SVM).",
+        "Textbook1:Chapter2(2.1-2.8)",
+        "--- PAGE 69 ---"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Trendsin AI",
+      "hours": 8,
+      "topics": [
+        "AI and Ethical Concerns, AIasa Service(AIaaS), Recenttrendsin AI, Expert",
+        "System, Internet of Things, Artificial Intelligence of Things (AIoT).",
+        "Textbook1:Chapter8(8.1,8.2,8.4),Chapter9(9.1-9.3)"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Robotics, Robotics-an Application of AI, Drones Using AI, No Code AI, Low Code AI.",
+      "hours": 8,
+      "topics": [
+        "Textbook1:Chapter8(8.3),Chapter1(1.7,1.8,1.10,1.11)",
+        "Industrial Applications of AI: Application of AI in Healthcare, Application of AI in Finance,",
+        "Application of AI in Retail, Application of AI in Agriculture, Application of AI in Education,",
+        "Application of AI in Transportation, AI in Experimentation and Multi-disciplinary research.",
+        "Textbook3:Chapter3,Chapter5(5.1)"
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "Chapter1(1.1-1.5), Chapter3(3.1-3.7.2), Chapter4(4.1-4.4)",
+    "Introduction to Prompt Engineering, Introduction to Prompt Engineering, The Evolution",
+    "of Prompt Engineering, Types of Prompts, How Does Prompt Engineering Work?",
+    "Comprehending Prompt Engineering's Function in Communication, The Advantages of",
+    "Prompt Engineering, The Future of LLM Communication.",
+    "Prompt Engineering Techniques for ChatGPT , Introduction to Prompt Engineering",
+    "Techniques, Instructions Prompt Technique, Zero, One, and Few Shot Prompting, Self -",
+    "Prompts for Creative Thinking: Introduction, Unlocking Imagination and Innovation.",
+    "Prompts for Effective Writing: Introduction, Igniting the Writing Process with Prompts.",
+    "Textbook2:Chapters1,3,4&5",
+    "Machine Learning: Techniques in AI, Machine Learning Model, Regression Analysis in",
+    "Machine Learning, Classification Techniques, Clustering Techniques, Naïve Bayes",
+    "Classification, Neural Network, Support Vector Machine (SVM).",
+    "Textbook1:Chapter2(2.1-2.8)",
+    "-- PAGE 69 ---",
+    "Trendsin AI:AI and Ethical Concerns, AIasa Service(AIaaS), Recenttrendsin AI, Expert",
+    "System, Internet of Things, Artificial Intelligence of Things (AIoT).",
+    "Textbook1:Chapter8(8.1,8.2,8.4),Chapter9(9.1-9.3)",
+    "Robotics, Robotics-an Application of AI, Drones Using AI, No Code AI, Low Code AI.",
+    "Textbook1:Chapter8(8.3),Chapter1(1.7,1.8,1.10,1.11)",
+    "Industrial Applications of AI: Application of AI in Healthcare, Application of AI in Finance,",
+    "Application of AI in Retail, Application of AI in Agriculture, Application of AI in Education,",
+    "Application of AI in Transportation, AI in Experimentation and Multi-disciplinary research.",
+    "Textbook3:Chapter3,Chapter5(5.1)",
+    "Semester End Examination (SEE):",
+    "Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for",
+    "The question paper will have ten questions. Each question is set for 20 marks.",
+    "There will be 2 questions from each module. Each of the two questions under a module (with a maximum",
+    "of 3 sub-questions), should have a mix of topics under that module.",
+    "The students have to answer 5 full questions, selecting one full question from each module."
+  ],
+  "references": [
+    "Stuart Russell and Peter Norvig, Artificial Intelligence: A Modern Approach (4thEdition),",
+    "Pearson Education, 2023.",
+    "Elaine Rich, Kevin Knight, and Shivashankar B. Nair, Artificial Intelligence, McGraw Hill",
+    "Tom Taulli, Prompt Engineering for Generative AI: ChatGPT, LLMs, and Beyond, Apress,",
+    "Springer Nature , 2023.",
+    "Nilakshi Jain, Artificial Intelligence: Making A System Intelligent, First Edition, Wiley,2020."
+  ],
+  "web_links": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "course_outcomes": [
+    "CO1 Explain the concepts and types of artificial intelligence.",
+    "CO2 Make use of prompt engineering techniques to interact with generative AI tools.",
+    "CO3   Illustrate basic machine learning methods for regression, classification and clustering.",
+    "CO4 Describe recent trends in artificial intelligence and machine learning.",
+    "CO5 Explore real-world applications across different disciplines"
+  ],
+  "data_status": "partial"
+}

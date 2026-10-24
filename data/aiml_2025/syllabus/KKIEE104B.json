@@ -1,0 +1,113 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKIEE104B",
+  "name": "Introduction to Electrical Engineering",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Explain the generation of power and the laws used in DC circuits.",
+    "Analyse single-phase and three-phase circuits.",
+    "Describe the construction, operation and applications of DC machines.",
+    "Describe the construction, operation and applications of transformers and induction motors.",
+    "Explain electricity billing and safety measures"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Power Generation",
+      "hours": 8,
+      "topics": [
+        "Conventional and non-conventional energy sources. Single-line",
+        "diagram",
+        "of power supply system showing power station, transmission system and distribution system.",
+        "Definition of power grid. Hydel, Nuclear, Solar & Wind power generation (Block Diagram",
+        "approach)",
+        "Electromagnetic Induction: Faraday’s law of electromagnetic induction, Lenz’s law,",
+        "dynamically and statically induced emf, Fleming’s right-hand rule, Fleming’s left-hand rule.",
+        "Inductance and mutual inductance, coefficient of coupling, Simple problems."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Single-Phase Circuits",
+      "hours": 8,
+      "topics": [
+        "Generation of single-phase system. Equation of AC voltage and",
+        "current, average value, RMS value, form factor, peak factor and their relation [No",
+        "derivations]. Voltage and current relationships in R, L and C circuits, analysis of   R-L, R-C",
+        "and R-L-C series circuits  illustrative examples. concept of power, reactive power, apparent",
+        "power and power factor,",
+        "Three-Phase Circuits: Generation of three-phase systems, star and delta (mesh)",
+        "connections, relation between phase and line values of voltages and of currents of star and",
+        "delta connections. Definition of balanced and unbalanced source and load. Problems with",
+        "balanced loads."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "DC Generator",
+      "hours": 8,
+      "topics": [
+        "Principle of operation, constructional details, induced emf expression, types",
+        "of generators. Relation between induced emf and terminal voltage. Simple problems.",
+        "DC Motor: Principle of operation, back emf and its significance. Torque equation, types of",
+        "motors, Applications of DC motors. Simple problems."
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Transformers",
+      "hours": 8,
+      "topics": [
+        "Introduction to transformers, necessity of transformer, principles of operation,",
+        "Constructional features of single phase transformers. EMF equation, losses , Calculation of",
+        "efficiency at different loads. Simple problems.",
+        "Three-phase induction Motors: Concept of rotating   magnetic field, Principle of operation.",
+        "Constructional features of squirrel cage type and wound rotor type induction motor. Slip and",
+        "its significance, Applications.  problems.",
+        "--- PAGE 73 ---"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Domestic Wiring",
+      "hours": 8,
+      "topics": [
+        "Two-way and three-way control of loads.  Electricity Bill: Definition of",
+        "“unit” used for consumption of electrical energy, power rating of common  household",
+        "appliances. Two-part electricity tariff. Equipment Safety measures: Working principle of fuse",
+        "and miniature circuit breaker (MCB), merits and demerits.",
+        "Personal safety measures: Electric shock, safety precautions to avoid s hock. Earthing and",
+        "types: Plate earthing and pipe earthing."
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "A text book of Electrical Technology by B.L. Theraja, S Chand and Company, reprint edition 2014.",
+    "Principles of Electrical Engineering & Electronics by V. K. Mehta, Rohit Mehta, S. Chand",
+    "and Company Publications, 2nd edition, 2015."
+  ],
+  "references": [
+    "Basic Electrical Engineering, D. P. Kothari and I. J. Nagrath, Tata McGraw Hill 4th edition, 2019.0",
+    "Fundamentals of Electrical Engineering by Rajendra Prasad, PHI, 3rd edition, 2014.",
+    "Electrical Technology by E. Hughes, Pearson, 12th Edition, 2016.",
+    "Basic Electrical and Electronics Engineering, K.Vijayarekha, et al, Cengage. Reprint 2023.",
+    "Handbook of Electrical Engineering formulae, Harish C Rai, CBS Publications, 2018."
+  ],
+  "web_links": [
+    "Web links and Video Lectures (e-Resources): www.nptel.ac.in"
+  ],
+  "course_outcomes": [
+    "CO1 Understand the concepts of various energy sources and Electromagnetism",
+    "CO2 Analyze the single phase and three phase AC circuits.",
+    "CO3 Discuss the construction and operation of DC  Machines.",
+    "CO4 Discuss the construction and operation of AC  Machines.",
+    "CO5 Explain the concepts of  electricity billing, circuit protective devices and personal safety"
+  ],
+  "data_status": "available"
+}

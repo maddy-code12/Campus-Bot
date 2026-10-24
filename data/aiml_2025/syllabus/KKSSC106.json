@@ -1,0 +1,121 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKSSC106",
+  "name": "Soft Skills",
+  "credits": 0.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "The competencies those are important for engineering students joining the digital age",
+    "workforce or looking to become entrepreneurs are listed in 5 modules:",
+    "Apply social skills for clear communication, persuasion, self-awareness, and active listening.",
+    "Use emotional skills to build confidence, manage stress, time management & discipline",
+    "Set ambitious goals, practice empathy and apply creativity for problem-solving.",
+    "Develop presentation skills, public speaking and body language",
+    "Work in teams, negotiate, resolve conflicts and think critically."
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Social Skills",
+      "hours": 3,
+      "topics": [
+        "➢ Communication: Principles of clear and effective exchange of ideas in professional",
+        "and social contexts.",
+        "➢ Persuasion: Techniques to influence and convince through logical, emotional  and",
+        "ethical appeals.",
+        "➢ Self Awareness: Identifying personal stren gths, weaknesses, opportunities  and",
+        "challenges (SWOC analysis).",
+        "➢ Active Listening: Paraphrasing, questioning techniques and demonstrating",
+        "attentiveness."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Emotional Skills  I",
+      "hours": 3,
+      "topics": [
+        "➢ Emotional Intelligence (EI): Recognizing and managing emotions, empathy,",
+        "relationship management, and conflict resolution.",
+        "➢ Stress Management: Identifying stress triggers, relaxation techniques, work -life",
+        "balance strategies, and mindfulness practices.",
+        "➢ Time Management: Prioritization(Eisenhower Matrix), setting SMART goals,",
+        "avoiding procrastination",
+        "➢ Discipline: Building consistency, accountability, and professional habits.",
+        "➢ Adaptability & Resilience: Handling change, bouncing back from setbacks and",
+        "developing a growth mindset."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Emotional Skills II",
+      "hours": 3,
+      "topics": [
+        "➢ Ambition & Goal Setting: Defining personal and professional asp irations, creating",
+        "SMART goals and aligning actions with long-term vision.",
+        "➢ Sympathy & Empathy: Understanding emotional perspectives, d ifferentiating",
+        "between the two and applying them in workplace and social interactions.",
+        "➢ Creativity & Innovation: Generating original ideas, problem -solving and applying",
+        "creative thinking techniques (mind-mapping, SCAMPER)."
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Professional Skills I",
+      "hours": 8,
+      "topics": [
+        "Presentation – Element of Presentation – Designing and delivering",
+        "Power Point Presentation (PPT), Public Speaking on various occasions,  Non-verbal",
+        "Communications -  Body Language, facial expressions, Eye Contact, audience research,",
+        "social etiquette,  Creativity in oral communication. Communication through telephonic and",
+        "video conference, Grooming – do’s & don’ts",
+        "--- PAGE 100 ---"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Professional Skills II",
+      "hours": 3,
+      "topics": [
+        "➢ Collaboration & Teamwork: Teamwork, Advantages and disadvantages of",
+        "teamwork, challenges in teamwork",
+        "➢ Negotiation Skills & Conflict Resolution: Strategies to resolve differences and reach",
+        "win– win outcomes (with examples of case studies).",
+        "➢ Group Discussion – Do’s and Don’ts in Group discussion, Group Presentation.",
+        "Debate – do’s and don’ts in Debate. Group Communication - Meetings, Notice,",
+        "objectives, timing, venue of meetings, leading meetings, Minutes of meeting,"
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Nil Suggested Learning",
+  "textbooks": [
+    "PrinciplesofScientificandTechnicalWriting,1e,ByPratapK.J.Mohapatra,Sanjib Moulick,",
+    "© 2025 | Published: December 23, 2024",
+    "SoftSkills,1e,BySomaMahesh Kumar ©2024|Published:June 8,2023",
+    "EffectiveTechnicalCommunication,3e,ByAshrafM.Rizvi,PriyadarshiPatnaik,© 2024 |",
+    "Published: September 12, 2024",
+    "Yadav,D.P.(2022).AcourseinEnglishpronunciation.NotionPublications."
+  ],
+  "references": [
+    "Murphy – Effective Business Communication – Mc Graw Hill.",
+    "Nageshwar Rao and Rajendra Das – Business Skills – HPH.",
+    "Advance Business Communcation – Penrose, Rasberry, Myers, 5/e, cengage learning 2004.",
+    "Prasad P. Communication Skills, S.K. Kataria & Sons."
+  ],
+  "web_links": [
+    "• GoogleDocs+VoiceTyping-https://docs.google.com",
+    "• LearnEnglish–https://learnenglish.britishcouncil.org/",
+    "• TakeIELTS-https://www.britishcouncil.in/exam/ielts"
+  ],
+  "course_outcomes": [
+    "CO1 Apply social skills for clear communication, persuasion, self-awareness and active",
+    "CO2 Use emotional skills to build confidence, manage stress, time management & discipline",
+    "CO3 Set ambitious goals, practice empathy, and apply creativity for problem-solving.",
+    "CO4 Develop presentation skills, public speaking and body language",
+    "CO5 Work in teams, negotiate, resolve conflicts and think critically."
+  ],
+  "data_status": "available"
+}

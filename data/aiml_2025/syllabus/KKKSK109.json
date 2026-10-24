@@ -1,0 +1,44 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKKSK109",
+  "name": "Samskrutika Kannada",
+  "credits": 1.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "¸ÁA¸ÀÌøwPÀ PÀ£ÀßqÀ ¥ÀoÀå PÀ°PÉAiÀÄ GzÉÝÃ±ÀUÀ¼ÀÄ",
+    "¥ÀzÀ« «zÁåyðUÀ¼ÁVgÀÄªÀÅzÀjAzÀ PÀ£ÀßqÀ ¨sÁµÉ, ¸Á»vÀå ªÀÄvÀÄÛ ¸ÀA¸ÀÌøwAiÀÄ ¥ÀjZÀAiÀÄ ªÀiÁrPÉÆqÀÄªÀÅzÀÄ.",
+    "PÀ£ÀßqÀ ¸Á»vÀåzÀ ¥ÀæzsÁ£À ¨sÁUÀªÁzÀ DzsÀÄ¤PÀ ¥ÀÆªÀð ªÀÄvÀÄÛ DzsÀÄ¤PÀ PÁªÀåUÀ¼À£ÀÄß ¥ÀjZÀ¬Ä¸ÀÄªÀÅzÀÄ.",
+    "«zÁåyðUÀ¼À°è ¸Á»vÀå ªÀÄvÀÄÛ ¸ÀA¸ÀÌøwAiÀÄ §UÉÎ CjªÀÅ ºÁUÀÆ D¸ÀQÛAiÀÄ£ÀÄß ªÀÄÆr¸ÀÄªÀÅzÀÄ.",
+    "vÁAwæPÀ ªÀåQÛUÀ¼À ¥ÀjZÀAiÀÄªÀ£ÀÄß ºÁUÀÆ CªÀgÀÄUÀ¼À ¸Á¢ü¹zÀ «µÀAiÀÄUÀ¼À£ÀÄß ¥ÀjZÀ¬Ä¸ÀÄªÀÅzÀÄ.",
+    "¸ÁA¸ÀÌøwPÀ d£À¥ÀzÀ ºÁUÀÆ ¥ÀæªÁ¸À PÀxÀUÀ£ÀUÀ¼À ¥ÀjZÀAiÀÄ ªÀiÁrPÉÆqÀÄªÀÅzÀÄ."
+  ],
+  "modules": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "lab_experiments": [],
+  "see_pattern": "Assessment Structure : Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course The Weightage of Continuous Internal Evaluation (CIE) is 50% and for Semester End Exam )SEE) is 50% The minimum passing mark for the CIE is 40% of the maximum marks (20 marks out of 50). The minimum passing mark for the SEE is 35% of the maximum marks (18 marks out of 50). A student shall be deemed to have satisfied the academic requirements and earned the credits allotted to each subject/ course if the student secures not less than 35% (18 Marks out of 50) in the semester-end examination (SEE), and a minimum of 40% (40 marks out of 100) in the sum total of the CIE (continuous Internal Evaluation) and SEE (Semester End Examination) taken together.",
+  "textbooks": [
+    "qÁ. ».a. ¨ÉÆÃgÀ°AUÀAiÀÄå ªÀÄvÀÄÛ qÁ. J¯ï. wªÉÄäÃ±À",
+    "¥ÀæPÀluÉ : ¥Àæ¸ÁgÁAUÀ,",
+    "«±ÉéÃ±ÀégÀAiÀÄå vÁAwæPÀ «±Àé«zÁå®AiÀÄ, ¨É¼ÀUÁ«."
+  ],
+  "references": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "web_links": [
+    "VTU Website"
+  ],
+  "course_outcomes": [
+    "CO1 PÀ£ÀßqÀ ¨sÁµÉ, ¸Á»vÀå ªÀÄvÀÄÛ PÀ£ÀßqÀzÀ ¸ÀA¸ÀÌøwAiÀÄ PÀÄjvÀÄ CjªÀÅ ªÀÄÆrgÀÄvÀÛzÉ.",
+    "CO2 PÀ£ÀßqÀ ¸Á»vÀåzÀ DzsÀÄ¤PÀ ¥ÀÆªÀð ªÀÄvÀÄÛ DzsÀÄ¤PÀ PÁªÀåUÀ¼À£ÀÄß ¸ÁAPÉÃwPÀªÁV PÀ°vÀÄ ºÉaÑ£À N¢UÉ ªÀÄvÀÄÛ eÁÕ£ÀPÉÌ ¸ÀÆàwð ªÀÄÆqÀÄvÀÛzÉ.",
+    "CO3 «zÁåyðUÀ¼À°è ¸Á»vÀå ªÀÄvÀÄÛ ¸ÀA¸ÀÌøwAiÀÄ §UÉÎ CjªÀÅ ºÁUÀÆ D¸ÀQÛ ºÉZÁÑUÀÄvÀÛzÉ.",
+    "CO4 vÁAwæPÀ ªÀåQÛUÀ¼À ¥ÀjZÀAiÀÄ ºÁUÀÆ CªÀgÀÄUÀ¼À ¸Á¢ü¹zÀ «µÀAiÀÄUÀ¼À£ÀÄß w½zÀÄPÉÆAqÀÄ £Ár£À E¤ßvÀgÀ ªÀåQÛUÀ¼À §UÉÎ w½zÀÄPÉÆ¼Àî®Ä",
+    "CO5 ¸ÁA¸ÀÌøwPÀ d£À¥ÀzÀ ºÁUÀÆ ¥ÀæªÁ¸À PÀxÀ£ÀUÀ¼À ¥ÀjZÀAiÀÄ ªÀiÁrPÉÆqÀÄªÀÅzÀÄ."
+  ],
+  "data_status": "partial"
+}

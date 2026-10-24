@@ -1,0 +1,120 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "CSPOC105",
+  "name": "Principles of Programming using C",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Introduce the fundamentals of algorithms, flowcharts, the structure of C programs, operators, expressions,",
+    "and input/output operations.",
+    "Develop problem-solving skills using decision-making constructs and iterative looping mechanisms.",
+    "Provide knowledge of arrays and strings for efficient data representation, manipulation, and program",
+    "development.",
+    "Promote modular programming using user-defined functions, recursion, and structures for managing",
+    "complex data.",
+    "Introduce advanced programming concepts such as pointers and file management for dynamic memory",
+    "access and persistent data storage.",
+    "Modules Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Algorithms, Flowcharts, Introduction to C",
+      "hours": 8,
+      "topics": [
+        "Algorithms, Flowcharts, Basic Structure",
+        "of C Program, Executing a “C” program, Constants, Variables and Data types.",
+        "Operators and Expressions, Managing Input/ Output: Arithmetic operators, relational",
+        "operators, logical operators, assignment operators, increment/decrement operators,",
+        "conditional operators, bitwise operators, special operators. Evaluation of expression,",
+        "precedence of arithmetic operators, type conversions in expression, operator precedence",
+        "and associativity. Formatted Input and Output. Examples & exercises."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Decision making and branching",
+      "hours": 8,
+      "topics": [
+        "Decision Making with if statement, Simple if",
+        "statement, the if else and nested if statements, the elseif ladder, Switch statement, The?:",
+        "operator, Unconditionalcontrol Statements.",
+        "Decision Making and Looping: While statement, Do -While statement, For  statement,",
+        "jumps in loop. Examples &exercise"
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Arrays",
+      "hours": 8,
+      "topics": [
+        "One dimensional Array, declaration, Initialization, Two dimensional Arrays",
+        "declaration, Initialization, examples and exercises",
+        "Strings: Declaring and Initializing String Variables, Reading Strings from Terminal, Writing",
+        "strings to Screen, Arithmetic Operations on Characters, String-handling functions, examples and",
+        "exercises."
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Functions and Recursion",
+      "hours": 8,
+      "topics": [
+        "Need for User-defined Functions, A multi-functionprogram,",
+        "Elements of User -defined Functions, Definition of functions, Return  value and their",
+        "types, Function calls, Function declaration, Category of functions, Recursion, examples",
+        "and exercises.",
+        "Structures: Initialization. Defining Structures, Declaration of  Structure variables,",
+        "Accessing Structure Members, Structure Initialization, Copying and comparing structure",
+        "variables, operations on individual members.",
+        "--- PAGE 92 ---"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Pointers",
+      "hours": 8,
+      "topics": [
+        "Introduction, understanding pointers, Accessing the address of a variable,",
+        "declaring pointer variables,  initializing of pointer variables, accessing a variable",
+        "through its pointer, pointer expressions, Examples &exercises.",
+        "File Management: Defining and opening a file, closing file, input output operations",
+        "on files, error handling during I/O operations. Examples & exercises."
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "Programming in ANSI C, E Balaguruswamy , 9",
+    "Edition, Mc  GrawHill.",
+    "Hassan A fyouni, Behrouz A. Forouzan.“A Structured Programming Approach in C”,"
+  ],
+  "references": [
+    "Brian W. Kernighan and Dennis M. Ritchie, The ‘C’ Programming Language, 2",
+    "Prentice Hall of India.",
+    "Reema Thareja, Programming in C, 3",
+    "Edition, Oxford University Press,2023."
+  ],
+  "web_links": [
+    "1. elearning.vtu.ac.in/econtent/courses/video/BS/15PCD23.html",
+    "2. Introduction to Programming in C[https://onlinecourses.nptel.ac.in/noc23_cs02/preview]",
+    "3. C for Everyone: Programming Fundamentals[https://www.coursera.org/learn/c-for-everyone]",
+    "4. Computer ProgrammingVirtual Lab[https://cse02-iiith.vlabs.ac.in/exp/pointers/]",
+    "[https://www.pdfdrive.com/c-programming-the-ultimate-way-to-learn-the-fundamentals-of-",
+    "6. C Programming: The Complete Reference [https://viden.io/knowledge/programming-in-",
+    "7. https://infyspringboard.onwingspan.com/web/en/app/toc/lex_auth_0138432370393743363451",
+    "8. C programming Tutorial: https://www.geeksforgeeks.org/c/c-programming-language/."
+  ],
+  "course_outcomes": [
+    "CO1 Design algorithms and flowcharts, and implement C programs using operators, expressions, and I/O",
+    "CO2 Apply conditional statements and looping constructs to solve computational problems effectively.",
+    "CO3 Implement one-dimensional /two-dimensional arrays and string operations using standard string-",
+    "CO4 Develop modular programs using functions, recursion, and structures for structured problem-",
+    "CO5 Utilize pointers for memory manipulation and perform file operations for data handling in C."
+  ],
+  "data_status": "available"
+}

@@ -1,0 +1,170 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "C",
+  "sem": 2,
+  "code": "CSCHE202",
+  "name": "Applied Chemistry For Smart Systems",
+  "credits": 4.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "To enable students to acquire knowledge on basic principles of chemistry for engineering applications.",
+    "To develop an intuitive understanding of chemistry by emphasizing the related branches of engineering.",
+    "To provide students with a solid foundation in analytical reasoning required to solve societal problems.",
+    "Module Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Sustainable Chemistry for Energy Devices",
+      "hours": 8,
+      "topics": [
+        "Energy Storage Devices: Introduction, classification of batteries -primary, secondary and",
+        "reserve battery, characteristics (capacity, power density, cell balancing & cycle life), construction",
+        "and working of lithium-ion, Na-Ion, Li-Polymer battery advantages in EV applications,",
+        "Energy Conversion Devices : Introduction, construction, working principal, advantages and",
+        "applications of photovoltaic cell of (PV cell), Construction, working and applications of lead -",
+        "acid storage battery, Ni-MH battery and Li-MnO2 battery.",
+        "Clean Energy Chemistry: Introduction, fuel cell, difference between fuel cell and battery,",
+        "construction, working principle, applications and limitations of solid-oxide fuel cell (SOFCs).",
+        "Self learning : organic photovoltaic’s - Poly (3-hexylthiophene) (P3HT) as a donor and",
+        "Phenyl- C61-butyric acid methyl ester (PCBM) as a acceptor, construction, working and",
+        "applications."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Polymers and Quantum Materials",
+      "hours": 8,
+      "topics": [
+        "Polymer: Introduction, types of polymerization(Addition and Condensation).Free radical",
+        "mechanism of addition polymerization by ethylene. Techniques of addition polymerization,",
+        "molecularweight; number average and weight average, numerical problems. Glass Tranition",
+        "Temperature, factors affecting Tg & its significance. structure-property relationship of polymers,",
+        ", synthesis and properties of PVC and PMMA for device applications.",
+        "Conducting polymers - Introduction, synthesis & conduction mechanism of Polyaniline &",
+        "Polyacetylene.",
+        "Quantum Dots: Introduction, size dependent properties -quantum confinement effect, surface-",
+        "to-volume ratio & band gap, synthesis and applications of Cd-Se Quantum dots by wet chemical",
+        "method",
+        "Self Leaning: quantum dot sensitized solar cells (QDSSCs)-construction, working principle and",
+        "applications. synthesis and properties of nylon-12 advantages in 3D printing applications."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Chemical Sensors and Corrosion Control",
+      "hours": 8,
+      "topics": [
+        "Sensor: Introduction, principle and instrumentation of colorimetric sensors; its application in the",
+        "estimation of copper in given solution, principle and instrumentation of potentiometric sensors;",
+        "applications in the estimation of iron in steel, conductometric se nsors; its application in the",
+        "estimation of acid mixture in sample.",
+        "Corrosion Chemistry: Introduction, electrochemical theory of corrosion, types of corrosion",
+        "differential metal corrosion and differential aeration corrosion, factors affecting corrosion.",
+        "Corrosion control -galvanization and anodization, cathodic protection and impressed current",
+        "method, sacrificial anode method. Corrosion penetration rate (CPR)- definition, importance and",
+        "numerical problems.",
+        "Self Learning : Electroless plating of copper in the manufacture of PCB"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "08",
+      "hours": 8,
+      "topics": [
+        "--- PAGE 52 ---",
+        "Green Materials and E-Waste Management",
+        "Green Fuels: Introduction, green hydrogen production by TiO2-Photocatalytical method and",
+        "applications. synthesis by trans-esterification method, advantages and its applications.",
+        "Production of green hydrogen by photocatalytic water splitting and its advantages.",
+        "E-waste: Introduction, sources, composition of e-waste, effects of e-waste on environment and",
+        "human health, Artificial intelligence in e-waste management and its applications, extraction of",
+        "gold from e-waste by bioleaching method, direct recycling method of lithium-ion batteries.",
+        "Self Learning : Biomaterials: Introduction, synthesis and properties of polylactic Acid (PLA)",
+        "and polyethylene glycol (PEG) for touch screen applications, synthesis and properties of Alginate",
+        "Hydrogel for Brain-Computer Interfaces (BCIs) applications."
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Water Technology and Nanotechnology",
+      "hours": 8,
+      "topics": [
+        "Water technology: Introduction, sources and nature of impurities of water, hardness of water,",
+        "types of hardness, determination of temporary, permanent and total hardness and numerical",
+        "problems. Determination of total hardness by EDTA method. Softening of water by Lime -Soda",
+        "Process, determination of COD, numerical problems.",
+        "Purification of water: Reverse osmosis and chlorination methods.",
+        "Nanotechnology: Introduction, definition, properties and engineering applications of carbon",
+        "nanotubes & graphene.",
+        "Self Learning: Introduction, classification, properties and application of silicon carbide."
+      ]
+    }
+  ],
+  "lab_experiments": [
+    "Estimation of total hardness of water by EDTA method",
+    "Determination of chemical oxygen demand(COD) of industrial waste water",
+    "Estimation of iron in steel industry effluent by diphenylamine indicator method",
+    "Determination of alkalinity of water using standard NaOH solution",
+    "Estimation of acid mixture in electrochemical bath effluent using conductometric",
+    "Estimation of iron in rust sample by Potentiometric sensor(Potentiometry)",
+    "Determination of pKa ofacid electrolyte using pH sensor(Glass electrode)",
+    "Estimation of copper presentine-waste by optical sensor(Colorimetry)",
+    "Determination of viscosity coefficient of lubricant using Ostwald’s viscometer",
+    "Determination of acid value of biofuel",
+    "Green synthesis of copper nanoparticles for conductive inks",
+    "Synthesis of polylacticacid(PLA)"
+  ],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub- questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "WileyEngineeringChemistry,WileyIndiaPvt.Ltd.NewDelhi,2013-2ndEdition.",
+    "ATextbookofEngg.Chemistry,ShashiChawla,DhanpatRai&Co.(P)Ltd.",
+    "ATextbookofEngineeringChemistry,R.V.GadagandNityanandaShetty,I.K. International Publishing",
+    "house. 2nd Edition, 2016."
+  ],
+  "references": [
+    "EngineeringChemistry,Satyaprakash&ManishaAgrawal,KhannaBookPublishing,Delhi",
+    "-- PAGE 53 ---",
+    "Nanotechnology A Chemical Approach to Nanomaterials, G.A. Ozin & A.C. Arsenault, RSC",
+    "Corrosion Engineering, M. G. Fontana, N. D. Greene, McGraw Hill Publications, New York, 3rd",
+    "Linden'sHandbookofBatteries,KirbyW.Beard,FifthEdition,McGrawHill,2019.",
+    "AppliedChemistryforMechanicalEngineeringandAlliedBranches,CManasa,Vrushabendra B,",
+    "Srikantamurthy N. ISBN: 978-93-58380-90-3, Astitva Prakashan",
+    "ExpandingtheVisionofSensorMaterials.NationalResearchCouncil1995,Washington,DC: The",
+    "National Academies Press. doi:10.17226/4782.",
+    "Engineering Chemistry, Edited by Dr. Mahesh B and Dr. Roopashree B, Sunstar Publisher,",
+    "Bengaluru, ISBN 978-93-85155-70-3, 2022",
+    "PolymerScience,VRGowariker,NVViswanathan,Jayadev,Sreedhar,NewageInt.Publishers, 4th",
+    "ChemistryforEngineeringStudents,B.S.JaiPrakash,R.Venugopal,Sivakumaraiah& Pushpa Iyengar.,",
+    "Subash Publications, 5th Edition, 2014",
+    "PrinciplesofInstrumentalAnalysis,DouglasA.Skoog,F.JamesHoller,StanleyR.Crouch",
+    "SeventhEdition,CengageLearning,2020"
+  ],
+  "web_links": [
+    "15. https://www.vturesource.com/post/1570/News/Bomb-calorimeter-construction-working-",
+    "vtu-chemistry.html?utm_source",
+    "16. https://pubs.acs.org/doi/10.1021/acsomega.3c00963?utm_source",
+    "17. https://youtu.be/qTw_p9dkiVU",
+    "18. https://youtu.be/wdCYXj-bI-U",
+    "19. https://youtu.be/Y0EkLYK5i-c",
+    "20. https://youtu.be/tzTxMF7CDd4",
+    "21. https://youtu.be/YxrpQEX9ORA",
+    "22. https://youtu.be/Gxv4r9qoRf8",
+    "23. https://youtu.be/XIjDw5Sw9c4",
+    "24. https://youtu.be/j_rNjiIiBKE",
+    "25. https://youtu.be/GpbcjWstzEE",
+    "26. https://youtu.be/ygtbo5KDXeI",
+    "27. https://www.youtube.com/watch?v=ygtbo5KDXeI",
+    "28. https://youtu.be/y-7t-GdRTKA",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11085161/?utm_source"
+  ],
+  "course_outcomes": [
+    "CO1 Understand energy storage, conversion devices & clean energy chemistry.",
+    "CO2 Explain the role of functional polymers in flexible electronic applications & Quantum dots",
+    "CO3 Apply concepts of sensors, corrosion mechanism, types of corrosion and corrosion control.",
+    "CO4 Understanding green materials in sustainable energy application and e-waste management",
+    "CO5 Understand principles of water technology and demonstrate the knowledge of nanomaterials."
+  ],
+  "data_status": "available"
+}

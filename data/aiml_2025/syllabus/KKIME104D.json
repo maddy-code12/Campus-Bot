@@ -1,0 +1,133 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKIME104D",
+  "name": "Introduction to Mechanical Engineering",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Module Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Introduction",
+      "hours": 8,
+      "topics": [
+        "Streams in mechanical engineering and their",
+        "relevance/significance, role of mechanical engineers in industry.  Energy",
+        "conversion: Introduction of water turbine and basic workin g principles of",
+        "Pelton Turbine. Flying machines: Classification, basic parts involved in",
+        "drone making, working principle of Drones . Refrigeration (VCR only) and",
+        "Room air conditioning principles."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Engines",
+      "hours": 8,
+      "topics": [
+        "Introduction, petrol engine, diesel engines, Working of four",
+        "Stroke engines, applications simple numerical.",
+        "Insight into Future Mobility:  Electric and Hybrid Vehicles, Components",
+        "of Electric and Hybrid Vehicles. Advantages and disadvantages of EVs and",
+        "Hybrid vehicles.",
+        "Power Transmission systems:  Classification of gears, simple &",
+        "compound gear trains, simple numerical."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Engineering materials",
+      "hours": 8,
+      "topics": [
+        "Introduction, Classification, Ferrous (IRON ) and",
+        "Non-Ferrous metals (COPPER): Types, Properties and their applications.",
+        "Composite materials : Introduction, Constituents of a composite,",
+        "Classification, Types of Matrix And Reinforcement materials, Advantages,",
+        "Disadvantages and Applications of composite materials.",
+        "Smart materials:  Introduction, Types - Piezoelectric materials, and",
+        "Advantages, Disadvantages and Applications"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Manufacturing overview, types of manufacturing processes.",
+      "hours": 8,
+      "topics": [
+        "Principles of Welding, soldering, brazing. Introduction to machine tools –",
+        "lathe, drilling and milling machine.",
+        "Lathe operations: Turning, facing, knurling,",
+        "Drilling machine operations: Drilling,reaming, tapping.",
+        "Milling machine operations: End milling, face milling.",
+        "Introduction to CNC , components, advantages and applications. Basic",
+        "principles of 3D printing.",
+        "--- PAGE 77 ---"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Advances in mechanical engineering",
+      "hours": 8,
+      "topics": [
+        "Automation technology :  Def inition of automation, types of",
+        "automation, basic elements of automation.",
+        "Mechatronic systems:  Definition of mechatronics, elements of",
+        "mechatronics systems, examples.",
+        "Elementary sensors:  Working principle and applications of",
+        "Potentiometer and optical encoders.",
+        "Integrated system : Need for integration of technologies, ADAS",
+        "(Advanced Driver Assistance System).",
+        "Web links and Video Lectures (e-Resources):",
+        "• https://nptel.ac.in/courses/112104526",
+        "• https://nptel.ac.in/courses/112104616",
+        "• https://nptel.ac.in/courses/112104769",
+        "• https://theconstructor.org/practical-guide/pelton-turbine-parts-working-",
+        "design- aspects/2894/",
+        "• https://www.mechstudies.com/centrifugal-pump/",
+        "• https://cfdflowengineering.com/working-principle-and-components-of-drone/",
+        "• https://youtu.be/i1ojp09VXHY",
+        "• https://www.theengineerspost.com/automatic-transmission/",
+        "• https://learnmech.com/continuously-variable-transmission-components-working-",
+        "types/",
+        "Teaching-Learning Process(Innovative Delivery Methods):",
+        "The following are sample strategies that educators may adopt to enhance the effectiveness",
+        "of the teaching-learning process and facilitate the achievement of"
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "web_links": [
+    "• https://nptel.ac.in/courses/112104526",
+    "• https://nptel.ac.in/courses/112104616",
+    "• https://nptel.ac.in/courses/112104769",
+    "• https://theconstructor.org/practical-guide/pelton-turbine-parts-working-",
+    "• https://www.mechstudies.com/centrifugal-pump/",
+    "• https://cfdflowengineering.com/working-principle-and-components-of-drone/",
+    "• https://youtu.be/i1ojp09VXHY",
+    "• https://www.theengineerspost.com/automatic-transmission/",
+    "• https://learnmech.com/continuously-variable-transmission-components-working-"
+  ],
+  "course_outcomes": [
+    "CO1 Recognize the significance of mechanical engineering principles to solve the",
+    "CO2 Understand the working of I.C. engines, power transmission elements and future",
+    "CO3 Discuss the properties and applications of engineering materials, composite",
+    "CO4 Describe the working principles and applications of various manufacturing processes.",
+    "CO5 Explain the advances in mechanical engineering."
+  ],
+  "data_status": "partial"
+}

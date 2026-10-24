@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDA Campus Bot - Glassmorphism Light Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      margin: 0;
+      padding: 40px;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 20%, #e8ecff 0%, #b9c4ff 80%);
+      font-family: "Inter", system-ui, sans-serif;
+      color: #14183a;
+    }
+    .hero {
+      max-width: 600px;
+      margin-top: 60px;
+    }
+    h1 { font-size: 28px; margin-bottom: 12px; }
+    p { font-size: 15px; color: #4a527f; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>PDA College of Engineering, Kalaburagi</h1>
+    <p>Campus-Bot with Liquid Glassmorphism UI (Light Mode).</p>
+  </div>
+  <script src="/static/widget.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        if (window.PDACampusBot) window.PDACampusBot.open();
+      }, 600);
+    });
+  </script>
+</body>
+</html>

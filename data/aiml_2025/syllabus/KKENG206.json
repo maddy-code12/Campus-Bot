@@ -1,0 +1,116 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "C",
+  "sem": 2,
+  "code": "KKENG206",
+  "name": "Communication Skills",
+  "credits": 1.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Build essential verbal, non-verbal communication and phonetic communication skills for clarity",
+    "and effectiveness",
+    "Develop better professional reading and writing skills",
+    "Apply formal writing, email etiquette and creative content development for employability",
+    "Communicate effectively in digital platforms, following etiquette and academic integrity.",
+    "Prepare job applications, resume and perform confidently in interviews"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Communication skills",
+      "hours": 3,
+      "topics": [
+        "Communication Skills and its importance, process, verbal and non -verbal, proxemics,",
+        "chronemics and barriers for communication .Vocabulary - definition and Importance of",
+        "vocabulary, types of vocabulary, ways to improve vocabulary – Exercises on it.",
+        "Homonyms, Homographs, Homophones ,One Word Substitutes, phrasal Verbs, auxiliary",
+        "verbs."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Interpersonal skills",
+      "hours": 3,
+      "topics": [
+        "Reading: Skimming and Scanning of Case Studies , Reading Comprehension – Reading",
+        "rate and reading comprehension, paraphrasing, interpretations of graphical information,",
+        "data, reports etc, b ook reading and summarizing it.  Writing: purposes of writing,.",
+        "Principles of effective writing. better writing using personal Experiences – describing a",
+        "person, situation, memorable events , future plans, food, culture , daily life etc."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "English for employability",
+      "hours": 3,
+      "topics": [
+        "Formal Letter writing ( Job application, joining, r esignation, enquiry, order  and",
+        "Complaint). Grammar: Sentence patterns, tenses, Email etiquettes, structure, writing and",
+        "responding to Emails. paragraph writing (Descriptive, Argumentative, Expository, Short",
+        "Story, and Narrative), blog writing."
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "English in digital world",
+      "hours": 3,
+      "topics": [
+        "Writing: Framing of search terms / keywords in search engines/ Commands for search",
+        "on open AIs - Tools to support synchronous communication such as webinar platforms,",
+        "and asynchronous communication such as forums and social media - Online",
+        "communication - Types – pros and cons of online communication. Acceptable online",
+        "roles and behaviors – etiquettes - etiquettes of social media. Problems and opportunities",
+        "in handling digital resources -Tools to check grammar. Writing: Citing information",
+        "accurately from sou rce material - Plagiarism – Infringement, Importance of academic",
+        "integrity."
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Applying for jobs",
+      "hours": 8,
+      "topics": [
+        "Listening: TED Talks.  Preparation of resume, Speaking: mock interview, t elephone",
+        "interviews. Preparing for j ob Interview- language used in formal professional settings,",
+        "--- PAGE 102 ---",
+        "formal vs. informal tone, non -verbal communication cues, things to do before going to",
+        "interview, during interview and after interview."
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 10 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "Kumar, A. R. (2008). English for engineers and technologists. Orient BlackSwan.",
+    "Raman, M., & Sharma, S. (2015). Technical communication: Principles and practice (3rd ed.). Oxford",
+    "University Press. 3. Floyd, K., & Cardon, P. W. (2019). Business and professional communication (3rd",
+    "ed.). Principles of Scientific and Technical Writing, 1e, By Pratap K. J. Mohapatra, Sanjib Moulick, ©",
+    "2025 | Published: December 23, 2024",
+    "Effective Technical Communication, 3e, By Ashraf M. Rizvi, Priyadarshi Patnaik, © 2024 | Published:",
+    "Yadav, D. P. (2022). A course in English pronunciation. Notion Publications."
+  ],
+  "references": [
+    "“Professional Writing Skills in English” published by Fillip Learning – Education (ILS), Bangalore –",
+    "2)",
+    "“Functional English” (As per AICTE 2018 Model Curriculum) (ISBN -978-93-5350-047-4) Cengage",
+    "learning India Pvt Limited [Latest Edition 2019].",
+    "Murphy – Effective Business Communication – Mc Graw Hill.",
+    "4 Nageshwar Rao and Rajendra Das – Business Skills – HPH.",
+    "Advance Business Communcation – Penrose, Rasberry, Myers, 5/e, cengage learning 2004.",
+    "Prasad P. Communication Skills, S.K. Kataria & Sons."
+  ],
+  "web_links": [
+    "• Google Docs + Voice Typing - https://docs.google.com",
+    "• LearnEnglish – https://learnenglish.britishcouncil.org/",
+    "• TakeIELTS - https://www.britishcouncil.in/exam/ielts"
+  ],
+  "course_outcomes": [
+    "CO1 Build essential verbal, non-verbal, and phonetic communication skills for clarity and",
+    "CO2 Develop better professional reading and writing skills",
+    "CO3 Apply formal writing, email etiquette and creative content development for",
+    "CO4 Communicate effectively in digital platforms, following etiquette and academic integrity.",
+    "CO5  Prepare job applications, resumes, and perform confidently in interviews"
+  ],
+  "data_status": "available"
+}

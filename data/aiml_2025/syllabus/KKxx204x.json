@@ -1,0 +1,41 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "C",
+  "sem": 2,
+  "subject_code": "KKxx204x",
+  "subject_name": "Elective course",
+  "credits": 3.0,
+  "source_page": "70-79",
+  "syllabus_found": true,
+  "data_status": "available",
+  "description": "Engineering Science Courses (ESC) elective basket offering 5 discipline streams.",
+  "options": [
+    {
+      "code": "KKBSM204A",
+      "title": "Building Sciences & Mechanics",
+      "syllabus_file": "syllabus/KKBSM104A.json"
+    },
+    {
+      "code": "KKIEE204B",
+      "title": "Introduction to Electrical Engineering",
+      "syllabus_file": "syllabus/KKIEE104B.json"
+    },
+    {
+      "code": "KKIEC204C",
+      "title": "Introduction to Electronics & Communication Engineering",
+      "syllabus_file": "syllabus/KKIEC104C.json"
+    },
+    {
+      "code": "KKIME204D",
+      "title": "Introduction to Mechanical Engineering",
+      "syllabus_file": "syllabus/KKIME104D.json"
+    },
+    {
+      "code": "KKEIT204E",
+      "title": "Essentials of Information Technology",
+      "syllabus_file": "syllabus/KKEIT104E.json"
+    }
+  ],
+  "name": "Emerging Science Course - II (ESC-II)"
+}

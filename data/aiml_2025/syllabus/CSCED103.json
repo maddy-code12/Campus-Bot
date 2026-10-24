@@ -1,0 +1,108 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "CSCED103",
+  "name": "Computer Aided Engineering Drawing",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Module Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Introduction",
+      "hours": 8,
+      "topics": [
+        "Significance of Engineering drawing, BIS Conventions of Engineering Drawing,",
+        "Freehand sketching of engineering drawing, Scales.",
+        "Introduction to Computer Aided Drafting software, Co -ordinate system and",
+        "reference planes HP, VP, RPP & LPP of 2D/3D environment. Selection of drawing",
+        "sheet size and scale. Commands and creation of Lines, coordinate points, axes, poly",
+        "lines, square, rectan gle, polygons, splines, circles, ellipse, text, move, copy, off -set,",
+        "mirror, rotate, trim, extend, break, chamfer, fillet and curves.",
+        "Orthographic Projections of Points, Lines and Planes:",
+        "Introduction to Orthographic projections, Orthographic projections of points in1st",
+        "and 3rd quadrants. Orthographic projections of lines (Placed in First quadrant only as",
+        "per BIS).",
+        "Orthographic projections of planes: triangular, square, rectangular, pentagonal,",
+        "hexagonal and circular lamina (Placed in First quadrant only using change of",
+        "position method)."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Orthographic Projection of Solids",
+      "hours": 8,
+      "topics": [
+        "Orthographic projection of right regular solids (Resting on HP only and inclined to",
+        "both the planes); Prisms, Pyramids, Cylinders & Cones."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Section of Solids",
+      "hours": 8,
+      "topics": [
+        "Introduction, Section planes, Sectional views: apparent shapes and true shapes,",
+        "Sections of right regular prisms, pyramids, cylinders and cones resting with their",
+        "base on HP. (Concepts only and No Problems for practice)",
+        "Development of Lateral Surfaces of Solids:",
+        "Development of lateral surfaces of right regular Prisms, Pyramids, Cylinders & Cones",
+        "and their frustums and truncations."
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Isometric Views",
+      "hours": 8,
+      "topics": [
+        "Introduction to Isometric views, Isometric projections, Isometric scale.",
+        "Isometric view of hexahedron (cube), right regular prisms, pyramids, cylinders",
+        ",cones and spheres, Isometric view of combination of two simple solids.",
+        "Conversion of simple isometric drawings in to orthographic views: Problems on",
+        "--- PAGE 66 ---",
+        "conversion of Isometric view of simple objects / engineering components into",
+        "orthographic views."
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Computer Network Drawing (For CIE Only)",
+      "hours": 8,
+      "topics": [
+        "2D Network drawing with wired and wireless, Network topology-wired and",
+        "wireless.",
+        "3D Modeling: Raspberry Pi / Arduino boards, Router & switches, IoT devices -",
+        "Concept of converting to 3D printing format (stl)",
+        "Concept of Industrial drawing"
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): • SEE shall be conducted in batches similar to practical and evaluated for maximum of 100 Marks. Obtained marks shall be accounted for SEE final marks, reducing it by 50%. • Two full questions shall be set from Modules1,2,3and4. Students need to answer one full question from each module. • Two full questions set from each Module shall cover the entire topic of the respective module. • Question papers shall be provided by the University for each batch as per schedule. • SEE shall be conducted by one Internal and one External Examiner. • Evaluation shall be carried out jointly by both the examiners. • The student may be awarded full marks, if he/she completes a solution on computer display without sketch. CO Course Outcome",
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": [
+    "K.R.Gopalakrishna,& Sudhir Gopalakrishna:A Textbook of Computer  Aided Engineering",
+    "Drawing, 39th Edition, Subash Stores, Bangalore, 2017",
+    "Bhatt, N.D., Engineering Drawing: Plane and Solid Geometry, 53rd Edition, Charotar",
+    "Publishing House Pvt. Limited, 2023."
+  ],
+  "web_links": [
+    "• https://nptel.ac.in/courses/112104172",
+    "• https://nptel.ac.in/courses/112102304",
+    "• https://nptel.ac.in/courses/112105294",
+    "• https://www.coursera.org/courses?query=3d%20modeling&utm",
+    "• https://www.youtube.com/watch?v=zbqrNg4C98U"
+  ],
+  "course_outcomes": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "data_status": "partial"
+}

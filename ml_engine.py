@@ -12,6 +12,8 @@ import collections
 import datetime
 import difflib
 import math
+import os
+import json
 import re
 import sqlite3
 from typing import Any, Dict, List, Optional, Tuple
@@ -208,6 +210,32 @@ class HybridMLSearchEngine:
             "keywords": ["notice", "notices", "announcement", "circular", "event", "hackathon", "ai yuga", "news"],
         })
 
+
+        # 5. Add AIML 2025 Scheme RAG Chunks (Job B & Job C)
+        chunks_path = os.path.join(os.path.dirname(__file__), "data", "aiml_2025", "rag_chunks.jsonl")
+        if os.path.exists(chunks_path):
+            with open(chunks_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    chk = json.loads(line)
+                    meta = chk.get("metadata", {})
+                    # Rule 3: RAG must never answer from a coming_soon field
+                    if meta.get("data_status") == "coming_soon":
+                        continue
+                    cnt = chk.get("content", "")
+                    lines_cnt = [l for l in cnt.split("\n") if l.strip()]
+                    title = f"📚 {meta.get('code', 'AIML')} — {meta.get('name', 'Curriculum')}"
+                    self.docs.append({
+                        "id": f"aiml_{meta.get('code')}_{meta.get('type')}_{len(self.docs)}",
+                        "type": "aiml_2025",
+                        "title": title,
+                        "lines": lines_cnt,
+                        "search_text": f"{meta.get('code', '')} {meta.get('name', '')} {cnt}",
+                        "keywords": [str(meta.get('code', '')).lower(), str(meta.get('name', '')).lower(), "2025", "aiml"],
+                        "meta": meta
+                    })
+
         # Compute BM25 & N-gram TF-IDF statistics
         N = len(self.docs)
         df_word: Dict[str, int] = collections.defaultdict(int)
@@ -358,7 +386,259 @@ class HybridMLSearchEngine:
         raw_res = self._answer_query_raw(query, conn, lang)
         return self.localize_response(raw_res, lang)
 
+
+    def resolve_aiml_2025(self, query: str, lang: str = "en") -> Optional[Dict[str, Any]]:
+        q_norm = query.lower().strip()
+        aiml_dir = os.path.join(os.path.dirname(__file__), "data", "aiml_2025")
+
+        cs_text = "Coming soon" if lang == "en" else ("ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ" if lang == "kn" else "जल्द आ रहा है")
+        btn_text = "Visit PDA College Website" if lang == "en" else ("ಪಿ.ಡಿ.ಎ ಕಾಲೇಜು ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ" if lang == "kn" else "पीडीए कॉलेज वेबसाइट पर जाएं")
+        btn_html = f'<a href="https://www.pdacek.ac.in" target="_blank" rel="noopener" class="pda-cs-btn">{btn_text} ↗</a>'
+
+        # 1. Development problems (e.g. 4.1 to 4.16)
+        prob_m = re.search(r'\b(?:problem|prob)?\s*(4\.\d+)\b', q_norm)
+        if prob_m or "development problem" in q_norm or ("caed" in q_norm and "problem" in q_norm):
+            dev_path = os.path.join(aiml_dir, "resources", "CSCED103_development.json")
+            if os.path.exists(dev_path):
+                with open(dev_path, "r", encoding="utf-8") as f:
+                    dev_data = json.load(f)
+                if prob_m:
+                    pid = prob_m.group(1)
+                    match_p = next((p for p in dev_data["problems"] if p["problem_id"] == pid), None)
+                    if match_p:
+                        lines = [
+                            f"### 📐 CSCED103: CAED — Development Problem {match_p['problem_id']}",
+                            f"• **Source Page:** 2.Development.pdf (Page {match_p['pdf_page']})",
+                            f"• **Problem Statement:** {match_p['title_text']}",
+                            f"• **Module:** Module-3 Development of Lateral Surfaces of Solids"
+                        ]
+                        return {"reply": "\n".join(lines), "lines": lines, "category": "caed_development", "confidence": 0.99}
+                else:
+                    lines = [
+                        f"### 📐 CSCED103: Development of Lateral Surfaces (Problems 4.1 - 4.16)",
+                        f"• **Module:** Module-3 Development of Lateral Surfaces of Solids (2.Development.pdf)",
+                        f"• **Total Problems Available:** {dev_data['total_problems']}"
+                    ]
+                    for p in dev_data["problems"][:5]:
+                        lines.append(f"  • **{p['problem_id']} (Page {p['pdf_page']}):** {p['title_text']}")
+                    lines.append("  *(Ask for any specific problem e.g. 'Problem 4.1', 'Problem 4.7' to see full statement)*")
+                    return {"reply": "\n".join(lines), "lines": lines, "category": "caed_development", "confidence": 0.99}
+
+        # 2. ESC-I Batches / Course table
+        if any(k in q_norm for k in ["esc-1", "esc-i", "esc batch", "esc courses", "engineering science course"]):
+            esc_path = os.path.join(aiml_dir, "esc_batches.json")
+            if os.path.exists(esc_path):
+                with open(esc_path, "r", encoding="utf-8") as f:
+                    esc_data = json.load(f)
+                lines = [
+                    f"### 🛠️ {esc_data['title']} (w.e.f. {esc_data['w_e_f']})",
+                    f"• **Timings for AIML Sections G & H:** Monday, Tuesday & Wednesday — Period 5 (2:15 PM – 3:15 PM)"
+                ]
+                for c in esc_data["courses"]:
+                    lines.append(f"• **{c['course_code']}: {c['course_title']}**")
+                    for b in c["batches"]:
+                        lines.append(f"  - **Batch {b['batch']}:** Faculty: {b['faculty']} | Class Room: `{b['room']}`")
+                return {"reply": "\n".join(lines), "lines": lines, "category": "esc_batches", "confidence": 0.99}
+
+        # 3. Section G, H, I Timetable
+        # Check if user asked about Section I in AIML
+        if re.search(r'\b(?:section|sec)\s*i\b|\bi\s*(?:section|sec)\b', q_norm) and any(w in q_norm for w in ["aiml", "timetable", "schedule"]):
+            return {
+                "reply": "ℹ️ **AIML Department Notice:** The AIML Department currently has **Sections G and H only** (Room FB LH07 & FB LH08). There is **no Section I** in the AIML Department.",
+                "lines": ["The AIML Department has Sections G and H only. There is no Section I in AIML."],
+                "category": "aiml_2025_timetable",
+                "confidence": 0.99
+            }
+        sec_m = re.search(r'\b(?:section|sec)\s*([gh])\b|\b([gh])\s*(?:section|sec)\b', q_norm)
+        if sec_m and any(w in q_norm for w in ["timetable", "schedule", "classes", "time table", "timing"]):
+            sec_char = (sec_m.group(1) or sec_m.group(2)).upper()
+            tt_path = os.path.join(aiml_dir, "timetable_p_cycle.json")
+            if os.path.exists(tt_path):
+                with open(tt_path, "r", encoding="utf-8") as f:
+                    tt_data = json.load(f)
+                sec_info = tt_data["sections"].get(sec_char)
+                if sec_info:
+                    lines = [
+                        f"### 🗓️ AIML Section {sec_char} Timetable (w.e.f. {tt_data['w_e_f']})",
+                        f"• **Stream:** {sec_info['stream']}",
+                        f"• **Default Lecture Hall:** `{sec_info['default_room']}`",
+                        f"• **Lab Batches:** " + ", ".join([f"{k}: {v}" for k, v in sec_info["batches"].items()]),
+                        "",
+                        "• **Weekly Day-by-Day Schedule:**"
+                    ]
+                    for d_name, d_slots in sec_info["days"].items():
+                        slot_str = []
+                        for pk in ["P1", "P2", "P3", "P4", "P5", "P6", "P7"]:
+                            slot = d_slots.get(pk, {})
+                            c = slot.get("code", "-")
+                            slot_str.append(f"{pk}: {c}")
+                        lines.append(f"  • **{d_name}:** " + " | ".join(slot_str))
+                    lines.append("")
+                    lines.append("• **Faculty Members for Section " + sec_char + ":**")
+                    for fac in sec_info["faculty"]:
+                        lines.append(f"  - **{fac['code']}:** {fac['title']} — {fac['faculty']} ({fac['dept']})")
+                    return {"reply": "\n".join(lines), "lines": lines, "category": "aiml_timetable", "confidence": 0.99}
+
+        # 4. Course Code match
+        code_m = re.search(r'\b(CSMAT101|CSPHY102|CSPH102|CSCED103|CSPOC105|CSPOCL107|KKIDTL158|KKIDT158|KKKSK109|KKKBK109|KKSSC106|CSCHE202|CSMAT201|KKAIA203|KKENG206|KKICO207|KKPRJ258|KKPYP205B|KKBSM104A|KKIEE104B|KKIEC104C|KKIME104D|KKEIT104E|KKXXX104X|KKXX204X)\b', q_norm, re.IGNORECASE)
+        code = code_m.group(1).upper() if code_m else None
+
+        # Title check fallbacks
+        if not code:
+            if "constitution" in q_norm or "ethics" in q_norm:
+                code = "KKICO207"
+            elif "project based learning" in q_norm or "interdisciplinary project" in q_norm:
+                code = "KKPRJ258"
+            elif "quantum physics" in q_norm:
+                code = "CSPHY102"
+            elif "differential calculus" in q_norm or ("linear algebra" in q_norm and "101" in q_norm):
+                code = "CSMAT101"
+            elif "programming in c lab" in q_norm or "poc lab" in q_norm:
+                code = "CSPOCL107"
+            elif "programming in c" in q_norm or "poc" in q_norm:
+                code = "CSPOC105"
+            elif "computer aided engineering drawing" in q_norm or "caed" in q_norm:
+                code = "CSCED103"
+            elif "innovation and design thinking" in q_norm or "idt" in q_norm:
+                code = "KKIDTL158"
+            elif "soft skills" in q_norm:
+                code = "KKSSC106"
+            elif "applied chemistry" in q_norm:
+                code = "CSCHE202"
+            elif "numerical methods" in q_norm:
+                code = "CSMAT201"
+            elif "python programming" in q_norm or "pyp" in q_norm:
+                code = "KKPYP205B"
+            elif "introduction to ai" in q_norm or "aia" in q_norm:
+                code = "KKAIA203"
+            elif "communication skills" in q_norm:
+                code = "KKENG206"
+            elif "samskrutika kannada" in q_norm:
+                code = "KKKSK109"
+            elif "balake kannada" in q_norm:
+                code = "KKKBK109"
+
+        if code:
+            s_file = os.path.join(aiml_dir, "syllabus", f"{code}.json")
+            if not os.path.exists(s_file):
+                if code == "CSPH102": s_file = os.path.join(aiml_dir, "syllabus", "CSPHY102.json")
+                elif code == "KKIDT158": s_file = os.path.join(aiml_dir, "syllabus", "KKIDTL158.json")
+
+            if os.path.exists(s_file):
+                with open(s_file, "r", encoding="utf-8") as f:
+                    rec = json.load(f)
+
+                st = rec.get("data_status", "available")
+                name = rec.get("subject_name", code)
+                credits = rec.get("credits", 0.0)
+                sem = rec.get("sem", 1)
+                cycle = rec.get("cycle", "P")
+
+                # CASE A: COMING SOON
+                if st == "coming_soon" or not rec.get("syllabus_found", True):
+                    lines = [
+                        f"### 📚 {code}: {name}",
+                        f"• **Course Code:** `{code}`",
+                        f"• **Credits:** {credits:.2f}",
+                        f"• **Cycle / Semester:** {cycle} Cycle / Semester {sem} (AIML 2025 Scheme)",
+                        f"• **Status:** {cs_text}",
+                        f"  Official syllabus details are not yet released in the scheme syllabus draft.",
+                        f'<br>{btn_html}'
+                    ]
+                    return {
+                        "reply": "\n".join(lines),
+                        "lines": lines,
+                        "category": "aiml_2025_coming_soon",
+                        "confidence": 0.99
+                    }
+
+                # CASE B: PARTIAL OR AVAILABLE
+                lines = [
+                    f"### 📚 {code}: {name} (AIML 2025 Scheme)",
+                    f"• **Credits:** {credits:.2f} | **Cycle:** {cycle} Cycle (Sem {sem}) | **Status:** {st.capitalize()}",
+                ]
+
+                # Objectives
+                objs = rec.get("objectives")
+                if isinstance(objs, list) and objs:
+                    lines.append("• **Course Objectives:**")
+                    for ob in objs: lines.append(f"  - {ob}")
+                else:
+                    lines.append(f"• **Course Objectives:** {cs_text}")
+
+                # Modules
+                mods = rec.get("modules")
+                if isinstance(mods, list) and mods:
+                    lines.append("• **Modules & Topics:**")
+                    for m in mods:
+                        m_num = m.get('module_number') or m.get('label', 'Module')
+                        m_title = m.get('title', '')
+                        m_hrs = m.get('hours', 8)
+                        topics = m.get('topics', '')
+                        top_str = "; ".join(topics)[:160] if isinstance(topics, list) else str(topics)[:160]
+                        lines.append(f"  - **Module {m_num} ({m_hrs} hrs):** {m_title} — {top_str}...")
+                elif isinstance(mods, dict) and mods.get("status") == "coming_soon":
+                    lines.append(f"• **Modules & Topics:** {cs_text}")
+
+                # Labs
+                labs = rec.get("lab_experiments")
+                if isinstance(labs, list) and labs:
+                    lines.append("• **Laboratory Experiments / Practical Activities:**")
+                    for lb in labs[:8]: lines.append(f"  - {lb}")
+                    if len(labs) > 8: lines.append(f"  *(Total {len(labs)} experiments listed in official syllabus)*")
+
+                # SEE Pattern
+                see = rec.get("see_pattern")
+                if isinstance(see, str) and len(see) > 5:
+                    lines.append(f"• **Semester End Examination (SEE) Pattern:** {see}")
+                elif isinstance(see, dict) and see.get("status") == "coming_soon":
+                    lines.append(f"• **SEE Pattern:** {cs_text}")
+
+                # Textbooks & References
+                tbs = rec.get("textbooks")
+                if isinstance(tbs, list) and tbs:
+                    lines.append("• **Prescribed Textbooks:**")
+                    for tb in tbs: lines.append(f"  - {tb}")
+                elif isinstance(tbs, dict) and tbs.get("status") == "coming_soon":
+                    lines.append(f"• **Prescribed Textbooks:** {cs_text}")
+
+                refs = rec.get("references")
+                if isinstance(refs, list) and refs:
+                    lines.append("• **Reference Books:**")
+                    for rf in refs[:4]: lines.append(f"  - {rf}")
+                elif isinstance(refs, dict) and refs.get("status") == "coming_soon":
+                    lines.append(f"• **Reference Books:** {cs_text}")
+
+                # Course Outcomes
+                cos = rec.get("course_outcomes")
+                if isinstance(cos, list) and cos:
+                    lines.append("• **Course Outcomes (COs):**")
+                    for co in cos:
+                        if isinstance(co, dict):
+                            lines.append(f"  - **{co.get('co_number', 'CO')}:** {co.get('description', '')}")
+                        else:
+                            lines.append(f"  - {co}")
+                elif isinstance(cos, dict) and cos.get("status") == "coming_soon":
+                    lines.append(f"• **Course Outcomes:** {cs_text}")
+
+                if st == "partial":
+                    lines.append(f"<br>{btn_html}")
+
+                return {
+                    "reply": "\n".join(lines),
+                    "lines": lines,
+                    "category": "aiml_2025_syllabus",
+                    "confidence": 0.99
+                }
+
+        return None
+
     def _answer_query_raw(self, query: str, conn: sqlite3.Connection, lang: str = "en") -> Dict[str, Any]:
+        # AIML 2025 Scheme Priority Resolver
+        aiml_res = self.resolve_aiml_2025(query, lang)
+        if aiml_res:
+            return aiml_res
+
         q_raw = query.strip()
         q_norm = normalize_text(q_raw)
         q_tokens = set(tokenize(q_raw))
@@ -873,6 +1153,15 @@ class HybridMLSearchEngine:
             "Class Coordinator:": "ತರಗತಿ ಸಂಯೋಜಕರು:",
             "Allocated Classroom:": "ತರಗತಿ ಕೊಠಡಿ:",
             "Primary Lecture Hall:": "ಮುಖ್ಯ ಉಪನ್ಯಾಸ ಕೊಠಡಿ:",
+            "Coming soon": "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ",
+            "Status: Coming soon": "ಸ್ಥಿತಿ: ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ",
+            "Visit PDA College Website": "ಪಿ.ಡಿ.ಎ ಕಾಲೇಜು ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ",
+            "Course Objectives:": "ಕೋರ್ಸ್ ಉದ್ದೇಶಗಳು:",
+            "Modules & Topics:": "ಘಟಕಗಳು ಮತ್ತು ವಿಷಯಗಳು:",
+            "Prescribed Textbooks:": "ನಿಗದಿತ ಪಠ್ಯಪುಸ್ತಕಗಳು:",
+            "Reference Books:": "ಉಲ್ಲೇಖ ಪುಸ್ತಕಗಳು:",
+            "Course Outcomes (COs):": "ಕೋರ್ಸ್ ಫಲಿತಾಂಶಗಳು:",
+
         }
 
         phrase_map_hi = {
@@ -907,6 +1196,15 @@ class HybridMLSearchEngine:
             "Class Coordinator:": "कक्षा समन्वयक:",
             "Allocated Classroom:": "आवंटित कक्षा:",
             "Primary Lecture Hall:": "मुख्य व्याख्यान कक्ष:",
+            "Coming soon": "जल्द आ रहा है",
+            "Status: Coming soon": "स्थिति: जल्द आ रहा है",
+            "Visit PDA College Website": "पीडीए कॉलेज वेबसाइट पर जाएं",
+            "Course Objectives:": "पाठ्यक्रम उद्देश्य:",
+            "Modules & Topics:": "मॉड्यूल और विषय:",
+            "Prescribed Textbooks:": "निर्धारित पाठ्यपुस्तकें:",
+            "Reference Books:": "संदर्भ पुस्तकें:",
+            "Course Outcomes (COs):": "पाठ्यक्रम परिणाम:",
+
         }
 
         mapping = phrase_map_kn if lang == "kn" else phrase_map_hi

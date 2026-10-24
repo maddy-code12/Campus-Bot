@@ -1,0 +1,55 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKIDT158",
+  "name": "Innovation and Design Thinking Lab",
+  "credits": 1.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "1. Empathize with community problems and define meaningful challenges.",
+    "2. Apply design thinking principles and multidisciplinary skills to develop user-centric",
+    "3. Build and test basic prototypes using tools available in the Atal Idea/Tinkering Lab or",
+    "4. Pitch socially relevant ideas with scalable models.",
+    "5. Collaborate effectively in diverse teams."
+  ],
+  "modules": [],
+  "lab_experiments": [
+    "Week 1, 2 & 3: Orientation and Team Formation",
+    "Week -1&2: Introduction to Social Entrepreneurship, Innovation and Design Thinking Group discussion on What is Innovation vs Invention. Why Design Thinking is important. Brief about 5 stages: Empathize – Define – Ideate – Prototype – Test.",
+    "Week -3: Innovation warm-up activities, forming interdisciplinary teams, Instructions about Next week activities",
+    "Week 4–5: Empathy and Field Exploration",
+    "Week-4&5: Field (any public places of student’s interest Eg- Village, Government Office, Industry. R&D institute, NGO etc) visits, stakeholder interviews and interaction. Recording all interaction through handwritten in activity book prescribed by the University. Week 6, 7 and 8: Problem Definition",
+    "Week-6: Documentation, categorization and Group discussion on interactions and problems/challenges.",
+    "Week-7&8: Problem framing using “How Might We” approach, Identification of social problems and user insights through affinity Clustering and Problem Tree. Mention of clearly defined challenge statements.",
+    "Week 9, 10 &11: Ideation Sprint",
+    "Week-9&10: Presentation by teams on Defined Problems, Brainstorming interactions and Mind Mapping.",
+    "Week-10: Idea Filtering - Shortlist of creative, eco -friendly and feasible ideas. Selection of one Suitable IDEA for next process, Designing/Structuring of Prototype model. --- PAGE 118 ---",
+    "Week 12, 13 &14: Rapid Prototyping using Atal Idea Lab/Makers Space",
+    "Week-12&13: Building low -fidelity and working models using tools like Arduino, 3D printers,: Digital fabrication, electronics kits and recycled materials",
+    "Week-14: User testing, Feedback collection, Iteration - Observation Notes, Feedback Forms (Designing a business model  for impact and scalability, if  possible) Preparation of Draft of social venture plan",
+    "Week 15 &16: Final Demo and Social Pitch Innovation showcase, Poster display, Project pitching to jury Presentation of the project with impact with"
+  ],
+  "see_pattern": "Assessment Structure: The assessment in each course is divided equally between Continuous Internal Evaluation (CIE) and the Semester End Examination (SEE), with each carrying 50% weightage. • To qualify and become eligible to appear for SEE, in the CIE, a student must score at least 40% of 50 marks, i.e., 20 marks. • To pass the SEE, a student must score at least 35% of 50 marks, i.e., 18 marks. Notwithstanding the above, a student is considered to have passed the course, provided the combined total of CIE and SEE is at least 40 out of 100 marks. --- PAGE 119 --- Continuous Internal Evaluation (CIE) – CIE Marks allocation Parameters for Social Entrepreneurship, Innovation & Design Thinking using Atal Idea/Tinkering Lab or Maker Space CIE Parameters (50 Marks) *Minimum to Qualify for SEE: 20 out of 50 in CIE Sl. No. CIE Component/Week Marks Description 1 Orientation Activities & Communication Skills  5 Participation in Week 1–3 orientation, communication and teamwork skill-building exercises. 2 Empathy & Field Exploration Documentation  10 Quality and completeness of field visit reflections, stakeholder interviews, and activity book. 3 Problem Definition and Framing 10 Clarity of challenge statements, use of “How Might We”, Affinity Mapping, Problem Trees. 4 Ideation & Mind Mapping 5 Participation in brainstorming, mind mapping, idea filtering sessions. 5 Prototype Development & Iteration 10 Quality and creativity of prototype/model, user testing, feedback collection, iterations. 6 Final Presentation & Pitch 5 Project pitching, poster presentation, storytelling and scalability model. 7 Teamwork, Journal, and Engagement 5 Peer and mentor evaluation of participation, teamwork, journal updates. 8 Total CIE marks 50 Final CIE marks to be considered --- PAGE 120 --- Semester End Examination (SEE) – SEE to be conducted in batches where the students will exhibit their projects along with the presentation and Viva -voce. – 100 Marks “SEE shall be conducted by one Internal and one External Examiner\" Submission Requirements: • Handwritten activity book with CIE marks and Final project report (Typed or Handwritten). • Final presentation ppt/pdf (hard and soft copy). • Prototype or working model [physical or conceptual (shall be drawn/sketched clearly on card sheet paper)]. • Peer/team feedback and reflection entries (if applicable). Sl. No. Evaluation Parameter Marks Details 1 Prototype / Solution Demonstration 30 Working functionality, creativity, use of lab tools, relevance to the problem. 2 Final Presentation / Social Pitch 20 Clarity, storytelling, problem-solution fit, communication, visual aids. 3 Business Model or Sustainability Plan 10 Feasibility, cost-effectiveness, scalability, and alignment with SDGs. 4 Viva Voce 20 Individual understanding, contribution, tools used, learning outcomes. 5 Documentation Report / Portfolio 20 Project report, reflection, team activity log, stakeholder input summaries.",
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "web_links": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "course_outcomes": [
+    "1. Empathize with community problems and define meaningful challenges.",
+    "2. Apply design thinking principles and multidisciplinary skills to develop user-centric",
+    "3. Build and test basic prototypes using tools available in the Atal Idea/Tinkering Lab or",
+    "4. Pitch socially relevant ideas with scalable models.",
+    "5. Collaborate effectively in diverse teams."
+  ],
+  "data_status": "partial"
+}

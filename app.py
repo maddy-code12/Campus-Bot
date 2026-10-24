@@ -8,9 +8,9 @@ import time
 import urllib.request
 from typing import Dict, List, Optional
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Header, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -18,15 +18,9 @@ import data.first_year_data as fy_data
 import data.seed_data as seed
 from ml_engine import ml_engine
 
-DB_FILE = os.getenv("DB_FILE", "campus.db")
+DB_FILE = "campus.db"
 CSV_FILE = os.path.join("data", "timetable.csv")
 DEFAULT_AI_URL = os.environ.get("AI_URL", "")
-HOST = os.getenv("HOST", "0.0.0.0")
-PORT = int(os.getenv("PORT", "8000"))
-ALLOWED_ORIGINS = [
-    origin.strip() for origin in os.getenv("ALLOWED_ORIGINS", "*").split(",") if origin.strip()
-]
-ALLOWED_ORIGINS = ["*"] if ALLOWED_ORIGINS == ["*"] else ALLOWED_ORIGINS
 
 app = FastAPI(
     title="PDA College of Engineering - Campus Assistant API",
@@ -36,7 +30,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -49,703 +43,541 @@ def get_db():
     return conn
 
 
-SENIOR_FACULTY_SLOTS = [
-    {
-        "name": "Dr. S. R. Patil",
-        "dept": "CSE",
-        "cabin": "CSE Block, 1st Floor, HOD Cabin 101",
-        "phone": "08472-224360",
-        "email": "hodcse@pdaengg.com",
-        "designation": "Professor & HOD (CSE)",
-        "slots": [
-            ("Mon", "10:00", "11:00", "7th Sem CSE-A", "CSE LH-201", "Cloud Computing"),
-            ("Tue", "11:15", "12:15", "5th Sem CSE-A", "CSE LH-105", "Computer Networks"),
-            ("Wed", "09:00", "10:00", "7th Sem CSE-A", "CSE LH-201", "Cloud Computing"),
-            ("Thu", "14:00", "16:00", "7th Sem CSE-A", "Cloud COE Lab", "Cloud Computing Lab"),
-            ("Fri", "11:15", "12:15", "5th Sem CSE-A", "CSE LH-105", "Computer Networks"),
-            ("Sat", "10:00", "11:00", "7th Sem CSE-B", "CSE LH-202", "Project Seminar"),
-        ],
-    },
-    {
-        "name": "Dr. Basavaraj S. Mathapati",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Zen AI Block, HOD Cabin",
-        "phone": "08472-224360",
-        "email": "hodaiml@pdaengg.com",
-        "designation": "Professor & HOD (AIML)",
-        "slots": [
-            ("Mon", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-            ("Mon", "11:15", "12:15", "5th Sem AIML-B", "LH-16", "Human Computer Interface (HCI)"),
-            ("Tue", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-            ("Wed", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-            ("Thu", "09:00", "10:00", "5th Sem AIML-B", "LH-16", "Human Computer Interface (HCI)"),
-            ("Fri", "09:00", "10:00", "5th Sem AIML-B", "LH-16", "Human Computer Interface (HCI)"),
-            ("Sat", "10:00", "11:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-        ],
-    },
-    {
-        "name": "Prof. Ashwini Hatti",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Cabin (3rd Sem Sec-A Class Coordinator)",
-        "phone": "08472-224360",
-        "email": "ashwinih@pdaengg.com",
-        "designation": "Assistant Professor & 3rd Sem Sec-A Coordinator (AIML)",
-        "slots": [
-            ("Mon", "10:00", "11:00", "3rd Sem AIML-B", "LH-09", "Data Structures & Applications (DSC)"),
-            ("Tue", "09:00", "10:00", "3rd Sem AIML-B", "LH-09", "Data Structures & Applications (DSC)"),
-            ("Thu", "11:15", "12:15", "3rd Sem AIML-B", "LH-15", "Data Structures & Applications (DSC)"),
-        ],
-    },
-    {
-        "name": "Prof. Sowmya Gaitond",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Cabin (3rd Sem Sec-B Class Coordinator)",
-        "phone": "08472-224360",
-        "email": "sowmyag@pdaengg.com",
-        "designation": "Assistant Professor & 3rd Sem Sec-B Coordinator (AIML)",
-        "slots": [
-            ("Mon", "14:00", "15:00", "3rd Sem AIML-B", "LH-09", "Operating Systems (OS)"),
-            ("Tue", "12:15", "13:15", "3rd Sem AIML-B", "LH-15", "Operating Systems (OS)"),
-            ("Thu", "14:00", "16:00", "3rd Sem AIML-B", "AIML Lab", "AEC (DVP) Lab"),
-            ("Fri", "14:00", "15:00", "3rd Sem AIML-B", "LH-16", "Operating Systems (OS)"),
-        ],
-    },
-    {
-        "name": "Prof. Mallinath Swamy",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Cabin (5th Sem Sec-A Class Coordinator)",
-        "phone": "08472-224360",
-        "email": "mallinaths@pdaengg.com",
-        "designation": "Assistant Professor & 5th Sem Sec-A Coordinator (AIML)",
-        "slots": [
-            ("Mon", "12:15", "13:15", "5th Sem AIML-A", "LH-15", "Principles of Machine Learning (PML)"),
-            ("Thu", "14:00", "15:00", "5th Sem AIML-A", "LH-15", "Principles of Machine Learning (PML)"),
-            ("Fri", "10:00", "11:00", "5th Sem AIML-A", "LH-15", "Principles of Machine Learning (PML)"),
-            ("Sat", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Principles of Machine Learning (PML)"),
-        ],
-    },
-    {
-        "name": "Dr. Sharanamma H",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Cabin (5th Sem Sec-B Class Coordinator)",
-        "phone": "08472-224360",
-        "email": "sharanammah@pdaengg.com",
-        "designation": "Associate Professor & 5th Sem Sec-B Coordinator (AIML)",
-        "slots": [
-            ("Mon", "12:15", "13:15", "5th Sem AIML-B", "LH-16", "DBMS"),
-            ("Tue", "10:00", "11:00", "3rd Sem AIML-B", "LH-09", "OOP Java"),
-            ("Tue", "14:00", "16:00", "3rd Sem AIML-B", "LH-15", "Community Project (CP)"),
-            ("Wed", "14:00", "15:00", "5th Sem AIML-B", "LH-16", "DBMS"),
-            ("Thu", "09:00", "10:00", "3rd Sem AIML-B", "LH-15", "OOP Java"),
-            ("Fri", "12:15", "13:15", "5th Sem AIML-B", "LH-16", "DBMS"),
-            ("Fri", "14:00", "16:00", "5th Sem AIML-B", "DBMS Lab", "DBMS Lab"),
-            ("Sat", "09:00", "10:00", "3rd Sem AIML-B", "LH-09", "OOP Java"),
-            ("Mon", "11:15", "13:15", "3rd Sem AIML-B", "AIML Lab", "OOP Lab B2"),
-            ("Fri", "11:15", "13:15", "3rd Sem AIML-B", "AIML Lab", "OOP Lab B1"),
-            ("Sat", "11:15", "13:15", "5th Sem AIML-B", "DBMS Lab", "DBMS Lab"),
-        ],
-    },
-    {
-        "name": "Dr. Basavaraj M",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Senior Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "basavarajm@pdaengg.com",
-        "designation": "Professor (AIML)",
-        "slots": [
-            ("Mon", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-            ("Mon", "11:15", "12:15", "5th Sem AIML-B", "LH-16", "Human Computer Interface (HCI)"),
-            ("Tue", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-            ("Wed", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-            ("Thu", "09:00", "10:00", "5th Sem AIML-B", "LH-16", "Human Computer Interface (HCI)"),
-            ("Fri", "09:00", "10:00", "5th Sem AIML-B", "LH-16", "Human Computer Interface (HCI)"),
-            ("Sat", "10:00", "11:00", "5th Sem AIML-A", "LH-15", "Data Science & Applications (DSA)"),
-        ],
-    },
-    {
-        "name": "Prof. Santoshi P",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "santoship@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "10:00", "11:00", "5th Sem AIML-A", "LH-15", "DBMS"),
-            ("Mon", "14:00", "16:00", "5th Sem AIML-A", "DBMS Lab", "DBMS Lab B2"),
-            ("Tue", "10:00", "11:00", "5th Sem AIML-A", "LH-15", "DBMS"),
-            ("Tue", "14:00", "16:00", "5th Sem AIML-A", "DBMS Lab", "DBMS Lab B1"),
-            ("Wed", "10:00", "11:00", "5th Sem AIML-A", "LH-15", "DBMS"),
-        ],
-    },
-    {
-        "name": "Prof. Priyanka D",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "priyankad@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "14:00", "16:00", "5th Sem AIML-A", "AIML Lab", "AIML Lab B1"),
-            ("Tue", "14:00", "16:00", "5th Sem AIML-A", "AIML Lab", "AIML Lab B2"),
-        ],
-    },
-    {
-        "name": "Prof. Neha A",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "nehaa@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "09:00", "11:00", "3rd Sem AIML-A", "AIML Lab", "DSC Lab B2"),
-            ("Mon", "11:15", "12:15", "3rd Sem AIML-A", "LH-09", "DSC"),
-            ("Tue", "09:00", "11:00", "3rd Sem AIML-A", "AIML Lab", "DSC Lab B1"),
-            ("Wed", "12:15", "13:15", "5th Sem AIML-A", "LH-15", "HCI"),
-            ("Wed", "14:00", "15:00", "3rd Sem AIML-A", "LH-09", "DSC"),
-            ("Thu", "12:15", "13:15", "3rd Sem AIML-A", "LH-09", "DSC"),
-            ("Thu", "15:00", "16:00", "5th Sem AIML-A", "LH-15", "HCI"),
-            ("Fri", "09:00", "10:00", "5th Sem AIML-A", "LH-15", "HCI"),
-        ],
-    },
-    {
-        "name": "Prof. Laxmi J",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "laxmij@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "15:00", "16:00", "5th Sem AIML-B", "LH-16", "RMIPR"),
-            ("Tue", "09:00", "11:00", "3rd Sem AIML-A", "AIML Lab", "DSDO Lab B2"),
-            ("Tue", "11:15", "13:15", "5th Sem AIML-A", "AIML Lab", "Mini-Proj B2"),
-            ("Tue", "15:00", "16:00", "3rd Sem AIML-A", "LH-09", "DSDO"),
-            ("Wed", "10:00", "11:00", "3rd Sem AIML-A", "LH-09", "DSDO"),
-            ("Thu", "11:15", "13:15", "5th Sem AIML-A", "AIML Lab", "Mini-Proj B1"),
-            ("Thu", "14:00", "16:00", "3rd Sem AIML-A", "AIML Lab", "DSDO Lab B1"),
-            ("Fri", "09:00", "10:00", "3rd Sem AIML-A", "LH-09", "DSDO"),
-            ("Fri", "11:15", "12:15", "5th Sem AIML-B", "LH-16", "RMIPR"),
-            ("Sat", "10:00", "11:00", "5th Sem AIML-B", "LH-16", "RMIPR"),
-        ],
-    },
-    {
-        "name": "Prof. Kaveri K",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "kaverik@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Wed", "11:15", "13:15", "3rd Sem AIML-A", "AIML Lab", "AEC DVP"),
-            ("Wed", "14:00", "15:00", "5th Sem AIML-A", "LH-15", "RMIPR"),
-            ("Fri", "14:00", "15:00", "5th Sem AIML-A", "LH-15", "RMIPR"),
-            ("Sat", "11:15", "12:15", "5th Sem AIML-A", "LH-15", "RMIPR"),
-        ],
-    },
-    {
-        "name": "Dr. Nandini P",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Senior Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "nandinip@pdaengg.com",
-        "designation": "Associate Professor (AIML)",
-        "slots": [
-            ("Tue", "14:00", "15:00", "5th Sem AIML-B", "LH-16", "PML"),
-            ("Wed", "12:15", "13:15", "5th Sem AIML-B", "LH-16", "PML"),
-            ("Thu", "15:00", "16:00", "5th Sem AIML-B", "LH-16", "PML"),
-            ("Fri", "10:00", "11:00", "5th Sem AIML-B", "LH-16", "PML"),
-            ("Sat", "09:00", "11:00", "3rd Sem AIML-A", "LH-09", "Community Project (CP)"),
-        ],
-    },
-    {
-        "name": "Prof. Sonali M",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "sonalim@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "09:00", "10:00", "3rd Sem AIML-B", "LH-09", "DSDO"),
-            ("Mon", "10:00", "11:00", "5th Sem AIML-B", "AIML Lab", "Mini-Proj B1"),
-            ("Tue", "09:00", "11:00", "5th Sem AIML-B", "AIML Lab", "Mini-Proj B2"),
-            ("Wed", "09:00", "11:00", "3rd Sem AIML-B", "AIML Lab", "DSDO Lab B1"),
-            ("Thu", "12:15", "13:15", "3rd Sem AIML-B", "LH-15", "DSDO"),
-            ("Fri", "11:15", "13:15", "3rd Sem AIML-B", "AIML Lab", "DSDO Lab B2"),
-            ("Fri", "15:00", "16:00", "3rd Sem AIML-B", "LH-16", "DSDO"),
-        ],
-    },
-    {
-        "name": "Prof. Savitha P",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "savithap@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "11:15", "13:15", "3rd Sem AIML-B", "AIML Lab", "DSC Lab B1"),
-            ("Tue", "14:00", "15:00", "3rd Sem AIML-A", "LH-09", "Operating Systems (OS)"),
-            ("Wed", "09:00", "11:00", "3rd Sem AIML-B", "AIML Lab", "DSC Lab B2"),
-            ("Mon", "09:00", "11:00", "3rd Sem AIML-A", "AIML Lab", "OOP Lab B1"),
-            ("Thu", "14:00", "16:00", "3rd Sem AIML-A", "AIML Lab", "OOP Lab B2"),
-            ("Thu", "10:00", "11:00", "3rd Sem AIML-A", "LH-09", "Operating Systems (OS)"),
-            ("Fri", "10:00", "11:00", "3rd Sem AIML-A", "LH-09", "Operating Systems (OS)"),
-        ],
-    },
-    {
-        "name": "Prof. Rajashekhar B",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "rajashekharb@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "12:15", "13:15", "3rd Sem AIML-A", "LH-09", "OOP Java"),
-            ("Tue", "12:15", "13:15", "3rd Sem AIML-A", "LH-09", "OOP Java"),
-            ("Thu", "09:00", "10:00", "3rd Sem AIML-A", "LH-09", "OOP Java"),
-        ],
-    },
-    {
-        "name": "Prof. Shreya G",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Faculty Cabin",
-        "phone": "08472-224360",
-        "email": "shreyag@pdaengg.com",
-        "designation": "Assistant Professor (AIML)",
-        "slots": [
-            ("Mon", "14:00", "15:00", "5th Sem AIML-B", "LH-16", "DSA"),
-            ("Tue", "12:15", "13:15", "5th Sem AIML-B", "LH-16", "DSA"),
-            ("Wed", "11:15", "12:15", "5th Sem AIML-B", "LH-16", "DSA"),
-            ("Thu", "14:00", "15:00", "5th Sem AIML-B", "LH-16", "DSA"),
-            ("Fri", "14:00", "16:00", "5th Sem AIML-B", "AIML Lab", "AIML Lab B2"),
-            ("Sat", "11:15", "13:15", "5th Sem AIML-B", "AIML Lab", "AIML Lab B1"),
-        ],
-    },
-    {
-        "name": "Prof. Gopichand P",
-        "dept": "Mathematics",
-        "cabin": "Maths Dept Cabin",
-        "phone": "08472-224360",
-        "email": "gopichandp@pdaengg.com",
-        "designation": "Assistant Professor (Mathematics)",
-        "slots": [
-            ("Tue", "11:15", "12:15", "3rd Sem AIML-B", "LH-15", "Engg Math III"),
-            ("Wed", "14:00", "16:00", "3rd Sem AIML-B", "LH-17", "Engg Math Tutorial"),
-            ("Thu", "10:00", "11:00", "3rd Sem AIML-B", "LH-15", "Engg Math III"),
-            ("Sat", "10:00", "11:00", "3rd Sem AIML-B", "LH-09", "Engg Math III"),
-        ],
-    },
-    {
-        "name": "Dr. Afiya A",
-        "dept": "Civil / AIML",
-        "cabin": "Civil Engg Dept Cabin",
-        "phone": "08472-224360",
-        "email": "afiyaa@pdaengg.com",
-        "designation": "Assistant Professor (Civil / Environmental Studies)",
-        "slots": [
-            ("Mon", "11:15", "12:15", "5th Sem AIML-A", "LH-15", "Environmental Studies"),
-            ("Tue", "11:15", "12:15", "5th Sem AIML-B", "LH-16", "Environmental Studies"),
-            ("Wed", "11:15", "12:15", "5th Sem AIML-A", "LH-15", "Environmental Studies"),
-            ("Thu", "10:00", "11:00", "5th Sem AIML-B", "LH-16", "Environmental Studies"),
-        ],
-    },
-    {
-        "name": "Dr. Ramesh Kulkarni",
-        "dept": "ISE",
-        "cabin": "ISE Block, 2nd Floor, HOD Cabin 201",
-        "phone": "08472-224360",
-        "email": "hodise@pdaengg.com",
-        "designation": "Professor & HOD (ISE)",
-        "slots": [
-            ("Mon", "10:00", "11:00", "4th Sem ISE", "Room 110", "Database Management Systems"),
-            ("Tue", "09:00", "10:00", "6th Sem ISE", "Room 112", "Big Data Analytics"),
-            ("Tue", "12:15", "13:15", "4th Sem ISE", "Room 110", "Database Management Systems"),
-            ("Wed", "11:15", "12:15", "6th Sem ISE", "Room 112", "Big Data Analytics"),
-            ("Thu", "09:00", "10:00", "4th Sem ISE", "Room 110", "Database Management Systems"),
-            ("Thu", "14:00", "16:00", "4th Sem ISE", "ISE Lab 3", "DBMS Lab"),
-            ("Sat", "09:00", "10:00", "6th Sem ISE", "Room 112", "Cloud & DevOps"),
-        ],
-    },
-    {
-        "name": "Dr. Mahesh Biradar",
-        "dept": "ECE",
-        "cabin": "ECE Dept, Main Building, Cabin 1",
-        "phone": "08472-224360",
-        "email": "hodece@pdaengg.com",
-        "designation": "Professor & HOD (ECE)",
-        "slots": [
-            ("Mon", "11:15", "12:15", "5th Sem ECE", "Room 305", "Digital Signal Processing"),
-            ("Tue", "11:15", "12:15", "5th Sem ECE", "Room 305", "Digital Signal Processing"),
-            ("Wed", "12:15", "13:15", "3rd Sem ECE", "Room 302", "Signals & Systems"),
-            ("Thu", "10:00", "11:00", "5th Sem ECE", "Room 305", "Digital Signal Processing"),
-            ("Fri", "14:00", "16:00", "7th Sem ECE", "VLSI Lab 5", "VLSI Design Lab"),
-            ("Sat", "10:00", "11:00", "3rd Sem ECE", "Room 302", "Signals & Systems"),
-        ],
-    },
-    {
-        "name": "Prof. Sunitha Reddy",
-        "dept": "AIML",
-        "cabin": "AIML Dept, Cabin 4",
-        "phone": "08472-224360",
-        "email": "sunithareddy@pdaengg.com",
-        "designation": "Associate Professor (AIML)",
-        "slots": [
-            ("Mon", "12:15", "13:15", "3rd Sem AIML", "Room 201", "Python for Data Science"),
-            ("Mon", "14:00", "16:00", "5th Sem AIML", "Zen AI Lab 1", "Machine Learning Lab"),
-            ("Wed", "10:00", "11:00", "3rd Sem AIML", "Room 201", "Python for Data Science"),
-            ("Thu", "11:15", "12:15", "5th Sem AIML", "Room 204", "Supervised Machine Learning"),
-            ("Fri", "09:00", "10:00", "3rd Sem AIML", "Room 201", "Python for Data Science"),
-        ],
-    },
-    {
-        "name": "Prof. Shweta Hiremath",
-        "dept": "Maths",
-        "cabin": "Maths Dept, Cabin 3",
-        "phone": "08472-224360",
-        "email": "shwetahiremath@pdaengg.com",
-        "designation": "Assistant Professor (Mathematics)",
-        "slots": [
-            ("Mon", "09:00", "10:00", "1st Sem Maths", "Room 301", "Calculus & Linear Algebra"),
-            ("Tue", "10:00", "11:00", "1st Sem Maths", "Room 301", "Calculus & Linear Algebra"),
-            ("Wed", "14:00", "15:00", "3rd Sem Maths", "Room 303", "Transform Calculus & Probability"),
-            ("Fri", "10:00", "11:00", "3rd Sem Maths", "Room 303", "Transform Calculus & Probability"),
-        ],
-    },
-    {
-        "name": "Prof. Imran Shaikh",
-        "dept": "Mechanical",
-        "cabin": "Mech Dept, Cabin 6",
-        "phone": "08472-224360",
-        "email": "imranshaikh@pdaengg.com",
-        "designation": "Associate Professor (Mechanical)",
-        "slots": [
-            ("Mon", "11:15", "12:15", "4th Sem Mech", "Room 120", "Applied Thermodynamics"),
-            ("Tue", "14:00", "16:00", "6th Sem Mech", "CNC Workshop", "CAD/CAM & CNC Lab"),
-            ("Thu", "12:15", "13:15", "4th Sem Mech", "Room 120", "Applied Thermodynamics"),
-            ("Fri", "12:15", "13:15", "6th Sem Mech", "Room 122", "Heat & Mass Transfer"),
-        ],
-    },
-]
+SENIOR_FACULTY_SLOTS = [   {   'cabin': 'AIML Dept, Zen AI Block, HOD Cabin',
+        'dept': 'AIML',
+        'designation': 'Professor & HOD (AIML)',
+        'email': 'hodaiml@pdaengg.com',
+        'name': 'Dr. Basavaraj S. Mathapati',
+        'phone': '08472-224360 (Ext. 207)',
+        'slots': [   ('Mon', '09:00', '10:00', '5th Sem AIML-A', 'LH-15', 'Data Science & Applications (DSA)'),
+                     ('Mon', '11:15', '12:15', '5th Sem AIML-B', 'LH-16', 'Human Computer Interface (HCI)'),
+                     ('Tue', '09:00', '10:00', '5th Sem AIML-A', 'LH-15', 'Data Science & Applications (DSA)'),
+                     ('Wed', '09:00', '10:00', '5th Sem AIML-A', 'LH-15', 'Data Science & Applications (DSA)'),
+                     ('Thu', '09:00', '10:00', '5th Sem AIML-B', 'LH-16', 'Human Computer Interface (HCI)'),
+                     ('Fri', '09:00', '10:00', '5th Sem AIML-B', 'LH-16', 'Human Computer Interface (HCI)'),
+                     ('Sat', '10:00', '11:00', '5th Sem AIML-A', 'LH-15', 'Data Science & Applications (DSA)')]},
+    {   'cabin': 'AIML Dept, Senior Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Associate Professor (AIML)',
+        'email': 'nandinip@pdaengg.com',
+        'name': 'Dr. Nandini P',
+        'phone': '08472-224360',
+        'slots': [   ('Tue', '14:00', '15:00', '5th Sem AIML-B', 'LH-16', 'Principles of Machine Learning (PML)'),
+                     ('Wed', '12:15', '13:15', '5th Sem AIML-B', 'LH-16', 'Principles of Machine Learning (PML)'),
+                     ('Thu', '15:00', '16:00', '5th Sem AIML-B', 'LH-16', 'Principles of Machine Learning (PML)'),
+                     ('Fri', '10:00', '11:00', '5th Sem AIML-B', 'LH-16', 'Principles of Machine Learning (PML)'),
+                     ('Sat', '09:00', '10:00', '3rd Sem AIML-A', 'LH-09', 'Community Project (CP)'),
+                     ('Sat', '10:00', '11:00', '3rd Sem AIML-A', 'LH-09', 'Community Project (CP)')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'rajashekharb@pdaengg.com',
+        'name': 'Prof. Rajashekhar B',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '09:00', '11:00', '3rd Sem AIML-A', 'AIML Lab', 'OOP Lab B1'),
+                     ('Mon', '12:15', '13:15', '3rd Sem AIML-A', 'LH-09', 'OOP with Java'),
+                     ('Tue', '12:15', '13:15', '3rd Sem AIML-A', 'LH-09', 'OOP with Java'),
+                     ('Thu', '09:00', '10:00', '3rd Sem AIML-A', 'LH-09', 'OOP with Java'),
+                     ('Thu', '14:00', '16:00', '3rd Sem AIML-A', 'AIML Lab', 'OOP Lab B2')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'priyankad@pdaengg.com',
+        'name': 'Prof. Priyanka Devani',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '14:00', '16:00', '5th Sem AIML-A', 'AIML Lab', 'AIML Lab B1'),
+                     ('Tue', '14:00', '16:00', '5th Sem AIML-A', 'AIML Lab', 'AIML Lab B2')]},
+    {   'cabin': 'AIML Dept, Cabin (3rd Sem Sec-B Class Coordinator)',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor & 3rd Sem Sec-B Coordinator (AIML)',
+        'email': 'sowmyag@pdaengg.com',
+        'name': 'Prof. Sowmya Gaitond',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '14:00', '15:00', '3rd Sem AIML-B', 'LH-09', 'Operating Systems (OS)'),
+                     ('Tue', '12:15', '13:15', '3rd Sem AIML-B', 'LH-15', 'Operating Systems (OS)'),
+                     ('Thu', '14:00', '16:00', '3rd Sem AIML-B', 'AIML Lab', 'AEC (DVP) Lab'),
+                     ('Fri', '14:00', '15:00', '3rd Sem AIML-B', 'LH-16', 'Operating Systems (OS)')]},
+    {   'cabin': 'AIML Dept, Cabin (5th Sem Sec-A Class Coordinator)',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor & 5th Sem Sec-A Coordinator (AIML)',
+        'email': 'mallinaths@pdaengg.com',
+        'name': 'Prof. Mallinath Swamy',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '12:15', '13:15', '5th Sem AIML-A', 'LH-15', 'Principles of Machine Learning (PML)'),
+                     ('Thu', '14:00', '15:00', '5th Sem AIML-A', 'LH-15', 'Principles of Machine Learning (PML)'),
+                     ('Fri', '10:00', '11:00', '5th Sem AIML-A', 'LH-15', 'Principles of Machine Learning (PML)'),
+                     ('Sat', '09:00', '10:00', '5th Sem AIML-A', 'LH-15', 'Principles of Machine Learning (PML)')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'kaverik@pdaengg.com',
+        'name': 'Dr. Kaveri Kori',
+        'phone': '08472-224360',
+        'slots': [   ('Wed', '11:15', '13:15', '3rd Sem AIML-A', 'AIML Lab', 'AEC (DVP) Lab'),
+                     ('Wed', '14:00', '15:00', '5th Sem AIML-A', 'LH-15', 'Research Methodology & IPR (RMIPR)'),
+                     ('Fri', '14:00', '15:00', '5th Sem AIML-A', 'LH-15', 'Research Methodology & IPR (RMIPR)'),
+                     ('Sat', '11:15', '12:15', '5th Sem AIML-A', 'LH-15', 'Research Methodology & IPR (RMIPR)')]},
+    {   'cabin': 'AIML Dept, Cabin (3rd Sem Sec-A Class Coordinator)',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor & 3rd Sem Sec-A Coordinator (AIML)',
+        'email': 'ashwinih@pdaengg.com',
+        'name': 'Prof. Ashwini Hatti',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '10:00', '11:00', '3rd Sem AIML-B', 'LH-09', 'Data Structures & Applications (DSC)'),
+                     ('Tue', '09:00', '10:00', '3rd Sem AIML-B', 'LH-09', 'Data Structures & Applications (DSC)'),
+                     ('Wed', '09:00', '10:00', '1st Sem AIML-G', 'FB LH07', 'Programming in C'),
+                     ('Thu', '11:15', '12:15', '3rd Sem AIML-B', 'LH-15', 'Data Structures & Applications (DSC)'),
+                     ('Fri', '10:00', '11:00', '1st Sem AIML-G', 'FB LH07', 'Programming in C'),
+                     ('Sat', '10:00', '11:00', '1st Sem AIML-G', 'FB LH07', 'Programming in C')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'sonalim@pdaengg.com',
+        'name': 'Prof. Sonali M',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '09:00', '10:00', '3rd Sem AIML-B', 'LH-09', 'Digital System Design (DSDO)'),
+                     ('Mon', '10:00', '11:00', '5th Sem AIML-B', 'AIML Lab', 'Mini-Project B1'),
+                     ('Tue', '09:00', '11:00', '5th Sem AIML-B', 'AIML Lab', 'Mini-Project B2'),
+                     ('Wed', '09:00', '11:00', '3rd Sem AIML-B', 'AIML Lab', 'DSDO Lab B1'),
+                     ('Thu', '12:15', '13:15', '3rd Sem AIML-B', 'LH-15', 'Digital System Design (DSDO)'),
+                     ('Fri', '11:15', '13:15', '3rd Sem AIML-B', 'AIML Lab', 'DSDO Lab B2'),
+                     ('Fri', '15:00', '16:00', '3rd Sem AIML-B', 'LH-16', 'Digital System Design (DSDO)')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'nehaa@pdaengg.com',
+        'name': 'Prof. Neha A',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '09:00', '11:00', '3rd Sem AIML-A', 'AIML Lab', 'DSC Lab B2'),
+                     ('Mon', '11:15', '12:15', '3rd Sem AIML-A', 'LH-09', 'Data Structures & Applications (DSC)'),
+                     ('Tue', '09:00', '11:00', '3rd Sem AIML-A', 'AIML Lab', 'DSC Lab B1'),
+                     ('Wed', '12:15', '13:15', '5th Sem AIML-A', 'LH-15', 'Human Computer Interface (HCI)'),
+                     ('Wed', '14:00', '15:00', '3rd Sem AIML-A', 'LH-09', 'Data Structures & Applications (DSC)'),
+                     ('Thu', '12:15', '13:15', '3rd Sem AIML-A', 'LH-09', 'Data Structures & Applications (DSC)'),
+                     ('Thu', '15:00', '16:00', '5th Sem AIML-A', 'LH-15', 'Human Computer Interface (HCI)'),
+                     ('Fri', '09:00', '10:00', '5th Sem AIML-A', 'LH-15', 'Human Computer Interface (HCI)')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'savithap@pdaengg.com',
+        'name': 'Prof. Savitha P',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '11:15', '13:15', '3rd Sem AIML-B', 'AIML Lab', 'DSC Lab B1'),
+                     ('Tue', '14:00', '15:00', '3rd Sem AIML-A', 'LH-09', 'Operating Systems (OS)'),
+                     ('Wed', '09:00', '11:00', '3rd Sem AIML-B', 'AIML Lab', 'DSC Lab B2'),
+                     ('Thu', '10:00', '11:00', '3rd Sem AIML-A', 'LH-09', 'Operating Systems (OS)'),
+                     ('Thu', '14:00', '16:00', '3rd Sem AIML-A', 'AIML Lab', 'OOP Lab B2'),
+                     ('Fri', '10:00', '11:00', '3rd Sem AIML-A', 'LH-09', 'Operating Systems (OS)')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'laxmij@pdaengg.com',
+        'name': 'Prof. Laxmi J',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '15:00', '16:00', '5th Sem AIML-B', 'LH-16', 'Research Methodology & IPR (RMIPR)'),
+                     ('Tue', '09:00', '11:00', '3rd Sem AIML-A', 'AIML Lab', 'DSDO Lab B2'),
+                     ('Tue', '11:15', '13:15', '5th Sem AIML-A', 'AIML Lab', 'Mini-Project B2'),
+                     ('Tue', '15:00', '16:00', '3rd Sem AIML-A', 'LH-09', 'Digital System Design (DSDO)'),
+                     ('Wed', '10:00', '11:00', '3rd Sem AIML-A', 'LH-09', 'Digital System Design (DSDO)'),
+                     ('Thu', '11:15', '13:15', '5th Sem AIML-A', 'AIML Lab', 'Mini-Project B1'),
+                     ('Thu', '14:00', '16:00', '3rd Sem AIML-A', 'AIML Lab', 'DSDO Lab B1'),
+                     ('Fri', '09:00', '10:00', '3rd Sem AIML-A', 'LH-09', 'Digital System Design (DSDO)'),
+                     ('Fri', '11:15', '12:15', '5th Sem AIML-B', 'LH-16', 'Research Methodology & IPR (RMIPR)'),
+                     ('Sat', '10:00', '11:00', '5th Sem AIML-B', 'LH-16', 'Research Methodology & IPR (RMIPR)')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'santoship@pdaengg.com',
+        'name': 'Prof. Santoshi P',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '10:00', '11:00', '5th Sem AIML-A', 'LH-15', 'Database Management Systems (DBMS)'),
+                     ('Mon', '14:00', '16:00', '5th Sem AIML-A', 'DBMS Lab', 'DBMS Lab B2'),
+                     ('Tue', '10:00', '11:00', '5th Sem AIML-A', 'LH-15', 'Database Management Systems (DBMS)'),
+                     ('Tue', '14:00', '16:00', '5th Sem AIML-A', 'DBMS Lab', 'DBMS Lab B1'),
+                     ('Wed', '10:00', '11:00', '5th Sem AIML-A', 'LH-15', 'Database Management Systems (DBMS)')]},
+    {   'cabin': 'AIML Dept, Cabin (5th Sem Sec-B Class Coordinator)',
+        'dept': 'AIML',
+        'designation': 'Associate Professor & 5th Sem Sec-B Coordinator (AIML)',
+        'email': 'sharanammah@pdaengg.com',
+        'name': 'Dr. Sharanamma H',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '12:15', '13:15', '5th Sem AIML-B', 'LH-16', 'Database Management Systems (DBMS)'),
+                     ('Tue', '10:00', '11:00', '3rd Sem AIML-B', 'LH-09', 'OOP with Java'),
+                     ('Tue', '14:00', '16:00', '3rd Sem AIML-B', 'LH-15', 'Community Project (CP)'),
+                     ('Wed', '14:00', '15:00', '5th Sem AIML-B', 'LH-16', 'Database Management Systems (DBMS)'),
+                     ('Thu', '09:00', '10:00', '3rd Sem AIML-B', 'LH-15', 'OOP with Java'),
+                     ('Fri', '11:15', '13:15', '3rd Sem AIML-B', 'AIML Lab', 'OOP Lab B1'),
+                     ('Fri', '12:15', '13:15', '5th Sem AIML-B', 'LH-16', 'Database Management Systems (DBMS)'),
+                     ('Fri', '14:00', '16:00', '5th Sem AIML-B', 'DBMS Lab', 'DBMS Lab B1'),
+                     ('Sat', '09:00', '10:00', '3rd Sem AIML-B', 'LH-09', 'OOP with Java'),
+                     ('Sat', '11:15', '13:15', '5th Sem AIML-B', 'DBMS Lab', 'DBMS Lab B2')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'shreyag@pdaengg.com',
+        'name': 'Prof. Shreya G',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '11:15', '13:15', '3rd Sem AIML-B', 'AIML Lab', 'OOP Lab B2'),
+                     ('Mon', '14:00', '15:00', '5th Sem AIML-B', 'LH-16', 'Data Science & Applications (DSA)'),
+                     ('Tue', '12:15', '13:15', '5th Sem AIML-B', 'LH-16', 'Data Science & Applications (DSA)'),
+                     ('Wed', '11:15', '12:15', '5th Sem AIML-B', 'LH-16', 'Data Science & Applications (DSA)'),
+                     ('Thu', '14:00', '15:00', '5th Sem AIML-B', 'LH-16', 'Data Science & Applications (DSA)'),
+                     ('Fri', '14:00', '16:00', '5th Sem AIML-B', 'AIML Lab', 'AIML Lab B2'),
+                     ('Sat', '11:15', '13:15', '5th Sem AIML-B', 'AIML Lab', 'AIML Lab B1')]},
+    {   'cabin': 'AIML Dept, Faculty Cabin',
+        'dept': 'AIML',
+        'designation': 'Assistant Professor (AIML)',
+        'email': 'cbiradar@pdaengg.com',
+        'name': 'Prof. Chandrakant Biradar',
+        'phone': '08472-224360',
+        'slots': [   ('Mon', '10:00', '11:00', '1st Sem AIML-H', 'FB LH08', 'Programming in C'),
+                     ('Tue', '12:15', '13:15', '1st Sem AIML-H', 'FB LH08', 'Programming in C'),
+                     ('Wed', '09:00', '10:00', '1st Sem AIML-H', 'FB LH08', 'Programming in C')]}]
 
 
 def init_db():
     conn = get_db()
-    try:
-        conn.executescript(
+    conn.executescript(
+        """
+        DROP TABLE IF EXISTS teachers;
+        DROP TABLE IF EXISTS slots;
+        DROP TABLE IF EXISTS departments;
+        DROP TABLE IF EXISTS scholarships;
+        DROP TABLE IF EXISTS first_year_timetable;
+        DROP TABLE IF EXISTS first_year_esc_courses;
+        DROP TABLE IF EXISTS students;
+        DROP TABLE IF EXISTS student_records;
+
+        CREATE TABLE IF NOT EXISTS teachers(
+            id INTEGER PRIMARY KEY,
+            name TEXT UNIQUE,
+            dept TEXT,
+            cabin TEXT,
+            phone TEXT,
+            email TEXT,
+            designation TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS slots(
+            id INTEGER PRIMARY KEY,
+            teacher_id INTEGER,
+            day TEXT,
+            start_time TEXT,
+            end_time TEXT,
+            class_name TEXT,
+            room TEXT,
+            subject TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS departments(
+            code TEXT PRIMARY KEY,
+            name TEXT,
+            intake INTEGER,
+            fee_govt INTEGER,
+            cutoff_kcet INTEGER,
+            open_seats INTEGER,
+            hod TEXT,
+            phone TEXT,
+            email TEXT,
+            description TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS scholarships(
+            id INTEGER PRIMARY KEY,
+            title TEXT,
+            category TEXT,
+            eligibility TEXT,
+            benefit TEXT,
+            portal_link TEXT,
+            deadline TEXT,
+            documents_required TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS staff_users(
+            id INTEGER PRIMARY KEY,
+            username TEXT UNIQUE,
+            password TEXT,
+            full_name TEXT,
+            dept TEXT,
+            role TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS students(
+            usn TEXT PRIMARY KEY,
+            name TEXT,
+            dept TEXT,
+            sem INTEGER,
+            section TEXT,
+            attendance REAL,
+            cie1 INTEGER,
+            cie2 INTEGER,
+            cie3 INTEGER,
+            assignment INTEGER,
+            lab INTEGER
+        );
+
+        CREATE TABLE IF NOT EXISTS student_records(
+            id INTEGER PRIMARY KEY,
+            usn TEXT,
+            subject_code TEXT,
+            subject_name TEXT,
+            attendance REAL,
+            cie1 INTEGER,
+            cie2 INTEGER,
+            cie3 INTEGER,
+            assignment INTEGER,
+            lab INTEGER
+        );
+
+        CREATE TABLE IF NOT EXISTS first_year_timetable(
+            id INTEGER PRIMARY KEY,
+            year INTEGER DEFAULT 1,
+            semester INTEGER DEFAULT 1,
+            section TEXT,
+            dept TEXT,
+            stream TEXT,
+            room TEXT,
+            subject_code TEXT,
+            subject_title TEXT,
+            faculty TEXT,
+            faculty_dept TEXT,
+            day TEXT,
+            period INTEGER,
+            slot_label TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS first_year_esc_courses(
+            id INTEGER PRIMARY KEY,
+            year INTEGER DEFAULT 1,
+            semester INTEGER DEFAULT 1,
+            course_code TEXT,
+            course_title TEXT,
+            batch TEXT,
+            faculty TEXT,
+            room TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS notices(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            date TEXT NOT NULL,
+            category TEXT DEFAULT 'Notice',
+            link TEXT DEFAULT 'https://www.pdacek.ac.in/announcement.php',
+            details TEXT DEFAULT ''
+        );
+
+        CREATE TABLE IF NOT EXISTS study_materials(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            dept TEXT NOT NULL,
+            scheme TEXT NOT NULL,
+            resource_type TEXT NOT NULL,
+            title TEXT NOT NULL,
+            content TEXT DEFAULT '',
+            link TEXT DEFAULT ''
+        );
+        """
+    )
+
+    # 1. Seed Senior Faculty & HODs + CSV Teachers & Slots
+    for sf in SENIOR_FACULTY_SLOTS:
+        conn.execute(
             """
-            CREATE TABLE IF NOT EXISTS teachers(
-                id INTEGER PRIMARY KEY,
-                name TEXT UNIQUE,
-                dept TEXT,
-                cabin TEXT,
-                phone TEXT,
-                email TEXT,
-                designation TEXT
-            );
+            INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (sf["name"], sf["dept"], sf["cabin"], sf["phone"], sf["email"], sf["designation"]),
+        )
+        tid = conn.execute("SELECT id FROM teachers WHERE name=?", (sf["name"],)).fetchone()[0]
+        for day, st, et, cls_name, rm, subj in sf["slots"]:
+            conn.execute(
+                """
+                INSERT INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (tid, day, st, et, cls_name, rm, subj),
+            )
 
-            CREATE TABLE IF NOT EXISTS slots(
-                id INTEGER PRIMARY KEY,
-                teacher_id INTEGER,
-                day TEXT,
-                start_time TEXT,
-                end_time TEXT,
-                class_name TEXT,
-                room TEXT,
-                subject TEXT
-            );
-
-            CREATE TABLE IF NOT EXISTS departments(
-                code TEXT PRIMARY KEY,
-                name TEXT,
-                intake INTEGER,
-                fee_govt INTEGER,
-                cutoff_kcet INTEGER,
-                open_seats INTEGER,
-                hod TEXT,
-                phone TEXT,
-                email TEXT,
-                description TEXT
-            );
-
-            CREATE TABLE IF NOT EXISTS scholarships(
-                id INTEGER PRIMARY KEY,
-                title TEXT,
-                category TEXT,
-                eligibility TEXT,
-                benefit TEXT,
-                portal_link TEXT,
-                deadline TEXT,
-                documents_required TEXT
-            );
-
-            CREATE TABLE IF NOT EXISTS staff_users(
-                id INTEGER PRIMARY KEY,
-                username TEXT UNIQUE,
-                password TEXT,
-                full_name TEXT,
-                dept TEXT,
-                role TEXT
-            );
-
-            CREATE TABLE IF NOT EXISTS students(
-                usn TEXT PRIMARY KEY,
-                name TEXT,
-                dept TEXT,
-                sem INTEGER,
-                section TEXT,
-                attendance REAL,
-                cie1 INTEGER,
-                cie2 INTEGER,
-                cie3 INTEGER,
-                assignment INTEGER,
-                lab INTEGER
-            );
-
-            CREATE TABLE IF NOT EXISTS student_records(
-                id INTEGER PRIMARY KEY,
-                usn TEXT,
-                subject_code TEXT,
-                subject_name TEXT,
-                attendance REAL,
-                cie1 INTEGER,
-                cie2 INTEGER,
-                cie3 INTEGER,
-                assignment INTEGER,
-                lab INTEGER
-            );
-
-            CREATE TABLE IF NOT EXISTS first_year_timetable(
-                id INTEGER PRIMARY KEY,
-                year INTEGER DEFAULT 1,
-                semester INTEGER DEFAULT 1,
-                section TEXT,
-                dept TEXT,
-                stream TEXT,
-                room TEXT,
-                subject_code TEXT,
-                subject_title TEXT,
-                faculty TEXT,
-                faculty_dept TEXT,
-                day TEXT,
-                period INTEGER,
-                slot_label TEXT
-            );
-
-            CREATE TABLE IF NOT EXISTS first_year_esc_courses(
-                id INTEGER PRIMARY KEY,
-                year INTEGER DEFAULT 1,
-                semester INTEGER DEFAULT 1,
-                course_code TEXT,
-                course_title TEXT,
-                batch TEXT,
-                faculty TEXT,
-                room TEXT
-            );
-
-            CREATE TABLE IF NOT EXISTS notices(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT NOT NULL,
-                date TEXT NOT NULL,
-                category TEXT DEFAULT 'Notice',
-                link TEXT DEFAULT 'https://www.pdacek.ac.in/announcement.php',
-                details TEXT DEFAULT ''
-            );
-
-            CREATE TABLE IF NOT EXISTS study_materials(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                dept TEXT NOT NULL,
-                scheme TEXT NOT NULL,
-                resource_type TEXT NOT NULL,
-                title TEXT NOT NULL,
-                content TEXT DEFAULT '',
-                link TEXT DEFAULT ''
-            );
+    # Also ensure every department HOD is in teachers table
+    for d in seed.DEPARTMENTS:
+        conn.execute(
             """
+            INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                d["hod"],
+                d["code"],
+                d.get("cabin", f"{d['code']} Dept HOD Cabin"),
+                d["phone"],
+                d["email"],
+                f"Professor & HOD ({d['code']})",
+            ),
         )
 
-        if conn.execute("SELECT COUNT(*) FROM teachers").fetchone()[0] == 0:
-            for sf in SENIOR_FACULTY_SLOTS:
+    if os.path.exists(CSV_FILE):
+        with open(CSV_FILE, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for r in reader:
                 conn.execute(
                     """
                     INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
                     VALUES (?, ?, ?, ?, ?, ?)
                     """,
-                    (sf["name"], sf["dept"], sf["cabin"], sf["phone"], sf["email"], sf["designation"]),
-                )
-                tid = conn.execute("SELECT id FROM teachers WHERE name=?", (sf["name"],)).fetchone()[0]
-                for day, st, et, cls_name, rm, subj in sf["slots"]:
-                    conn.execute(
-                        """
-                        INSERT OR IGNORE INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                        """,
-                        (tid, day, st, et, cls_name, rm, subj),
-                    )
-
-        if conn.execute("SELECT COUNT(*) FROM departments").fetchone()[0] == 0:
-            for d in seed.DEPARTMENTS:
-                conn.execute(
-                    """
-                    INSERT OR IGNORE INTO departments(code, name, intake, fee_govt, cutoff_kcet, open_seats, hod, phone, email, description)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
                     (
-                        d["code"],
-                        d["name"],
-                        d["intake"],
-                        d["fee_govt"],
-                        d["cutoff_kcet"],
-                        d["open_seats"],
-                        d["hod"],
-                        d["phone"],
-                        d["email"],
-                        d["description"],
+                        r.get("teacher"),
+                        r.get("dept"),
+                        r.get("cabin"),
+                        r.get("phone", "08472-224360"),
+                        r.get("email", "principal@pdaengg.com"),
+                        r.get("designation", "Faculty Member"),
                     ),
                 )
+                tid = conn.execute(
+                    "SELECT id FROM teachers WHERE name=?", (r.get("teacher"),)
+                ).fetchone()[0]
 
-        if conn.execute("SELECT COUNT(*) FROM scholarships").fetchone()[0] == 0:
-            for s in seed.SCHOLARSHIPS:
                 conn.execute(
                     """
-                    INSERT OR IGNORE INTO scholarships(title, category, eligibility, benefit, portal_link, deadline, documents_required)
+                    INSERT INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
                     VALUES (?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
-                        s["title"],
-                        s["category"],
-                        s["eligibility"],
-                        s["benefit"],
-                        s["portal_link"],
-                        s["deadline"],
-                        s["documents_required"],
+                        tid,
+                        r.get("day"),
+                        r.get("start"),
+                        r.get("end"),
+                        r.get("class"),
+                        r.get("room"),
+                        r.get("subject", "Theory/Lab"),
                     ),
                 )
 
-        if conn.execute("SELECT COUNT(*) FROM first_year_timetable").fetchone()[0] == 0:
-            for section, info in fy_data.FIRST_YEAR_TIMETABLE.items():
-                subj_lookup = {sub["code"]: sub for sub in info.get("faculties", [])}
-                for day, periods in info.get("schedule", {}).items():
-                    for period_num, slot_label in enumerate(periods, start=1):
-                        matched_code = ""
-                        matched_title = slot_label
-                        matched_faculty = ""
-                        matched_faculty_dept = ""
+    # 2. Departments
+    for d in seed.DEPARTMENTS:
+        conn.execute(
+            """
+            INSERT OR REPLACE INTO departments(code, name, intake, fee_govt, cutoff_kcet, open_seats, hod, phone, email, description)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                d["code"],
+                d["name"],
+                d["intake"],
+                d["fee_govt"],
+                d["cutoff_kcet"],
+                d["open_seats"],
+                d["hod"],
+                d["phone"],
+                d["email"],
+                d["description"],
+            ),
+        )
 
-                        for code, meta in subj_lookup.items():
-                            if code in slot_label or meta["title"][:10].lower() in slot_label.lower():
-                                matched_code = code
-                                matched_title = meta["title"]
-                                matched_faculty = meta["faculty"]
-                                matched_faculty_dept = meta["dept"]
-                                break
+    # 3. Scholarships
+    for s in seed.SCHOLARSHIPS:
+        conn.execute(
+            """
+            INSERT INTO scholarships(title, category, eligibility, benefit, portal_link, deadline, documents_required)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                s["title"],
+                s["category"],
+                s["eligibility"],
+                s["benefit"],
+                s["portal_link"],
+                s["deadline"],
+                s["documents_required"],
+            ),
+        )
 
-                        conn.execute(
-                            """
-                            INSERT OR IGNORE INTO first_year_timetable(
-                                year, semester, section, dept, stream, room,
-                                subject_code, subject_title, faculty, faculty_dept,
-                                day, period, slot_label
-                            ) VALUES (1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                            """,
-                            (
-                                section,
-                                info.get("dept", ""),
-                                info.get("stream", ""),
-                                info.get("room", ""),
-                                matched_code,
-                                matched_title,
-                                matched_faculty,
-                                matched_faculty_dept,
-                                day,
-                                period_num,
-                                slot_label,
-                            ),
-                        )
+    # 4. 1st Year Timetable (Sem 1, Sections A–R)
+    for section, info in fy_data.FIRST_YEAR_TIMETABLE.items():
+        subj_lookup = {sub["code"]: sub for sub in info.get("faculties", [])}
+        for day, periods in info.get("schedule", {}).items():
+            for period_num, slot_label in enumerate(periods, start=1):
+                matched_code = ""
+                matched_title = slot_label
+                matched_faculty = ""
+                matched_faculty_dept = ""
 
-        if conn.execute("SELECT COUNT(*) FROM first_year_esc_courses").fetchone()[0] == 0:
-            for course in fy_data.ESC_COURSES:
-                for batch_info in course.get("batches", []):
-                    conn.execute(
-                        """
-                        INSERT OR IGNORE INTO first_year_esc_courses(
-                            year, semester, course_code, course_title, batch, faculty, room
-                        ) VALUES (1, 1, ?, ?, ?, ?, ?)
-                        """,
-                        (
-                            course["code"],
-                            course["title"],
-                            batch_info["batch"],
-                            batch_info["faculty"],
-                            batch_info["room"],
-                        ),
-                    )
+                for code, meta in subj_lookup.items():
+                    if code in slot_label or meta["title"][:10].lower() in slot_label.lower():
+                        matched_code = code
+                        matched_title = meta["title"]
+                        matched_faculty = meta["faculty"]
+                        matched_faculty_dept = meta["dept"]
+                        break
 
-        if conn.execute("SELECT COUNT(*) FROM notices").fetchone()[0] == 0:
-            for n in seed.RECENT_NOTICES:
                 conn.execute(
-                    "INSERT OR IGNORE INTO notices(title, date, category, link, details) VALUES (?,?,?,?,?)",
-                    (n["title"], n["date"], n["category"], n["link"], n["details"]),
+                    """
+                    INSERT INTO first_year_timetable(
+                        year, semester, section, dept, stream, room,
+                        subject_code, subject_title, faculty, faculty_dept,
+                        day, period, slot_label
+                    ) VALUES (1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        section,
+                        info.get("dept", ""),
+                        info.get("stream", ""),
+                        info.get("room", ""),
+                        matched_code,
+                        matched_title,
+                        matched_faculty,
+                        matched_faculty_dept,
+                        day,
+                        period_num,
+                        slot_label,
+                    ),
                 )
 
-        default_staff = [
-            (os.getenv("STAFF_CSE_USER", "staff_cse"), os.getenv("STAFF_CSE_PASS", "pda1958"), "Dr. S. R. Patil", "CSE", "Professor & HOD"),
-            (os.getenv("STAFF_ISE_USER", "staff_ise"), os.getenv("STAFF_ISE_PASS", "pda1958"), "Dr. Ramesh Kulkarni", "ISE", "Professor & HOD"),
-            (os.getenv("STAFF_AIML_USER", "basavaraj.mathapati"), os.getenv("STAFF_AIML_PASS", "pda1958"), "Dr. Basavaraj S. Mathapati", "AIML", "Professor & HOD"),
-            (os.getenv("STAFF_ADMIN_USER", "admin"), os.getenv("STAFF_ADMIN_PASS", "pdaadmin2026"), "Principal Office", "Administration", "Administrator"),
-        ]
-        for u, p, fn, dp, rl in default_staff:
+    # 5. 1st Year ESC Courses
+    for course in fy_data.ESC_COURSES:
+        for batch_info in course.get("batches", []):
             conn.execute(
-                "INSERT OR IGNORE INTO staff_users(username, password, full_name, dept, role) VALUES (?,?,?,?,?)",
-                (u, p, fn, dp, rl),
+                """
+                INSERT INTO first_year_esc_courses(
+                    year, semester, course_code, course_title, batch, faculty, room
+                ) VALUES (1, 1, ?, ?, ?, ?, ?)
+                """,
+                (
+                    course["code"],
+                    course["title"],
+                    batch_info["batch"],
+                    batch_info["faculty"],
+                    batch_info["room"],
+                ),
             )
 
-        if os.path.exists(CSV_FILE):
-            teacher_count = conn.execute("SELECT COUNT(*) FROM teachers").fetchone()[0]
-            if teacher_count > 0:
-                with open(CSV_FILE, newline="", encoding="utf-8") as f:
-                    reader = csv.DictReader(f)
-                    for r in reader:
-                        conn.execute(
-                            """
-                            INSERT OR IGNORE INTO teachers(name, dept, cabin, phone, email, designation)
-                            VALUES (?, ?, ?, ?, ?, ?)
-                            """,
-                            (
-                                r.get("teacher"),
-                                r.get("dept"),
-                                r.get("cabin"),
-                                r.get("phone", "08472-224360"),
-                                r.get("email", "principal@pdaengg.com"),
-                                r.get("designation", "Faculty Member"),
-                            ),
-                        )
-                        tid = conn.execute(
-                            "SELECT id FROM teachers WHERE name=?", (r.get("teacher"),)
-                        ).fetchone()
-                        if tid:
-                            tid = tid[0]
-                            conn.execute(
-                                """
-                                INSERT OR IGNORE INTO slots(teacher_id, day, start_time, end_time, class_name, room, subject)
-                                VALUES (?, ?, ?, ?, ?, ?, ?)
-                                """,
-                                (
-                                    tid,
-                                    r.get("day"),
-                                    r.get("start"),
-                                    r.get("end"),
-                                    r.get("class"),
-                                    r.get("room"),
-                                    r.get("subject", "Theory/Lab"),
-                                ),
-                            )
+    # 6. Staff users & Official Notices
+    default_staff = [
+        ("staff_cse", "pda1958", "Dr. S. R. Patil", "CSE", "Professor & HOD"),
+        ("staff_ise", "pda1958", "Dr. Ramesh Kulkarni", "ISE", "Professor & HOD"),
+        ("basavaraj.mathapati", "pda1958", "Dr. Basavaraj S. Mathapati", "AIML", "Professor & HOD"),
+        ("ramesh.kulkarni", "pda1958", "Dr. Ramesh Kulkarni", "ISE", "Professor & HOD"),
+        ("mahesh.biradar", "pda1958", "Dr. Mahesh Biradar", "ECE", "Professor & HOD"),
+        ("admin", "pdaadmin2026", "Principal Office", "Administration", "Administrator"),
+    ]
+    for u, p, fn, dp, rl in default_staff:
+        conn.execute(
+            "INSERT OR IGNORE INTO staff_users(username, password, full_name, dept, role) VALUES (?,?,?,?,?)",
+            (u, p, fn, dp, rl),
+        )
 
-        conn.commit()
-    finally:
-        conn.close()
+    existing_notices = conn.execute("SELECT COUNT(*) FROM notices").fetchone()[0]
+    if existing_notices == 0:
+        for n in seed.RECENT_NOTICES:
+            conn.execute(
+                "INSERT INTO notices(title, date, category, link, details) VALUES (?,?,?,?,?)",
+                (n["title"], n["date"], n["category"], n["link"], n["details"]),
+            )
+
+    conn.commit()
+    conn.close()
 
 
-@app.on_event("startup")
-def startup_event():
-    init_db()
+init_db()
 
 
 class ChatRequest(BaseModel):
@@ -793,7 +625,7 @@ def greet(lang: str = "en"):
         },
         "hi": {
             "title": "नमस्ते! पी.डी.ए. कॉलेज ऑफ इंजीनियरिंग कैंपस बॉट में आपका स्वागत है",
-            "subtitle": "स्वायत्त संस्थान (स्थापنة 1958) | कलबुर्गी",
+            "subtitle": "स्वायत्त संस्थान (स्थापना 1958) | कलबुर्गी",
         },
     }
     return greetings.get(lang, greetings["en"])
@@ -859,7 +691,8 @@ def locate_teacher(name: str, day: Optional[str] = None, time: Optional[str] = N
             (t["id"], day, time, time),
         ).fetchone()
         nxt = conn.execute(
-            "SELECT * FROM slots WHERE teacher_id=? AND lower(day)=lower(?) AND start_time>? ORDER BY start_time LIMIT 1",
+            "SELECT * FROM slots WHERE teacher_id=? AND lower(day)=lower(?) AND start_time>? "
+            "ORDER BY start_time LIMIT 1",
             (t["id"], day, time),
         ).fetchone()
         all_slots = conn.execute(
@@ -1109,6 +942,83 @@ def get_first_year_esc_courses():
     return [dict(r) for r in rows]
 
 
+
+# -------------------------------------------------------------
+# AIML 2025 Scheme Endpoints (Job B)
+# -------------------------------------------------------------
+AIML_2025_DIR = os.path.join(os.path.dirname(__file__), "data", "aiml_2025")
+
+@app.get("/api/aiml-2025/subjects")
+def get_aiml_2025_subjects(cycle: Optional[str] = Query(None)):
+    p_path = os.path.join(AIML_2025_DIR, "subjects_p_cycle.json")
+    c_path = os.path.join(AIML_2025_DIR, "subjects_c_cycle.json")
+    p_subs = json.load(open(p_path, encoding="utf-8")) if os.path.exists(p_path) else []
+    c_subs = json.load(open(c_path, encoding="utf-8")) if os.path.exists(c_path) else []
+    if cycle and cycle.upper() == "P":
+        return {"cycle": "P", "subjects": p_subs}
+    elif cycle and cycle.upper() == "C":
+        return {"cycle": "C", "subjects": c_subs}
+    return {"p_cycle": p_subs, "c_cycle": c_subs}
+
+@app.get("/api/aiml-2025/syllabus/{code}")
+def get_aiml_2025_syllabus(code: str):
+    code_clean = code.strip().upper()
+    file_path = os.path.join(AIML_2025_DIR, "syllabus", f"{code_clean}.json")
+    if not os.path.exists(file_path):
+        if code_clean == "CSPH102":
+            file_path = os.path.join(AIML_2025_DIR, "syllabus", "CSPHY102.json")
+        elif code_clean == "KKIDT158":
+            file_path = os.path.join(AIML_2025_DIR, "syllabus", "KKIDTL158.json")
+    if os.path.exists(file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    raise HTTPException(status_code=404, detail=f"Syllabus for code {code} not found")
+
+@app.get("/api/aiml-2025/timetable")
+def get_aiml_2025_timetable(section: Optional[str] = Query(None)):
+    tt_path = os.path.join(AIML_2025_DIR, "timetable_p_cycle.json")
+    if not os.path.exists(tt_path):
+        raise HTTPException(status_code=404, detail="Timetable not found")
+    with open(tt_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if section:
+        sec_upper = section.strip().upper()
+        if sec_upper in data.get("sections", {}):
+            return {
+                "section": sec_upper,
+                "academic_year": data.get("academic_year"),
+                "w_e_f": data.get("w_e_f"),
+                "period_timings": data.get("period_timings"),
+                "details": data["sections"][sec_upper]
+            }
+        raise HTTPException(status_code=404, detail=f"Section {section} not found")
+    return data
+
+@app.get("/api/aiml-2025/teacher-index")
+def get_aiml_2025_teacher_index():
+    path = os.path.join(AIML_2025_DIR, "teacher_index.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+@app.get("/api/aiml-2025/esc-batches")
+def get_aiml_2025_esc_batches():
+    path = os.path.join(AIML_2025_DIR, "esc_batches.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+@app.get("/api/aiml-2025/resources/development")
+def get_aiml_2025_development_problems():
+    path = os.path.join(AIML_2025_DIR, "resources", "CSCED103_development.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
 @app.post("/api/rag")
 @app.post("/api/chat")
 def chat_bot(req: ChatRequest):
@@ -1176,8 +1086,3 @@ def serve_embed():
         with open("static/embed_example.html", encoding="utf-8") as f:
             return f.read()
     return "<h1>PDA Campus Assistant</h1>"
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("app:app", host=HOST, port=PORT, reload=False)

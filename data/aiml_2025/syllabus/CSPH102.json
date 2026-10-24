@@ -1,0 +1,133 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "CSPH102",
+  "name": "Quantum Physics and Applications",
+  "credits": 4.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "To study the interaction of light with matter through Einstein’s coefficients and its role in lasing action.",
+    "To study the principles of quantum mechanics and its application in quantum computing.",
+    "To study the electrical properties of materials.",
+    "To the characteristic properties of superconductors such as zero resistance, Meissner effect, and",
+    "persistent current.",
+    "To study the taxonomy of physics-based animation methods and explain the role of physical laws."
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Photonics",
+      "hours": 8,
+      "topics": [
+        "Interaction of radiation with matter – Einstein’s A and B coefficients, prerequisites for lasing",
+        "actions, types of LASER – Semiconductor diode LASER, use of attenuators for single photon sources,",
+        "optical modulators – Pockel’s effect, Kerr effect, photodete ctors – Single Photon Avalanche Diode,",
+        "Superconducting Nanowire Single Photon Detector. Optical fiber: Derivation of numerical aperture, V -",
+        "number, number of modes, losses in optical fiber, Mach-Zehnder interferometer, numerical problems."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Quantum Mechanics",
+      "hours": 8,
+      "topics": [
+        "De Broglie Hypothesis, Heisenberg’s Uncertainty Principle and its application",
+        "(Broadening of Spectral Lines), Principle of Complementarity, Wave Function, Time -independent",
+        "Schrödinger wave equation (Derivation), Physical significance of a wave function and Born Interpretation,",
+        "Expectation value and its physical significance, Eigenfunctions and Eigenvalues, Particle inside a one -",
+        "dimensional infinite potential well, Role of higher dimensions (Qualitative), Waveforms and Probabilities,",
+        "Particle inside a finite potential well and quantum tunneling, Numerical Problems."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Electrical Properties of Metals and Semiconductors",
+      "hours": 8,
+      "topics": [
+        "Failures of classical free electron theory, mechanisms of electron scattering in solids, Matthiessen’s rule,",
+        "assumptions of quantum free electron theory, density of states, Fermi -Dirac statistics, Fermi energy,",
+        "variation of Fermi factor with temperature an d energy, expression for carrier concentration, derivation of",
+        "electron concentration in an intrinsic semiconductor, expression for electron and hole concentration in an",
+        "extrinsic semiconductor, Fermi level for intrinsic (with derivation) and extrinsic semi conductor (no",
+        "derivation), Hall effect, numerical problems.",
+        "Textbook: 1 and 3"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Superconductivity",
+      "hours": 8,
+      "topics": [
+        "Zero resistance state, Persitent current, Meissner effect, Critical temperature, Critical",
+        "current (Silsbee Effect) – Derivation for a cylindrical wire using ampere’s law, Critical field, Formation of",
+        "Cooper pairs - Mediation of phonons, Two -fluid model, BCS Theory - Phase coherent state, Limitations",
+        "of BCS theory, Examples of systems with low and high electron -phonon coupling, Type -I and Type -II",
+        "superconductors, Formation of Vortices, Explanation for upper critical field, Cooper pair Tunneling",
+        "(Andreev reflection), Josephson junction, Flux quantization, DC and AC SQUID, Numerical Problems."
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Applications of Physics in computing",
+      "hours": 8,
+      "topics": [
+        "Physics of Animation:",
+        "Taxonomy of physics based animation methods, Frames, Frames per Second, Size and Scale, Weight and",
+        "Strength, Motion and Timing in Animations, Constant Force and Acceleration, The Odd rule, Odd -rule",
+        "Scenarios, Motion Graphs, Examples of Character Animation:  Jumping, Parts of Jump, Jump",
+        "Magnification, Stop Time, Walking: Strides and Steps, Walk Timing. Numerical Problems",
+        "Statistical Physics for Computing : Descriptive statistics and inferential statistics, Poisson distribution",
+        "and modeling the probability of proton decay, Normal Distributions (Bell Curves), Monte Carlo Method:",
+        "Determination of Value of π. Numerical Problems."
+      ]
+    }
+  ],
+  "lab_experiments": [
+    "Determination of wavelength of LASER using Diffraction Grating.",
+    "Determination of acceptance angle and numerical aperture of the given Optical Fiber.",
+    "Study the Characteristics of a Photo-Diode and to determine the power responsivity / Verification of Inverse",
+    "Determination of Planck's Constant using LEDs.",
+    "Determination of Fermi Energy of Copper.",
+    "Determination of Energy gap of the given Semiconductor.",
+    "Resonance in LCR circuit.",
+    "Characteristics of a Bipolar Junction Transistor.",
+    "Determination of dielectric constant of the material of capacitor by Charging and Discharging method.",
+    "Determination of resistivity of a semiconductor by Four Probe Method.",
+    "Predicting the outputs of various combinations of single and two-qubit gates using QUIRK Quantum",
+    "Air-wedge /Newtons to study the interference by the division of amplitude.",
+    "Predicting the outputs of various combinations of single and two-qubit gates using QUISKIT.",
+    "Data Analysis using Spread Sheet."
+  ],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": [
+    "Quantum Mechanics:  De Broglie Hypothesis, Heisenberg’s Uncertainty Principle and its application",
+    "(Broadening of Spectral Lines), Principle of Complementarity, Wave Function, Time -independent",
+    "Schrödinger wave equation (Derivation), Physical significance of a wave function and Born Interpretation,",
+    "Expectation value and its physical significance, Eigenfunctions and Eigenvalues, Particle inside a one -",
+    "dimensional infinite potential well, Role of higher dimensions (Qualitative), Waveforms and Probabilities,",
+    "Particle inside a finite potential well and quantum tunneling, Numerical Problems."
+  ],
+  "web_links": [
+    "1. NPTEL – Quantum Mechanics I (IIT Madras):https://nptel.ac.in/courses/115106066",
+    "https://archive.nptel.ac.in/courses/115/104/115104096",
+    "3. Solid State Physics – NPTEL (IIT Madras):https://nptel.ac.in/courses/115106127",
+    "5. YouTube Playlist Introduction Video:https://www.youtube.com/watch?v=SHoGV-sezNI",
+    "Lecture 1:https://digimat.in/nptel/courses/video/115105131/L01.html",
+    "10. Lecture 04 – Quantum Computing Basics:https://www.youtube.com/watch?v=-fttE1SzpD8",
+    "11. Lecture 08 – Quantum Gates and Circuits Part 1:https://www.youtube.com/watch?v=nGPr1QM_XrY"
+  ],
+  "course_outcomes": [
+    "CO1 Interpret the interaction of radiation with matter  and the operational principles of photonic",
+    "CO2 Explain the core concepts of quantum mechanics such as matter waves, the uncertainty principle,",
+    "CO3 Analyze the behavior of electrons in metals and semiconductors  using classical and quantum",
+    "CO4 Evaluate the principles and characteristics of superconductivity , including Meissner’s effect,",
+    "CO5 Summarize the basic concepts of quantum computing , including qubits, quantum gates, and"
+  ],
+  "data_status": "partial"
+}

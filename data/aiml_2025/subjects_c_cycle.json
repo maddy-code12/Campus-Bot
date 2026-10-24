@@ -1,0 +1,134 @@
+[
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "CSCHE202",
+    "normalized_code": "CSCHE102/202",
+    "name": "Applied Chemistry For Smart Systems",
+    "credits": 4.0,
+    "source_page": "51-53",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "CSMAT201",
+    "name": "Numerical Methods",
+    "credits": 4.0,
+    "source_page": "131-132",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "KKAIA203",
+    "normalized_code": "KKAIA103/203",
+    "name": "Introduction To AI And Applications",
+    "credits": 3.0,
+    "source_page": "68-69",
+    "syllabus_found": true,
+    "data_status": "partial"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "KKENG206",
+    "normalized_code": "BENGL106/206",
+    "name": "Communication Skills",
+    "credits": 1.0,
+    "source_page": "101-102",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "KKICO207",
+    "name": "Indian Constitution & Professional Ethics",
+    "credits": 0.0,
+    "source_page": null,
+    "syllabus_found": false,
+    "data_status": "coming_soon"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "KKxx204x",
+    "name": "Elective course",
+    "credits": 3.0,
+    "source_page": "70-79",
+    "syllabus_found": true,
+    "data_status": "available",
+    "options": [
+      {
+        "code": "KKBSM204A",
+        "title": "Building Sciences & Mechanics",
+        "credits": 3.0,
+        "source_page": "70-71"
+      },
+      {
+        "code": "KKIEE204B",
+        "title": "Introduction to Electrical Engineering",
+        "credits": 3.0,
+        "source_page": "72-73"
+      },
+      {
+        "code": "KKIEC204C",
+        "title": "Introduction to Electronics & Communication Engineering",
+        "credits": 3.0,
+        "source_page": "74-75"
+      },
+      {
+        "code": "KKIME204D",
+        "title": "Introduction to Mechanical Engineering",
+        "credits": 3.0,
+        "source_page": "76-77"
+      },
+      {
+        "code": "KKEIT204E",
+        "title": "Essentials of Information Technology",
+        "credits": 3.0,
+        "source_page": "78-79"
+      }
+    ]
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "KKPRJ258",
+    "name": "Interdisciplinary Project Based Learning",
+    "credits": 1.0,
+    "source_page": null,
+    "syllabus_found": false,
+    "data_status": "coming_soon"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "C",
+    "sem": 2,
+    "code": "KKPYP205B",
+    "normalized_code": "KKPYP105B/205B",
+    "name": "Python Programming",
+    "credits": 4.0,
+    "source_page": "96-98",
+    "syllabus_found": true,
+    "data_status": "available"
+  }
+]

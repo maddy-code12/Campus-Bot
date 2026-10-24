@@ -1,0 +1,90 @@
+{
+  "subject_code": "CSCED103",
+  "subject_title": "Computer Aided Engineering Drawing",
+  "module": "Module-3: Development of Lateral Surfaces of Solids",
+  "source_document": "2.Development.pdf",
+  "total_problems": 16,
+  "data_status": "available",
+  "problems": [
+    {
+      "problem_id": "4.1",
+      "pdf_page": 2,
+      "title_text": "4.1 A Square prism of base side 35mm & height 55mm rests with its base on HP and two faces equally inclined to VP. Draw the"
+    },
+    {
+      "problem_id": "4.2",
+      "pdf_page": 3,
+      "title_text": "4.2. A square prism of 30mm side of the base and height 50mm is resting with its base on HP such that one of its vertical faces is inclined at 400 to VP. It is cut as shown in the following front view figure. Draw the"
+    },
+    {
+      "problem_id": "4.3",
+      "pdf_page": 4,
+      "title_text": "4.3 A rectangular prism of base 40mm × 25mm and height 65mm rests on HP on its base with the longer base side inclined at 30 0 to VP. It is cut by a plane inclined at 400 to HP; perpendicular to VP cuts the axis at its mid height. Draw the"
+    },
+    {
+      "problem_id": "4.4",
+      "pdf_page": 5,
+      "title_text": "4.4 A pentagonal prism of base sides 20 mm and height 40 mm is resting with its base on HP with a base edge parallel to VP. The prism is cut a s shown in the following front view. Draw the"
+    },
+    {
+      "problem_id": "4.5",
+      "pdf_page": 6,
+      "title_text": "4.5 A hexagonal prism of base side 20mm and height 50mm is resting on HP on its base, such that one of its base edge is parallel to VP. The prism is cut in this position as shown in following front view. Draw the"
+    },
+    {
+      "problem_id": "4.6",
+      "pdf_page": 7,
+      "title_text": "4.6 Develop the lateral surface of the cylinder of 40mm diameter and height 60mm which is cut in the following way. 60 30° O 40 a1(a) b1(b) c1(c) d1(d) e1(e) f1(f) g1(g) h1(h) 15,7"
+    },
+    {
+      "problem_id": "4.7",
+      "pdf_page": 8,
+      "title_text": "4.7 A square pyramid of base edge 40 mm and height 60 mm rests on HP with its axis vertical and two of its base edges parallel to VP. A section plane perpendicular to VP and inclined at 45 0 to HP bisects the axis of the pyramid. Draw the"
+    },
+    {
+      "problem_id": "4.8",
+      "pdf_page": 9,
+      "title_text": "4.8 Draw the"
+    },
+    {
+      "problem_id": "4.9",
+      "pdf_page": 10,
+      "title_text": "4.9 A pentagonal pyramid, 30mm sides, with a side of base perpendicular to VP. Draw the"
+    },
+    {
+      "problem_id": "4.10",
+      "pdf_page": 11,
+      "title_text": "4.10 Draw the"
+    },
+    {
+      "problem_id": "4.11",
+      "pdf_page": 12,
+      "title_text": "4.11 A cone of base diameter 60mm and height 70mm is resting on its base on HP. It is cut as shown in the following figure. Draw the"
+    },
+    {
+      "problem_id": "4.12",
+      "pdf_page": 13,
+      "title_text": "4.12 Draw the"
+    },
+    {
+      "problem_id": "4.13",
+      "pdf_page": 14,
+      "title_text": "4.13 Draw the"
+    },
+    {
+      "problem_id": "4.14",
+      "pdf_page": 15,
+      "title_text": "4.14. Develop the lateral surface of the cylinder of 40mm diameter and height 60mm which is cut in the following way. 45° 60 30 O 40"
+    },
+    {
+      "problem_id": "4.15",
+      "pdf_page": 16,
+      "title_text": "4.15. Draw the"
+    },
+    {
+      "problem_id": "4.16",
+      "pdf_page": 17,
+      "title_text": "4.16. Draw the"
+    }
+  ]
+}

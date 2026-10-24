@@ -1,0 +1,138 @@
+{
+  "title": "Engineering Science Course – I (ESC-I) Batch, Faculty, and Class Room",
+  "w_e_f": "07.09.2026",
+  "source_pdf": "BE_Time_Table_1_SEM__26-27_Draft2.pdf",
+  "source_page": 19,
+  "courses": [
+    {
+      "course_code": "KKBSM104A",
+      "course_title": "Building Sciences & Mechanics",
+      "batches": [
+        {
+          "batch": "B1",
+          "faculty": "Dr. Shruti G",
+          "room": "FBLH01"
+        },
+        {
+          "batch": "B2",
+          "faculty": "Prof. Rajashree C",
+          "room": "FBLH02"
+        },
+        {
+          "batch": "B3",
+          "faculty": "Dr. Sharanbasav P",
+          "room": "FBLH03"
+        },
+        {
+          "batch": "B4",
+          "faculty": "Prof. Rahul Patil",
+          "room": "FBLH04"
+        }
+      ]
+    },
+    {
+      "course_code": "KKIEE104B",
+      "course_title": "Introduction to Electrical Engineering",
+      "batches": [
+        {
+          "batch": "B1",
+          "faculty": "Prof. Akash Patil",
+          "room": "FBLH06"
+        },
+        {
+          "batch": "B2",
+          "faculty": "Prof. Gopinath Harsha",
+          "room": "FBLH07"
+        },
+        {
+          "batch": "B3",
+          "faculty": "Prof. Mahadevi S N",
+          "room": "FBLH08"
+        },
+        {
+          "batch": "B4",
+          "faculty": "Prof. Megha Upase",
+          "room": "EEE Dept."
+        }
+      ]
+    },
+    {
+      "course_code": "KKIEC104C",
+      "course_title": "Introduction to Electronics & Communication Engineering",
+      "batches": [
+        {
+          "batch": "B1",
+          "faculty": "Prof. Seema Deshmukh",
+          "room": "LH15"
+        },
+        {
+          "batch": "B2",
+          "faculty": "Prof. Veena Saraf",
+          "room": "LH16"
+        },
+        {
+          "batch": "B3",
+          "faculty": "Prof. C D Bogale",
+          "room": "LH17"
+        },
+        {
+          "batch": "B4",
+          "faculty": "Dr. Juhi Nishant Ansari",
+          "room": "LH18"
+        }
+      ]
+    },
+    {
+      "course_code": "KKIME104D",
+      "course_title": "Introduction to Mechanical Engineering",
+      "batches": [
+        {
+          "batch": "B1",
+          "faculty": "Dr. C. H Biradar",
+          "room": "MBLH54"
+        },
+        {
+          "batch": "B2",
+          "faculty": "Prof. Shivakumar Patil",
+          "room": "MBLH55"
+        },
+        {
+          "batch": "B3",
+          "faculty": "Prof. Mallikarjun Bijapur",
+          "room": "MBIP11"
+        },
+        {
+          "batch": "B4",
+          "faculty": "Prof. Sarita M",
+          "room": "MBIP01"
+        }
+      ]
+    },
+    {
+      "course_code": "KKEIT104E",
+      "course_title": "Essential of Information Technology",
+      "batches": [
+        {
+          "batch": "B1",
+          "faculty": "Prof. Neha",
+          "room": "CSE Dept."
+        },
+        {
+          "batch": "B2",
+          "faculty": "Prof. Spoorti",
+          "room": "CSE Dept."
+        },
+        {
+          "batch": "B3",
+          "faculty": "Prof. Shivani",
+          "room": "CSE Dept."
+        },
+        {
+          "batch": "B4",
+          "faculty": "Prof. Siddaram S",
+          "room": "CSE Dept."
+        }
+      ]
+    }
+  ]
+}

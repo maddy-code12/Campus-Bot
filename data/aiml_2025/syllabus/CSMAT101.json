@@ -1,0 +1,126 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "CSMAT101",
+  "name": "Differential Calculus and Linear Algebra",
+  "credits": 4.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "The goal of the course Differential Calculus and Linear Algebra (CSMAT101) is to",
+    "Familiarize the importance of calculus associated with one variable and two variables,",
+    "the importance of Integral calculus for civil engineering.",
+    "Analyze Civil engineering problems applying Ordinary Differential Equations.",
+    "Develop the knowledge of Linear Algebra referring to matrices.",
+    "Module Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Series Expansion ,Indeterminate Forms and Multivariable Calculus: Statement and",
+      "hours": 8,
+      "topics": [
+        "problem son Taylor’s and Maclaurin’s series expansion for one variable. Indeterminate",
+        "forms-L’Hospital’s rule. Partial differentiation, total derivative, differentiation of composite",
+        "functions, Jacobian, Statement of  Taylor’s and Maclaurin’s series expansion for two",
+        "variables. Maxima and minima for the function of two variables.",
+        "(8 L +4 T)"
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Differential Equations of First and Higher Order",
+      "hours": 8,
+      "topics": [
+        "Linear and Bernoulli`s differential",
+        "equations .Exact and reducible to exact differential equations with Integrating factors on",
+        "𝑁(",
+        "𝜕𝑀",
+        "𝜕𝑦 −",
+        "𝜕𝑁",
+        "𝜕𝑥 ) and",
+        "𝑀(",
+        "𝜕𝑁",
+        "𝜕𝑥 −",
+        "𝜕𝑀",
+        "𝜕𝑦 )  Homogeneous and non-homogeneous Differential equations of",
+        "higher order with constant coefficients. Inverse differential operators - eax, sin(ax+b),",
+        "cos(ax+b) and  xn.",
+        "(8 L +4 T)"
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "System of Linear Equations, Eigen values and Eigen vectors",
+      "hours": 8,
+      "topics": [
+        "Elementary row",
+        "transformation of a matrix, Echelon form , rank of a matrix. Consistency and solution of",
+        "system of linear equations: Gauss elimination method, Gauss Jordan method. Applications:",
+        "Traffic flow. Eigen values and Eigenvectors , diagonalization of the matrix, modal matrix.",
+        "(8 L +4 T)"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Vector Space",
+      "hours": 8,
+      "topics": [
+        "Vector spaces:  definition and examples, subspace: definition and examples.",
+        "Linear Combinations, linear span Linearly independent and dependent sets, basis and",
+        "dimension, row space and column space of a matrix, Coordinates vector, inner products and",
+        "orthogonality.",
+        "(8 L +4 T)"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Linear Transformation",
+      "hours": 8,
+      "topics": [
+        "Definition and examples, algebra of linear transformations, matrix",
+        "of a linear transformation. Singular, non -singular linear transformations and invertible linear",
+        "transformations. Rank and nullity of linear transformations, Rank-Nullity theorem.",
+        "(8 L +4 T)"
+      ]
+    }
+  ],
+  "lab_experiments": [
+    "Finding partial derivatives and Jacobian,",
+    "Expansion of Taylor’s and Maclaurin’s series,",
+    "Solving differential equations of first and higher order,",
+    "Finding rank ,reduced echelon form, solving system of linear equations using Gauss elimination method,",
+    "Solving system of linear equations using Gauss-Seidel method,",
+    "Determine Eigen values and Eigen vectors,",
+    "Linearly Independence and Dependence sets,",
+    "Basis and dimension,",
+    "Linear transformation-range space and null space,",
+    "Verification of the rank nullity theorem.",
+    "-- PAGE 23 ---"
+  ],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub- questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": [
+    "B.S. Grewal, Higher Engineering Mathematics, Khanna Publishers,44 thEd.,2021.",
+    "GilbertStrang, Linear Algebra and its Applications,Cengage Publications, 4 thEd.,2022.",
+    "Seymour Lipschutz and MarcLipson, Linear Algebra,Schaum’s ou tlines series ,4 thEd.,2008."
+  ],
+  "web_links": [
+    "• http://academicearth.org/",
+    "• VTU e-Shikshana Program",
+    "• VTUEDUSAT Program",
+    "• https://nptel.ac.in/courses/111105160",
+    "• https://nptel.ac.in/courses/127106019",
+    "• https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/",
+    "• https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/pages/syllabus/"
+  ],
+  "course_outcomes": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "data_status": "partial"
+}

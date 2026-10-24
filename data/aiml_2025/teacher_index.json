@@ -1,0 +1,1074 @@
+{
+  "Dr. C. H Biradar": [
+    {
+      "section": "ESC-I (B1)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBLH54",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBLH54",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBLH54",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    }
+  ],
+  "Dr. Juhi Nishant Ansari": [
+    {
+      "section": "ESC-I (B4)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH18",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH18",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH18",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    }
+  ],
+  "Dr. Prashant H": [
+    {
+      "section": "G",
+      "day": "MON",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH07",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing"
+    },
+    {
+      "section": "G",
+      "day": "MON",
+      "period": "P4",
+      "time": "12:15-1:15",
+      "room": "FB LH07",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing"
+    },
+    {
+      "section": "G",
+      "day": "THU",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "CAED LAB",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing (CAED LAB)"
+    },
+    {
+      "section": "G",
+      "day": "THU",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "CAED LAB",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing (CAED LAB)"
+    }
+  ],
+  "Dr. Satish Lathure": [
+    {
+      "section": "G",
+      "day": "MON",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G1) / POC LAB (G2)"
+    },
+    {
+      "section": "G",
+      "day": "MON",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G1) / POC LAB (G2)"
+    },
+    {
+      "section": "G",
+      "day": "SAT",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH07",
+      "subject_code": "CSPHY102",
+      "subject_title": "Quantum Physics & Applications"
+    },
+    {
+      "section": "G",
+      "day": "THU",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH07",
+      "subject_code": "CSPHY102",
+      "subject_title": "Quantum Physics & Applications"
+    },
+    {
+      "section": "G",
+      "day": "TUE",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G2) / POC LAB (G1)"
+    },
+    {
+      "section": "G",
+      "day": "TUE",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G2) / POC LAB (G1)"
+    },
+    {
+      "section": "G",
+      "day": "WED",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH07",
+      "subject_code": "CSPHY102",
+      "subject_title": "Quantum Physics & Applications"
+    }
+  ],
+  "Dr. Sharanbasav P": [
+    {
+      "section": "ESC-I (B3)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH03",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH03",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH03",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    }
+  ],
+  "Dr. Shruti G": [
+    {
+      "section": "ESC-I (B1)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH01",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH01",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH01",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    }
+  ],
+  "Dr. Sujatha Patil": [
+    {
+      "section": "H",
+      "day": "FRI",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH08",
+      "subject_code": "KKKSK/KBK109",
+      "subject_title": "Samskritika / Balake Kannada"
+    },
+    {
+      "section": "G",
+      "day": "WED",
+      "period": "P4",
+      "time": "12:15-1:15",
+      "room": "FB LH07",
+      "subject_code": "KKKSK/KBK109",
+      "subject_title": "Samskritika / Balake Kannada"
+    }
+  ],
+  "Dr. Suvarna H": [
+    {
+      "section": "H",
+      "day": "MON",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Maths Lab / FB LH08",
+      "subject_code": "CSMAT101",
+      "subject_title": "Maths LAB: H"
+    },
+    {
+      "section": "H",
+      "day": "MON",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Maths Lab / FB LH08",
+      "subject_code": "CSMAT101",
+      "subject_title": "Maths LAB: H"
+    },
+    {
+      "section": "H",
+      "day": "THU",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH08",
+      "subject_code": "CSMAT101",
+      "subject_title": "Calculus and Linear Algebra"
+    },
+    {
+      "section": "H",
+      "day": "TUE",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH08",
+      "subject_code": "CSMAT101",
+      "subject_title": "Calculus and Linear Algebra"
+    },
+    {
+      "section": "H",
+      "day": "WED",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH08",
+      "subject_code": "CSMAT101",
+      "subject_title": "Calculus and Linear Algebra"
+    }
+  ],
+  "Dr. Umadevi R Devani": [
+    {
+      "section": "G",
+      "day": "SAT",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH07",
+      "subject_code": "CSMAT101",
+      "subject_title": "Calculus and Linear Algebra"
+    },
+    {
+      "section": "G",
+      "day": "THU",
+      "period": "P4",
+      "time": "12:15-1:15",
+      "room": "FB LH07",
+      "subject_code": "CSMAT101",
+      "subject_title": "Calculus and Linear Algebra"
+    },
+    {
+      "section": "G",
+      "day": "WED",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH07",
+      "subject_code": "CSMAT101",
+      "subject_title": "Calculus and Linear Algebra"
+    },
+    {
+      "section": "G",
+      "day": "WED",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Maths Lab / FB LH07",
+      "subject_code": "CSMAT101",
+      "subject_title": "Maths LAB: G"
+    },
+    {
+      "section": "G",
+      "day": "WED",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Maths Lab / FB LH07",
+      "subject_code": "CSMAT101",
+      "subject_title": "Maths LAB: G"
+    }
+  ],
+  "Prof. Akash Patil": [
+    {
+      "section": "ESC-I (B1)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH06",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH06",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH06",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    }
+  ],
+  "Prof. Ashwini H": [
+    {
+      "section": "G",
+      "day": "FRI",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH07",
+      "subject_code": "CSPOC105",
+      "subject_title": "Programming in C"
+    },
+    {
+      "section": "G",
+      "day": "MON",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G1) / POC LAB (G2)"
+    },
+    {
+      "section": "G",
+      "day": "MON",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G1) / POC LAB (G2)"
+    },
+    {
+      "section": "G",
+      "day": "SAT",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH07",
+      "subject_code": "CSPOC105",
+      "subject_title": "Programming in C"
+    },
+    {
+      "section": "G",
+      "day": "TUE",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G2) / POC LAB (G1)"
+    },
+    {
+      "section": "G",
+      "day": "TUE",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB (G2) / POC LAB (G1)"
+    },
+    {
+      "section": "G",
+      "day": "WED",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH07",
+      "subject_code": "CSPOC105",
+      "subject_title": "Programming in C"
+    }
+  ],
+  "Prof. C D Bogale": [
+    {
+      "section": "ESC-I (B3)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH17",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH17",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH17",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    }
+  ],
+  "Prof. Chandrakant Biradr": [
+    {
+      "section": "H",
+      "day": "MON",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH08",
+      "subject_code": "CSPOC105",
+      "subject_title": "Programming in C"
+    },
+    {
+      "section": "H",
+      "day": "TUE",
+      "period": "P4",
+      "time": "12:15-1:15",
+      "room": "FB LH08",
+      "subject_code": "CSPOC105",
+      "subject_title": "Programming in C"
+    },
+    {
+      "section": "H",
+      "day": "WED",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH08",
+      "subject_code": "CSPOC105",
+      "subject_title": "Programming in C"
+    }
+  ],
+  "Prof. Chanra Reddy": [
+    {
+      "section": "G",
+      "day": "FRI",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH07",
+      "subject_code": "KKSSC106",
+      "subject_title": "Soft Skills"
+    }
+  ],
+  "Prof. Gopinath Harsha": [
+    {
+      "section": "ESC-I (B2)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH07",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH07",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH07",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    }
+  ],
+  "Prof. Mahadevi S N": [
+    {
+      "section": "ESC-I (B3)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH08",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH08",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH08",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    }
+  ],
+  "Prof. Mallikarjun Bijapur": [
+    {
+      "section": "ESC-I (B3)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBIP11",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBIP11",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBIP11",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    }
+  ],
+  "Prof. Megha Upase": [
+    {
+      "section": "ESC-I (B4)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "EEE Dept.",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "EEE Dept.",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "EEE Dept.",
+      "subject_code": "KKIEE104B",
+      "subject_title": "Introduction to Electrical Engineering"
+    }
+  ],
+  "Prof. Neha": [
+    {
+      "section": "ESC-I (B1)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    }
+  ],
+  "Prof. Priyanka": [
+    {
+      "section": "H",
+      "day": "FRI",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB: H2 / POC LAB: H1"
+    },
+    {
+      "section": "H",
+      "day": "FRI",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB: H2 / POC LAB: H1"
+    },
+    {
+      "section": "H",
+      "day": "THU",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB: H1 / POC LAB: H2 (1:15 to 3:15)"
+    }
+  ],
+  "Prof. Rahul Patil": [
+    {
+      "section": "ESC-I (B4)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH04",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH04",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH04",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    }
+  ],
+  "Prof. Rajashree C": [
+    {
+      "section": "ESC-I (B2)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH02",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH02",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "FBLH02",
+      "subject_code": "KKBSM104A",
+      "subject_title": "Building Sciences & Mechanics"
+    }
+  ],
+  "Prof. Sarita M": [
+    {
+      "section": "ESC-I (B4)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBIP01",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBIP01",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBIP01",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    }
+  ],
+  "Prof. Savitri S": [
+    {
+      "section": "H",
+      "day": "MON",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH08",
+      "subject_code": "KKSSC106",
+      "subject_title": "Soft Skills"
+    }
+  ],
+  "Prof. Seema Deshmukh": [
+    {
+      "section": "ESC-I (B1)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH15",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH15",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B1)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH15",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    }
+  ],
+  "Prof. Shivakumar Patil": [
+    {
+      "section": "ESC-I (B2)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBLH55",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "H",
+      "day": "SAT",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "CAED LAB",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing (CAED LAB)"
+    },
+    {
+      "section": "H",
+      "day": "SAT",
+      "period": "P4",
+      "time": "12:15-1:15",
+      "room": "CAED LAB",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing (CAED LAB)"
+    },
+    {
+      "section": "H",
+      "day": "TUE",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH08",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing"
+    },
+    {
+      "section": "H",
+      "day": "TUE",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH08",
+      "subject_code": "CSCED103",
+      "subject_title": "Computer Aided Engg. Drawing"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBLH55",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "MBLH55",
+      "subject_code": "KKIME104D",
+      "subject_title": "Introduction to Mechanical Engineering"
+    }
+  ],
+  "Prof. Shivani": [
+    {
+      "section": "ESC-I (B3)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B3)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    }
+  ],
+  "Prof. Siddaling B": [
+    {
+      "section": "H",
+      "day": "FRI",
+      "period": "P2",
+      "time": "10:00-11:00",
+      "room": "FB LH08",
+      "subject_code": "CSPHY102",
+      "subject_title": "Quantum Physics & Applications"
+    },
+    {
+      "section": "H",
+      "day": "FRI",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB: H2 / POC LAB: H1"
+    },
+    {
+      "section": "H",
+      "day": "FRI",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB: H2 / POC LAB: H1"
+    },
+    {
+      "section": "H",
+      "day": "MON",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH08",
+      "subject_code": "CSPHY102",
+      "subject_title": "Quantum Physics & Applications"
+    },
+    {
+      "section": "H",
+      "day": "THU",
+      "period": "P1",
+      "time": "9:00-10:00",
+      "room": "FB LH08",
+      "subject_code": "CSPHY102",
+      "subject_title": "Quantum Physics & Applications"
+    },
+    {
+      "section": "H",
+      "day": "THU",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "Physics Lab / POC Lab",
+      "subject_code": "LAB",
+      "subject_title": "PHY LAB: H1 / POC LAB: H2 (1:15 to 3:15)"
+    }
+  ],
+  "Prof. Siddaram S": [
+    {
+      "section": "ESC-I (B4)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B4)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    }
+  ],
+  "Prof. Sonali": [
+    {
+      "section": "G",
+      "day": "TUE",
+      "period": "P3",
+      "time": "11:15-12:15",
+      "room": "FB LH07",
+      "subject_code": "KKIDT158",
+      "subject_title": "Innovation and Design Thinking Lab"
+    },
+    {
+      "section": "G",
+      "day": "TUE",
+      "period": "P4",
+      "time": "12:15-1:15",
+      "room": "FB LH07",
+      "subject_code": "KKIDT158",
+      "subject_title": "Innovation and Design Thinking Lab"
+    },
+    {
+      "section": "H",
+      "day": "TUE",
+      "period": "P6",
+      "time": "3:15-4:15",
+      "room": "FB LH08",
+      "subject_code": "KKIDT158",
+      "subject_title": "Innovation and Design Thinking Lab (IDT)"
+    },
+    {
+      "section": "H",
+      "day": "TUE",
+      "period": "P7",
+      "time": "4:15-5:15",
+      "room": "FB LH08",
+      "subject_code": "KKIDT158",
+      "subject_title": "Innovation and Design Thinking Lab (IDT)"
+    }
+  ],
+  "Prof. Spoorti": [
+    {
+      "section": "ESC-I (B2)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "CSE Dept.",
+      "subject_code": "KKEIT104E",
+      "subject_title": "Essential of Information Technology"
+    }
+  ],
+  "Prof. Veena Saraf": [
+    {
+      "section": "ESC-I (B2)",
+      "day": "MON",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH16",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "TUE",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH16",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    },
+    {
+      "section": "ESC-I (B2)",
+      "day": "WED",
+      "period": "P5",
+      "time": "2:15-3:15",
+      "room": "LH16",
+      "subject_code": "KKIEC104C",
+      "subject_title": "Introduction to Electronics & Communication Engineering"
+    }
+  ]
+}

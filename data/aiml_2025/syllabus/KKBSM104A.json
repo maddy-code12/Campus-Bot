@@ -1,0 +1,118 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKBSM104A",
+  "name": "Building Science & Mechanics",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "The students will be able to acquire knowledge in the following topics.",
+    "Understanding fundamental concepts of building science.",
+    "Selection of green materials.",
+    "Understanding and solving the problems involving forces, loads and reactions, Moments,",
+    "and its applications of concurrent force system.",
+    "To determine support reactions.",
+    "To determine the centroid of simple and composite plane sections."
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Introduction to building science",
+      "hours": 8,
+      "topics": [
+        "Importance and Scope of various fields of Civil Engineering : Surveying,",
+        "Structural Engineering, Geotechnical Engineering, Water Resources Engineering,",
+        "Transportation Engineering, Environmental Engineering, Construction Planning and",
+        "Project Management.",
+        "Basic Materials of Construction: Types and Uses of Bricks, Stones, Cement,",
+        "Structural Steel, Wood, and Concrete.",
+        "Structural Elements of a Building: Concept of Foundation, Plinth, Lintel, Chejja,",
+        "Masonry wall, Column, Beam, Slab, Flooring and Staircase."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Sustainable Built Environment",
+      "hours": 8,
+      "topics": [
+        "Emerging materials: Types and Uses of Autoclaved Aerated Concrete (AAC) blocks,",
+        "Bamboo, Recycled plastics, Material selection criteria, Durability, Sustainability,",
+        "Smart City concept.",
+        "Green Building: Green building materials and rating systems IGBC, LEED, GRIHA",
+        "(Green Rating for Integrated Habitat Assessment) for new buildings – Purpose - Key",
+        "highlights -Point System with Differential weightage."
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Force Systems",
+      "hours": 8,
+      "topics": [
+        "Concept of idealization, System of forces, Principles of",
+        "transmissibility of a force, Resolution and composition of forces, Law of",
+        "Parallelogram of forces, Concurrent and non-concurrent coplanar force systems,",
+        "Moment of forces, Couple, Varignon’s theorem: Numerical examples"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Equilibrium and Support Reactions",
+      "hours": 8,
+      "topics": [
+        "Free body diagram, equations of equilibrium, Lami’s Theorem, Equilibrium of",
+        "Coplanar Concurrent and Non -concurrent force systems: Numerical examples.",
+        "Types of loadings, beams and supports, Concept of Statically determinate and",
+        "indeterminate structures (Definitions with examples only), Support reactions:",
+        "Numerical examples on Statically determinate beams.",
+        "--- PAGE 71 ---"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Centroid of Plane areas",
+      "hours": 8,
+      "topics": [
+        "Introduction, Locating the centroid of rectangle, triangle,",
+        "circle, semicircle, and quadrant of  a circle using method of  integration, centroid of",
+        "composite areas and simple built-up sections: Numerical examples."
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "Rangwala, Building Construction,33rd Edition, 2016, Charotar Publishing House Pvt. Ltd.,",
+    "ISBN-10 : 9385039040, ISBN-13 : 978-9385039041",
+    "Bansal R. K., Rakesh Ranjan Beohar and Ahmad Ali Khan, Basic Civil Engineering and",
+    "Engineering Mechanics, 3rd Edition, 2015, Laxmi Publications, ISBN: 9789380856674.",
+    "Kolhapure B K, Elements of Civil Engineering and Engineering Mechanics, 11th Edition,",
+    "2018, Eastern Book Promoters Belgaum [EBPB], ISBN: 5551234003896"
+  ],
+  "references": [
+    "Beer F.P. and Johnston E. R., Mechanics for Engineers: Statics and Dynamics, 4th Edition,",
+    "1987, McGraw Hill, ISBN: 9780070045842",
+    "Meriam J. L. and Kraige L. G, Engineering Mechanics-Statics, Vol I–6th Edition,2008, Wiley",
+    "Irving H. Shames, Engineering Mechanics-Statics and Dynamics, 4th Edition, 2002,",
+    "Prentice-Hall of India(PHI).",
+    "Hibbler R. C., Engineering Mechanics: Principles of Statics and Dynamics, 2017, Pearson",
+    "Timoshenko S, Young D. H., Rao J. V., Sukumar Patil, Engineering Mechanics, 5th Edition,",
+    "2017,McGraw Hill Publisher, ISBN: 9781259062667",
+    "Bhavikatti S S, Engineering Mechanics, 4th     Edition, 2018, New Age",
+    "International Publications.",
+    "Reddy Vijaykumar K and Suresh Kumar K, Engineering Mechanics, 3rd Edition 2013, BS"
+  ],
+  "web_links": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "course_outcomes": [
+    "CO1 Explain the fundamental concepts of building science, disciplines of civil engineering,",
+    "CO2 Evaluate the sustainability aspects of the built environment through appropriate selection",
+    "CO3 Determine the resultant of coplanar concurrent and non-concurrent force system.",
+    "CO4 Apply the principles of force systems and equilibrium to determine support reactions.",
+    "CO5 Locate the centroid of simple and composite plane areas using first principles."
+  ],
+  "data_status": "partial"
+}

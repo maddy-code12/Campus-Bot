@@ -1,0 +1,118 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "C",
+  "sem": 2,
+  "code": "CSMAT201",
+  "name": "Numerical Methods",
+  "credits": 4.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "The goal of the course NUMERICAL METHODS (CSMAT201) is to",
+    "Develop the knowledge of numerical methods and apply them to solve transcendental and",
+    "differential equations..",
+    "Familiarize the importance of Vector calculus",
+    "Module Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Introduction to Numerical Methods (8 Hours Theory+",
+      "hours": 8,
+      "topics": [
+        "4 Hours Tutorials)",
+        "Errors and their computation : Round off error, Truncation error, Absolute error, Relative error and Percentage",
+        "error. Solution of algebraic and transcendental equations: Bisection, Regular-Falsie, Secant and Newton-",
+        "Raphson",
+        "methods."
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Numerical solutions for system of linear equations (8 Hours Theory+",
+      "hours": 8,
+      "topics": [
+        "4 Hours Tutorials)",
+        "Norms: Vector norms and Matrix norms- L1,L2 and L∞, Ill conditioned linear system, condition number. Solution of",
+        "system of linear equations: Gauss Seidel method and LU-decomposition method.",
+        "Eigen values and Eigen vectors :Rayleigh power method, Jacobi’s method"
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Interpolation",
+      "hours": 8,
+      "topics": [
+        "(8 Hours Theory+",
+        "4 Hours Tutorials)",
+        "Finite differences ,interpolation using Newton Gregory forward and Newton Gregory backward difference",
+        "formulae, Newton’s divided difference. Lagrange interpolation formulae, piecewise interpolation-linear and",
+        "quadratic."
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Numerical Integration and Numerical Solution of Differential",
+      "hours": 8,
+      "topics": [
+        "Equations",
+        "(8 Hours Theory+",
+        "4 Hours Tutorials)",
+        "Numerical integration: Trapezoidal, Simpson's1/3rd, Simpson’s3/8th rule and Weddle’s rule.",
+        "Numerical solution of ordinary differential equations of first order and first degree -Taylor’s series method,",
+        "Modified Euler’s method, Runge-Kutta method of fourth order and Milne’s predictor-corrector method."
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Vector Calculus (8HoursTheory+",
+      "hours": 8,
+      "topics": [
+        "4HoursTutorials",
+        "Scalar and vector fields, Gradient, directional derivatives, divergence and curl-physical",
+        "interpretation, solenoidal vector fields, irrotational vector fields and scalar potential. Introduction to polar",
+        "coordinates and polarcurves. Curvilinear coordinates: Scale factors  ,base vectors, Cylindrical polar",
+        "coordinates ,Spherical polar coordinates, transformation between Cartesian and curvilinear systems,",
+        "orthogonality."
+      ]
+    }
+  ],
+  "lab_experiments": [
+    "Errors and approximation,",
+    "Root finding methods,",
+    "Norms, Condition number,",
+    "Gauss Seidel method and Rayleigh power’s method,",
+    "Forward and Backward interpolation,",
+    "Lagrange’s interpolation,,",
+    "-- PAGE 132 ---",
+    "Numerical integration,",
+    "Taylor’s method, Modified Euler’s method,",
+    "Runge-Kutta method of fourth order.",
+    "Finding Gradient, divergence and curl,"
+  ],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub- questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": [
+    "M.K. Jain, S.R.K. Iyengar and R.K. Jain, Numerical Methods for Scientific and Engineering Computation,",
+    "New Age International Publishers, 8thEd., 2022.",
+    "David Clay ,Linear Algebra and its Applications, Pearson Publishers, 5thEd.,2023.",
+    "B.S.Grewal, Higher Engineering Mathematics, Khanna Publishers,44thEd.,2021."
+  ],
+  "web_links": [
+    "• http://academicearth.org/",
+    "• VTU e-Shikshana Program",
+    "• VTUEDUSAT Program",
+    "• https://nptel.ac.in/courses/111105160",
+    "• https://nptel.ac.in/courses/127106019",
+    "• https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/",
+    "• https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-"
+  ],
+  "course_outcomes": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "data_status": "partial"
+}

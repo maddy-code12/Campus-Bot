@@ -1,0 +1,129 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "sem": 1,
+  "code": "KKEIT104E",
+  "name": "Essentials of Information Technology",
+  "credits": 3.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "Gain understanding of IT fundamentals, software, hardware, networking, and cyber security.",
+    "Apply practical skills in data management, application development, and problem -solving for both",
+    "business and societal applications.",
+    "Develop essential professional skills such as communication, critical thinking, and an entrepreneurial",
+    "mindset for roles in diverse IT-driven environments.",
+    "Modules Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "Data Storage",
+      "hours": 8,
+      "topics": [
+        "Bits and Their Storage, Main Memory, Mass Storage, Representing",
+        "Information as Bit Patterns, The Binary System, Storing Integers, Storing Fractions.",
+        "Data Manipulation: Computer Architecture, Machine Language, Program Execution,",
+        "Arithmetic/Logic Instructions, Communicating with Other Devices.",
+        "Text book1:Chapter-1(1.1-1.7),Chapter-2(2.1-2.5)"
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Operating  Systems",
+      "hours": 8,
+      "topics": [
+        "The History of Operating Systems, Operating System Architecture,",
+        "Coordinating the Machine’s Activities, Handling Competition Among Processes, Security.",
+        "Algorithms: The Concept of an Algorithm, Algorithm Representation, Algorithm Discovery.",
+        "Textbook1:Chapter-3,Chapter-5(5.1-5.3)"
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Networking and the Internet",
+      "hours": 8,
+      "topics": [
+        "Network Fundamentals, The Internet,The World Wide Web,",
+        "Internet Protocols, Security.",
+        "Cyber security: Overview—What is Cyber security?, Brief History of Cyber security Events,",
+        "The Basic Information Security Model, Cyber Hygiene, Teams in Cybersecurity.",
+        "Ethical Issues in Information Technology: Overview, Ownership Rules, Ethics and Online",
+        "Content.",
+        "Textbook1:Chapter-4",
+        "Textbook2:Chapter-16,Chapter-17"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Software Engineering",
+      "hours": 8,
+      "topics": [
+        "The Software Engineering Discipline, The Software Life Cycle,",
+        "Software Engineering Methodologies, Modularity, Tools of the Trade.",
+        "Database Systems: Database Fundamentals, The Relational Model.",
+        "Textbook1: Chapter-7(7.1-7.5),Chapter-9(9.1-9.2)"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Introduction to HTML and Website Development",
+      "hours": 8,
+      "topics": [
+        "What is HTML? Cascading Style",
+        "Sheets (CSS), Website Design and Story boarding, Structure of a Website.",
+        "Computer Graphics: The Scope of Computer Graphics, Overview of 3D Graphics,",
+        "Modeling, Rendering.",
+        "Text book 2 : Chapter-12. Text book 1: Chapter-10(10.1-10.4)",
+        "--- PAGE 79 ---"
+      ]
+    }
+  ],
+  "lab_experiments": [],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": [
+    "Chapter-1(1.1-1.7),Chapter-2(2.1-2.5)",
+    "Operating  Systems:  The History of Operating Systems, Operating System Architecture,",
+    "Coordinating the Machine’s Activities, Handling Competition Among Processes, Security.",
+    "Algorithms: The Concept of an Algorithm, Algorithm Representation, Algorithm Discovery.",
+    "Textbook1:Chapter-3,Chapter-5(5.1-5.3)",
+    "Networking and the Internet: Network Fundamentals, The Internet,The World Wide Web,",
+    "Internet Protocols, Security.",
+    "Cyber security: Overview—What is Cyber security?, Brief History of Cyber security Events,",
+    "The Basic Information Security Model, Cyber Hygiene, Teams in Cybersecurity.",
+    "Ethical Issues in Information Technology: Overview, Ownership Rules, Ethics and Online",
+    "Textbook2:Chapter-16,Chapter-17",
+    "Software Engineering: The Software Engineering Discipline, The Software Life Cycle,",
+    "Software Engineering Methodologies, Modularity, Tools of the Trade.",
+    "Database Systems: Database Fundamentals, The Relational Model.",
+    "Textbook1: Chapter-7(7.1-7.5),Chapter-9(9.1-9.2)",
+    "Introduction to HTML and Website Development: What is HTML? Cascading Style",
+    "Sheets (CSS), Website Design and Story boarding, Structure of a Website.",
+    "Computer Graphics: The Scope of Computer Graphics, Overview of 3D Graphics,",
+    "Text book 2 : Chapter-12. Text book 1: Chapter-10(10.1-10.4)",
+    "-- PAGE 79 ---",
+    "Semester End Examination (SEE):",
+    "Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for",
+    "The question paper will have ten questions. Each question is set for 20 marks.",
+    "There will be 2 questions from each module. Each of the two questions under a module (with a maximum",
+    "of 3 sub-questions), should have a mix of topics under that module.",
+    "The students have to answer 5 full questions, selecting one full question from each module."
+  ],
+  "references": [
+    "V. Rajaraman, “Introduction to Information Technology”, Third Edition, PHI Learning,2018.",
+    "Pelin Aksoy, Information Technology in Theory, First Edition, Cengage 2012."
+  ],
+  "web_links": [
+    "• Information Technology: https://onlinecourses.swayam2.ac.in/cec20_cs05/preview",
+    "• Computer Organization and Architecture: https://nptel.ac.in/courses/106103068",
+    "• Introduction To Internet: https://nptel.ac.in/courses/106105084"
+  ],
+  "course_outcomes": [
+    "CO1 Illustrate data storage and manipulation concepts.",
+    "CO2 Explain the knowledge of operating systems and illustrate the use of algorithms for problem",
+    "CO3 Discuss network and Internet concepts, identify role of cyber security and ethical issues in IT.",
+    "CO4 Apply basic software engineering concepts and construction.",
+    "CO5 Illustrate HTML, CSS for website development and learn basic concepts of computer Graphics."
+  ],
+  "data_status": "available"
+}

@@ -1,0 +1,937 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "P",
+  "semester": 1,
+  "academic_year": "2026-27",
+  "w_e_f": "07-09-2026",
+  "data_status": "available",
+  "period_timings": [
+    {
+      "period": "P1",
+      "time": "9:00-10:00",
+      "label": "Period 1"
+    },
+    {
+      "period": "P2",
+      "time": "10:00-11:00",
+      "label": "Period 2"
+    },
+    {
+      "period": "P3",
+      "time": "11:15-12:15",
+      "label": "Period 3"
+    },
+    {
+      "period": "P4",
+      "time": "12:15-1:15",
+      "label": "Period 4"
+    },
+    {
+      "period": "lunch",
+      "time": "1:15-2:15",
+      "label": "Lunch Break"
+    },
+    {
+      "period": "P5",
+      "time": "2:15-3:15",
+      "label": "Period 5"
+    },
+    {
+      "period": "P6",
+      "time": "3:15-4:15",
+      "label": "Period 6"
+    },
+    {
+      "period": "P7",
+      "time": "4:15-5:15",
+      "label": "Period 7"
+    }
+  ],
+  "sections": {
+    "G": {
+      "stream": "CSE / AI&ML (GAI01-GAI60)",
+      "dept": "Artificial Intelligence & Machine Learning",
+      "default_room": "FB LH07",
+      "batches": {
+        "G1": "GAI01 - GAI30 (G1A, G1B)",
+        "G2": "GAI31 - GAI60 (G2A, G2B)"
+      },
+      "faculty": [
+        {
+          "sl_no": 1,
+          "code": "CSMAT101",
+          "title": "Calculus and Linear Algebra",
+          "dept": "Maths",
+          "theory_hrs": 3,
+          "lab_hrs": 2,
+          "faculty": "Dr. Umadevi R Devani"
+        },
+        {
+          "sl_no": 2,
+          "code": "CSPHY102",
+          "title": "Quantum Physics & Applications",
+          "dept": "Physics",
+          "theory_hrs": 3,
+          "lab_hrs": 2,
+          "faculty": "Dr. Satish Lathure"
+        },
+        {
+          "sl_no": 3,
+          "code": "CSCED103",
+          "title": "Computer Aided Engg. Drawing",
+          "dept": "Mechanical",
+          "theory_hrs": 2,
+          "lab_hrs": 2,
+          "faculty": "DRr. Prashant H"
+        },
+        {
+          "sl_no": 4,
+          "code": "KKXXX104X",
+          "title": "Engineering Science Courses - I",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 3,
+          "lab_hrs": 0,
+          "faculty": "Respective Engg. Dept"
+        },
+        {
+          "sl_no": 5,
+          "code": "CSPOC105",
+          "title": "Programming in C",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 3,
+          "lab_hrs": 0,
+          "faculty": "Prof. Ashwini H"
+        },
+        {
+          "sl_no": 6,
+          "code": "KKSSC106",
+          "title": "Soft Skills",
+          "dept": "Humanites",
+          "theory_hrs": 1,
+          "lab_hrs": 0,
+          "faculty": "Prof. Chanra Reddy"
+        },
+        {
+          "sl_no": 7,
+          "code": "CSPOCL107",
+          "title": "Programming in C Lab",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 0,
+          "lab_hrs": 2,
+          "faculty": "Prof. Ashwini H"
+        },
+        {
+          "sl_no": 8,
+          "code": "KKIDT158",
+          "title": "Innovation and Design Thinking Lab",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 0,
+          "lab_hrs": 2,
+          "faculty": "Prof. Sonali"
+        },
+        {
+          "sl_no": 9,
+          "code": "KKKSK/KBK109",
+          "title": "Samskritika / Balake Kannada",
+          "dept": "Humanites",
+          "theory_hrs": 1,
+          "lab_hrs": 0,
+          "faculty": "Dr. Sujatha Patil"
+        }
+      ],
+      "days": {
+        "MON": {
+          "P1": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH07",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "FREE",
+            "title": "Free / Library",
+            "room": "FB LH07",
+            "faculty": "None",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing",
+            "room": "FB LH07",
+            "faculty": "DRr. Prashant H",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing",
+            "room": "FB LH07",
+            "faculty": "DRr. Prashant H",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "KKXXX104X",
+            "title": "Engineering Science Courses - I (ESC-I)",
+            "room": "As per ESC Batch Room",
+            "faculty": "ESC-I Faculty",
+            "lab_batch": "ESC-I Batches"
+          },
+          "P6": {
+            "code": "LAB",
+            "title": "PHY LAB (G1) / POC LAB (G2)",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Dr. Satish Lathure (PHY) / Prof. Ashwini H (POC)",
+            "lab_batch": "PHY LAB: G1(G1A & G1B) / POC LAB: G2(G2A & G2B)"
+          },
+          "P7": {
+            "code": "LAB",
+            "title": "PHY LAB (G1) / POC LAB (G2)",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Dr. Satish Lathure (PHY) / Prof. Ashwini H (POC)",
+            "lab_batch": "PHY LAB: G1(G1A & G1B) / POC LAB: G2(G2A & G2B)"
+          }
+        },
+        "TUE": {
+          "P1": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH07 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH07 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "KKIDT158",
+            "title": "Innovation and Design Thinking Lab",
+            "room": "FB LH07",
+            "faculty": "Prof. Sonali",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "KKIDT158",
+            "title": "Innovation and Design Thinking Lab",
+            "room": "FB LH07",
+            "faculty": "Prof. Sonali",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "KKXXX104X",
+            "title": "Engineering Science Courses - I (ESC-I)",
+            "room": "As per ESC Batch Room",
+            "faculty": "ESC-I Faculty",
+            "lab_batch": "ESC-I Batches"
+          },
+          "P6": {
+            "code": "LAB",
+            "title": "PHY LAB (G2) / POC LAB (G1)",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Dr. Satish Lathure (PHY) / Prof. Ashwini H (POC)",
+            "lab_batch": "PHY LAB: G2(G2A & G2B) / POC LAB: G1(G1A & G1B)"
+          },
+          "P7": {
+            "code": "LAB",
+            "title": "PHY LAB (G2) / POC LAB (G1)",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Dr. Satish Lathure (PHY) / Prof. Ashwini H (POC)",
+            "lab_batch": "PHY LAB: G2(G2A & G2B) / POC LAB: G1(G1A & G1B)"
+          }
+        },
+        "WED": {
+          "P1": {
+            "code": "CSPOC105",
+            "title": "Programming in C",
+            "room": "FB LH07",
+            "faculty": "Prof. Ashwini H",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSMAT101",
+            "title": "Calculus and Linear Algebra",
+            "room": "FB LH07",
+            "faculty": "Dr. Umadevi R Devani",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "CSPHY102",
+            "title": "Quantum Physics & Applications",
+            "room": "FB LH07",
+            "faculty": "Dr. Satish Lathure",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "KKKSK/KBK109",
+            "title": "Samskritika / Balake Kannada",
+            "room": "FB LH07",
+            "faculty": "Dr. Sujatha Patil",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "KKXXX104X",
+            "title": "Engineering Science Courses - I (ESC-I)",
+            "room": "As per ESC Batch Room",
+            "faculty": "ESC-I Faculty",
+            "lab_batch": "ESC-I Batches"
+          },
+          "P6": {
+            "code": "CSMAT101",
+            "title": "Maths LAB: G",
+            "room": "Maths Lab / FB LH07",
+            "faculty": "Dr. Umadevi R Devani",
+            "lab_batch": "Batch G"
+          },
+          "P7": {
+            "code": "CSMAT101",
+            "title": "Maths LAB: G",
+            "room": "Maths Lab / FB LH07",
+            "faculty": "Dr. Umadevi R Devani",
+            "lab_batch": "Batch G"
+          }
+        },
+        "THU": {
+          "P1": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing (CAED LAB)",
+            "room": "CAED LAB",
+            "faculty": "DRr. Prashant H",
+            "lab_batch": "Batch G"
+          },
+          "P2": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing (CAED LAB)",
+            "room": "CAED LAB",
+            "faculty": "DRr. Prashant H",
+            "lab_batch": "Batch G"
+          },
+          "P3": {
+            "code": "CSPHY102",
+            "title": "Quantum Physics & Applications",
+            "room": "FB LH07",
+            "faculty": "Dr. Satish Lathure",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "CSMAT101",
+            "title": "Calculus and Linear Algebra",
+            "room": "FB LH07",
+            "faculty": "Dr. Umadevi R Devani",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH07",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "P6": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH07",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P7": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH07",
+            "faculty": null,
+            "lab_batch": null
+          }
+        },
+        "FRI": {
+          "P1": {
+            "code": "KKSSC106",
+            "title": "Soft Skills",
+            "room": "FB LH07",
+            "faculty": "Prof. Chanra Reddy",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSPOC105",
+            "title": "Programming in C",
+            "room": "FB LH07",
+            "faculty": "Prof. Ashwini H",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH07 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH07 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH07",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "P6": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH07",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P7": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH07",
+            "faculty": null,
+            "lab_batch": null
+          }
+        },
+        "SAT": {
+          "P1": {
+            "code": "CSMAT101",
+            "title": "Calculus and Linear Algebra",
+            "room": "FB LH07",
+            "faculty": "Dr. Umadevi R Devani",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSPOC105",
+            "title": "Programming in C",
+            "room": "FB LH07",
+            "faculty": "Prof. Ashwini H",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "CSPHY102",
+            "title": "Quantum Physics & Applications",
+            "room": "FB LH07",
+            "faculty": "Dr. Satish Lathure",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH07",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P6": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P7": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          }
+        }
+      }
+    },
+    "H": {
+      "stream": "CSE / AI&ML (HAI01-HAI49)",
+      "dept": "Artificial Intelligence & Machine Learning",
+      "default_room": "FB LH08",
+      "batches": {
+        "H1": "HAI01 - HAI30 (H1A, H1B)",
+        "H2": "HAI31 - HAI49 (H2A, H2B)"
+      },
+      "faculty": [
+        {
+          "sl_no": 1,
+          "code": "CSMAT101",
+          "title": "Calculus and Linear Algebra",
+          "dept": "Maths",
+          "theory_hrs": 3,
+          "lab_hrs": 2,
+          "faculty": "Dr. Suvarna H"
+        },
+        {
+          "sl_no": 2,
+          "code": "CSPHY102",
+          "title": "Quantum Physics & Applications",
+          "dept": "Physics",
+          "theory_hrs": 3,
+          "lab_hrs": 2,
+          "faculty": "Prof. Siddaling B"
+        },
+        {
+          "sl_no": 3,
+          "code": "CSCED103",
+          "title": "Computer Aided Engg. Drawing",
+          "dept": "Mechanical",
+          "theory_hrs": 2,
+          "lab_hrs": 2,
+          "faculty": "Prof. Shivakumar Patil"
+        },
+        {
+          "sl_no": 4,
+          "code": "KKXXX104X",
+          "title": "Engineering Science Courses - I",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 3,
+          "lab_hrs": 0,
+          "faculty": "Respective Engg. Dept"
+        },
+        {
+          "sl_no": 5,
+          "code": "CSPOC105",
+          "title": "Programming in C",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 3,
+          "lab_hrs": 0,
+          "faculty": "Prof. Chandrakant Biradr"
+        },
+        {
+          "sl_no": 6,
+          "code": "KKSSC106",
+          "title": "Soft Skills",
+          "dept": "Humanites",
+          "theory_hrs": 1,
+          "lab_hrs": 0,
+          "faculty": "Prof. Savitri S"
+        },
+        {
+          "sl_no": 7,
+          "code": "CSPOCL107",
+          "title": "Programming in C Lab",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 0,
+          "lab_hrs": 2,
+          "faculty": "Prof. Priyanka"
+        },
+        {
+          "sl_no": 8,
+          "code": "KKIDT158",
+          "title": "Innovation and Design Thinking Lab",
+          "dept": "Respective Engg. Dept",
+          "theory_hrs": 0,
+          "lab_hrs": 2,
+          "faculty": "Prof. Sonali"
+        },
+        {
+          "sl_no": 9,
+          "code": "KKKSK/KBK109",
+          "title": "Samskritika / Balake Kannada",
+          "dept": "Humanites",
+          "theory_hrs": 1,
+          "lab_hrs": 0,
+          "faculty": "Dr. Sujatha Patil"
+        }
+      ],
+      "days": {
+        "MON": {
+          "P1": {
+            "code": "CSPHY102",
+            "title": "Quantum Physics & Applications",
+            "room": "FB LH08",
+            "faculty": "Prof. Siddaling B",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSPOC105",
+            "title": "Programming in C",
+            "room": "FB LH08",
+            "faculty": "Prof. Chandrakant Biradr",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "KKSSC106",
+            "title": "Soft Skills",
+            "room": "FB LH08",
+            "faculty": "Prof. Savitri S",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH08",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "KKXXX104X",
+            "title": "Engineering Science Courses - I (ESC-I)",
+            "room": "As per ESC Batch Room",
+            "faculty": "ESC-I Faculty",
+            "lab_batch": "ESC-I Batches"
+          },
+          "P6": {
+            "code": "CSMAT101",
+            "title": "Maths LAB: H",
+            "room": "Maths Lab / FB LH08",
+            "faculty": "Dr. Suvarna H",
+            "lab_batch": "Batch H"
+          },
+          "P7": {
+            "code": "CSMAT101",
+            "title": "Maths LAB: H",
+            "room": "Maths Lab / FB LH08",
+            "faculty": "Dr. Suvarna H",
+            "lab_batch": "Batch H"
+          }
+        },
+        "TUE": {
+          "P1": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing",
+            "room": "FB LH08",
+            "faculty": "Prof. Shivakumar Patil",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing",
+            "room": "FB LH08",
+            "faculty": "Prof. Shivakumar Patil",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "CSMAT101",
+            "title": "Calculus and Linear Algebra",
+            "room": "FB LH08",
+            "faculty": "Dr. Suvarna H",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "CSPOC105",
+            "title": "Programming in C",
+            "room": "FB LH08",
+            "faculty": "Prof. Chandrakant Biradr",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "KKXXX104X",
+            "title": "Engineering Science Courses - I (ESC-I)",
+            "room": "As per ESC Batch Room",
+            "faculty": "ESC-I Faculty",
+            "lab_batch": "ESC-I Batches"
+          },
+          "P6": {
+            "code": "KKIDT158",
+            "title": "Innovation and Design Thinking Lab (IDT)",
+            "room": "FB LH08",
+            "faculty": "Prof. Sonali",
+            "lab_batch": "Batch H"
+          },
+          "P7": {
+            "code": "KKIDT158",
+            "title": "Innovation and Design Thinking Lab (IDT)",
+            "room": "FB LH08",
+            "faculty": "Prof. Sonali",
+            "lab_batch": "Batch H"
+          }
+        },
+        "WED": {
+          "P1": {
+            "code": "CSPOC105",
+            "title": "Programming in C",
+            "room": "FB LH08",
+            "faculty": "Prof. Chandrakant Biradr",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSMAT101",
+            "title": "Calculus and Linear Algebra",
+            "room": "FB LH08",
+            "faculty": "Dr. Suvarna H",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH08 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH08 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "KKXXX104X",
+            "title": "Engineering Science Courses - I (ESC-I)",
+            "room": "As per ESC Batch Room",
+            "faculty": "ESC-I Faculty",
+            "lab_batch": "ESC-I Batches"
+          },
+          "P6": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH08",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P7": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH08",
+            "faculty": null,
+            "lab_batch": null
+          }
+        },
+        "THU": {
+          "P1": {
+            "code": "CSPHY102",
+            "title": "Quantum Physics & Applications",
+            "room": "FB LH08",
+            "faculty": "Prof. Siddaling B",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSMAT101",
+            "title": "Calculus and Linear Algebra",
+            "room": "FB LH08",
+            "faculty": "Dr. Suvarna H",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH08",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH08",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LAB",
+            "title": "PHY LAB: H1 / POC LAB: H2 (1:15 to 3:15)",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Prof. Siddaling B / Prof. Priyanka",
+            "lab_batch": "PHY LAB: H1(H1A&H1B) / POC LAB: H2(H2A&H2B)"
+          },
+          "P5": {
+            "code": "LAB",
+            "title": "PHY LAB: H1 / POC LAB: H2 (1:15 to 3:15)",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Prof. Siddaling B / Prof. Priyanka",
+            "lab_batch": "PHY LAB: H1(H1A&H1B) / POC LAB: H2(H2A&H2B)"
+          },
+          "P6": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH08",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P7": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH08",
+            "faculty": null,
+            "lab_batch": null
+          }
+        },
+        "FRI": {
+          "P1": {
+            "code": "KKKSK/KBK109",
+            "title": "Samskritika / Balake Kannada",
+            "room": "FB LH08",
+            "faculty": "Dr. Sujatha Patil",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "CSPHY102",
+            "title": "Quantum Physics & Applications",
+            "room": "FB LH08",
+            "faculty": "Prof. Siddaling B",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH08",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "P4": {
+            "code": "LIB",
+            "title": "Library",
+            "room": "FB LH08",
+            "faculty": "Library Staff",
+            "lab_batch": null
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "FB LH08",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P6": {
+            "code": "LAB",
+            "title": "PHY LAB: H2 / POC LAB: H1",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Prof. Siddaling B / Prof. Priyanka",
+            "lab_batch": "PHY LAB: H2(H2A&H2B) / POC LAB: H1(H1A&H1B)"
+          },
+          "P7": {
+            "code": "LAB",
+            "title": "PHY LAB: H2 / POC LAB: H1",
+            "room": "Physics Lab / POC Lab",
+            "faculty": "Prof. Siddaling B / Prof. Priyanka",
+            "lab_batch": "PHY LAB: H2(H2A&H2B) / POC LAB: H1(H1A&H1B)"
+          }
+        },
+        "SAT": {
+          "P1": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH08 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "P2": {
+            "code": "COE",
+            "title": "Centre of Excellence",
+            "room": "FB LH08 / COE Lab",
+            "faculty": "COE In-charge",
+            "lab_batch": null
+          },
+          "P3": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing (CAED LAB)",
+            "room": "CAED LAB",
+            "faculty": "Prof. Shivakumar Patil",
+            "lab_batch": "Batch H"
+          },
+          "P4": {
+            "code": "CSCED103",
+            "title": "Computer Aided Engg. Drawing (CAED LAB)",
+            "room": "CAED LAB",
+            "faculty": "Prof. Shivakumar Patil",
+            "lab_batch": "Batch H"
+          },
+          "lunch": {
+            "code": "LUNCH",
+            "title": "Lunch Break",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P5": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P6": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          },
+          "P7": {
+            "code": "FREE",
+            "title": "Free",
+            "room": "-",
+            "faculty": null,
+            "lab_batch": null
+          }
+        }
+      }
+    }
+  }
+}

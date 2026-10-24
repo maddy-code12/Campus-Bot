@@ -50,7 +50,7 @@ input[type=text]:focus{border-color:var(--pri)}
     <option value="kn">ಕನ್ನಡ (Kannada)</option>
     <option value="hi">हिन्दी (Hindi)</option>
   </select>
-  <span id="lbl-demo">Demo time</span>
+  <span id="lbl-time">Campus Time</span>
   <select id="day" aria-label="Day"></select>
   <input type="time" id="tm" aria-label="Time">
   <button class="chip" id="now" type="button" style="padding:2px 9px;font-size:.75rem">Now</button>
@@ -72,7 +72,7 @@ const TX={
   en:{
     hdrTitle:"PDA Campus Assistant",
     hdrSub:"P.D.A. College of Engineering, Kalaburagi (Autonomous · Estd. 1958)",
-    langLbl:"Language",demoLbl:"Demo time",nowBtn:"Now",menuBtn:"🏠 Main menu",sendBtn:"Send",
+    langLbl:"Language",timeLbl:"Campus Time",nowBtn:"Now",menuBtn:"🏠 Main menu",sendBtn:"Send",
     ph:"Ask a question or type a teacher’s name...",
     g:"Hello! 👋 Welcome to the <b>PDA Campus Assistant</b>.<br>Please choose a section below or ask your question:",
     m:[
@@ -107,7 +107,7 @@ const TX={
   kn:{
     hdrTitle:"ಪಿ.ಡಿ.ಎ ಕ್ಯಾಂಪಸ್ ಸಹಾಯಕ (PDA Campus Assistant)",
     hdrSub:"ಪಿ.ಡಿ.ಎ ಇಂಜಿನಿಯರಿಂಗ್ ಕಾಲೇಜು, ಕಲಬುರಗಿ (ಸ್ವಾಯತ್ತ ಸಂಸ್ಥೆ · ಸ್ಥಾಪನೆ 1958)",
-    langLbl:"ಭಾಷೆ",demoLbl:"ಸಮಯ",nowBtn:"ಈಗ",menuBtn:"🏠 ಮುಖ್ಯ ಮೆನು",sendBtn:"ಕಳುಹಿಸಿ",
+    langLbl:"ಭಾಷೆ",timeLbl:"ಸಮಯ",nowBtn:"ಈಗ",menuBtn:"🏠 ಮುಖ್ಯ ಮೆನು",sendBtn:"ಕಳುಹಿಸಿ",
     ph:"ಪ್ರಶ್ನೆ ಕೇಳಿ ಅಥವಾ ಶಿಕ್ಷಕರ ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ...",
     g:"ನಮಸ್ಕಾರ! 👋 <b>ಪಿ.ಡಿ.ಎ ಕ್ಯಾಂಪಸ್ ಸಹಾಯಕ</b>ಕ್ಕೆ ಸ್ವಾಗತ.<br>ದಯವಿಟ್ಟು ಕೆಳಗಿನ ವಿಭಾಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ ಅಥವಾ ಪ್ರಶ್ನೆ ಕೇಳಿ:",
     m:[
@@ -142,7 +142,7 @@ const TX={
   hi:{
     hdrTitle:"पी.डी.ए. कैंपस असिस्टेंट (PDA Campus Assistant)",
     hdrSub:"पी.डी.ए. कॉलेज ऑफ इंजीनियरिंग, कलबुर्गी (स्वायत्त संस्थान · स्थापना 1958)",
-    langLbl:"भाषा",demoLbl:"डेमो समय",nowBtn:"अभी",menuBtn:"🏠 मुख्य मेनू",sendBtn:"भेजें",
+    langLbl:"भाषा",timeLbl:"समय (घड़ी)",nowBtn:"अभी",menuBtn:"🏠 मुख्य मेनू",sendBtn:"भेजें",
     ph:"अपना प्रश्न लिखें या शिक्षक का नाम टाइप करें...",
     g:"नमस्ते! 👋 <b>पी.डी.ए. कैंपस असिस्टेंट</b> में आपका स्वागत है।<br>कृपया नीचे से एक विकल्प चुनें या अपना प्रश्न पूछें:",
     m:[
@@ -456,7 +456,7 @@ function syncUILang(){
   $("#hdr-title").textContent=t.hdrTitle;
   $("#hdr-sub").textContent=t.hdrSub;
   $("#lbl-lang").textContent=t.langLbl;
-  $("#lbl-demo").textContent=t.demoLbl;
+  $("#lbl-time").textContent=t.timeLbl;
   $("#now").textContent=t.nowBtn;
   $("#home-top").textContent=t.menuBtn;
   $("#send-btn").textContent=t.sendBtn;
@@ -984,12 +984,12 @@ function askMenu(){
   add(T().askTitle,[
     [m[0],()=>{add(T().a,back());$("#q").focus()}],
     [m[1],()=>{$("#mic").click()}],
-    [m[2],builtInDemo],
+    [m[2],builtInCampusTour],
     [m[3],()=>add(T().notSure,back())],
     [m[4],configAIUrl]
   ].concat(back()));
 }
-function builtInDemo(){
+function builtInCampusTour(){
   add(
     `<span class="tag">Built-in Verified Answers</span><br>`+
     `<b>Instant answers from verified PDA College data, timetables &amp; faculty:</b><br>`+

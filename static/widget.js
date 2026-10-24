@@ -573,25 +573,11 @@
       {batch:"B3",faculty:"Prof. Shivani",room:"CSE Dept."},{batch:"B4",faculty:"Prof. Siddaram S",room:"CSE Dept."}]},
   ];
 
-  // Real staff timetable data
+  // Official AIML Department Faculty Directory & Weekly Timetables (Available data)
   const T = [
     {
-      n: "Dr. S. R. Patil",
-      a: ["ಎಸ್ ಆರ್ ಪಾಟೀಲ್", "पाटिल"],
-      d: "CSE",
-      cab: "CSE Block, 1st Floor, HOD Cabin 101",
-      s: {
-        Mon: { 1: ["7th Sem CSE-A (Cloud Computing)", "CSE LH-201"] },
-        Tue: { 2: ["5th Sem CSE-A (Computer Networks)", "CSE LH-105"] },
-        Wed: { 0: ["7th Sem CSE-A (Cloud Computing)", "CSE LH-201"] },
-        Thu: { 4: ["7th Sem CSE-A (Cloud Lab)", "Cloud COE Lab"], 5: ["7th Sem CSE-A (Cloud Lab)", "Cloud COE Lab"] },
-        Fri: { 2: ["5th Sem CSE-A (Computer Networks)", "CSE LH-105"] },
-        Sat: { 1: ["7th Sem CSE-B (Project Seminar)", "CSE LH-202"] },
-      },
-    },
-    {
       n: "Dr. Basavaraj S. Mathapati",
-      a: ["ಬಸವರಾಜ್", "बसवराज", "ಮಠಪತಿ", "मठपति", "mathapati", "mathpati", "basavaraj"],
+      a: ["ಬಸವರಾಜ್", "बसवराज", "ಮಠಪತಿ", "मठपति", "mathapati", "mathpati", "basavaraj", "dr. basavaraj m"],
       d: "AIML",
       cab: "AIML Dept, Zen AI Block, HOD Cabin",
       s: {
@@ -618,7 +604,7 @@
     },
     {
       n: "Prof. Rajashekhar B",
-      a: ["ರಾಜಶೇಖರ್", "राजशेखर", "rajashekhar", "rajshekhar"],
+      a: ["ರಾಜಶೇಖರ್", "राजशेखर", "rajashekhar", "rajshekhar", "rajshekhar p"],
       d: "AIML",
       cab: "AIML Dept, Faculty Cabin",
       s: {
@@ -629,7 +615,7 @@
     },
     {
       n: "Prof. Priyanka Devani",
-      a: ["ಪ್ರಿಯಾಂಕಾ", "प्रियंका", "priyanka", "devani"],
+      a: ["ಪ್ರಿಯಾಂಕಾ", "प्रियंका", "priyanka", "devani", "priyanka d"],
       d: "AIML",
       cab: "AIML Dept, Faculty Cabin",
       s: {
@@ -639,7 +625,7 @@
     },
     {
       n: "Prof. Sowmya Gaitond",
-      a: ["ಸೌಮ್ಯ", "सौम्या", "sowmya", "gaitond"],
+      a: ["ಸೌಮ್ಯ", "सौम्या", "sowmya", "gaitond", "sowmya g"],
       d: "AIML",
       cab: "AIML Dept, Cabin (3rd Sem Sec-B Class Coordinator)",
       s: {
@@ -651,7 +637,7 @@
     },
     {
       n: "Prof. Mallinath Swamy",
-      a: ["ಮಲ್ಲಿನಾಥ್", "मल्लिनाथ", "mallinath", "swamy"],
+      a: ["ಮಲ್ಲಿನಾಥ್", "मल्लिनाथ", "mallinath", "swamy", "mallinath s"],
       d: "AIML",
       cab: "AIML Dept, Cabin (5th Sem Sec-A Class Coordinator)",
       s: {
@@ -663,7 +649,7 @@
     },
     {
       n: "Dr. Kaveri Kori",
-      a: ["ಕಾವೇರಿ", "कावेरी", "kaveri", "kori"],
+      a: ["ಕಾವೇರಿ", "कावेरी", "kaveri", "kori", "kaveri k"],
       d: "AIML",
       cab: "AIML Dept, Faculty Cabin",
       s: {
@@ -674,13 +660,16 @@
     },
     {
       n: "Prof. Ashwini Hatti",
-      a: ["ಅಶ್ವಿನಿ", "अश्विनी", "ashwini", "aswini", "hatti"],
+      a: ["ಅಶ್ವಿನಿ", "अश्विनी", "ashwini", "aswini", "hatti", "ashwini h"],
       d: "AIML",
       cab: "AIML Dept, Cabin (3rd Sem Sec-A Class Coordinator)",
       s: {
         Mon: { 1: ["3rd Sem AIML-B (DSC)", "LH-09"] },
         Tue: { 0: ["3rd Sem AIML-B (DSC)", "LH-09"] },
+        Wed: { 0: ["1st Sem AIML-G (Prog in C)", "FB LH07"] },
         Thu: { 2: ["3rd Sem AIML-B (DSC)", "LH-15"] },
+        Fri: { 1: ["1st Sem AIML-G (Prog in C)", "FB LH07"] },
+        Sat: { 1: ["1st Sem AIML-G (Prog in C)", "FB LH07"] },
       },
     },
     {
@@ -757,17 +746,17 @@
         Tue: { 1: ["3rd Sem AIML-B (OOP Java)", "LH-09"], 4: ["3rd Sem AIML-B (CP)", "LH-15"], 5: ["3rd Sem AIML-B (CP)", "LH-15"] },
         Wed: { 4: ["5th Sem AIML-B (DBMS)", "LH-16"] },
         Thu: { 0: ["3rd Sem AIML-B (OOP Java)", "LH-15"] },
-        Fri: { 3: ["5th Sem AIML-B (DBMS)", "LH-16"], 4: ["5th Sem AIML-B (DBMS Lab)", "DBMS Lab"], 5: ["5th Sem AIML-B (DBMS Lab)", "DBMS Lab"] },
+        Fri: { 2: ["3rd Sem AIML-B (OOP.LAB B1)", "AIML Lab"], 3: ["5th Sem AIML-B (DBMS)", "LH-16"], 4: ["5th Sem AIML-B (DBMS Lab)", "DBMS Lab"], 5: ["5th Sem AIML-B (DBMS Lab)", "DBMS Lab"] },
         Sat: { 0: ["3rd Sem AIML-B (OOP Java)", "LH-09"], 2: ["5th Sem AIML-B (DBMS Lab)", "DBMS Lab"], 3: ["5th Sem AIML-B (DBMS Lab)", "DBMS Lab"] },
       },
     },
     {
       n: "Prof. Shreya G",
-      a: ["ಶ್ರೇಯಾ", "श्रेया"],
+      a: ["ಶ್ರೇಯಾ", "श्रेया", "shreya", "shreya g", "shreya p"],
       d: "AIML",
       cab: "AIML Dept, Faculty Cabin",
       s: {
-        Mon: { 4: ["5th Sem AIML-B (DSA)", "LH-16"] },
+        Mon: { 2: ["3rd Sem AIML-B (OOP LAB B2)", "AIML Lab"], 3: ["3rd Sem AIML-B (OOP LAB B2)", "AIML Lab"], 4: ["5th Sem AIML-B (DSA)", "LH-16"] },
         Tue: { 3: ["5th Sem AIML-B (DSA)", "LH-16"] },
         Wed: { 2: ["5th Sem AIML-B (DSA)", "LH-16"] },
         Thu: { 4: ["5th Sem AIML-B (DSA)", "LH-16"] },
@@ -776,162 +765,14 @@
       },
     },
     {
-      n: "Prof. Rajeshwari B",
-      a: ["ರಾಜೇಶ್ವರಿ", "राजेश्वरी"],
-      d: "Mathematics",
-      cab: "Maths Dept Cabin",
+      n: "Prof. Chandrakant Biradar",
+      a: ["ಚಂದ್ರಕಾಂತ್", "चंद्रकांत", "chandrakant", "biradar"],
+      d: "AIML",
+      cab: "AIML Dept, Faculty Cabin",
       s: {
-        Tue: { 2: ["3rd Sem AIML-A (Engg Math III)", "LH-09"] },
-        Wed: { 0: ["3rd Sem AIML-A (Engg Math III)", "LH-09"] },
-        Thu: { 2: ["3rd Sem AIML-A (Engg Math III)", "LH-09"] },
-        Fri: { 4: ["3rd Sem AIML-A (Engg Math Tutorial)", "LH-09"], 5: ["3rd Sem AIML-A (Engg Math Tutorial)", "LH-09"] },
-      },
-    },
-    {
-      n: "Prof. Gopichand P",
-      a: ["ಗೋಪಿಚಂದ್", "गोपीचंद"],
-      d: "Mathematics",
-      cab: "Maths Dept Cabin",
-      s: {
-        Tue: { 2: ["3rd Sem AIML-B (Engg Math III)", "LH-15"] },
-        Wed: { 4: ["3rd Sem AIML-B (Engg Math Tutorial)", "LH-17"], 5: ["3rd Sem AIML-B (Engg Math Tutorial)", "LH-17"] },
-        Thu: { 1: ["3rd Sem AIML-B (Engg Math III)", "LH-15"] },
-        Sat: { 1: ["3rd Sem AIML-B (Engg Math III)", "LH-09"] },
-      },
-    },
-    {
-      n: "Dr. Afiya A",
-      a: ["ಆಫಿಯಾ", "आफिया"],
-      d: "Civil / AIML",
-      cab: "Civil Engg Dept Cabin",
-      s: {
-        Mon: { 2: ["5th Sem AIML-A (Environmental Studies)", "LH-15"] },
-        Tue: { 2: ["5th Sem AIML-B (Environmental Studies)", "LH-16"] },
-        Wed: { 2: ["5th Sem AIML-A (Environmental Studies)", "LH-15"] },
-        Thu: { 1: ["5th Sem AIML-B (Environmental Studies)", "LH-16"] },
-      },
-    },
-    {
-      n: "Dr. Ramesh Kulkarni",
-      a: ["ರಮೇಶ್", "रमेश"],
-      d: "ISE",
-      cab: "ISE Block, 2nd Floor, HOD Cabin 201",
-      s: {
-        Mon: { 1: ["4th Sem ISE (DBMS)", "Room 110"] },
-        Tue: { 0: ["6th Sem ISE (Big Data)", "Room 112"], 3: ["4th Sem ISE (DBMS)", "Room 110"] },
-        Wed: { 2: ["6th Sem ISE (Big Data)", "Room 112"] },
-        Thu: { 0: ["4th Sem ISE (DBMS)", "Room 110"], 4: ["4th Sem ISE (DBMS Lab)", "ISE Lab 3"] },
-        Sat: { 0: ["6th Sem ISE (Cloud & DevOps)", "Room 112"] },
-      },
-    },
-    {
-      n: "Dr. Mahesh Biradar",
-      a: ["ಮಹೇಶ್", "महेश"],
-      d: "ECE",
-      cab: "ECE Dept, Main Building, Cabin 1",
-      s: {
-        Mon: { 2: ["5th Sem ECE (DSP)", "Room 305"] },
-        Tue: { 2: ["5th Sem ECE (DSP)", "Room 305"] },
-        Wed: { 3: ["3rd Sem ECE (Signals & Systems)", "Room 302"] },
-        Thu: { 1: ["5th Sem ECE (DSP)", "Room 305"] },
-        Fri: { 4: ["7th Sem ECE (VLSI Lab)", "VLSI Lab 5"] },
-        Sat: { 1: ["3rd Sem ECE (Signals & Systems)", "Room 302"] },
-      },
-    },
-    {
-      n: "Dr. Anand Ghuli",
-      a: ["ಆನಂದ್", "आनंद"],
-      d: "AI&DS",
-      cab: "AI & DS Block, Cabin 1",
-      s: {
-        Mon: { 1: ["5th Sem AI&DS (Big Data)", "Room 201"] },
-        Tue: { 2: ["3rd Sem AI&DS (Python)", "Lab 1"] },
-        Wed: { 1: ["5th Sem AI&DS (Big Data)", "Room 201"] },
-        Thu: { 3: ["7th Sem AI&DS (MLOps)", "Room 202"] },
-      },
-    },
-    {
-      n: "Dr. Sanjeev Kumar",
-      a: ["ಸಂಜೀವ್", "संजीव"],
-      d: "CSD",
-      cab: "CSD Block, Cabin 104",
-      s: {
-        Mon: { 2: ["5th Sem CSD (UI/UX)", "Studio 1"] },
-        Wed: { 0: ["3rd Sem CSD (Design Thinking)", "Room 104"] },
-        Fri: { 1: ["5th Sem CSD (AR/VR)", "Lab 2"] },
-      },
-    },
-    {
-      n: "Dr. B. K. Singh",
-      a: ["ಸಿಂಗ್", "सिंह"],
-      d: "EEE",
-      cab: "EEE Block, Ground Floor, HOD Cabin",
-      s: {
-        Mon: { 0: ["5th Sem EEE (Power Systems)", "Room 101"] },
-        Tue: { 3: ["7th Sem EEE (High Voltage)", "HV Lab"] },
-        Thu: { 1: ["3rd Sem EEE (Network Analysis)", "Room 102"] },
-      },
-    },
-    {
-      n: "Dr. Shrishail Kakkeri",
-      a: ["ಶ್ರೀಶೈಲ", "श्रीशैल"],
-      d: "MECH",
-      cab: "Mechanical Block, Ground Floor, HOD Cabin",
-      s: {
-        Mon: { 1: ["5th Sem Mech (Thermodynamics)", "LH-54"] },
-        Wed: { 2: ["7th Sem Mech (CAD/CAM)", "CAD Lab"] },
-        Fri: { 0: ["3rd Sem Mech (Material Science)", "LH-55"] },
-      },
-    },
-    {
-      n: "Dr. Mallikarjun B.",
-      a: ["ಮಲ್ಲಿಕಾರ್ಜುನ", "मल्लिकार्जुन"],
-      d: "CIVIL",
-      cab: "Civil Block, Main Building, HOD Cabin",
-      s: {
-        Tue: { 1: ["5th Sem Civil (Structural Analysis)", "Room 205"] },
-        Thu: { 2: ["3rd Sem Civil (Surveying)", "Survey Lab"] },
-        Sat: { 0: ["7th Sem Civil (Geotechnical)", "Room 206"] },
-      },
-    },
-    {
-      n: "Dr. V. S. Jamadar",
-      a: ["ಜಮಾದಾರ್", "जमादार"],
-      d: "EIE",
-      cab: "EIE Dept, Main Building, Cabin 108",
-      s: {
-        Mon: { 2: ["5th Sem EIE (Transducers)", "Cabin 108"] },
-        Wed: { 1: ["3rd Sem EIE (Sensors)", "Room 108"] },
-      },
-    },
-    {
-      n: "Dr. Suresh S.",
-      a: ["ಸುರೇಶ್", "सुरेश"],
-      d: "AUTO",
-      cab: "Automobile Block, HOD Cabin",
-      s: {
-        Tue: { 0: ["5th Sem Auto (Automotive Engines)", "Auto Lab"] },
-        Thu: { 3: ["7th Sem Auto (EV Technology)", "EV Lab"] },
-      },
-    },
-    {
-      n: "Dr. Ravindra Patil",
-      a: ["ರವೀಂದ್ರ", "रविंद्र"],
-      d: "IPE",
-      cab: "MB IP01 Block, HOD Cabin",
-      s: {
-        Mon: { 3: ["5th Sem IPE (Operations Research)", "MB IP01"] },
-        Fri: { 2: ["7th Sem IPE (Quality Engg)", "MB IP02"] },
-      },
-    },
-    {
-      n: "Dr. S. B. Patil",
-      a: ["ಎಸ್ ಬಿ ಪಾಟೀಲ್", "पाटिल"],
-      d: "CCT",
-      cab: "CCT Block, MB IP11, HOD Cabin",
-      s: {
-        Wed: { 1: ["5th Sem CCT (Cement Tech)", "MB IP11"] },
-        Fri: { 3: ["7th Sem CCT (Refractories)", "MB IP12"] },
+        Mon: { 1: ["1st Sem AIML-H (Prog in C)", "FB LH08"] },
+        Tue: { 3: ["1st Sem AIML-H (Prog in C)", "FB LH08"] },
+        Wed: { 0: ["1st Sem AIML-H (Prog in C)", "FB LH08"] },
       },
     },
   ];
@@ -1130,348 +971,443 @@
   // Inject Styles
   const styleEl = document.createElement("style");
   styleEl.textContent = `
-    #pda-widget-root * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Kannada", sans-serif; }
-    
+    :root {
+      --bg1: #0b1020;
+      --bg2: #1b2a6b;
+      --glass: rgba(255, 255, 255, 0.09);
+      --glass2: rgba(255, 255, 255, 0.16);
+      --bd: rgba(255, 255, 255, 0.22);
+      --tx: #f4f6ff;
+      --mu: #b6bddc;
+      --ac: #7c8cff;
+      --ac2: #35d0c0;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg1: #e8ecff;
+        --bg2: #b9c4ff;
+        --glass: rgba(255, 255, 255, 0.55);
+        --glass2: rgba(255, 255, 255, 0.8);
+        --bd: rgba(255, 255, 255, 0.9);
+        --tx: #14183a;
+        --mu: #4a527f;
+      }
+    }
+
+    #pda-widget-root * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Kannada", sans-serif;
+    }
+
     #pda-chat-launcher {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 68px;
-      height: 68px;
+      bottom: 18px;
+      right: 18px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #4c1d95 0%, #311068 100%);
-      box-shadow: 0 10px 28px rgba(76, 29, 149, 0.45), 0 0 0 3px #f59e0b;
+      background: linear-gradient(135deg, var(--bg2), #4c1d95);
+      border: 1px solid var(--bd);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 999998;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: pda-pulse 3s infinite;
     }
     #pda-chat-launcher:hover {
-      transform: scale(1.06) translateY(-2px);
-      box-shadow: 0 14px 34px rgba(76, 29, 149, 0.55), 0 0 0 4px #fbbf24;
+      transform: scale(1.06);
+    }
+    @keyframes pda-pulse {
+      0% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 0 var(--ac);
+      }
+      70% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 14px rgba(124, 140, 255, 0);
+      }
+      100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(124, 140, 255, 0);
+      }
     }
     #pda-chat-launcher img {
-      width: 52px;
-      height: 52px;
+      width: 42px;
+      height: 42px;
       object-fit: contain;
       border-radius: 50%;
-      background: #fff;
-      padding: 2px;
       pointer-events: none;
     }
     #pda-chat-launcher .pda-badge {
       position: absolute;
-      top: -4px;
-      right: -4px;
+      top: -2px;
+      right: -2px;
       background: #f59e0b;
       color: #1e1b4b;
       font-size: 10px;
       font-weight: 800;
       padding: 2px 6px;
       border-radius: 999px;
-      border: 2px solid #ffffff;
+      border: 1.5px solid var(--bd);
     }
 
     #pda-chat-window {
       position: fixed;
-      bottom: 102px;
-      right: 24px;
-      width: 450px;
-      max-width: calc(100vw - 28px);
-      height: 660px;
-      max-height: calc(100vh - 116px);
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(30, 14, 64, 0.28);
-      border: 1.5px solid #ddd6fe;
+      bottom: 18px;
+      right: 18px;
+      width: min(400px, 100% - 36px);
+      height: min(640px, 100% - 36px);
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--glass);
+      border: 1px solid var(--bd);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      backdrop-filter: blur(22px) saturate(160%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
       display: none;
       flex-direction: column;
-      overflow: hidden;
       z-index: 999999;
-      animation: pdaSlideUp 0.24s ease-out;
+      color: var(--tx);
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    @keyframes pdaSlideUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
+    @supports not (backdrop-filter: blur(1px)) {
+      #pda-chat-window {
+        background: rgba(20, 26, 60, 0.92);
+      }
+    }
+    @supports not (-webkit-backdrop-filter: blur(1px)) {
+      #pda-chat-window {
+        background: rgba(20, 26, 60, 0.92);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #pda-chat-launcher {
+        animation: none !important;
+        transition: none !important;
+      }
+      #pda-chat-window, .pda-msg-in, .pda-b {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+    @media (max-width: 480px) {
+      #pda-chat-window {
+        bottom: env(safe-area-inset-bottom, 12px);
+        right: 12px;
+        left: 12px;
+        width: auto;
+        height: calc(100vh - 24px - env(safe-area-inset-bottom, 0px));
+        border-radius: 18px;
+      }
     }
 
     .pda-header {
-      background: linear-gradient(135deg, #4c1d95 0%, #311068 100%);
-      color: #ffffff;
-      padding: 13px 16px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, rgba(76, 29, 149, 0.35), rgba(27, 42, 107, 0.35));
+      border-bottom: 1px solid var(--bd);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 3px solid #f59e0b;
+      gap: 10px;
+      flex-shrink: 0;
     }
     .pda-header-left {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 10px;
+      overflow: hidden;
     }
     .pda-header-left img {
-      width: 42px;
-      height: 42px;
-      background: #ffffff;
-      border-radius: 50%;
-      padding: 2px;
-      border: 2px solid #f59e0b;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       object-fit: contain;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px;
+      border: 1px solid var(--bd);
+      flex-shrink: 0;
+    }
+    .pda-header-title {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+      overflow: hidden;
     }
     .pda-header-title b {
       font-size: 15px;
       font-weight: 700;
-      display: block;
-      color: #ffffff;
+      color: var(--tx);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     .pda-header-title small {
       font-size: 11.5px;
-      color: #fde68a;
-      display: block;
-      margin-top: 1px;
+      color: var(--mu);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     .pda-header-actions {
       display: flex;
       align-items: center;
       gap: 6px;
+      flex-shrink: 0;
     }
-    .pda-lang-select {
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    .pda-lang-select, .pda-hbtn {
+      background: var(--glass2);
+      border: 1px solid var(--bd);
+      color: var(--tx);
+      border-radius: 999px;
       padding: 4px 8px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 600;
-      outline: none;
+      font-size: 12px;
       cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
     }
-    .pda-lang-select option {
-      background: #311068;
-      color: white;
+    .pda-lang-select:hover, .pda-hbtn:hover {
+      border-color: var(--ac);
+      background: rgba(255, 255, 255, 0.25);
     }
-    .pda-hbtn {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: white;
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      transition: background 0.2s;
-    }
-    .pda-hbtn:hover { background: rgba(255, 255, 255, 0.28); }
 
     #pda-chat-messages {
       flex: 1;
       overflow-y: auto;
-      padding: 15px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
-      gap: 11px;
-      background: #faf9ff;
-      scroll-behavior: smooth;
+      gap: 12px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--bd) transparent;
+    }
+    #pda-chat-messages::-webkit-scrollbar {
+      width: 6px;
+    }
+    #pda-chat-messages::-webkit-scrollbar-thumb {
+      background: var(--bd);
+      border-radius: 3px;
     }
 
     .pda-b {
-      max-width: 94%;
-      padding: 13px 15px;
-      border-radius: 15px;
-      background: #ffffff;
-      color: #1e1b4b;
-      border: 1px solid #ede9fe;
-      border-top-left-radius: 4px;
+      max-width: 86%;
+      padding: 11px 14px;
+      border-radius: 16px;
+      border-bottom-left-radius: 5px;
+      background: var(--glass2);
+      color: var(--tx);
+      border: 1px solid var(--bd);
       overflow-wrap: anywhere;
-      font-size: 13.2px;
-      line-height: 1.55;
-      animation: pdaFade 0.2s ease;
-      box-shadow: 0 3px 10px rgba(76, 29, 149, 0.05);
+      font-size: 14px;
+      line-height: 1.45;
+      animation: pdaFade 0.25s ease-out;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     @keyframes pdaFade {
-      from { opacity: 0; transform: translateY(4px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .pda-b.me {
       align-self: flex-end;
-      background: linear-gradient(135deg, #4c1d95 0%, #3b0764 100%);
+      background: linear-gradient(135deg, var(--ac), #5566e6);
       color: #ffffff;
-      border: 0;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 5px;
       padding: 10px 14px;
-      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.2);
+      box-shadow: 0 4px 16px rgba(85, 102, 230, 0.3);
     }
-    .pda-b a { color: #6d28d9; font-weight: 700; text-decoration: underline; }
+    .pda-b a {
+      color: var(--ac);
+      font-weight: 700;
+      text-decoration: underline;
+    }
 
     .pda-tag {
       display: inline-block;
       font-size: 10.5px;
-      background: #f5f3ff;
-      color: #5b21b6;
-      border: 1px solid #ddd6fe;
+      background: var(--glass2);
+      color: var(--ac2);
+      border: 1px solid var(--bd);
       border-radius: 999px;
       padding: 2px 9px;
-      margin-bottom: 7px;
-      font-weight: 700;
-    }
-
-    .pda-ml-line {
-      padding: 5px 9px;
-      margin: 4px 0;
-      border-left: 3px solid #6d28d9;
-      background: #faf8ff;
-      border-radius: 0 8px 8px 0;
-      animation: pdaLineIn 0.2s ease forwards;
-    }
-    .pda-ml-heading {
-      font-size: 14px;
-      font-weight: 800;
-      color: #3b0764;
-      margin: 6px 0 8px;
-      padding-bottom: 5px;
-      border-bottom: 1.5px solid #ede9fe;
-    }
-    @keyframes pdaLineIn {
-      from { opacity: 0; transform: translateX(-5px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .pda-col-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-top: 10px;
-      width: 100%;
-    }
-    .pda-menu-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #f5f3ff;
-      border: 1px solid #ddd6fe;
-      border-radius: 11px;
-      padding: 10px 12px;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.18s ease;
-      width: 100%;
-      color: #1e1b4b;
-    }
-    .pda-menu-card:hover {
-      background: #4c1d95;
-      border-color: #4c1d95;
-      color: #ffffff;
-      transform: translateX(2px);
-      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.18);
-    }
-    .pda-menu-icon {
-      font-size: 16px;
-      flex-shrink: 0;
-      width: 24px;
-      text-align: center;
-    }
-    .pda-menu-text {
-      flex: 1;
-      min-width: 0;
-    }
-    .pda-menu-title {
-      font-size: 13px;
+      margin-bottom: 6px;
       font-weight: 600;
-      color: inherit;
-      line-height: 1.35;
-    }
-    .pda-menu-arrow {
-      font-size: 13px;
-      color: #6d28d9;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .pda-menu-card:hover .pda-menu-arrow {
-      color: #fde68a;
     }
 
-    .pda-back-bar { margin-bottom: 8px; }
-    .pda-back-btn {
-      background: #fef3c7;
-      border: 1px solid #f59e0b;
-      color: #92400e;
+    .pda-chips-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 12px;
+      max-height: 36%;
+      overflow-y: auto;
+      border-top: 1px solid var(--bd);
+      background: rgba(0, 0, 0, 0.08);
+      scrollbar-width: thin;
+      scrollbar-color: var(--bd) transparent;
+    }
+    .pda-chip {
+      background: var(--glass2);
+      border: 1px solid var(--bd);
+      color: var(--tx);
       border-radius: 999px;
-      padding: 4px 11px;
-      font-size: 11.2px;
-      font-weight: 700;
+      padding: 7px 12px;
+      font-size: 12.5px;
+      font-weight: 500;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
-    .pda-back-btn:hover { background: #fde68a; }
-
-    .pda-wrap { overflow-x: auto; margin-top: 8px; border-radius: 9px; border: 1px solid #e2e8f0; }
-    .pda-table { border-collapse: collapse; width: 100%; font-size: 11.5px; background: white; }
-    .pda-table td, .pda-table th { border: 1px solid #e2e8f0; padding: 6px 7px; text-align: left; }
-    .pda-table th { background: #f5f3ff; color: #4c1d95; font-weight: 700; }
+    .pda-chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.28);
+    }
 
     .pda-footer-form {
       display: flex;
-      gap: 7px;
-      padding: 11px 12px;
-      background: #ffffff;
-      border-top: 1px solid #ede9fe;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-top: 1px solid var(--bd);
+      background: rgba(0, 0, 0, 0.12);
+      flex-shrink: 0;
     }
     .pda-input-text {
       flex: 1;
-      font: inherit;
-      color: #1e1b4b;
-      background: #faf9ff;
-      border: 1.5px solid #ddd6fe;
-      border-radius: 999px;
-      padding: 9px 14px;
-      font-size: 13px;
+      background: var(--glass2);
+      border: 1px solid var(--bd);
+      color: var(--tx);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-size: 13.5px;
       outline: none;
-      min-width: 0;
+      transition: border-color 0.2s;
     }
     .pda-input-text:focus {
-      border-color: #6d28d9;
-      background: #ffffff;
+      border-color: var(--ac);
     }
-    .pda-mic-btn {
-      background: #f5f3ff;
-      border: 1px solid #ddd6fe;
-      color: #4c1d95;
-      border-radius: 999px;
-      width: 38px;
-      height: 38px;
+    .pda-input-text::placeholder {
+      color: var(--mu);
+    }
+    .pda-mic-btn, .pda-send-btn {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--ac), var(--ac2));
+      border: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
-      font-size: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      box-shadow: 0 4px 12px rgba(53, 208, 192, 0.2);
     }
-    .pda-mic-btn.recording {
-      background: #fee2e2;
-      border-color: #ef4444;
-      color: #ef4444;
+    .pda-mic-btn:hover, .pda-send-btn:hover {
+      transform: scale(1.04);
+      opacity: 0.95;
     }
-    .pda-send-btn {
-      font: inherit;
-      font-size: 13px;
-      font-weight: 700;
-      border: 0;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #4c1d95 0%, #3b0764 100%);
-      color: #ffffff;
-      padding: 0 16px;
+
+    .pda-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--bd);
+      border-radius: 10px;
+      margin: 8px 0;
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .pda-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .pda-table th {
+      background: transparent;
+      color: var(--mu);
+      padding: 7px 9px;
+      text-align: left;
+      border-bottom: 1px solid var(--bd);
+      font-weight: 600;
+    }
+    .pda-table td {
+      padding: 7px 9px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--tx);
+    }
+
+    .pda-menu-card {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--glass2);
+      border: 1px solid var(--bd);
+      border-radius: 12px;
+      padding: 9px 12px;
+      margin: 6px 0;
+      color: var(--tx);
       cursor: pointer;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
-    .pda-send-btn:hover { opacity: 0.93; }
-  `;
+    .pda-menu-card:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.28);
+      border-color: var(--ac);
+    }
+    .pda-menu-icon { font-size: 16px; flex-shrink: 0; }
+    .pda-menu-text { flex: 1; }
+    .pda-menu-title { font-size: 13px; color: var(--tx); font-weight: 600; }
+    .pda-menu-arrow { font-size: 12px; color: var(--mu); }
+
+    .pda-back-bar { margin-bottom: 8px; }
+    .pda-back-btn {
+      background: var(--glass2);
+      border: 1px solid var(--bd);
+      color: var(--tx);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 11.5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .pda-back-btn:hover {
+      border-color: var(--ac);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .pda-website-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 7px 14px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--ac), var(--ac2));
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(124, 140, 255, 0.3);
+    }
+    .pda-website-btn:hover {
+      opacity: 0.92;
+    }
+`;
   document.head.appendChild(styleEl);
 
   const root = document.createElement("div");
@@ -1505,6 +1441,14 @@
 
       <div id="pda-chat-messages" aria-live="polite"></div>
 
+      <div id="pda-chips-bar" class="pda-chips-bar">
+        <button type="button" class="pda-chip" data-chip="admission">🎓 Admission</button>
+        <button type="button" class="pda-chip" data-chip="student">📚 Student Enquiry</button>
+        <button type="button" class="pda-chip" data-chip="staff">👨‍🏫 Staff</button>
+        <button type="button" class="pda-chip" data-chip="scholarship">💰 Scholarship</button>
+        <button type="button" class="pda-chip" data-chip="ask">❓ Ask a question</button>
+      </div>
+
       <form id="pda-chat-form" class="pda-footer-form">
         <input type="text" id="pda-query-input" class="pda-input-text" placeholder="Ask any question (e.g. 'AIML fees & cutoff', 'Dr. S. R. Patil')..." autocomplete="off" />
         <button type="button" class="pda-mic-btn" id="pda-mic-btn" aria-label="Voice Search">🎤</button>
@@ -1513,6 +1457,29 @@
     </div>
   `;
   document.body.appendChild(root);
+
+  // Wire up chips
+  root.querySelectorAll(".pda-chip").forEach(function(btn) {
+    btn.onclick = function() {
+      const chipType = btn.getAttribute("data-chip");
+      if (chipType === "admission") {
+        add("Admission", null, true);
+        adm();
+      } else if (chipType === "student") {
+        add("Student Enquiry", null, true);
+        stu();
+      } else if (chipType === "staff") {
+        add("Staff", null, true);
+        stf();
+      } else if (chipType === "scholarship") {
+        add("Scholarship", null, true);
+        schola();
+      } else if (chipType === "ask") {
+        add("Ask a question", null, true);
+        queryInput.focus();
+      }
+    };
+  });
 
   const launcher = document.getElementById("pda-chat-launcher");
   const chatWindow = document.getElementById("pda-chat-window");
@@ -1788,10 +1755,41 @@
 
   // AUTO-BUILD each AIML teacher's personal weekly timetable directly from the official class timetables (AIML_TT)
   (function buildTeacherTimetablesFromClassTT() {
+    const FACULTY_ALIASES = {
+      "dr. basavaraj m": "dr. basavaraj s. mathapati",
+      "dr. basavaraj s mathapati": "dr. basavaraj s. mathapati",
+      "dr. nandini p": "dr. nandini p",
+      "prof. rajshekhar p": "prof. rajashekhar b",
+      "prof. rajashekhar b": "prof. rajashekhar b",
+      "prof. priyanka d": "prof. priyanka devani",
+      "prof. priyanka devani": "prof. priyanka devani",
+      "prof. sowmya g": "prof. sowmya gaitond",
+      "prof. sowmya gaitond": "prof. sowmya gaitond",
+      "prof. mallinath s": "prof. mallinath swamy",
+      "prof. mallinath swamy": "prof. mallinath swamy",
+      "prof. kaveri k": "dr. kaveri kori",
+      "dr. kaveri kori": "dr. kaveri kori",
+      "prof. ashwini h": "prof. ashwini hatti",
+      "prof. ashwini hatti": "prof. ashwini hatti",
+      "prof. sonali m": "prof. sonali m",
+      "prof. neha a": "prof. neha a",
+      "prof. savitha p": "prof. savitha p",
+      "prof. laxmi j": "prof. laxmi j",
+      "prof. santoshi p": "prof. santoshi p",
+      "dr. sharanamma h": "dr. sharanamma h",
+      "prof. shreya g": "prof. shreya g",
+      "prof. shreya p": "prof. shreya g",
+      "prof. chandrakant biradar": "prof. chandrakant biradar"
+    };
     const norm = function (s) { return s.toLowerCase().replace(/\s+/g, " ").trim(); };
     const findT = function (fname) {
       const f = norm(fname);
-      return T.find(function (t) { return t.d === "AIML" && norm(t.n) === f; });
+      const target = FACULTY_ALIASES[f] || f;
+      return T.find(function (t) {
+        if (t.d !== "AIML") return false;
+        const tn = norm(t.n);
+        return tn === target || tn.indexOf(target) !== -1 || target.indexOf(tn) !== -1;
+      });
     };
     const courseFor = function (courses, key) {
       const k = key.toUpperCase();
@@ -1852,6 +1850,29 @@
         });
       });
     });
+
+    // Merge 1st Year AIML faculty slots into fresh
+    const tAshwini = T.find(function (t) { return t.n.indexOf("Ashwini") !== -1; });
+    if (tAshwini) {
+      fresh[tAshwini.n] = fresh[tAshwini.n] || {};
+      fresh[tAshwini.n]["Wed"] = fresh[tAshwini.n]["Wed"] || {};
+      fresh[tAshwini.n]["Wed"][0] = ["1st Sem AIML-G (Prog in C)", "FB LH07"];
+      fresh[tAshwini.n]["Fri"] = fresh[tAshwini.n]["Fri"] || {};
+      fresh[tAshwini.n]["Fri"][1] = ["1st Sem AIML-G (Prog in C)", "FB LH07"];
+      fresh[tAshwini.n]["Sat"] = fresh[tAshwini.n]["Sat"] || {};
+      fresh[tAshwini.n]["Sat"][1] = ["1st Sem AIML-G (Prog in C)", "FB LH07"];
+    }
+    const tChandra = T.find(function (t) { return t.n.indexOf("Chandrakant") !== -1; });
+    if (tChandra) {
+      fresh[tChandra.n] = fresh[tChandra.n] || {};
+      fresh[tChandra.n]["Mon"] = fresh[tChandra.n]["Mon"] || {};
+      fresh[tChandra.n]["Mon"][1] = ["1st Sem AIML-H (Prog in C)", "FB LH08"];
+      fresh[tChandra.n]["Tue"] = fresh[tChandra.n]["Tue"] || {};
+      fresh[tChandra.n]["Tue"][3] = ["1st Sem AIML-H (Prog in C)", "FB LH08"];
+      fresh[tChandra.n]["Wed"] = fresh[tChandra.n]["Wed"] || {};
+      fresh[tChandra.n]["Wed"][0] = ["1st Sem AIML-H (Prog in C)", "FB LH08"];
+    }
+
     T.forEach(function (t) { if (t.d === "AIML" && fresh[t.n]) t.s = fresh[t.n]; });
   })();
   // Helper: Format department name & short code exactly ONCE (never "(AIML) (AIML)")
@@ -2073,13 +2094,15 @@
 
   function showComingSoonDept(d, backAction) {
     const label = deptLabel(d);
+    const csText = lg() === "kn" ? "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ" : (lg() === "hi" ? "जल्द आ रहा है" : "Coming soon");
     add(
-      tag(`${label} · Coming Soon`) +
+      tag(`${label} · ${csText}`) +
         `<b>🏛️ ${label}</b><br>` +
-        `<b>Status:</b> <span style="color:#d97706;font-weight:700">⏳ Coming Soon</span><br>` +
+        `<b>Status:</b> <span style="color:#d97706;font-weight:700">⏳ ${csText}</span><br>` +
         `• Currently, complete academic data & timetables are live for <b>1st Year (Sections A–R & ESC-I)</b> and <b>Artificial Intelligence & Machine Learning (AIML)</b>.<br>` +
-        `• Scheme, syllabus, notes, question papers & class timetable for <b>${label}</b> are <b>Coming Soon</b>.<br>` +
-        `• <b>HOD:</b> ${d.hod} (${d.cabin})`,
+        `• Scheme, syllabus, notes, question papers & class timetable for <b>${label}</b> are <b>${csText}</b>.<br>` +
+        `• <b>HOD:</b> ${d.hod} (${d.cabin})<br>` +
+        `<a href="https://www.pdacek.ac.in" target="_blank" rel="noopener" class="pda-website-btn">🌐 Visit PDA College Website</a>`,
       [
         { icon: "🤖", title: "Open Artificial Intelligence & Machine Learning (AIML)", action: function () { stuPickScheme(DEPTS[1]); } },
         { icon: "1️⃣", title: "Open 1st Year Timetable (Sections A–I / A–R)", action: firstYearTT },
@@ -2141,9 +2164,263 @@
     );
   }
 
+
+  function showAIML2025Menu(d) {
+    const labelDept = deptLabel(d);
+    add(
+      tag("AIML · 2025 Scheme") + `<b>🏛️ ${labelDept} — 2025 Scheme:</b><br><small>Select a category to view verified academic records:</small>`,
+      [
+        { icon: "📘", title: "1st Sem P-Cycle Subjects (9 Subjects)", action: function () { show2025CycleSubjects("P", d); } },
+        { icon: "📗", title: "2nd Sem C-Cycle Subjects (8 Subjects)", action: function () { show2025CycleSubjects("C", d); } },
+        { icon: "🗓️", title: "1st Sem Timetables (Sections G & H)", action: function () { show2025TimetableMenu(d); } },
+        { icon: "⚡", title: "ESC-I Batches & Faculty Distribution", action: function () { show2025ESCBatches(d); } },
+        { icon: "📐", title: "CSCED103 Development Problems (4.1–4.16)", action: function () { show2025DevResources(d); } },
+        { icon: "⬅️", title: `← ${d.code} Schemes`, action: function () { stuPickScheme(d); } },
+      ],
+      false,
+      true
+    );
+  }
+
+  function show2025CycleSubjects(cycle, d) {
+    const csText = lg() === "kn" ? "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ" : (lg() === "hi" ? "जल्द आ रहा है" : "Coming soon");
+    fetch(`${API_BASE}/api/aiml-2025/subjects?cycle=${cycle}`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        const subjects = (res && res.subjects) || [];
+        const bars = subjects.map(function (s) {
+          const isCs = s.data_status === "coming_soon";
+          return {
+            icon: isCs ? "⏳" : "📄",
+            title: `${s.code}: ${s.name} (${s.credits} Credits)${isCs ? " — " + csText : ""}`,
+            action: function () { show2025SubjectDetail(s.code, cycle, d); },
+          };
+        });
+        bars.push({ icon: "⬅️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } });
+        add(
+          tag(`AIML 2025 · ${cycle}-Cycle`) + `<b>${cycle}-Cycle Subjects (${subjects.length} Total):</b><br><small>Click any course to inspect syllabus & details:</small>`,
+          bars,
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching 2025 subjects. Please try again.", [{ icon: "⬅️", title: "← Back", action: function () { showAIML2025Menu(d); } }], false, true);
+      });
+  }
+
+  function show2025SubjectDetail(code, cycle, d) {
+    const csText = lg() === "kn" ? "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ" : (lg() === "hi" ? "जल्द आ रहा है" : "Coming soon");
+    fetch(`${API_BASE}/api/aiml-2025/syllabus/${code}`)
+      .then(function (r) { return r.json(); })
+      .then(function (s) {
+        let h = tag(`${s.code} · Syllabus`);
+        h += `<b>${s.code}: ${s.name}</b><br>`;
+        h += `<b>Scheme:</b> 2025 | <b>Credits:</b> ${s.credits} | <b>Cycle:</b> ${s.cycle} | <b>Stream:</b> ${s.stream || "CS Stream"}<br>`;
+        h += `<b>Status:</b> ${s.data_status === "coming_soon" ? '<span style="color:#d97706;font-weight:700">⏳ ' + csText + '</span>' : '<span style="color:#10b981;font-weight:700">✅ Verified</span>'}<br><br>`;
+
+        if (s.data_status === "coming_soon") {
+          h += `• <b>Syllabus Details:</b> ${csText}<br>`;
+          h += `<a href="https://www.pdacek.ac.in" target="_blank" rel="noopener" class="pda-website-btn">🌐 Visit PDA College Website</a>`;
+        } else {
+          // Objectives
+          if (s.objectives && s.objectives.status === "coming_soon") {
+            h += `<b>Course Objectives:</b> <i>${csText}</i><br><br>`;
+          } else if (Array.isArray(s.objectives) && s.objectives.length > 0) {
+            h += `<b>Course Objectives:</b><br>`;
+            s.objectives.forEach(function (obj) { h += `• ${obj}<br>`; });
+            h += `<br>`;
+          }
+
+          // Modules
+          if (Array.isArray(s.modules) && s.modules.length > 0) {
+            h += `<b>Modules:</b><br>`;
+            s.modules.forEach(function (m) {
+              h += `<b>Module ${m.module_number}: ${m.title}</b> (${m.hours || 0} Hours)<br>`;
+              if (m.topics && m.topics.length > 0) {
+                h += `<small style="color:var(--mu)">${m.topics.join("; ")}</small><br>`;
+              }
+            });
+            h += `<br>`;
+          }
+
+          // Lab Experiments
+          if (Array.isArray(s.lab_experiments) && s.lab_experiments.length > 0) {
+            h += `<b>Lab Experiments:</b><br>`;
+            s.lab_experiments.forEach(function (exp) {
+              h += `• ${typeof exp === "string" ? exp : exp.title || JSON.stringify(exp)}<br>`;
+            });
+            h += `<br>`;
+          }
+
+          // Textbooks
+          if (Array.isArray(s.textbooks) && s.textbooks.length > 0) {
+            h += `<b>Textbooks:</b><br>`;
+            s.textbooks.forEach(function (tb) { h += `• ${tb}<br>`; });
+            h += `<br>`;
+          }
+
+          // References
+          if (Array.isArray(s.references) && s.references.length > 0) {
+            h += `<b>Reference Books:</b><br>`;
+            s.references.forEach(function (ref) { h += `• ${ref}<br>`; });
+            h += `<br>`;
+          }
+
+          // Question Paper Pattern
+          if (s.question_paper_pattern) {
+            if (s.question_paper_pattern.status === "coming_soon") {
+              h += `<b>SEE Pattern:</b> <i>${csText}</i><br>`;
+            } else if (typeof s.question_paper_pattern === "string") {
+              h += `<b>SEE Pattern:</b> ${s.question_paper_pattern}<br>`;
+            }
+          }
+        }
+
+        add(
+          h,
+          [
+            { icon: "⬅️", title: `← Back to ${cycle}-Cycle`, action: function () { show2025CycleSubjects(cycle, d); } },
+            { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+          ],
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error loading subject details.", [{ icon: "⬅️", title: "← Back", action: function () { show2025CycleSubjects(cycle, d); } }], false, true);
+      });
+  }
+
+  function show2025TimetableMenu(d) {
+    add(
+      tag("AIML 2025 · 1st Sem Timetables") + `<b>🗓️ 1st Sem Timetable (w.e.f. 07-09-2026):</b><br><small>Select your section:</small>`,
+      [
+        { icon: "🔠", title: "Section G (AIML — Room 001)", action: function () { show2025SectionTT("G", d); } },
+        { icon: "🔠", title: "Section H (AIML — Room 002)", action: function () { show2025SectionTT("H", d); } },
+        { icon: "⚡", title: "ESC-I Batches & Faculty Distribution", action: function () { show2025ESCBatches(d); } },
+        { icon: "⬅️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+      ],
+      false,
+      true
+    );
+  }
+
+  function show2025SectionTT(sec, d) {
+    fetch(`${API_BASE}/api/aiml-2025/timetable?section=${sec}`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        const days = res.schedule || {};
+        let h = tag(`Section ${sec} · Timetable`);
+        h += `<b>🗓️ 1st Sem AIML — Section ${sec} (Room ${res.room || "TBA"}):</b><br>`;
+        h += `<small>Academic Year 2026-27 · Effective 07-09-2026</small><br>`;
+        
+        h += `<div class="pda-table-wrap"><table class="pda-table"><thead><tr><th>Day</th><th>P1 (9-10)</th><th>P2 (10-11)</th><th>P3 (11:15-12:15)</th><th>P4 (12:15-1:15)</th><th>P5 (2:15-3:15)</th><th>P6 (3:15-4:15)</th><th>P7 (4:15-5:15)</th></tr></thead><tbody>`;
+        
+        ["MON", "TUE", "WED", "THU", "FRI", "SAT"].forEach(function (dayKey) {
+          const periods = (days[dayKey] && days[dayKey].periods) || [];
+          h += `<tr><td><b>${dayKey}</b></td>`;
+          for (let pNum = 1; pNum <= 7; pNum++) {
+            const p = periods.find(function (it) { return it.period === pNum; });
+            if (p && p.subject_code) {
+              h += `<td><b>${p.subject_code}</b><br><small style="color:var(--mu)">${p.faculty || ""}</small></td>`;
+            } else {
+              h += `<td style="color:var(--mu)">—</td>`;
+            }
+          }
+          h += `</tr>`;
+        });
+        h += `</tbody></table></div>`;
+
+        // Faculty list
+        if (res.faculty && res.faculty.length > 0) {
+          h += `<b>Faculty Details:</b><br>`;
+          res.faculty.forEach(function (fac) {
+            h += `• <b>${fac.subject_code}:</b> ${fac.faculty_name} (${fac.initials})<br>`;
+          });
+        }
+
+        add(
+          h,
+          [
+            { icon: "⬅️", title: "← Other Sections", action: function () { show2025TimetableMenu(d); } },
+            { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+          ],
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching timetable.", [{ icon: "⬅️", title: "← Back", action: function () { show2025TimetableMenu(d); } }], false, true);
+      });
+  }
+
+  function show2025ESCBatches(d) {
+    fetch(`${API_BASE}/api/aiml-2025/esc-batches`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        let h = tag("ESC-I Batches");
+        h += `<b>⚡ Emerging Science Course - I (ESC-I) Batches:</b><br>`;
+        h += `<small>BE 1st Semester 2026-27 Draft Timetable (Page 19)</small><br>`;
+        
+        h += `<div class="pda-table-wrap"><table class="pda-table"><thead><tr><th>Batch</th><th>Course Name</th><th>Faculty</th><th>Room</th></tr></thead><tbody>`;
+        const courses = res.courses || [];
+        courses.forEach(function (c) {
+          const batches = c.batches || [];
+          batches.forEach(function (b) {
+            h += `<tr><td><b>${b.batch_id}</b></td><td>${c.course_name} (${c.course_code})</td><td>${b.faculty}</td><td>${b.room}</td></tr>`;
+          });
+        });
+        h += `</tbody></table></div>`;
+
+        add(
+          h,
+          [
+            { icon: "⬅️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+          ],
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching ESC batches.", [{ icon: "⬅️", title: "← Back", action: function () { showAIML2025Menu(d); } }], false, true);
+      });
+  }
+
+  function show2025DevResources(d) {
+    fetch(`${API_BASE}/api/aiml-2025/resources/development`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        let h = tag("CSCED103 · Development");
+        h += `<b>📐 Computer Aided Engineering Drawing (CSCED103):</b><br>`;
+        h += `<small>Development of Lateral Surfaces — Problems 4.1 to 4.16</small><br><br>`;
+        
+        const problems = res.problems || [];
+        problems.forEach(function (p) {
+          h += `<b>Problem ${p.problem_number}:</b> ${p.title} <small style="color:var(--mu)">(PDF Page ${p.pdf_page})</small><br>`;
+        });
+
+        add(
+          h,
+          [
+            { icon: "⬅️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+          ],
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching development resources.", [{ icon: "⬅️", title: "← Back", action: function () { showAIML2025Menu(d); } }], false, true);
+      });
+  }
+
   function stuSchemeMaterials(d, sch) {
     if (d.code !== "AIML") {
       showComingSoonDept(d, stuDeptList);
+      return;
+    }
+    if (sch === "2025") {
+      showAIML2025Menu(d);
       return;
     }
     const x = L[lg()];
@@ -2269,6 +2546,11 @@
               true
             );
           },
+        },
+        {
+          icon: "👨‍🏫",
+          title: "Teacher Timetable — AIML Faculty (Available)",
+          action: function () { stfDeptFacultyList(DEPTS[1]); },
         },
         { icon: "⬅️", title: x.backBtn, action: stu },
       ],
@@ -2542,7 +2824,7 @@
       if (d.code === "AIML") return;
       deptBars.push({
         icon: "⏳",
-        title: `${deptLabel(d)} — (Will be updated soon)`,
+        title: `${deptLabel(d)} — Coming Soon`,
         action: function () { stfDeptFacultyList(d); },
       });
     });
@@ -2577,6 +2859,9 @@
         "Prof. Savitha P",
         "Prof. Laxmi J",
         "Prof. Santoshi P",
+        "Dr. Sharanamma H",
+        "Prof. Shreya G",
+        "Prof. Chandrakant Biradar",
       ];
 
       const bars = [];
@@ -2633,16 +2918,17 @@
       return;
     }
 
-    // Other Unavailable Departments -> Will be updated soon
+    // Other Unavailable Departments -> Coming Soon
     add(
-      tag(`${d.code} · Faculty Directory`) +
-        `<h3>🏛️ ${label} — Faculty List</h3>` +
-        `<b>Status:</b> <span style="color:#d97706;font-weight:700">⏳ Will be updated soon</span><br><br>` +
-        `• Faculty list and individual teacher timetables for <b>${label}</b> <b>will be updated soon</b>.<br>` +
+      tag(`${d.code} · Faculty Timetable`) +
+        `<h3>🏛️ ${label} — Faculty List & Timetable</h3>` +
+        `<b>Status:</b> <span style="color:#d97706;font-weight:700">⏳ Coming Soon</span><br><br>` +
+        `• Faculty directory and teacher timetables for <b>${label}</b> <b>are Coming Soon</b>.<br>` +
+        `• Only 1st Year and AIML currently have complete timetable and faculty data populated.<br>` +
         `• <b>Head of Department (HOD):</b> ${d.hod} (<code>${d.cabin}</code>)<br>` +
         `• <b>College Contact:</b> <code>08472-224360</code>`,
       [
-        { icon: "🤖", title: "View AIML Faculty List (Available)", action: function () { stfDeptFacultyList(DEPTS[1]); } },
+        { icon: "🤖", title: "View AIML Faculty Timetables (Available)", action: function () { stfDeptFacultyList(DEPTS[1]); } },
         { icon: "1️⃣", title: "View 1st Year Faculty List (Available)", action: stfFYFacultyList },
         { icon: "⬅️", title: "← All Departments", action: stfDeptList },
       ],
@@ -2744,19 +3030,40 @@
       if (matched) {
         loc(matched);
       } else {
-        add(
-          tag("Teacher Search") +
-            `<b>Search result for: "${val}"</b><br>` +
-            `• No exact teacher found by that name in the current directory.<br>` +
-            `• You can select from the department faculty lists below or type another name:`,
-          [
-            { icon: "🤖", title: "AIML Department Faculty List", action: function () { stfDeptFacultyList(DEPTS[1]); } },
-            { icon: "🏛️", title: "All Department Names", action: stfDeptList },
-            { icon: "🔄", title: "Try Another Teacher Name", action: stfInsertTeacherName },
-          ],
-          false,
-          true
-        );
+        const otherDept = DEPTS.find(function (d) {
+          if (d.code === "AIML") return false;
+          return d.hod.toLowerCase().indexOf(l) !== -1 || d.code.toLowerCase() === l || (d.aliases || []).some(function (a) { return l.indexOf(a) !== -1; });
+        });
+        if (otherDept) {
+          add(
+            tag(`${otherDept.code} · Faculty Timetable`) +
+              `<b>${val}</b> is from <b>${deptLabel(otherDept)}</b>.<br>` +
+              `• <b>Status:</b> <span style="color:#d97706;font-weight:700">⏳ Coming Soon</span><br>` +
+              `• Teacher timetables are currently available only for the <b>AIML Department</b>.<br>` +
+              `• Timetables for other departments will be updated soon as official data is provided.`,
+            [
+              { icon: "🤖", title: "View AIML Faculty Timetables (Available)", action: function () { stfDeptFacultyList(DEPTS[1]); } },
+              { icon: "🔄", title: "Try Another Teacher Name", action: stfInsertTeacherName },
+              { icon: "⬅️", title: "← Faculty Menu", action: stfFacultyMenu },
+            ],
+            false,
+            true
+          );
+        } else {
+          add(
+            tag("Teacher Search") +
+              `<b>Search result for: "${val}"</b><br>` +
+              `• No matching teacher found in the AIML Faculty directory.<br>` +
+              `• Teacher timetables are currently available only for the <b>AIML Department</b> (other departments are coming soon).`,
+            [
+              { icon: "🤖", title: "AIML Faculty Timetables (All 16 Available)", action: function () { stfDeptFacultyList(DEPTS[1]); } },
+              { icon: "🏛️", title: "All Department Names", action: stfDeptList },
+              { icon: "🔄", title: "Try Another Teacher Name", action: stfInsertTeacherName },
+            ],
+            false,
+            true
+          );
+        }
       }
     }
 
@@ -2777,22 +3084,22 @@
     const x = L[lg()];
     add(
       tag(x.menuStf + " · " + x.stfSub[2]) +
-        "<b>📅 Staff Timetable Options:</b><br>" +
-        "<small>Select how you would like to view staff timetables:</small>",
+        "<b>📅 Staff / Teacher Timetables:</b><br>" +
+        "<small>Teacher timetables are currently available only for the <b>AIML Department</b>. Other departments will be updated soon:</small>",
       [
+        {
+          icon: "🤖",
+          title: "AIML Department — All Faculty Timetables (Available)",
+          action: function () { stfDeptFacultyList(DEPTS[1]); },
+        },
         {
           icon: "🔍",
           title: "Find a Teacher & View Their Weekly Timetable",
           action: stfInsertTeacherName,
         },
         {
-          icon: "🤖",
-          title: "AIML Department — All Faculty Timetables",
-          action: function () { stfDeptFacultyList(DEPTS[1]); },
-        },
-        {
           icon: "🏛️",
-          title: "Departments (All Department Faculty)",
+          title: "Other Departments — Timetables (Coming Soon)",
           action: stfDeptList,
         },
         {
@@ -3035,6 +3342,22 @@
           }
           return true;
         }
+      }
+    }
+
+    // Teacher / Faculty / Staff Timetable query handling
+    if (
+      (/(teacher|faculty|staff|prof|sir|mam)/.test(l) && /(time\s*table|timetable|schedule)/.test(l)) ||
+      l.indexOf("teacher time table") !== -1 ||
+      l.indexOf("faculty timetable") !== -1 ||
+      l.indexOf("staff timetable") !== -1
+    ) {
+      const hasOtherDept = DEPTS.some(function (d) {
+        return d.code !== "AIML" && (l.indexOf(d.code.toLowerCase()) !== -1 || (d.aliases || []).some(function (a) { return l.indexOf(a) !== -1; }));
+      });
+      if (!hasOtherDept || l.indexOf("aiml") !== -1 || l.indexOf("ai") !== -1) {
+        stfStaffTimetable();
+        return true;
       }
     }
 

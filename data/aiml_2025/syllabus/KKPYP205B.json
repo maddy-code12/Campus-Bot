@@ -1,0 +1,133 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycle": "C",
+  "sem": 2,
+  "code": "KKPYP205B",
+  "name": "Python Programming",
+  "credits": 4.0,
+  "stream": "CS Stream",
+  "objectives": [
+    "1       Gain the basic knowledge of Python programming concepts.",
+    "2       Develop python programs using control statements and data structures in Python.",
+    "3       Apply an object-oriented approach to solve a given problem using python.",
+    "Modules Hours"
+  ],
+  "modules": [
+    {
+      "module_number": 1,
+      "title": "The way of the program",
+      "hours": 8,
+      "topics": [
+        "The Python programming language, what is a program? What is",
+        "debugging? Syntax errors, Runtime errors, Semantic errors, Experimental debugging.",
+        "Variables, Expressions and Statements: Values and data types, Variables, Variable",
+        "names and keywords, Statements, Evaluating expressions, Operators and operands, Type",
+        "converter functions, Order of operations, Operations on strings, Input, Composition, The",
+        "modulus operator.",
+        "Iteration: Assignment, Updating variables, the for loop, the while statement, The Collatz",
+        "3n + 1 sequence, tables, two -dimensional tables, break statement, continue statement,",
+        "paired data, Nested Loops for Nested Data.",
+        "Functions: Functions with arguments and return values.",
+        "Chapters:1.1-1.7,2.1-2.12,3.3,4.4,4.5"
+      ]
+    },
+    {
+      "module_number": 2,
+      "title": "Strings",
+      "hours": 8,
+      "topics": [
+        "Working with strings as single things, working with the parts of a string, Length,",
+        "Traversal and the for loop, Slices, String comparison, Strings are immutable, the in and not",
+        "in operators, A find function, Looping and counting, Optional parameters, The bu ilt-in find",
+        "method, The split method, Cleaning up your strings, The string format method.",
+        "Tuples: Tuples are used for grouping data, Tuple assignment, Tuples as return values,",
+        "Compos ability of Data Structures.",
+        "Lists: List values, accessing elements, List length, List membership, List operations, List",
+        "slices, Lists are mutable, List deletion, Objects and references, Aliasing, cloning lists, Lists",
+        "and for loops, List parameters, List methods, Pure functions and modifiers, Functions that",
+        "produce lists, Strings and lists, list and range, Nested lists, Matrices.",
+        "Chapter:5.1,5.2,5.3",
+        "--- PAGE 97 ---"
+      ]
+    },
+    {
+      "module_number": 3,
+      "title": "Dictionaries",
+      "hours": 8,
+      "topics": [
+        "Dictionary operations, dictionary methods, aliasing and copying.",
+        "Numpy: About, Shape, Slicing, masking, Broadcasting, dtype.",
+        "Files: About files, writing our first file, reading a file line -at-a-time, turning a file into a list",
+        "of lines, Reading the whole file at once, working with binary files, Directories, fetching",
+        "something from the Web.",
+        "Chapter:5.4,6.1-6.5,7.1-7.8"
+      ]
+    },
+    {
+      "module_number": 4,
+      "title": "Modules",
+      "hours": 8,
+      "topics": [
+        "Random numbers, the time module, the math module, creating your own modules,",
+        "Namespaces, Scope and lookup rules, Attributes and the dot Operator, Three import",
+        "statement variants.",
+        "Mutable versus immutable and aliasing",
+        "Object oriented programming: Classes and Objects —The Basics, Attributes, Adding",
+        "methods to our class, Instances as arguments and parameters, Converting an instance to a",
+        "string, Instances as return values.",
+        "Chapter:8.1-8.8,9.1,11.1"
+      ]
+    },
+    {
+      "module_number": 5,
+      "title": "Object oriented programming",
+      "hours": 8,
+      "topics": [
+        "Objects are mutable, Sameness, Copying.",
+        "Inheritance: Pure functions, Modifiers, Generalization, Operator Overloading,",
+        "Polymorphism.",
+        "Exceptions: Catching Exceptions , Raising your own exceptions.",
+        "Chapter:11.2.2-11.2.4,11.3.2-11.3.9,12.1,12.2"
+      ]
+    }
+  ],
+  "lab_experiments": [
+    "Develop a python program to read 2 numbers from the keyboard and perform the arithmetic operations",
+    "Develop a program to read the name and year of birth of a person. Display whether the person is a",
+    "Develop a program to generate Fibonacci sequence of length (N). Read N from the console.",
+    "Read N numbers from the console and create a list. Develop a program to print mean, variance and",
+    "Develop a program to print 10 most frequently appearing words in a text file. [Hint: Use a dictionary",
+    "Develop a program to read 6 subject marks from the keyboard for a student. Generate a report that",
+    "Developaprogramtosortthecontentsofatextfileandwritethesortedcontentsintoaseparatetext file. [Hint:",
+    "-- PAGE 98 ---",
+    "Develop a function named DivExp which takes TWO parameters a, b, and returns a value c (c=a/b).",
+    "Define a function that takes TWO objects representing complex numbers and returns a new complex",
+    "Text Analysis Tool: Build a tool that analyses a paragraph: frequency of each word, longest word,",
+    "Develop Data Summary Generator: Read a CSV file (like COVID data or weather stats), convert",
+    "Develop Student Grade Tracker: Accept multiple students’ names and marks. Store them in a list  of"
+  ],
+  "see_pattern": "Semester End Examination (SEE): Theory SEE will be conducted by Institute as per the scheduled timetable, with common question papers for the course 1. The question paper will have ten questions. Each question is set for 20 marks. 2. There will be 2 questions from each module. Each of the two questions under a module (with a maximum of 3 sub-questions), should have a mix of topics under that module. 3. The students have to answer 5 full questions, selecting one full question from each module. Suggested Learning",
+  "textbooks": {
+    "status": "coming_soon",
+    "message": "Coming soon"
+  },
+  "references": [
+    "Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers - How to think like a",
+    "computer scientist: learning with python 3. Green Tea Press, Wellesley, Massachusetts,2020",
+    "https://media.readthedocs.org/pdf/howtothink/latest/howtothink.pdf"
+  ],
+  "web_links": [
+    "• https://www.learnbyexample.org/python/",
+    "• https://www.learnpython.org/",
+    "• https://pythontutor.com/visualize.html#mode=edit"
+  ],
+  "course_outcomes": [
+    "CO1 Develop scripts using primitive language constructs of python.",
+    "CO2 Apply the methods to manipulate primitive python data structures",
+    "CO3 Explore the use of Python standard libraries for programming.",
+    "CO4 Develop python scripts for performing file operations.",
+    "CO5 Illustrate the concepts of Object-Oriented Programming  used in Python"
+  ],
+  "data_status": "partial"
+}

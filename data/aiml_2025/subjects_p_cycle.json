@@ -1,0 +1,144 @@
+[
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "CSCED103",
+    "name": "Computer Aided Engineering Drawing",
+    "credits": 3.0,
+    "source_page": "65-67",
+    "syllabus_found": true,
+    "data_status": "partial"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "CSMAT101",
+    "name": "Differential Calculus And Linear Algebra",
+    "credits": 4.0,
+    "source_page": "22-23",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "CSPH102",
+    "normalized_code": "CSPHY102",
+    "name": "Quantum Physics And Applications",
+    "credits": 4.0,
+    "source_page": "37-39",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "CSPOC105",
+    "name": "Programming In C",
+    "credits": 3.0,
+    "source_page": "91-92",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "CSPOCL107",
+    "name": "Programming In C Lab",
+    "credits": 1.0,
+    "source_page": "112-116",
+    "syllabus_found": true,
+    "data_status": "available"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "KKIDTL158",
+    "normalized_code": "KKIDT158",
+    "name": "Innovation And Design Thinking Lab",
+    "credits": 1.0,
+    "source_page": "117-120",
+    "syllabus_found": true,
+    "data_status": "partial"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "KKxxx104x",
+    "name": "Elective Courses",
+    "credits": 3.0,
+    "source_page": "70-79",
+    "syllabus_found": true,
+    "data_status": "available",
+    "options": [
+      {
+        "code": "KKBSM104A",
+        "title": "Building Sciences & Mechanics",
+        "credits": 3.0,
+        "source_page": "70-71"
+      },
+      {
+        "code": "KKIEE104B",
+        "title": "Introduction to Electrical Engineering",
+        "credits": 3.0,
+        "source_page": "72-73"
+      },
+      {
+        "code": "KKIEC104C",
+        "title": "Introduction to Electronics & Communication Engineering",
+        "credits": 3.0,
+        "source_page": "74-75"
+      },
+      {
+        "code": "KKIME104D",
+        "title": "Introduction to Mechanical Engineering",
+        "credits": 3.0,
+        "source_page": "76-77"
+      },
+      {
+        "code": "KKEIT104E",
+        "title": "Essentials of Information Technology",
+        "credits": 3.0,
+        "source_page": "78-79"
+      }
+    ]
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "KKKSK109",
+    "name": "Samskrutika Kannada",
+    "credits": 1.0,
+    "source_page": "121-122",
+    "syllabus_found": true,
+    "data_status": "partial"
+  },
+  {
+    "scheme": "2025",
+    "branch": "AIML",
+    "cycle": "P",
+    "sem": 1,
+    "code": "KKSSC106",
+    "name": "Soft Skills",
+    "credits": 0.0,
+    "source_page": "99-100",
+    "syllabus_found": true,
+    "data_status": "available"
+  }
+]
