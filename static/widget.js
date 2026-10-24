@@ -2172,10 +2172,123 @@
       [
         { icon: "📘", title: "1st Sem P-Cycle Subjects (9 Subjects)", action: function () { show2025CycleSubjects("P", d); } },
         { icon: "📗", title: "2nd Sem C-Cycle Subjects (8 Subjects)", action: function () { show2025CycleSubjects("C", d); } },
+        { icon: "📝", title: "📚 Subject Notes (Python & C Programming)", action: function () { showNotesSelectionMenu(d); } },
         { icon: "🗓️", title: "1st Sem Timetables (Sections G & H)", action: function () { show2025TimetableMenu(d); } },
         { icon: "⚡", title: "ESC-I Batches & Faculty Distribution", action: function () { show2025ESCBatches(d); } },
         { icon: "📐", title: "CSCED103 Development Problems (4.1–4.16)", action: function () { show2025DevResources(d); } },
         { icon: "⬅️", title: `← ${d.code} Schemes`, action: function () { stuPickScheme(d); } },
+      ],
+      false,
+      true
+    );
+  }
+
+  const SUBJECT_NOTES = {
+    "KKPYP205B": [
+      {
+        module_number: 1,
+        title: "Module 1: The way of the program & Control Structures",
+        description: "Python installation, variables, expressions, operators, if-elif-else, while & for loops, functions",
+        link: "/static/materials/2nd_sem_python/Python%20Programming%20Module%201.pdf"
+      },
+      {
+        module_number: 2,
+        title: "Module 2: Strings, Tuples & Lists",
+        description: "String slicing, traversal, tuple immutability, list operations, matrices & comprehension",
+        link: "/static/materials/2nd_sem_python/Python%20Programming%20Module%202.pdf"
+      },
+      {
+        module_number: 3,
+        title: "Module 3: Dictionaries, Numpy & Files",
+        description: "Dictionary operations, numpy shape & slicing, file reading/writing and web data fetching",
+        link: "/static/materials/2nd_sem_python/Python%20Programming%20Module%203.pdf"
+      },
+      {
+        module_number: 4,
+        title: "Module 4: Modules & Object-Oriented Programming",
+        description: "Random/math/time modules, namespaces, classes, object instantiation & instance methods",
+        link: "/static/materials/2nd_sem_python/Python%20Programming%20Module%204.pdf"
+      },
+      {
+        module_number: 5,
+        title: "Module 5: OOP Inheritance & Exception Handling",
+        description: "Inheritance, polymorphism, operator overloading, try-except blocks & custom exceptions",
+        link: "/static/materials/2nd_sem_python/Python%20Programming%20Module%205.pdf"
+      }
+    ],
+    "CSPOC105": [
+      {
+        module_number: 1,
+        title: "Module 1: Algorithms, Flowcharts & Introduction to C",
+        description: "Constants, variables, data types, arithmetic/logical/bitwise operators, formatted I/O",
+        link: "/static/materials/1st_sem_c/POC%20Module%201%20Notes.pdf"
+      },
+      {
+        module_number: 2,
+        title: "Module 2: Decision Making, Branching & Looping",
+        description: "Conditional control (if, if-else, switch, ternary operator) and loops (while, do-while, for)",
+        link: "/static/materials/1st_sem_c/POC%20Module%202%20Notes.pdf"
+      },
+      {
+        module_number: 3,
+        title: "Module 3: Arrays & String Operations",
+        description: "1D & 2D arrays, matrix algebra, string declarations, reading/writing and string functions",
+        link: "/static/materials/1st_sem_c/POC%20Module%203%20Notes.pdf"
+      },
+      {
+        module_number: 4,
+        title: "Module 4: Functions, Recursion & Structures",
+        description: "User-defined functions, recursion, structures definition, declaration, and member access",
+        link: "/static/materials/1st_sem_c/POC%20Module%204%20Notes.pdf"
+      },
+      {
+        module_number: 5,
+        title: "Module 5: Pointers & File Management",
+        description: "Pointer declaration, address of variable, pointer expressions, file creation, reading & writing",
+        link: "/static/materials/1st_sem_c/POC%20Module%205%20Notes.pdf"
+      }
+    ],
+    "KKIEC104C": [
+      {
+        module_number: 1,
+        title: "Complete Subject Notes: Introduction to Electronics & Communication",
+        description: "Semiconductor diodes, bipolar junction transistors, operational amplifiers & communication systems",
+        link: "/static/materials/esc/KKIEC104C_Notes_Full.pdf"
+      }
+    ]
+  };
+
+  function showNotesSelectionMenu(d) {
+    add(
+      tag("2025 Scheme · Subject Notes") +
+        `<b>📚 2025 Scheme Verified Subject Notes & Study Materials:</b><br>` +
+        `<small>Select an individual subject to view all module notes, downloads & syllabus:</small>`,
+      [
+        {
+          icon: "🐍",
+          title: "Python Programming (KKPYP205B) — 5 Module Notes",
+          action: function () { show2025SubjectDetail("KKPYP205B", "C", d); }
+        },
+        {
+          icon: "💻",
+          title: "Programming in C (CSPOC105) — 5 Module Notes",
+          action: function () { show2025SubjectDetail("CSPOC105", "P", d); }
+        },
+        {
+          icon: "⚡",
+          title: "Intro to Electronics & Communication (KKIEC104C) — Full Notes",
+          action: function () { show2025SubjectDetail("KKIEC104C", "P", d); }
+        },
+        {
+          icon: "📐",
+          title: "Engineering Drawing (CSCED103) — Development Problems 4.1–4.16",
+          action: function () { show2025DevResources(d); }
+        },
+        {
+          icon: "⬅️",
+          title: "← 2025 Scheme Menu",
+          action: function () { showAIML2025Menu(d); }
+        }
       ],
       false,
       true
@@ -2190,9 +2303,10 @@
         const subjects = (res && res.subjects) || [];
         const bars = subjects.map(function (s) {
           const isCs = s.data_status === "coming_soon";
+          const hasNotes = Boolean(SUBJECT_NOTES[s.code] || (s.notes && s.notes.length > 0) || s.notes_available);
           return {
-            icon: isCs ? "⏳" : "📄",
-            title: `${s.code}: ${s.name} (${s.credits} Credits)${isCs ? " — " + csText : ""}`,
+            icon: isCs ? "⏳" : (hasNotes ? "📚" : "📄"),
+            title: `${s.code}: ${s.name} (${s.credits} Credits)${hasNotes ? " • 📝 Notes Available" : ""}${isCs ? " — " + csText : ""}`,
             action: function () { show2025SubjectDetail(s.code, cycle, d); },
           };
         });
@@ -2214,11 +2328,52 @@
     fetch(`${API_BASE}/api/aiml-2025/syllabus/${code}`)
       .then(function (r) { return r.json(); })
       .then(function (s) {
-        let h = tag(`${s.code} · Syllabus`);
+        const notesList = (Array.isArray(s.notes) && s.notes.length > 0)
+          ? s.notes
+          : (SUBJECT_NOTES[code] || SUBJECT_NOTES[s.code] || []);
+
+        let h = tag(`${s.code} · Syllabus & Notes`);
         h += `<b>${s.code}: ${s.name}</b><br>`;
         h += `<b>Scheme:</b> 2025 | <b>Credits:</b> ${s.credits} | <b>Cycle:</b> ${s.cycle} | <b>Stream:</b> ${s.stream || "CS Stream"}<br>`;
-        h += `<div style="margin:8px 0;"><a href="${API_BASE}/static/pdfs/I-II-SEM-Syllabus-2025.pdf" target="_blank" rel="noopener" class="pda-website-btn" style="font-size:11.5px;padding:5px 12px;">📄 View Official 2025 Syllabus PDF</a></div>`;
-        h += `<b>Status:</b> ${s.data_status === "coming_soon" ? '<span style="color:#d97706;font-weight:700">⏳ ' + csText + '</span>' : '<span style="color:#10b981;font-weight:700">✅ Verified</span>'}<br><br>`;
+        h += `<div style="margin:8px 0;display:flex;gap:8px;flex-wrap:wrap;">`;
+        h += `<a href="${API_BASE}/static/pdfs/I-II-SEM-Syllabus-2025.pdf" target="_blank" rel="noopener" class="pda-website-btn" style="font-size:11.5px;padding:5px 12px;">📄 Official 2025 Syllabus PDF</a>`;
+        if (notesList.length > 0) {
+          h += `<a href="#pda-notes-box" class="pda-website-btn" style="font-size:11.5px;padding:5px 12px;background:linear-gradient(135deg, #10b981, #059669);color:#fff;">📝 Notes Available (${notesList.length} Modules)</a>`;
+        }
+        h += `</div>`;
+        h += `<b>Status:</b> ${s.data_status === "coming_soon" ? '<span style="color:#d97706;font-weight:700">⏳ ' + csText + '</span>' : '<span style="color:#10b981;font-weight:700">✅ Verified</span>'}<br>`;
+
+        // ==========================================
+        // DEDICATED NOTES SECTION BELOW SUBJECT NAME
+        // ==========================================
+        if (notesList.length > 0) {
+          h += `<div id="pda-notes-box" style="margin:12px 0 16px 0;padding:12px 14px;background:linear-gradient(135deg, rgba(109,40,217,0.22), rgba(79,70,229,0.14));border:1.5px solid rgba(167,139,250,0.5);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.22);">`;
+          h += `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">`;
+          h += `<div style="font-size:13.5px;font-weight:700;color:#ddd6fe;display:flex;align-items:center;gap:6px;">`;
+          h += `<span>📝</span> <span>Official Study Notes & Module Handouts</span>`;
+          h += `</div>`;
+          h += `<span style="font-size:10.5px;background:#10b981;color:#fff;padding:2px 8px;border-radius:12px;font-weight:700;">Verified</span>`;
+          h += `</div>`;
+          h += `<div style="font-size:11px;color:#cbd5e1;margin-bottom:10px;">Module-wise study materials, lecture summaries & exam notes for <b>${s.name}</b>:</div>`;
+          h += `<div style="display:flex;flex-direction:column;gap:7px;">`;
+          notesList.forEach(function (n, idx) {
+            h += `<div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,23,42,0.7);padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);gap:8px;">`;
+            h += `<div style="flex:1;">`;
+            h += `<div style="font-size:12px;font-weight:700;color:#f8fafc;">${n.title || ('Module ' + (n.module_number || idx + 1) + ' Notes')}</div>`;
+            if (n.description) {
+              h += `<div style="font-size:10.5px;color:#94a3b8;margin-top:2px;">${n.description}</div>`;
+            }
+            h += `</div>`;
+            h += `<a href="${API_BASE}${n.link}" target="_blank" rel="noopener" class="pda-website-btn" style="white-space:nowrap;padding:5px 11px;font-size:11px;background:linear-gradient(135deg, #10b981, #059669);color:#fff;border-radius:6px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;">📥 Download PDF</a>`;
+            h += `</div>`;
+          });
+          h += `</div>`;
+          h += `</div>`;
+        } else {
+          h += `<div style="margin:10px 0 14px 0;padding:10px 12px;background:rgba(255,255,255,0.04);border:1px dashed rgba(255,255,255,0.15);border-radius:10px;">`;
+          h += `<div style="font-size:11.5px;color:#94a3b8;">📝 <b>Subject Notes:</b> Handouts & lecture notes for this course are uploaded step-by-step as released by the department. You can inspect the prescribed syllabus & textbooks below.</div>`;
+          h += `</div>`;
+        }
 
         if (s.data_status === "coming_soon") {
           h += `• <b>Syllabus Details:</b> ${csText}<br>`;
@@ -2235,9 +2390,14 @@
 
           // Modules
           if (Array.isArray(s.modules) && s.modules.length > 0) {
-            h += `<b>Modules:</b><br>`;
+            h += `<b>Modules & Lecture Units:</b><br>`;
             s.modules.forEach(function (m) {
-              h += `<b>Module ${m.module_number}: ${m.title}</b> (${m.hours || 0} Hours)<br>`;
+              var mNote = notesList.find(function (n) { return n.module_number === m.module_number; });
+              h += `<b>Module ${m.module_number}: ${m.title}</b> (${m.hours || 0} Hours)`;
+              if (mNote && mNote.link) {
+                h += ` &nbsp;<a href="${API_BASE}${mNote.link}" target="_blank" rel="noopener" style="font-size:11px;color:#a855f7;text-decoration:none;font-weight:700;">[📥 Module ${m.module_number} Notes PDF]</a>`;
+              }
+              h += `<br>`;
               if (m.topics && m.topics.length > 0) {
                 h += `<small style="color:var(--mu)">${m.topics.join("; ")}</small><br>`;
               }
@@ -2281,6 +2441,7 @@
         add(
           h,
           [
+            { icon: "📝", title: "📚 View All Subject Notes", action: function () { showNotesSelectionMenu(d); } },
             { icon: "⬅️", title: `← Back to ${cycle}-Cycle`, action: function () { show2025CycleSubjects(cycle, d); } },
             { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
           ],
@@ -3370,6 +3531,28 @@
   // Smart NLP Pre-Router: High-level understanding of what the user actually wants
   function tryDirectSmartAnswer(v) {
     const l = v.toLowerCase().trim();
+
+    // Subject Notes direct interceptor
+    if (
+      /\b(notes?|study\s*material|handout|module\s*notes?)\b/.test(l) &&
+      (/\b(python|pyp|c\s*programming|programming\s*in\s*c|cspoc|poc|c\s*lang|electronics|iec)\b/.test(l) || l === "notes" || l === "subject notes")
+    ) {
+      if (l.indexOf("python") !== -1 || l.indexOf("pyp") !== -1) {
+        show2025SubjectDetail("KKPYP205B", "C", DEPTS[1]);
+        return true;
+      }
+      if (l.indexOf("c") !== -1 || l.indexOf("poc") !== -1) {
+        show2025SubjectDetail("CSPOC105", "P", DEPTS[1]);
+        return true;
+      }
+      if (l.indexOf("iec") !== -1 || l.indexOf("electronic") !== -1) {
+        show2025SubjectDetail("KKIEC104C", "P", DEPTS[1]);
+        return true;
+      }
+      showNotesSelectionMenu(DEPTS[1]);
+      return true;
+    }
+
 
     // 1. AIML HOD Queries ("aiml hod", "who is hod of aiml", "mathapati", "dr basavaraj s mathapati")
     if (
