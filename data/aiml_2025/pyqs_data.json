@@ -1,0 +1,202 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycles": {
+    "P": {
+      "title": "1st Sem P-Cycle PYQs",
+      "subjects": [
+        {
+          "code": "CSCED103",
+          "title": "Computer Aided Engineering Drawing",
+          "status": "available",
+          "papers": [
+            {
+              "title": "CAED Previous Year Question Papers (Comprehensive)",
+              "download_name": "CAED pyqs.pdf",
+              "download_url": "/static/pyqs/CAED/CAED pyqs.pdf",
+              "pages": 5
+            }
+          ]
+        },
+        {
+          "code": "CSMAT101",
+          "title": "Differential Calculus And Linear Algebra",
+          "status": "available",
+          "papers": [
+            {
+              "title": "Maths 1st & 2nd Sem Previous Year Question Papers",
+              "download_name": "maths 1,2 sem pyqs.pdf",
+              "download_url": "/static/pyqs/Maths/maths 1,2 sem pyqs.pdf",
+              "pages": 13
+            },
+            {
+              "title": "I Sem CSE II CIE Question Bank (Maths S1)",
+              "download_name": "I sem cse II cie QB MATHS S1.docx.pdf",
+              "download_url": "/static/pyqs/Maths/I sem cse II cie QB MATHS S1.docx.pdf",
+              "pages": 2
+            }
+          ]
+        },
+        {
+          "code": "CSPH102",
+          "title": "Quantum Physics And Applications",
+          "status": "available",
+          "papers": [
+            {
+              "title": "Physics PYQs (Set 1)",
+              "download_name": "physics pyqs.pdf",
+              "download_url": "/static/pyqs/Physics/physics pyqs.pdf",
+              "pages": 2
+            },
+            {
+              "title": "Physics PYQs (Set 2)",
+              "download_name": "physics.pyqs.pdf",
+              "download_url": "/static/pyqs/Physics/physics.pyqs.pdf",
+              "pages": 5
+            },
+            {
+              "title": "Physics CIE & Model Question Paper (DocScanner)",
+              "download_name": "DocScanner 25 Jan 2025 1-04 pm-1.pdf",
+              "download_url": "/static/pyqs/Physics/DocScanner 25 Jan 2025 1-04 pm-1.pdf",
+              "pages": 2
+            },
+            {
+              "title": "Physics Question Paper Archive (WA0002)",
+              "download_name": "DOC-20240119-WA0002.pdf",
+              "download_url": "/static/pyqs/Physics/DOC-20240119-WA0002.pdf",
+              "pages": 4
+            }
+          ]
+        },
+        {
+          "code": "CSPOC105",
+          "title": "Programming In C",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "CSPOCL107",
+          "title": "Programming In C Lab",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKIDTL158",
+          "title": "Innovation And Design Thinking Lab",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKxxx104x",
+          "title": "Engineering Science Courses - I (ESC-I)",
+          "status": "available",
+          "papers": [
+            {
+              "title": "KKIEC104C: Electronics & Communication Question Bank (IEC-QBANK)",
+              "download_name": "IEC-QBANK.pdf",
+              "download_url": "/static/pyqs/Introduction to Electronics & Communication Engineering/IEC-QBANK.pdf",
+              "pages": 2
+            },
+            {
+              "title": "KKIEC104C: Semester End Exam Paper 1 (SEE-1)",
+              "download_name": "SEE-1.pdf",
+              "download_url": "/static/pyqs/Introduction to Electronics & Communication Engineering/SEE-1.pdf",
+              "pages": 2
+            },
+            {
+              "title": "KKIEC104C: Semester End Exam Paper 3 (SEE-3)",
+              "download_name": "SEE-3.pdf",
+              "download_url": "/static/pyqs/Introduction to Electronics & Communication Engineering/SEE-3.pdf",
+              "pages": 2
+            },
+            {
+              "title": "KKIEC104C: Semester End Exam Paper 4 (SEE-4)",
+              "download_name": "SEE-4.pdf",
+              "download_url": "/static/pyqs/Introduction to Electronics & Communication Engineering/SEE-4.pdf",
+              "pages": 2
+            }
+          ]
+        },
+        {
+          "code": "KKKSK109",
+          "title": "Samskrutika Kannada",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKSSC106",
+          "title": "Soft Skills",
+          "status": "coming_soon",
+          "papers": []
+        }
+      ]
+    },
+    "C": {
+      "title": "2nd Sem C-Cycle PYQs",
+      "subjects": [
+        {
+          "code": "CSCHE202",
+          "title": "Applied Chemistry For Smart Systems",
+          "status": "available",
+          "papers": [
+            {
+              "title": "Chemistry Previous Year Question Papers & Model Question Bank",
+              "download_name": "chemistry pyqs.pdf",
+              "download_url": "/static/pyqs/Chemistry/chemistry pyqs.pdf",
+              "pages": 11
+            }
+          ]
+        },
+        {
+          "code": "CSMAT201",
+          "title": "Numerical Methods",
+          "status": "available",
+          "papers": [
+            {
+              "title": "Maths 1st & 2nd Sem Previous Year Question Papers",
+              "download_name": "maths 1,2 sem pyqs.pdf",
+              "download_url": "/static/pyqs/Maths/maths 1,2 sem pyqs.pdf",
+              "pages": 13
+            }
+          ]
+        },
+        {
+          "code": "KKAIA203",
+          "title": "Introduction To AI And Applications",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKENG206",
+          "title": "Communication Skills",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKICO207",
+          "title": "Indian Constitution & Professional Ethics",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKxx204x",
+          "title": "Emerging Technology Courses (ETC)",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKPRJ258",
+          "title": "Interdisciplinary Project Based Learning",
+          "status": "coming_soon",
+          "papers": []
+        },
+        {
+          "code": "KKPYP205B",
+          "title": "Python Programming",
+          "status": "coming_soon",
+          "papers": []
+        }
+      ]
+    }
+  }
+}

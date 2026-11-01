@@ -489,6 +489,242 @@
             "lab_batch": null
           }
         }
+      },
+      "schedule": {
+        "MON": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 2,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 3,
+              "subject_code": "CSCED103",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 4,
+              "subject_code": "CSCED103",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 5,
+              "subject_code": "KKXXX104X",
+              "faculty": "ESC-I Faculty"
+            },
+            {
+              "period": 6,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "G1: PHY / G2: POC"
+            },
+            {
+              "period": 7,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "G1: PHY / G2: POC"
+            }
+          ]
+        },
+        "TUE": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 2,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 3,
+              "subject_code": "KKIDTL158",
+              "faculty": "IDT Faculty"
+            },
+            {
+              "period": 4,
+              "subject_code": "KKIDTL158",
+              "faculty": "IDT Faculty"
+            },
+            {
+              "period": 5,
+              "subject_code": "KKXXX104X",
+              "faculty": "ESC-I Faculty"
+            },
+            {
+              "period": 6,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "G2: PHY / G1: POC"
+            },
+            {
+              "period": 7,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "G2: PHY / G1: POC"
+            }
+          ]
+        },
+        "WED": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSPOC105",
+              "faculty": "Prof. Ashwini H"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSMAT101",
+              "faculty": "Dr. Umadevi R Devani"
+            },
+            {
+              "period": 3,
+              "subject_code": "CSPHY102",
+              "faculty": "Dr. Satish Lathure"
+            },
+            {
+              "period": 4,
+              "subject_code": "KKKSK109",
+              "faculty": "Kannada Faculty"
+            },
+            {
+              "period": 5,
+              "subject_code": "KKXXX104X",
+              "faculty": "ESC-I Faculty"
+            },
+            {
+              "period": 6,
+              "subject_code": "MATHS LAB",
+              "faculty": "Dr. Umadevi R Devani"
+            },
+            {
+              "period": 7,
+              "subject_code": "MATHS LAB",
+              "faculty": "Dr. Umadevi R Devani"
+            }
+          ]
+        },
+        "THU": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSCED103 LAB",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSCED103 LAB",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 3,
+              "subject_code": "CSPHY102",
+              "faculty": "Dr. Satish Lathure"
+            },
+            {
+              "period": 4,
+              "subject_code": "CSMAT101",
+              "faculty": "Dr. Umadevi R Devani"
+            },
+            {
+              "period": 5,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 6,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 7,
+              "subject_code": "\u2014",
+              "faculty": ""
+            }
+          ]
+        },
+        "FRI": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "KKSSC106",
+              "faculty": "Soft Skills Faculty"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSPOC105",
+              "faculty": "Prof. Ashwini H"
+            },
+            {
+              "period": 3,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 4,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 5,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 6,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 7,
+              "subject_code": "\u2014",
+              "faculty": ""
+            }
+          ]
+        },
+        "SAT": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSMAT101",
+              "faculty": "Dr. Umadevi R Devani"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSPOC105",
+              "faculty": "Prof. Ashwini H"
+            },
+            {
+              "period": 3,
+              "subject_code": "CSPHY102",
+              "faculty": "Dr. Satish Lathure"
+            },
+            {
+              "period": 4,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 5,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 6,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 7,
+              "subject_code": "\u2014",
+              "faculty": ""
+            }
+          ]
+        }
       }
     },
     "H": {
@@ -930,6 +1166,242 @@
             "faculty": null,
             "lab_batch": null
           }
+        }
+      },
+      "schedule": {
+        "MON": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSPHY102",
+              "faculty": "Dr. Satish Lathure"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSPOC105",
+              "faculty": "Prof. Chandrakant Biradar"
+            },
+            {
+              "period": 3,
+              "subject_code": "KKSSC106",
+              "faculty": "Soft Skills Faculty"
+            },
+            {
+              "period": 4,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 5,
+              "subject_code": "KKXXX104X",
+              "faculty": "ESC-I Faculty"
+            },
+            {
+              "period": 6,
+              "subject_code": "MATHS LAB",
+              "faculty": "Maths Faculty"
+            },
+            {
+              "period": 7,
+              "subject_code": "MATHS LAB",
+              "faculty": "Maths Faculty"
+            }
+          ]
+        },
+        "TUE": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSCED103",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSCED103",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 3,
+              "subject_code": "CSMAT101",
+              "faculty": "Maths Faculty"
+            },
+            {
+              "period": 4,
+              "subject_code": "CSPOC105",
+              "faculty": "Prof. Chandrakant Biradar"
+            },
+            {
+              "period": 5,
+              "subject_code": "KKXXX104X",
+              "faculty": "ESC-I Faculty"
+            },
+            {
+              "period": 6,
+              "subject_code": "KKIDTL158",
+              "faculty": "IDT Faculty (FBLH08)"
+            },
+            {
+              "period": 7,
+              "subject_code": "KKIDTL158",
+              "faculty": "IDT Faculty (FBLH08)"
+            }
+          ]
+        },
+        "WED": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSPOC105",
+              "faculty": "Prof. Chandrakant Biradar"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSMAT101",
+              "faculty": "Maths Faculty"
+            },
+            {
+              "period": 3,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 4,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 5,
+              "subject_code": "KKXXX104X",
+              "faculty": "ESC-I Faculty"
+            },
+            {
+              "period": 6,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 7,
+              "subject_code": "\u2014",
+              "faculty": ""
+            }
+          ]
+        },
+        "THU": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "CSPHY102",
+              "faculty": "Dr. Satish Lathure"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSMAT101",
+              "faculty": "Maths Faculty"
+            },
+            {
+              "period": 3,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 4,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 5,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "H1: PHY / H2: POC (1:15-3:15)"
+            },
+            {
+              "period": 6,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "H1: PHY / H2: POC (3:15-4:15)"
+            },
+            {
+              "period": 7,
+              "subject_code": "\u2014",
+              "faculty": ""
+            }
+          ]
+        },
+        "FRI": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "KKKSK109",
+              "faculty": "Kannada Faculty"
+            },
+            {
+              "period": 2,
+              "subject_code": "CSPHY102",
+              "faculty": "Dr. Satish Lathure"
+            },
+            {
+              "period": 3,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 4,
+              "subject_code": "LIBRARY",
+              "faculty": "Dept Library"
+            },
+            {
+              "period": 5,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 6,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "H2: PHY / H1: POC (3:15-4:15)"
+            },
+            {
+              "period": 7,
+              "subject_code": "PHY/POC LAB",
+              "faculty": "H2: PHY / H1: POC (4:15-5:15)"
+            }
+          ]
+        },
+        "SAT": {
+          "periods": [
+            {
+              "period": 1,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 2,
+              "subject_code": "COE",
+              "faculty": "Centre of Excellence"
+            },
+            {
+              "period": 3,
+              "subject_code": "CSCED103 LAB",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 4,
+              "subject_code": "CSCED103 LAB",
+              "faculty": "Dr. Prashant H"
+            },
+            {
+              "period": 5,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 6,
+              "subject_code": "\u2014",
+              "faculty": ""
+            },
+            {
+              "period": 7,
+              "subject_code": "\u2014",
+              "faculty": ""
+            }
+          ]
         }
       }
     }

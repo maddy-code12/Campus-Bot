@@ -1,0 +1,510 @@
+{
+  "scheme": "2025",
+  "branch": "AIML",
+  "cycles": {
+    "P": {
+      "title": "1st Sem P-Cycle Notes",
+      "subjects": [
+        {
+          "code": "CSCED103",
+          "title": "Computer Aided Engineering Drawing",
+          "credits": 4.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Orthographic Projection of Points",
+              "topics": [
+                "Projection of points in all four quadrants",
+                "Problems on distance from HP and VP"
+              ],
+              "download_name": "1.Points Soln.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSCED103 Computer Aided Engineering Drawing/1.Points Soln.pdf",
+              "pages": 12
+            },
+            {
+              "module_number": 2,
+              "title": "Projection of Planes",
+              "topics": [
+                "Projection of triangular, square, pentagonal, hexagonal and circular laminae",
+                "Inclination with HP and VP"
+              ],
+              "download_name": "3.Projection of planes solutions.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSCED103 Computer Aided Engineering Drawing/3.Projection of planes solutions.pdf",
+              "pages": 15
+            },
+            {
+              "module_number": 3,
+              "title": "Orthographic Projection of Solids",
+              "topics": [
+                "Prisms, pyramids, cones, and cylinders resting on HP/VP",
+                "Axis inclination to reference planes"
+              ],
+              "download_name": "4..Solids .pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSCED103 Computer Aided Engineering Drawing/4..Solids .pdf",
+              "pages": 15
+            },
+            {
+              "module_number": 4,
+              "title": "Development of Lateral Surfaces",
+              "topics": [
+                "Parallel line development of prisms and cylinders",
+                "Radial line development of pyramids and cones",
+                "Problems 4.1 to 4.16"
+              ],
+              "download_name": "2.Development.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSCED103 Computer Aided Engineering Drawing/2.Development.pdf",
+              "pages": 17
+            }
+          ]
+        },
+        {
+          "code": "CSMAT101",
+          "title": "Differential Calculus And Linear Algebra",
+          "credits": 4.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "CSPH102",
+          "title": "Quantum Physics And Applications",
+          "credits": 4.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Photonics",
+              "topics": [
+                "Laser principles, Einstein coefficients",
+                "Optical fibers, numerical aperture, attenuation, sensor applications"
+              ],
+              "download_name": "Module 1 Photonics.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPH102 Quatum Physics And Applications/Module 1 Photonics.pdf",
+              "pages": 21
+            },
+            {
+              "module_number": 2,
+              "title": "Quantum Mechanics",
+              "topics": [
+                "de Broglie hypothesis, Heisenberg uncertainty principle",
+                "Wave function, Schrodinger time-independent equation, particle in 1D box"
+              ],
+              "download_name": "Module 2 Quantum Mechanics.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPH102 Quatum Physics And Applications/Module 2 Quantum Mechanics.pdf",
+              "pages": 24
+            },
+            {
+              "module_number": 3,
+              "title": "Electrical Properties of Metals & Semiconductors",
+              "topics": [
+                "Free electron theory, Fermi energy, density of states",
+                "Intrinsic and extrinsic semiconductors, Hall effect"
+              ],
+              "download_name": "Module 3 Electrical Properties of Metals & Semi conductors.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPH102 Quatum Physics And Applications/Module 3 Electrical Properties of Metals & Semi conductors.pdf",
+              "pages": 9
+            },
+            {
+              "module_number": 4,
+              "title": "Superconductivity",
+              "topics": [
+                "Meissner effect, critical temperature and magnetic field",
+                "Type I and Type II superconductors, BCS theory overview, SQUID"
+              ],
+              "download_name": "M4 - Superconductivity.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPH102 Quatum Physics And Applications/M4 - Superconductivity.pdf",
+              "pages": 6
+            },
+            {
+              "module_number": 5,
+              "title": "Physics of Animation & Statistical Physics for Computing",
+              "topics": [
+                "Physics of animation: kinematics, gravity, collisions in computer graphics",
+                "Statistical physics for computing: Maxwell-Boltzmann, Bose-Einstein, Fermi-Dirac statistics"
+              ],
+              "download_name": "MODULE-5 Chapter 1 ANIMATION.pdf & Statistical Physics.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPH102 Quatum Physics And Applications/MODULE-5  Chapter 1 ANIMATION.pdf",
+              "pages": 19
+            }
+          ]
+        },
+        {
+          "code": "CSPOC105",
+          "title": "Programming In C",
+          "credits": 3.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Algorithms, Flowcharts, Introduction to C",
+              "topics": [
+                "Basic Structure of C Program, Constants, Variables, Data types",
+                "Operators, Expressions, Formatted Input/Output"
+              ],
+              "download_name": "POC Module 1 Notes.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPOC 105 Programming In C/POC Module 1 Notes.pdf",
+              "pages": 19
+            },
+            {
+              "module_number": 2,
+              "title": "Decision Making, Branching & Looping",
+              "topics": [
+                "Simple if, if-else, nested if, else-if ladder, switch statement",
+                "while, do-while, for loops, break and continue"
+              ],
+              "download_name": "POC Module 2 Notes.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPOC 105 Programming In C/POC Module 2 Notes.pdf",
+              "pages": 15
+            },
+            {
+              "module_number": 3,
+              "title": "Arrays and Strings",
+              "topics": [
+                "One-dimensional arrays, 2D arrays, matrix operations",
+                "String handling functions: strlen, strcpy, strcmp, strcat"
+              ],
+              "download_name": "POC Module 3 Notes.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPOC 105 Programming In C/POC Module 3 Notes.pdf",
+              "pages": 14
+            },
+            {
+              "module_number": 4,
+              "title": "User-Defined Functions & Recursion",
+              "topics": [
+                "Function declaration, definition, function calls, parameter passing",
+                "Recursion, scope, storage classes"
+              ],
+              "download_name": "POC Module 4 Notes.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPOC 105 Programming In C/POC Module 4 Notes.pdf",
+              "pages": 14
+            },
+            {
+              "module_number": 5,
+              "title": "Structures, Unions & Pointers",
+              "topics": [
+                "Structure definition, accessing members, arrays of structures",
+                "Pointers, memory allocation, pointers to structures, file handling basics"
+              ],
+              "download_name": "POC Module 5 Notes.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPOC 105 Programming In C/POC Module 5 Notes.pdf",
+              "pages": 14
+            }
+          ]
+        },
+        {
+          "code": "CSPOCL107",
+          "title": "Programming In C Lab",
+          "credits": 1.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "C Programming Lab Experiments & Solutions",
+              "topics": [
+                "Algorithms, flowcharts, and verified source code for all lab programs",
+                "Robot navigation, quadratics, numerical operations, string algorithms"
+              ],
+              "download_name": "POC LAB ALGO'S,FLOWCHRTS AND PROGS.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/CSPOCL 107 Programming in C Lab/POC LAB ALGO'S,FLOWCHRTS AND PROGS.pdf",
+              "pages": 49
+            }
+          ]
+        },
+        {
+          "code": "KKIDTL158",
+          "title": "Innovation And Design Thinking Lab",
+          "credits": 1.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "KKxxx104x",
+          "title": "Engineering Science Courses - I (ESC-I)",
+          "credits": 3.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "KKIEC104C: Introduction To Electronics & Communication Engineering",
+              "topics": [
+                "Semiconductor diodes, BJT, amplifiers, operational amplifiers, communication systems overview",
+                "Complete Modules 1-5 Comprehensive Course Notes"
+              ],
+              "download_name": "aKKIEC104C-Notes-full.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEC  Introduction To Electronics & Communicatio Engineering/aKKIEC104C-Notes-full (1)-1.pdf",
+              "pages": 74
+            },
+            {
+              "module_number": 2,
+              "title": "KKIEE104B: Introduction to Electrical Engineering",
+              "topics": [
+                "DC Circuits, Ohm's & Kirchhoff's Laws, AC fundamentals, Single-phase transformers, DC Motors & Machines"
+              ],
+              "download_name": "ITEE Modules & DC Motor Notes",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEE Introdution to Electrical Engineering/ITEE MODULE 1.pdf",
+              "pages": 82
+            },
+            {
+              "module_number": 3,
+              "title": "KKIME104D: Introduction to Mechanical Engineering",
+              "topics": [
+                "Modules I-V: Streams in mechanical, IC Engines, Engineering Materials, Manufacturing Processes, Automation & Robotics"
+              ],
+              "download_name": "IME Modules I-V Notes",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME204D) -MODULE - I.pdf",
+              "pages": 130
+            }
+          ]
+        },
+        {
+          "code": "KKKSK109",
+          "title": "Samskrutika Kannada",
+          "credits": 1.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "KKSSC106",
+          "title": "Soft Skills",
+          "credits": 1.0,
+          "status": "coming_soon",
+          "modules": []
+        }
+      ]
+    },
+    "C": {
+      "title": "2nd Sem C-Cycle Notes",
+      "subjects": [
+        {
+          "code": "CSCHE202",
+          "title": "Applied Chemistry For Smart Systems",
+          "credits": 4.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Sustainable Chemistry for Energy Devices",
+              "topics": [
+                "Batteries: Lithium-ion, Sodium-ion, solid-state batteries",
+                "Fuel cells: PEMFC, supercapacitors, solar energy conversion"
+              ],
+              "download_name": "M1 Sustainable Chemistry for energy devices.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/CSCHE102 Applied Chemistry For Smart Systems/M1 Sustainable Chemistry for energy devices.pdf",
+              "pages": 15
+            },
+            {
+              "module_number": 2,
+              "title": "Polymers & Quantum Materials",
+              "topics": [
+                "Conducting polymers, synthesis and mechanism",
+                "Quantum dots, graphene, 2D smart materials in computing"
+              ],
+              "download_name": "M2 Polymers & Quantum Materials .pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/CSCHE102 Applied Chemistry For Smart Systems/M2 Polymers & Quantum Materials .pdf",
+              "pages": 15
+            },
+            {
+              "module_number": 3,
+              "title": "Sensors & Corrosion Control",
+              "topics": [
+                "Electrochemical sensors, biosensors, gas sensors",
+                "Corrosion mechanism, electrochemical series, cathodic & anodic protection"
+              ],
+              "download_name": "M3 Sensors & Corrosion control .pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/CSCHE102 Applied Chemistry For Smart Systems/M3 Sensors & Corrosion control .pdf",
+              "pages": 19
+            },
+            {
+              "module_number": 4,
+              "title": "Green Materials & E-Waste Management",
+              "topics": [
+                "Green chemistry principles, biodegradable polymers",
+                "E-waste classification, toxic hazards, recycling and extraction of precious metals"
+              ],
+              "download_name": "M4 Green Material & E-Waste Management .pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/CSCHE102 Applied Chemistry For Smart Systems/M4 Green Material & E-Waste Management .pdf",
+              "pages": 13
+            }
+          ]
+        },
+        {
+          "code": "CSMAT201",
+          "title": "Numerical Methods",
+          "credits": 4.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Numerical Methods & Maths Lab Manual",
+              "topics": [
+                "Root finding: Bisection, Newton-Raphson",
+                "Linear systems: Gauss Elimination, Gauss-Seidel",
+                "Numerical integration & ODE solvers (Runge-Kutta)",
+                "Scilab / Python implementation manual"
+              ],
+              "download_name": "II Sem maths Lab Manual 2026(CSE1).pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/CSMAT201 Numerical Methods/II Sem maths Lab Manual 2026(CSE1).pdf",
+              "pages": 23
+            }
+          ]
+        },
+        {
+          "code": "KKAIA203",
+          "title": "Introduction To AI And Applications",
+          "credits": 3.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Introduction to AI & Intelligent Agents",
+              "topics": [
+                "What is AI, Turing test, rationality, agent architecture",
+                "PEAS description, agent environments, types of agents"
+              ],
+              "download_name": "Module 1 - VTU-Introduction to AI and Applications.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKAIA203 Introduction To AI And Applications/Module 1 - VTU-Introduction to AI and Applications-BETC105205.pdf",
+              "pages": 81
+            },
+            {
+              "module_number": 2,
+              "title": "Problem Solving by Search",
+              "topics": [
+                "State space search, BFS, DFS, uniform cost search",
+                "Informed search: A*, greedy best-first search, heuristic functions"
+              ],
+              "download_name": "Module 2 - VTU-Introduction to AI and Applications.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKAIA203 Introduction To AI And Applications/Module 2 - VTU-Introduction to AI and Applications-BETC105205.pdf",
+              "pages": 59
+            },
+            {
+              "module_number": 3,
+              "title": "Knowledge Representation & Adversarial Search",
+              "topics": [
+                "Propositional and First-Order Logic, inference, resolution",
+                "Adversarial search: minimax algorithm, alpha-beta pruning in games"
+              ],
+              "download_name": "Module 3 - VTU-Introduction to AI and Applications.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKAIA203 Introduction To AI And Applications/Module 3 - VTU-Introduction to AI and Applications-BETC105205.pdf",
+              "pages": 181
+            },
+            {
+              "module_number": 4,
+              "title": "Machine Learning Fundamentals & Neural Networks",
+              "topics": [
+                "Supervised vs unsupervised learning, decision trees, regression",
+                "Artificial neural networks, perceptrons, backpropagation overview"
+              ],
+              "download_name": "Module 4 - VTU-Introduction to AI and Applications.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKAIA203 Introduction To AI And Applications/Module 4- VTU-Introduction to AI and Applications-BETC105205.pdf",
+              "pages": 92
+            },
+            {
+              "module_number": 5,
+              "title": "AI Applications, NLP, Computer Vision & Ethics",
+              "topics": [
+                "Natural language processing overview, computer vision basics",
+                "Robotics, expert systems, ethical and social implications of AI"
+              ],
+              "download_name": "Module 5 - VTU-Introduction to AI and Applications.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKAIA203 Introduction To AI And Applications/Module 5- VTU-Introduction to AI and Applications-BETC105205.pdf",
+              "pages": 85
+            }
+          ]
+        },
+        {
+          "code": "KKENG206",
+          "title": "Communication Skills",
+          "credits": 1.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "KKICO207",
+          "title": "Indian Constitution & Professional Ethics",
+          "credits": 1.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "KKxx204x",
+          "title": "Emerging Technology Courses (ETC)",
+          "credits": 3.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "KKPRJ258",
+          "title": "Interdisciplinary Project Based Learning",
+          "credits": 1.0,
+          "status": "coming_soon",
+          "modules": []
+        },
+        {
+          "code": "KKPYP205B",
+          "title": "Python Programming",
+          "credits": 3.0,
+          "status": "available",
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "The Way of the Program & Control Structures",
+              "topics": [
+                "Python syntax, variables, expressions, operators, data types",
+                "Control flow, loops, while/for, functions and parameters"
+              ],
+              "download_name": "Module-1-Python.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKPYP205B Python Programming/Module-1-Python.pdf",
+              "pages": 30
+            },
+            {
+              "module_number": 2,
+              "title": "Strings, Tuples & Lists",
+              "topics": [
+                "String methods, slices, immutable sequences",
+                "Tuples, assignment, return values",
+                "Lists: methods, cloning, nested lists, list comprehensions"
+              ],
+              "download_name": "Module-2-Python.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKPYP205B Python Programming/Module-2-Python.pdf",
+              "pages": 83
+            },
+            {
+              "module_number": 3,
+              "title": "Dictionaries, NumPy & File Operations",
+              "topics": [
+                "Dictionary keys and values, lookup, sparse matrices",
+                "NumPy array creation, indexing, slicing, vectorized operations",
+                "Text file I/O: read, write, append, with statements"
+              ],
+              "download_name": "Module-3-Python.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKPYP205B Python Programming/Module-3-Python.pdf",
+              "pages": 22
+            },
+            {
+              "module_number": 4,
+              "title": "Object-Oriented Programming in Python",
+              "topics": [
+                "Classes, objects, attributes, methods, __init__ constructor",
+                "Inheritance, method overriding, encapsulation, polymorphism"
+              ],
+              "download_name": "Module-4-Python.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKPYP205B Python Programming/Module-4-Python.pdf",
+              "pages": 43
+            },
+            {
+              "module_number": 5,
+              "title": "GUI Development & Exception Handling",
+              "topics": [
+                "Tkinter GUI basics: widgets, layout managers, event binding",
+                "Exception handling: try, except, finally, raising custom exceptions"
+              ],
+              "download_name": "Module-5-Python.pdf",
+              "download_url": "/static/notes/C CYCLE NOTES/KKPYP205B Python Programming/Module-5-Python.pdf",
+              "pages": 41
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

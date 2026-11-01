@@ -1019,6 +1019,34 @@ def get_aiml_2025_development_problems():
     return {}
 
 
+
+@app.get("/api/aiml-2025/notes")
+def get_aiml_2025_notes(cycle: Optional[str] = Query(None)):
+    path = os.path.join(AIML_2025_DIR, "notes_data.json")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="Notes data not found")
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if cycle:
+        c_upper = cycle.upper()
+        if c_upper in data.get("cycles", {}):
+            return data["cycles"][c_upper]
+    return data
+
+
+@app.get("/api/aiml-2025/pyqs")
+def get_aiml_2025_pyqs(cycle: Optional[str] = Query(None)):
+    path = os.path.join(AIML_2025_DIR, "pyqs_data.json")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="PYQs data not found")
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if cycle:
+        c_upper = cycle.upper()
+        if c_upper in data.get("cycles", {}):
+            return data["cycles"][c_upper]
+    return data
+
 @app.post("/api/rag")
 @app.post("/api/chat")
 def chat_bot(req: ChatRequest):

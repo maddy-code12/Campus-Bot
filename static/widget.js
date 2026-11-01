@@ -2174,8 +2174,173 @@
         { icon: "📗", title: "2nd Sem C-Cycle Subjects (8 Subjects)", action: function () { show2025CycleSubjects("C", d); } },
         { icon: "🗓️", title: "1st Sem Timetables (Sections G & H)", action: function () { show2025TimetableMenu(d); } },
         { icon: "⚡", title: "ESC-I Batches & Faculty Distribution", action: function () { show2025ESCBatches(d); } },
-        { icon: "📐", title: "CSCED103 Development Problems (4.1–4.16)", action: function () { show2025DevResources(d); } },
+        { icon: "📝", title: "Subject Notes", action: function () { show2025NotesCycleMenu(d); } },
+        { icon: "📄", title: "PYQs", action: function () { show2025PYQCycleMenu(d); } },
         { icon: "⬅️", title: `← ${d.code} Schemes`, action: function () { stuPickScheme(d); } },
+      ],
+      false,
+      true
+    );
+  }
+
+  function show2025NotesCycleMenu(d) {
+    add(
+      tag("AIML 2025 · Notes") + `<b>📝 2025 Scheme — Subject Notes:</b><br><small>Select academic cycle:</small>`,
+      [
+        { icon: "📘", title: "1st Sem P-Cycle Notes (9 Subjects)", action: function () { show2025NotesSubjectList("P", d); } },
+        { icon: "📗", title: "2nd Sem C-Cycle Notes (8 Subjects)", action: function () { show2025NotesSubjectList("C", d); } },
+        { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+      ],
+      false,
+      true
+    );
+  }
+
+  function show2025NotesSubjectList(cycle, d) {
+    const csText = lg() === "kn" ? "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ" : (lg() === "hi" ? "जल्द आ रहा है" : "Coming soon");
+    fetch(`${API_BASE}/api/aiml-2025/notes?cycle=${cycle}`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        const subjects = (res && res.subjects) || [];
+        const bars = subjects.map(function (s) {
+          const isCs = s.status === "coming_soon" || !s.modules || s.modules.length === 0;
+          return {
+            icon: isCs ? "⏳" : "📝",
+            title: `${s.code}: ${s.title}${isCs ? " — " + csText : ""}`,
+            action: function () {
+              if (isCs) {
+                add(
+                  tag(`${s.code} · Notes`) + `<b>📝 ${s.code}: ${s.title}</b><br><br><span style="color:#d97706;font-weight:700">⏳ ${csText}</span><br><small>Notes for this subject are currently being verified and will be available soon.</small>`,
+                  [
+                    { icon: "⬅️", title: `← Back to ${cycle}-Cycle Notes`, action: function () { show2025NotesSubjectList(cycle, d); } },
+                    { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } }
+                  ],
+                  false,
+                  true
+                );
+              } else {
+                show2025NotesSubjectDetail(s, cycle, d);
+              }
+            }
+          };
+        });
+        bars.push({ icon: "⬅️", title: "← Cycle Selection", action: function () { show2025NotesCycleMenu(d); } });
+        bars.push({ icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } });
+        add(
+          tag(`AIML 2025 · ${cycle}-Cycle Notes`) + `<b>📝 ${cycle}-Cycle Subject Notes (${subjects.length} Total):</b><br><small>Select a subject to view modules, topics & downloads:</small>`,
+          bars,
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching notes. Please try again.", [{ icon: "⬅️", title: "← Back", action: function () { show2025NotesCycleMenu(d); } }], false, true);
+      });
+  }
+
+  function show2025NotesSubjectDetail(s, cycle, d) {
+    let h = tag(`${s.code} · Notes`);
+    h += `<b>📝 ${s.code}: ${s.title}</b><br>`;
+    h += `<b>Scheme:</b> 2025 | <b>Credits:</b> ${s.credits || 4.0} | <b>Cycle:</b> ${cycle}-Cycle<br><br>`;
+    h += `<b>Modules & Study Material:</b><br>`;
+
+    (s.modules || []).forEach(function (m) {
+      h += `<div style="margin:8px 0;padding:8px 10px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:3px solid var(--pr);">`;
+      h += `<b>Module ${m.module_number}: ${m.title}</b><br>`;
+      if (m.topics && m.topics.length > 0) {
+        h += `<small style="color:var(--mu);display:block;margin:4px 0;">${m.topics.join("; ")}</small>`;
+      }
+      if (m.download_url) {
+        h += `<a href="${API_BASE}${m.download_url}" target="_blank" rel="noopener" class="pda-website-btn" style="font-size:11px;padding:4px 10px;display:inline-block;margin-top:4px;">📄 Download ${m.download_name || 'Notes (PDF)'} (${m.pages || 0} Pages)</a>`;
+      }
+      h += `</div>`;
+    });
+
+    add(
+      h,
+      [
+        { icon: "⬅️", title: `← Back to ${cycle}-Cycle Notes`, action: function () { show2025NotesSubjectList(cycle, d); } },
+        { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } }
+      ],
+      false,
+      true
+    );
+  }
+
+  function show2025PYQCycleMenu(d) {
+    add(
+      tag("AIML 2025 · PYQs") + `<b>📄 2025 Scheme — Previous Year Question Papers (PYQs):</b><br><small>Select academic cycle:</small>`,
+      [
+        { icon: "📘", title: "1st Sem P-Cycle PYQs (9 Subjects)", action: function () { show2025PYQSubjectList("P", d); } },
+        { icon: "📗", title: "2nd Sem C-Cycle PYQs (8 Subjects)", action: function () { show2025PYQSubjectList("C", d); } },
+        { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
+      ],
+      false,
+      true
+    );
+  }
+
+  function show2025PYQSubjectList(cycle, d) {
+    const csText = "Coming";
+    fetch(`${API_BASE}/api/aiml-2025/pyqs?cycle=${cycle}`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        const subjects = (res && res.subjects) || [];
+        const bars = subjects.map(function (s) {
+          const isCs = s.status === "coming_soon" || !s.papers || s.papers.length === 0;
+          return {
+            icon: isCs ? "⏳" : "📄",
+            title: `${s.code}: ${s.title}${isCs ? " — " + csText : ""}`,
+            action: function () {
+              if (isCs) {
+                add(
+                  tag(`${s.code} · PYQs`) + `<b>📄 ${s.code}: ${s.title}</b><br><br><span style="color:#d97706;font-weight:700">⏳ ${csText}</span><br><small>Previous year question papers for this course are not yet available in the archive.</small>`,
+                  [
+                    { icon: "⬅️", title: `← Back to ${cycle}-Cycle PYQs`, action: function () { show2025PYQSubjectList(cycle, d); } },
+                    { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } }
+                  ],
+                  false,
+                  true
+                );
+              } else {
+                show2025PYQSubjectDetail(s, cycle, d);
+              }
+            }
+          };
+        });
+        bars.push({ icon: "⬅️", title: "← Cycle Selection", action: function () { show2025PYQCycleMenu(d); } });
+        bars.push({ icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } });
+        add(
+          tag(`AIML 2025 · ${cycle}-Cycle PYQs`) + `<b>📄 ${cycle}-Cycle PYQs (${subjects.length} Total):</b><br><small>Select a course to access verified question papers:</small>`,
+          bars,
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching PYQs. Please try again.", [{ icon: "⬅️", title: "← Back", action: function () { show2025PYQCycleMenu(d); } }], false, true);
+      });
+  }
+
+  function show2025PYQSubjectDetail(s, cycle, d) {
+    let h = tag(`${s.code} · PYQs`);
+    h += `<b>📄 ${s.code}: ${s.title} — Question Papers:</b><br>`;
+    h += `<b>Scheme:</b> 2025 | <b>Cycle:</b> ${cycle}-Cycle<br><br>`;
+
+    (s.papers || []).forEach(function (p, idx) {
+      h += `<div style="margin:8px 0;padding:8px 10px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:3px solid var(--pr);">`;
+      h += `<b>${idx + 1}. ${p.title}</b><br>`;
+      if (p.download_url) {
+        h += `<a href="${API_BASE}${p.download_url}" target="_blank" rel="noopener" class="pda-website-btn" style="font-size:11px;padding:4px 10px;display:inline-block;margin-top:5px;">📥 Download PDF (${p.pages || 0} Pages)</a>`;
+      }
+      h += `</div>`;
+    });
+
+    add(
+      h,
+      [
+        { icon: "⬅️", title: `← Back to ${cycle}-Cycle PYQs`, action: function () { show2025PYQSubjectList(cycle, d); } },
+        { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } }
       ],
       false,
       true
@@ -2278,12 +2443,15 @@
           }
         }
 
+        const detailButtons = [];
+        if (code === "CSCED103") {
+          detailButtons.push({ icon: "📐", title: "Development Problems (4.1–4.16)", action: function () { show2025DevResources(d); } });
+        }
+        detailButtons.push({ icon: "⬅️", title: `← Back to ${cycle}-Cycle`, action: function () { show2025CycleSubjects(cycle, d); } });
+        detailButtons.push({ icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } });
         add(
           h,
-          [
-            { icon: "⬅️", title: `← Back to ${cycle}-Cycle`, action: function () { show2025CycleSubjects(cycle, d); } },
-            { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } },
-          ],
+          detailButtons,
           false,
           true
         );
@@ -2433,7 +2601,9 @@
         
         const problems = res.problems || [];
         problems.forEach(function (p) {
-          h += `<b>Problem ${p.problem_number}:</b> ${p.title} <small style="color:var(--mu)">(PDF Page ${p.pdf_page})</small><br>`;
+          const pNum = p.problem_id || p.problem_number || "";
+          const pTitle = p.title_text || p.title || "";
+          h += `<b>Problem ${pNum}:</b> ${pTitle} <small style="color:var(--mu)">(PDF Page ${p.pdf_page})</small><br>`;
         });
 
         add(
@@ -3702,4 +3872,18 @@
       dash();
     },
   };
+
+  window.__PDA_NAV = {
+    showAIML2025Menu: showAIML2025Menu,
+    show2025PYQCycleMenu: show2025PYQCycleMenu,
+    show2025PYQSubjectList: show2025PYQSubjectList,
+    show2025PYQSubjectDetail: show2025PYQSubjectDetail,
+    show2025NotesCycleMenu: show2025NotesCycleMenu,
+    show2025NotesSubjectList: show2025NotesSubjectList,
+    show2025NotesSubjectDetail: show2025NotesSubjectDetail,
+    show2025SectionTT: show2025SectionTT,
+    show2025DevResources: show2025DevResources,
+    DEPTS: DEPTS
+  };
+
 })();
