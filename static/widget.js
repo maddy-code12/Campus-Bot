@@ -2481,9 +2481,11 @@
     fetch(`${API_BASE}/api/aiml-2025/timetable?section=${sec}`)
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        const days = res.schedule || {};
+        const secDetails = res.details || res;
+        const days = (res.details && res.details.schedule) || res.schedule || {};
+        const roomName = res.room || secDetails.room || secDetails.default_room || "FB LH07";
         let h = tag(`Section ${sec} · Timetable`);
-        h += `<b>🗓️ 1st Sem AIML — Section ${sec} (Room ${res.room || "TBA"}):</b><br>`;
+        h += `<b>🗓️ 1st Sem AIML — Section ${sec} (Room ${roomName}):</b><br>`;
         h += `<small>Academic Year 2026-27 · Effective 07-09-2026</small><br><br>`;
         
         // PDF download & high-res image buttons
@@ -2520,10 +2522,11 @@
         h += `</tbody></table></div>`;
 
         // Faculty list
-        if (res.faculty && res.faculty.length > 0) {
+        const facList = (res.details && res.details.faculty) || res.faculty || [];
+        if (facList && facList.length > 0) {
           h += `<b>Faculty Allocation:</b><br>`;
-          res.faculty.forEach(function (fac) {
-            h += `• <b>${fac.subject_code}:</b> ${fac.faculty_name} (${fac.initials})<br>`;
+          facList.forEach(function (fac) {
+            h += `• <b>${fac.subject_code || fac.code}:</b> ${fac.faculty_name || fac.faculty || ""} ${fac.initials ? '(' + fac.initials + ')' : ''}<br>`;
           });
         }
 

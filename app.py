@@ -984,12 +984,16 @@ def get_aiml_2025_timetable(section: Optional[str] = Query(None)):
     if section:
         sec_upper = section.strip().upper()
         if sec_upper in data.get("sections", {}):
+            sec_data = data["sections"][sec_upper]
             return {
                 "section": sec_upper,
                 "academic_year": data.get("academic_year"),
                 "w_e_f": data.get("w_e_f"),
                 "period_timings": data.get("period_timings"),
-                "details": data["sections"][sec_upper]
+                "room": sec_data.get("room") or sec_data.get("default_room", "FB LH07"),
+                "schedule": sec_data.get("schedule", {}),
+                "faculty": sec_data.get("faculty", []),
+                "details": sec_data
             }
         raise HTTPException(status_code=404, detail=f"Section {section} not found")
     return data
