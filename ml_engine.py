@@ -495,7 +495,7 @@ class HybridMLSearchEngine:
                 code = "CSMAT101"
             elif "programming in c lab" in q_norm or "poc lab" in q_norm:
                 code = "CSPOCL107"
-            elif "programming in c" in q_norm or "poc" in q_norm:
+            elif "programming in c" in q_norm or "poc" in q_norm or "c programming" in q_norm or "c notes" in q_norm or "c language" in q_norm:
                 code = "CSPOC105"
             elif "computer aided engineering drawing" in q_norm or "caed" in q_norm:
                 code = "CSCED103"
@@ -507,7 +507,7 @@ class HybridMLSearchEngine:
                 code = "CSCHE202"
             elif "numerical methods" in q_norm:
                 code = "CSMAT201"
-            elif "python programming" in q_norm or "pyp" in q_norm:
+            elif "python" in q_norm or "pyp" in q_norm:
                 code = "KKPYP205B"
             elif "introduction to ai" in q_norm or "aia" in q_norm:
                 code = "KKAIA203"
@@ -529,7 +529,7 @@ class HybridMLSearchEngine:
                     rec = json.load(f)
 
                 st = rec.get("data_status", "available")
-                name = rec.get("subject_name", code)
+                name = rec.get("name") or rec.get("subject_name") or code
                 credits = rec.get("credits", 0.0)
                 sem = rec.get("sem", 1)
                 cycle = rec.get("cycle", "P")
@@ -557,6 +557,16 @@ class HybridMLSearchEngine:
                     f"### 📚 {code}: {name} (AIML 2025 Scheme)",
                     f"• **Credits:** {credits:.2f} | **Cycle:** {cycle} Cycle (Sem {sem}) | **Status:** {st.capitalize()}",
                 ]
+
+                # Notes section below the individual subject name
+                notes = rec.get("notes")
+                if isinstance(notes, list) and notes:
+                    lines.append("• **📝 Subject Notes & Module Downloads:**")
+                    for n in notes:
+                        title = n.get("title", f"Module {n.get('module_number', '')} Notes")
+                        link = n.get("link", "")
+                        desc = n.get("description", "")
+                        lines.append(f"  - 📥 **[{title}]({link})** — *{desc}*")
 
                 # Objectives
                 objs = rec.get("objectives")

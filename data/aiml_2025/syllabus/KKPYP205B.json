@@ -129,5 +129,37 @@
     "CO4 Develop python scripts for performing file operations.",
     "CO5 Illustrate the concepts of Object-Oriented Programming  used in Python"
   ],
-  "data_status": "partial"
+  "data_status": "partial",
+  "notes": [
+    {
+      "module_number": 1,
+      "title": "Module 1: The way of the program & Control Structures",
+      "description": "Python installation, variables, expressions, operators, if-elif-else, while & for loops, functions",
+      "link": "/static/materials/2nd_sem_python/Python%20Programming%20Module%201.pdf"
+    },
+    {
+      "module_number": 2,
+      "title": "Module 2: Strings, Tuples & Lists",
+      "description": "String slicing, traversal, tuple immutability, list operations, matrices & comprehension",
+      "link": "/static/materials/2nd_sem_python/Python%20Programming%20Module%202.pdf"
+    },
+    {
+      "module_number": 3,
+      "title": "Module 3: Dictionaries, Numpy & Files",
+      "description": "Dictionary operations, numpy shape & slicing, file reading/writing and web data fetching",
+      "link": "/static/materials/2nd_sem_python/Python%20Programming%20Module%203.pdf"
+    },
+    {
+      "module_number": 4,
+      "title": "Module 4: Modules & Object-Oriented Programming",
+      "description": "Random/math/time modules, namespaces, classes, object instantiation & instance methods",
+      "link": "/static/materials/2nd_sem_python/Python%20Programming%20Module%204.pdf"
+    },
+    {
+      "module_number": 5,
+      "title": "Module 5: OOP Inheritance & Exception Handling",
+      "description": "Inheritance, polymorphism, operator overloading, try-except blocks & custom exceptions",
+      "link": "/static/materials/2nd_sem_python/Python%20Programming%20Module%205.pdf"
+    }
+  ]
 }

@@ -116,5 +116,37 @@
     "CO4 Develop modular programs using functions, recursion, and structures for structured problem-",
     "CO5 Utilize pointers for memory manipulation and perform file operations for data handling in C."
   ],
-  "data_status": "available"
+  "data_status": "available",
+  "notes": [
+    {
+      "module_number": 1,
+      "title": "Module 1: Algorithms, Flowcharts & Introduction to C",
+      "description": "Constants, variables, data types, arithmetic/logical/bitwise operators, formatted I/O",
+      "link": "/static/materials/1st_sem_c/POC%20Module%201%20Notes.pdf"
+    },
+    {
+      "module_number": 2,
+      "title": "Module 2: Decision Making, Branching & Looping",
+      "description": "Conditional control (if, if-else, switch, ternary operator) and loops (while, do-while, for)",
+      "link": "/static/materials/1st_sem_c/POC%20Module%202%20Notes.pdf"
+    },
+    {
+      "module_number": 3,
+      "title": "Module 3: Arrays & String Operations",
+      "description": "1D & 2D arrays, matrix algebra, string declarations, reading/writing and string-handling functions",
+      "link": "/static/materials/1st_sem_c/POC%20Module%203%20Notes.pdf"
+    },
+    {
+      "module_number": 4,
+      "title": "Module 4: Functions, Recursion & Structures",
+      "description": "User-defined functions, recursion, structures definition, declaration, and member access",
+      "link": "/static/materials/1st_sem_c/POC%20Module%204%20Notes.pdf"
+    },
+    {
+      "module_number": 5,
+      "title": "Module 5: Pointers & File Management",
+      "description": "Pointer declaration, address of variable, pointer expressions, file creation, reading & writing",
+      "link": "/static/materials/1st_sem_c/POC%20Module%205%20Notes.pdf"
+    }
+  ]
 }

@@ -116,5 +116,13 @@
     "CO4 Interpret the structure and functionality of embedded systems and digital logic components such as microcontrollers, sensors, and logic gates.",
     "CO5 Apply number system conversions and Boolean algebra to design and implement basic combinational logic circuits."
   ],
-  "data_status": "partial"
+  "data_status": "partial",
+  "notes": [
+    {
+      "module_number": 1,
+      "title": "Complete Subject Notes: Introduction to Electronics & Communication",
+      "description": "Semiconductor diodes, bipolar junction transistors, operational amplifiers & communication systems",
+      "link": "/static/materials/esc/KKIEC104C_Notes_Full.pdf"
+    }
+  ]
 }
