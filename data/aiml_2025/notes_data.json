@@ -254,6 +254,21 @@
               "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME204D) -MODULE - I.pdf",
               "pages": 130
             }
+          ],
+          "is_esc_group": true,
+          "sub_courses": [
+            {
+              "code": "KKIEC104C",
+              "title": "Introduction to Electronics and Communication Engineering (KKIEC104C)"
+            },
+            {
+              "code": "KKIEE104B",
+              "title": "Introduction to Electrical Engineering (KKIEE104B)"
+            },
+            {
+              "code": "KKIME104D",
+              "title": "Introduction to Mechanical Engineering (KKIME104D)"
+            }
           ]
         },
         {
@@ -269,6 +284,287 @@
           "credits": 1.0,
           "status": "coming_soon",
           "modules": []
+        }
+      ],
+      "esc_subjects": [
+        {
+          "code": "KKIEC104C",
+          "title": "Introduction to Electronics and Communication Engineering (KKIEC104C)",
+          "short_title": "Introduction to Electronics and Communication Engineering",
+          "credits": 3.0,
+          "stream": "ESC-I Elective (ECE)",
+          "full_notes": {
+            "title": "Download full notes (74 pages)",
+            "url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEC  Introduction To Electronics & Communicatio Engineering/aKKIEC104C-Notes-full (1)-1.pdf",
+            "pages": 74
+          },
+          "course_outcomes": [
+            "CO1: Analyze basic electronic circuits using the principles of rectifiers, voltage regulators, and amplifiers.",
+            "CO2: Analyze the behavior of analog circuits including oscillators and operational amplifiers in signal generation and conditioning applications.",
+            "CO3: Illustrate the fundamental concepts of analog and digital modulation techniques based on their characteristics and suitability for communication systems.",
+            "CO4: Interpret the structure and functionality of embedded systems and digital logic components such as microcontrollers, sensors, and logic gates.",
+            "CO5: Apply number system conversions and Boolean algebra to design and implement basic combinational logic circuits."
+          ],
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Power Supply, Amplifiers",
+              "hours": 8,
+              "topics": [
+                "Block Diagram of power supply",
+                "Analysis of Rectifiers: Half wave and Full wave rectifiers with capacitive filter",
+                "Zener voltage regulator",
+                "Bipolar Junction Transistor (BJT): Principle of operation of BJT, BJT as an amplifier, CB, CE, CC configurations and characteristics"
+              ],
+              "download_name": null,
+              "download_url": null,
+              "status": "coming_soon"
+            },
+            {
+              "module_number": 2,
+              "title": "Oscillators, Operational Amplifiers",
+              "hours": 8,
+              "topics": [
+                "Concept of feedback: Positive and Negative Feedback, Condition for Oscillations",
+                "RC Phase shift oscillator, Hartley and Colpitts oscillators",
+                "Introduction to Operational Amplifiers (Op-Amp), Ideal op-amp characteristics",
+                "Inverting and non-inverting amplifier, Summing amplifier, Voltage follower"
+              ],
+              "download_name": null,
+              "download_url": null,
+              "status": "coming_soon"
+            },
+            {
+              "module_number": 3,
+              "title": "Communication Systems",
+              "hours": 8,
+              "topics": [
+                "Introduction, Frequency Spectrum",
+                "Modern Communication System Scheme: Information Source, Input transducer, Transmitter, Channel, Receiver, Noise, Destination",
+                "Modulation: Need for modulation, Types of Modulation: Amplitude Modulation (AM), Frequency Modulation (FM), Phase Modulation (PM)",
+                "Comparison between AM and FM",
+                "Digital Modulation: ASK, FSK, PSK"
+              ],
+              "download_name": null,
+              "download_url": null,
+              "status": "coming_soon"
+            },
+            {
+              "module_number": 4,
+              "title": "Embedded Systems",
+              "hours": 8,
+              "topics": [
+                "Definition, Embedded Systems Vs General Computing Systems",
+                "Classification of Embedded Systems, Major Application Areas of Embedded Systems",
+                "Elements of Embedded Systems, Core of the Embedded System",
+                "Microprocessor vs Microcontroller, RISC vs CISC",
+                "Sensors and Actuators"
+              ],
+              "download_name": null,
+              "download_url": null,
+              "status": "coming_soon"
+            },
+            {
+              "module_number": 5,
+              "title": "Boolean Algebra and Logic Circuits",
+              "hours": 8,
+              "topics": [
+                "Binary Numbers, Number Base Conversion: Binary, Decimal, Octal and Hexadecimal Numbers and Vice-Versa",
+                "1's and 2's complement",
+                "Basic Logic Operations and Logic Gates: NOT, AND, OR, NAND, NOR, EX-OR, EX-NOR Gates",
+                "De Morgan's Theorems",
+                "Basic Combinational Logic Circuits: Half Adder, Full Adder"
+              ],
+              "download_name": null,
+              "download_url": null,
+              "status": "coming_soon"
+            }
+          ]
+        },
+        {
+          "code": "KKIEE104B",
+          "title": "Introduction to Electrical Engineering (KKIEE104B)",
+          "short_title": "Introduction to Electrical Engineering",
+          "credits": 3.0,
+          "stream": "ESC-I Elective (EEE)",
+          "full_notes": {
+            "title": "Download available notes (82 pages across 4 files)",
+            "url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEE Introdution to Electrical Engineering/ITEE MODULE 1.pdf",
+            "pages": 82
+          },
+          "course_outcomes": [
+            "CO1: Understand the concepts of various energy sources and Electromagnetism.",
+            "CO2: Analyze the single phase and three phase AC circuits.",
+            "CO3: Discuss the construction and operation of DC Machines.",
+            "CO4: Discuss the construction and operation of AC Machines.",
+            "CO5: Explain the concepts of electricity billing, circuit protective devices and personal safety."
+          ],
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Power Generation, Electromagnetic Induction",
+              "hours": 8,
+              "topics": [
+                "Conventional and non-conventional energy sources",
+                "Single-line diagram of power supply system showing power station, transmission, substation and distribution",
+                "Faraday's laws of electromagnetic induction, Fleming's right-hand rule, Lenz's law",
+                "Dynamically and statically induced EMF, Self and mutual inductance"
+              ],
+              "download_name": "ITEE MODULE 1.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEE Introdution to Electrical Engineering/ITEE MODULE 1.pdf",
+              "pages": 24,
+              "status": "available"
+            },
+            {
+              "module_number": 2,
+              "title": "Single-Phase Circuits, Three-Phase Circuits",
+              "hours": 8,
+              "topics": [
+                "Generation of single-phase system, Equation of AC voltage and current, average value, RMS value, form factor, peak factor",
+                "Phase and phase difference, Analysis of R, L, C, R-L, R-C, R-L-C series circuits, Power and power factor",
+                "Generation of three-phase system, Star and Delta connections, relationship between line and phase values"
+              ],
+              "download_name": "ITEE MODULE 2.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEE Introdution to Electrical Engineering/ITEE MODULE 2.pdf",
+              "pages": 19,
+              "status": "available"
+            },
+            {
+              "module_number": 3,
+              "title": "DC Generator, DC Motor",
+              "hours": 8,
+              "topics": [
+                "DC Generator: Principle of operation, constructional details, induced EMF expression, types of generators",
+                "DC Motor: Principle of operation, back EMF and its significance, torque equation, types of DC motors, characteristics and applications, necessity of a starter"
+              ],
+              "download_name": "Dc Motor.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEE Introdution to Electrical Engineering/Dc Motor.pdf",
+              "pages": 31,
+              "status": "available"
+            },
+            {
+              "module_number": 4,
+              "title": "Transformers, Three-phase Induction Motors",
+              "hours": 8,
+              "topics": [
+                "Transformers: Introduction, necessity of transformer, principles of operation, constructional features of single-phase shell and core types, EMF equation, transformation ratio, losses and efficiency",
+                "Three-Phase Induction Motors: Principle of operation, constructional details of squirrel cage and slip ring motors, slip and its significance"
+              ],
+              "download_name": null,
+              "download_url": null,
+              "status": "coming_soon"
+            },
+            {
+              "module_number": 5,
+              "title": "Domestic Wiring, Electricity Bill, Safety measures",
+              "hours": 8,
+              "topics": [
+                "Two-way and three-way control of loads",
+                "Electricity Bill: Definition of 'unit' used for consumption of electrical energy, two-part tariff, calculation of electricity bill for domestic consumers",
+                "Protective Devices: Working of Fuse, Miniature Circuit Breaker (MCB), Earth Leakage Circuit Breaker (ELCB)",
+                "Safety Measures: Electric shock, precautions against shock, earthing: pipe and plate earthing"
+              ],
+              "download_name": "ITEE MODULE 5.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIEE Introdution to Electrical Engineering/ITEE MODULE 5.pdf",
+              "pages": 8,
+              "status": "available"
+            }
+          ]
+        },
+        {
+          "code": "KKIME104D",
+          "title": "Introduction to Mechanical Engineering (KKIME104D)",
+          "short_title": "Introduction to Mechanical Engineering",
+          "credits": 3.0,
+          "stream": "ESC-I Elective (ME)",
+          "full_notes": {
+            "title": "Download complete notes (130 pages across All 5 Modules)",
+            "url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME204D) -MODULE - I.pdf",
+            "pages": 130
+          },
+          "course_outcomes": [
+            "CO1: Recognize the significance of mechanical engineering principles to solve the problems of society.",
+            "CO2: Understand the working of I.C. engines, power transmission elements and future mobility.",
+            "CO3: Discuss the properties and applications of engineering materials, composite materials and joining processes.",
+            "CO4: Describe the working principles and applications of various manufacturing processes and machine tools.",
+            "CO5: Explain the advances in mechanical engineering including automation, robotics and 3D printing."
+          ],
+          "modules": [
+            {
+              "module_number": 1,
+              "title": "Introduction, Energy conversion, Flying machines, Refrigeration",
+              "hours": 8,
+              "topics": [
+                "Streams in mechanical engineering and their relevance/significance, role of mechanical engineers in industry",
+                "Energy conversion: Principles of energy conversion, renewable and non-renewable energy sources",
+                "Flying machines: Introduction, classifications, basic principles of flight",
+                "Refrigeration: Principle of refrigeration, refrigerants, ozone depletion, Global Warming Potential, air conditioner, vapor compression refrigeration system"
+              ],
+              "download_name": "IME (KKIME204D) -MODULE - I.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME204D) -MODULE - I.pdf",
+              "pages": 18,
+              "status": "available"
+            },
+            {
+              "module_number": 2,
+              "title": "Engines, Future mobility, Power transmission",
+              "hours": 8,
+              "topics": [
+                "Introduction, petrol engine, diesel engines, working of four-stroke engines, applications, simple numericals",
+                "Insight into future mobility; Electric and Hybrid Vehicles: Components, advantages and disadvantages",
+                "Power transmission: Belt drives, gear drives, chain drives, rope drives and their comparison, velocity ratio"
+              ],
+              "download_name": "IME (KKIME204D) -MODULE - II.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME204D) -MODULE - II.pdf",
+              "pages": 36,
+              "status": "available"
+            },
+            {
+              "module_number": 3,
+              "title": "Engineering materials",
+              "hours": 8,
+              "topics": [
+                "Introduction, Classification, Ferrous (IRON) and Non-Ferrous metals (COPPER): Types, Properties and their applications",
+                "Composites: Definition, classification and applications",
+                "Joining Processes: Soldering, Brazing and Welding: Definitions, classification and method of soldering, brazing and welding. Differences between soldering, brazing and welding"
+              ],
+              "download_name": "IME (KKIME104D) MODULE-III.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME104D) MODULE-III.pdf",
+              "pages": 30,
+              "status": "available"
+            },
+            {
+              "module_number": 4,
+              "title": "Manufacturing overview, Machine tools",
+              "hours": 8,
+              "topics": [
+                "Manufacturing Processes: Principles of casting and forging",
+                "Introduction to machine tools: Lathe, drilling and milling machine",
+                "Operations on lathe: Turning, facing, knurling, thread cutting",
+                "Operations on drilling machine: Drilling, reaming, boring, counter sinking, counter boring",
+                "Operations on milling machine: Plain milling, end milling, slot milling"
+              ],
+              "download_name": "IME (KKIME104D) - MODULE-IV.pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME104D) - MODULE-IV.pdf",
+              "pages": 27,
+              "status": "available"
+            },
+            {
+              "module_number": 5,
+              "title": "Advances in mechanical engineering",
+              "hours": 8,
+              "topics": [
+                "Automation technology: Definition of automation, types of automation, basic elements of automation",
+                "Mechatronic systems: Introduction, evolution and components",
+                "Robotics: Introduction, anatomy of robots, joints and links, workspace",
+                "Additive manufacturing: Introduction, 3D printing, fused deposition modeling, applications"
+              ],
+              "download_name": "IME (KKIME104D) -MODULE-V(1).pdf",
+              "download_url": "/static/notes/P CYCLE NOTES/Elective courses/KKIME introduction to mechanical engineering/IME (KKIME104D) -MODULE-V(1).pdf",
+              "pages": 19,
+              "status": "available"
+            }
+          ]
         }
       ]
     },

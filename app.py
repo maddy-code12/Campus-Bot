@@ -10,7 +10,7 @@ from typing import Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException, Header, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -984,16 +984,12 @@ def get_aiml_2025_timetable(section: Optional[str] = Query(None)):
     if section:
         sec_upper = section.strip().upper()
         if sec_upper in data.get("sections", {}):
-            sec_data = data["sections"][sec_upper]
             return {
                 "section": sec_upper,
                 "academic_year": data.get("academic_year"),
                 "w_e_f": data.get("w_e_f"),
                 "period_timings": data.get("period_timings"),
-                "room": sec_data.get("room") or sec_data.get("default_room", "FB LH07"),
-                "schedule": sec_data.get("schedule", {}),
-                "faculty": sec_data.get("faculty", []),
-                "details": sec_data
+                "details": data["sections"][sec_upper]
             }
         raise HTTPException(status_code=404, detail=f"Section {section} not found")
     return data
@@ -1111,6 +1107,25 @@ def serve_assistant():
             return f.read()
     return serve_home()
 
+
+
+@app.get("/embed.js")
+def serve_embed_js():
+    path = os.path.join("static", "embed.js")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return Response(content=f.read(), media_type="application/javascript")
+    raise HTTPException(status_code=404, detail="embed.js not found")
+
+
+@app.get("/demo.html", response_class=HTMLResponse)
+@app.get("/demo", response_class=HTMLResponse)
+def serve_demo():
+    path = os.path.join("static", "demo.html")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+    raise HTTPException(status_code=404, detail="demo.html not found")
 
 @app.get("/embed", response_class=HTMLResponse)
 def serve_embed():

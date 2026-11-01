@@ -2208,6 +2208,10 @@
             icon: isCs ? "⏳" : "📝",
             title: `${s.code}: ${s.title}${isCs ? " — " + csText : ""}`,
             action: function () {
+              if (s.is_esc_group || s.code === "KKxxx104x") {
+                show2025ESCCourseSelection(d);
+                return;
+              }
               if (isCs) {
                 add(
                   tag(`${s.code} · Notes`) + `<b>📝 ${s.code}: ${s.title}</b><br><br><span style="color:#d97706;font-weight:700">⏳ ${csText}</span><br><small>Notes for this subject are currently being verified and will be available soon.</small>`,
@@ -2260,6 +2264,81 @@
       h,
       [
         { icon: "⬅️", title: `← Back to ${cycle}-Cycle Notes`, action: function () { show2025NotesSubjectList(cycle, d); } },
+        { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } }
+      ],
+      false,
+      true
+    );
+  }
+
+    function show2025ESCCourseSelection(d) {
+    fetch(`${API_BASE}/api/aiml-2025/notes?cycle=P`)
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        const escSubjects = (res && res.esc_subjects) || [];
+        const bars = escSubjects.map(function (s) {
+          return {
+            icon: s.code === "KKIEC104C" ? "📻" : (s.code === "KKIEE104B" ? "⚡" : "⚙️"),
+            title: s.title,
+            action: function () { show2025ESCSubjectDetail(s, d); }
+          };
+        });
+        bars.push({ icon: "⬅️", title: "← Back to P-Cycle Notes", action: function () { show2025NotesSubjectList("P", d); } });
+        bars.push({ icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } });
+        add(
+          tag("P-Cycle · ESC-I Electives") + `<b>⚡ Engineering Science Courses - I (ESC-I):</b><br><small>Select an elective course to view 5 modules, syllabus & verified notes:</small>`,
+          bars,
+          false,
+          true
+        );
+      })
+      .catch(function () {
+        add("Error fetching ESC-I courses. Please try again.", [{ icon: "⬅️", title: "← Back to P-Cycle Notes", action: function () { show2025NotesSubjectList("P", d); } }], false, true);
+      });
+  }
+
+  function show2025ESCSubjectDetail(s, d) {
+    let h = tag(`${s.code} · Notes`);
+    h += `<b>${s.code}: ${s.short_title || s.title}</b><br>`;
+    h += `<b>Scheme:</b> 2025 | <b>Credits:</b> ${s.credits} | <b>Stream:</b> ${s.stream || "ESC-I Elective"}<br><br>`;
+
+    // Course Outcomes
+    if (s.course_outcomes && s.course_outcomes.length > 0) {
+      h += `<b>Course Outcomes (COs):</b><br>`;
+      s.course_outcomes.forEach(function (co) {
+        h += `<small style="display:block;margin-bottom:3px;color:var(--tx);font-size:11.5px;">• ${co}</small>`;
+      });
+      h += `<br>`;
+    }
+
+    // Full Notes Download Button at top
+    if (s.full_notes && s.full_notes.url) {
+      h += `<div style="margin-bottom:14px;">`;
+      h += `<a href="${API_BASE}${s.full_notes.url}" target="_blank" rel="noopener" class="pda-website-btn" style="background:linear-gradient(135deg, #10b981, #059669);font-weight:700;display:inline-block;padding:7px 14px;border-radius:8px;">📄 ${s.full_notes.title}</a>`;
+      h += `</div>`;
+    }
+
+    // 5 Modules
+    h += `<b>Modules & Study Material:</b><br>`;
+    (s.modules || []).forEach(function (m) {
+      h += `<div style="margin:8px 0;padding:8px 10px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:3px solid var(--pr);">`;
+      h += `<b>Module ${m.module_number}: ${m.title}</b> (${m.hours || 8} Hours)<br>`;
+      if (m.topics && m.topics.length > 0) {
+        h += `<small style="color:var(--mu);display:block;margin:4px 0;">${m.topics.join("; ")}</small>`;
+      }
+      if (m.download_url) {
+        h += `<a href="${API_BASE}${m.download_url}" target="_blank" rel="noopener" class="pda-website-btn" style="font-size:11px;padding:4px 10px;display:inline-block;margin-top:4px;">📄 Download notes (${m.pages || 0} Pages)</a>`;
+      } else {
+        h += `<span style="color:#d97706;font-size:11.5px;font-weight:600;display:inline-block;margin-top:4px;">⏳ Notes: Coming soon</span>`;
+      }
+      h += `</div>`;
+    });
+
+    add(
+      h,
+      [
+        { icon: "⬅️", title: "← Back to ESC-I Subjects", action: function () { show2025ESCCourseSelection(d); } },
+        { icon: "📘", title: "← Back to P-Cycle Notes", action: function () { show2025NotesSubjectList("P", d); } },
         { icon: "🏛️", title: "← 2025 Scheme Menu", action: function () { showAIML2025Menu(d); } }
       ],
       false,
@@ -2481,11 +2560,9 @@
     fetch(`${API_BASE}/api/aiml-2025/timetable?section=${sec}`)
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        const secDetails = res.details || res;
-        const days = (res.details && res.details.schedule) || res.schedule || {};
-        const roomName = res.room || secDetails.room || secDetails.default_room || "FB LH07";
+        const days = res.schedule || {};
         let h = tag(`Section ${sec} · Timetable`);
-        h += `<b>🗓️ 1st Sem AIML — Section ${sec} (Room ${roomName}):</b><br>`;
+        h += `<b>🗓️ 1st Sem AIML — Section ${sec} (Room ${res.room || "TBA"}):</b><br>`;
         h += `<small>Academic Year 2026-27 · Effective 07-09-2026</small><br><br>`;
         
         // PDF download & high-res image buttons
@@ -2522,11 +2599,10 @@
         h += `</tbody></table></div>`;
 
         // Faculty list
-        const facList = (res.details && res.details.faculty) || res.faculty || [];
-        if (facList && facList.length > 0) {
+        if (res.faculty && res.faculty.length > 0) {
           h += `<b>Faculty Allocation:</b><br>`;
-          facList.forEach(function (fac) {
-            h += `• <b>${fac.subject_code || fac.code}:</b> ${fac.faculty_name || fac.faculty || ""} ${fac.initials ? '(' + fac.initials + ')' : ''}<br>`;
+          res.faculty.forEach(function (fac) {
+            h += `• <b>${fac.subject_code}:</b> ${fac.faculty_name} (${fac.initials})<br>`;
           });
         }
 
@@ -3886,6 +3962,8 @@
     show2025NotesSubjectDetail: show2025NotesSubjectDetail,
     show2025SectionTT: show2025SectionTT,
     show2025DevResources: show2025DevResources,
+    show2025ESCCourseSelection: show2025ESCCourseSelection,
+    show2025ESCSubjectDetail: show2025ESCSubjectDetail,
     DEPTS: DEPTS
   };
 

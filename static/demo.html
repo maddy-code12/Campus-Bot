@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDA College of Engineering — Official Website (Demo)</title>
+  <link rel="icon" type="image/png" href="/static/pda_logo.png" />
+  <style>
+    :root {
+      --primary: #311068;
+      --secondary: #4c1d95;
+      --gold: #f59e0b;
+      --bg: #0b0f19;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 24px;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-wrap img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .logo-text h1 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.3px;
+    }
+    .logo-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    /* Hero Banner */
+    .hero {
+      max-width: 1200px;
+      margin: 40px auto 30px;
+      padding: 48px 32px;
+      background: linear-gradient(135deg, rgba(49, 16, 104, 0.6) 0%, rgba(76, 29, 149, 0.3) 100%);
+      border-radius: 24px;
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+    /* Grid */
+    .section-title {
+      max-width: 1200px;
+      margin: 40px auto 20px;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .grid {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 58, 237, 0.4);
+    }
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo-wrap">
+        <img src="/static/pda_logo.png" alt="PDA College of Engineering Logo" />
+        <div class="logo-text">
+          <h1>P.D.A. College of Engineering</h1>
+          <p>Autonomous Institution Estd. 1958 | Kalaburagi, Karnataka</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#departments">Departments</a>
+        <a href="#admissions">Admissions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to PDA College of Engineering</h2>
+      <p>Pioneering technical education in North Karnataka for over 65 years. Empowering future engineers through autonomous curriculum, state-of-the-art laboratories, and modern AI innovation.</p>
+      <div class="hero-badges">
+        <span class="badge">🏛️ UGC Autonomous Institution</span>
+        <span class="badge">🌟 Affiliated to VTU Belagavi</span>
+        <span class="badge">🤖 AI Campus Assistant Enabled</span>
+      </div>
+    </section>
+
+    <h2 class="section-title">🎓 Featured Engineering Programs</h2>
+    <section class="grid">
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>Artificial Intelligence & ML</h3>
+        <p>120 Seats · Zen AI GPU Cluster · 2025 Scheme verified curriculum, timetables, syllabus, notes, and question paper archives.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Computer Science & Engineering</h3>
+        <p>240 Seats · Cloud Computing & Cybersecurity Labs · Center of Excellence (COE) and verified faculty directories.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Electrical & Electronics</h3>
+        <p>60 Seats · Power Systems Lab, High Voltage Testing, and Smart Grid Innovation Hub.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📻</div>
+        <h3>Electronics & Communication</h3>
+        <p>180 Seats · VLSI Design Studio, Embedded Systems & Wireless Sensor Network Research Labs.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Campus Bot 1-Line Embed Script -->
+  <script src="/embed.js" defer></script>
+</body>
+</html>
