@@ -40,7 +40,7 @@ DEPARTMENTS = [
         "cutoff_comedk": 16500,
         "open_seats": 18,
         "sections_1st_year": ["G", "H"],
-        "hod": "Dr. Basavaraj S Mathapati",
+        "hod": "Dr. Basavaraj S. Mathapati",
         "cabin": "AIML Dept, Zen AI Block, HOD Cabin",
         "phone": "08472-224360 (Ext. 207)",
         "email": "hodaiml@pdaengg.com",

@@ -621,6 +621,7 @@
       s: {
         Mon: { 4: ["5th Sem AIML-A (AIML Lab B1)", "AIML Lab"], 5: ["5th Sem AIML-A (AIML Lab B1)", "AIML Lab"] },
         Tue: { 4: ["5th Sem AIML-A (AIML Lab B2)", "AIML Lab"], 5: ["5th Sem AIML-A (AIML Lab B2)", "AIML Lab"] },
+        Thu: { 4: ["1st Sem AIML-H (POC Lab H1)", "POC Lab"], 5: ["1st Sem AIML-H (POC Lab H1)", "POC Lab"] },
       },
     },
     {
@@ -665,7 +666,7 @@
       cab: "AIML Dept, Cabin (3rd Sem Sec-A Class Coordinator)",
       s: {
         Mon: { 1: ["3rd Sem AIML-B (DSC)", "LH-09"] },
-        Tue: { 0: ["3rd Sem AIML-B (DSC)", "LH-09"] },
+        Tue: { 0: ["3rd Sem AIML-B (DSC)", "LH-09"], 4: ["1st Sem AIML-G (POC Lab G1)", "POC Lab"], 5: ["1st Sem AIML-G (POC Lab G1)", "POC Lab"] },
         Wed: { 0: ["1st Sem AIML-G (Prog in C)", "FB LH07"] },
         Thu: { 2: ["3rd Sem AIML-B (DSC)", "LH-15"] },
         Fri: { 1: ["1st Sem AIML-G (Prog in C)", "FB LH07"] },
@@ -707,7 +708,7 @@
         Mon: { 2: ["3rd Sem AIML-B (DSC Lab B1)", "AIML Lab"], 3: ["3rd Sem AIML-B (DSC Lab B1)", "AIML Lab"] },
         Tue: { 4: ["3rd Sem AIML-A (OS)", "LH-09"] },
         Wed: { 0: ["3rd Sem AIML-B (DSC Lab B2)", "AIML Lab"], 1: ["3rd Sem AIML-B (DSC Lab B2)", "AIML Lab"] },
-        Thu: { 1: ["3rd Sem AIML-A (OS)", "LH-09"] },
+        Thu: { 1: ["3rd Sem AIML-A (OS)", "LH-09"], 4: ["3rd Sem AIML-A (OOP Lab B2)", "AIML Lab"], 5: ["3rd Sem AIML-A (OOP Lab B2)", "AIML Lab"] },
         Fri: { 1: ["3rd Sem AIML-A (OS)", "LH-09"] },
       },
     },
